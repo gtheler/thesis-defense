@@ -708,12 +708,7 @@ Paul Graham
 
 ![](dominio-solo-nodos.svg)
 
-## Discretización en espacio: elementos finitos
-
-![](dominio-nodos-elementos.svg)
-
-
-## 
+## Discretización en espacio: funciones de forma
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -733,7 +728,15 @@ Paul Graham
 :::
 ::::::::::::::
 
-. . .
+
+## Discretización en espacio: elementos finitos
+
+![](dominio-nodos-elementos.svg)
+
+
+## Extras
+
+### Elementos de segundo orden
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -745,7 +748,17 @@ Paul Graham
 ::::::::::::::
 
 
+. . . 
 
+
+### Condiciones de Dirichlet no homogéneas
+
+Justificación de `MatZeroRows()`
+
+<https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
+
+
+ * Segunda respuesta más votada (después de la de Jed Brown)
 
 
 
@@ -753,7 +766,15 @@ Paul Graham
 
 Contribuciones globales
 
+ * Poisson steady-state
+ 
+ * Core-level neutronics
+ 
+   - with sources
+   - without sources
+
 ## 
+
 
 \centering ![](what.svg)
 
@@ -804,6 +825,20 @@ Contribuciones globales
  2. Software Design Specification
 
 
+### 
+
+TOC del SRS
+
+Highlights:
+
+ - FOSS
+ - cloud first
+   - transfer function
+   - Don's quote
+ - Scalable
+ - Flexible
+ - Extensible
+ 
 ## Implementación
 
 Arquitectura y otras secciones
