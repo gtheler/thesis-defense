@@ -163,7 +163,9 @@ Este capítulo es exactamente eso: una combinación de desarollos y referencias 
 Podríamos decir que hay una sola contribución original: el manejo de condiciones de contorno de Dirichlet no homogéneas.
 
 
+mostrar contribuciones elementales
 
+¿Se entiende? Bueno, terminó el how, pasemos al what.
 
 
 # What

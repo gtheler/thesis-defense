@@ -702,68 +702,6 @@ Paul Graham
 
 ## Discretización en espacio: elementos finitos
 
-![](dominio-pelado.svg)
-
-## Discretización en espacio: elementos finitos
-
-![](dominio-solo-nodos.svg)
-
-## Discretización en espacio: funciones de forma
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-![](shape-function-first-order-24.png)
-:::
-::: {.column width="50%"}
-![](shape-function-first-order-25.png)
-:::
-::::::::::::::
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-![](shape-function-first-order-21.png)
-:::
-::: {.column width="50%"}
-![](shape-function-first-order-8.png)
-:::
-::::::::::::::
-
-
-## Discretización en espacio: elementos finitos
-
-![](dominio-nodos-elementos.svg)
-
-
-## Extras
-
-### Elementos de segundo orden
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-![](shape-function-second-order-45.png)
-:::
-::: {.column width="50%"}
-![](shape-function-second-order-102.png)
-:::
-::::::::::::::
-
-
-. . . 
-
-
-### Condiciones de Dirichlet no homogéneas
-
-Justificación de `MatZeroRows()`
-
-<https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
-
-
- * Segunda respuesta más votada (después de la de Jed Brown)
-
-
-
-## Ejemplo: ecuación de Poisson en estado estacionario
-
 $$
 \begin{cases}
 -\text{div} \Big[ k(\vec{x}) \cdot \text{grad} \left[ u(\vec{x}) \right] \Big] = f(\vec{x}) & \forall\vec{x} \in U \\
@@ -796,11 +734,47 @@ $$
 \end{aligned}
 $$
 
+## Discretización en espacio: elementos finitos
 
-## 
+![](dominio-pelado.svg)
+
+## Discretización en espacio: elementos finitos
+
+![](dominio-solo-nodos.svg)
+
+## Discretización en espacio: elementos finitos
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+![](shape-function-first-order-24.png)
+:::
+::: {.column width="50%"}
+![](shape-function-first-order-25.png)
+:::
+::::::::::::::
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+![](shape-function-first-order-21.png)
+:::
+::: {.column width="50%"}
+![](shape-function-first-order-8.png)
+:::
+::::::::::::::
+
+
+## Discretización en espacio: elementos finitos
+
+![](dominio-nodos-elementos.svg)
+
+
+## Discretización en espacio: elementos finitos
+
 $$
 \mat{K} \cdot \vec{u} = \vec{b}
 $$
+
+\vspace{-0.75cm}
 
 $$
 \mat{K}_i \approx
@@ -816,6 +790,59 @@ $$
 \underbrace{\omega_q \cdot \Big|\det{\left[\mat{J}_i\left(\symbf{\xi}_q\right)\right]}\Big|}_{\text{cuadratura numérica sobre $e_c$}}
 \underbrace{\left\{\mat{H}_c^T(\symbf{\xi}_q) \cdot f(\vec{x}_q)\right\}}_{\text{discretización del miembro derecho $f$}}
 $$
+
+\medskip
+. . .
+
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+![](dominio-continuo.svg)
+:::
+
+::: {.column width="25%"}
+![](dominio-continuo-estructurado.svg)
+:::
+
+::: {.column width="25%"}
+![](dominio-estructurado.svg)
+:::
+
+::: {.column width="25%"}
+![](dominio-no-estructurado.svg)
+:::
+::::::::::::::
+
+
+
+
+## Extras
+
+### Elementos de segundo orden
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+![](shape-function-second-order-45.png)
+:::
+::: {.column width="50%"}
+![](shape-function-second-order-102.png)
+:::
+::::::::::::::
+
+
+. . . 
+
+
+### Condiciones de Dirichlet no homogéneas
+
+ * Prueba de que usar `MatZeroRows()` (o `MatZeroRowsColumns()`) es correcto (páginas 124--126)
+
+<https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
+
+ * Segunda respuesta más votada (después de la de Jed Brown)
+
+
+
+
 
 ## Difusión de neutrones multigrupo en estado estacionario
 
@@ -860,11 +887,10 @@ $$
 $$
 \begin{gathered}
 \omegaversor_m \cdot \text{grad} \left[ \psi_{mg}(\vec{x}) \right]  +
-\Sigma_{t g}(\vec{x}) \cdot \psi_{mg}(\vec{x}) = 
+\Sigma_{t g}(\vec{x}) \cdot \psi_{mg}(\vec{x}) = s_{mg}(\vec{x}) +
 \sum_{g=1}^G \Sigma_{s_0 g^\prime \rightarrow g}(\vec{x})  \sum_{m^\prime=1} w_{m^\prime} \psi_{m^\prime g^\prime}(\vec{x})  + \\
 3 \sum_{g=1}^G \Sigma_{s_1 g^\prime \rightarrow g}(\vec{x}) \sum_{m^\prime=1} w_{m^\prime} \left( \omegaversor_{m} \cdot \omegaversor_{m^\prime} \right) \psi_{m^\prime g^\prime}(\vec{x}) + 
-\chi_g \sum_{g^\prime=1}^G \nu\Sigma_{fg^\prime}(\vec{x})   \sum_{m^\prime=1} w_{m^\prime} \psi_{m^\prime g^\prime}(\vec{x}) + 
-s_{mg}(\vec{x})
+\chi_g \sum_{g^\prime=1}^G \nu\Sigma_{fg^\prime}(\vec{x})   \sum_{m^\prime=1} w_{m^\prime} \psi_{m^\prime g^\prime}(\vec{x}) 
 \end{gathered}
 $$
 
@@ -874,6 +900,8 @@ $$
 \sum_{q=1}^Q \omega_q \cdot \Big|\det{\left[\mat{J}_i\left(\symbf{\xi}_q\right)\right]}\Big| \cdot \left[ \mat{L}_i(\symbf{\xi}_q) + \mat{A}_i(\symbf{\xi}_q) - \mat{F}_i(\symbf{\xi}_q)\right]
 \end{aligned}
 $$
+
+. . .
 
 $$
 \begin{aligned}
@@ -908,10 +936,74 @@ $$
 
 ## 
 
-
 \centering ![](what.svg)
 
-## Historia de Unix
+## 
+
+```{=latex}
+\begin{center}
+```
+
+![](bicicleta.jpg)
+
+```{=latex}
+\end{center}
+```
+
+
+## 
+
+![](ritchie-thompson.jpg)
+
+
+
+## 
+
+![](jon.jpg) 
+
+
+## 
+
+![](history-of-solidworks-1995.png){width=50%}
+![](history-of-solidworks-1996.png){width=45%} 
+
+## 
+
+```{=latex}
+\begin{center}
+```
+
+![](onshape.png){width=60%}
+
+```{=latex}
+\end{center}
+```
+
+
+
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+![](jon2.jpg)
+:::
+
+. . .
+
+::: {.column width="25%"}
+![](gates.jpg)
+:::
+
+. . .
+
+::: {.column width="25%"}
+![](thompson.jpg)
+:::
+
+::: {.column width="25%"}
+![](ritchie.jpg)
+:::
+::::::::::::::
 
 
 ## 
@@ -949,42 +1041,120 @@ $$
 
 
 
-## SRS/SDS
+## Software Requirements Specification $\rightarrow$ Software Design Specification
 
- 1. Software Requirements Specification
- 
 . . .
+
+:::::::::::::: {.columns}
+::: {.column width="48%"}
+
+ 1. Introduction
+     1. Objective
+     2. Scope
+ 2. Architecture
+     1. Deployment
+     2. Execution
+     3. Efficiency
+     4. Scalability
+     5. Flexibility
+     6. Extensibility
+     7. Interoperability
+ 3. Interfaces
+     1. Problem input
+     2. Results output
+ 4. Quality assurance
+     1. Reproducibility and traceability
+     2. Automated testing
+     3. Bug reporting and tracking
+     4. Verification
+     5. Validation
+     6. Documentation
+:::
+
+. . .
+
+::: {.column width="53%"}
+
+\medskip
+
+ * Que resuelva problemas de ingeniería
+ * Que corra en la nube
+ * Buenas prácticas de desarrollo de software
+    - Trazable
+    - Escalable
+    - Flexible
+    - Extensible
+
+\medskip
+. . .
+
+ * Cloud first (no sólo "cloud friendly")
+ * Código libre & abierto ([free]{lang=en-US} $\neq$ [gratis]{lang=en-US} $\neq$ [open]{lang=en-US})
+   - GPLv3+
+ * Filosofía Unix
+
+. . .
+
+\medskip
+
+\centering <https://github.com/seamplex/feenox>
+
+\medskip
+
+\centering “Desktop solver development is the _opposite_ of cloud development”
  
- 2. Software Design Specification
+ 
+:::
 
 
-### 
+:::::::::::
 
-TOC del SRS
 
-Highlights:
+## 
 
- - FOSS
- - cloud first
-   - transfer function
-   - Don's quote
- - Scalable
- - Flexible
- - Extensible
+ Feature                               |     Microsoft Word    |       Google Docs    |      Markdown[^1]  |     (La)TeX
+:--------------------------------------|:---------------------:|:--------------------:|:------------------:|:----------------:
+ Aesthetics                            |       $\times$        |       $\times$       |      $\checkmark$      |  $\checkmark$
+ Convertibility (to other formats)     |       $\sim$          |       $\sim$         |      $\checkmark$      |  $\sim$
+ Traceability                          |       $\times$        |       $\sim$         |      $\checkmark$      |  $\checkmark$
+ Mobile-friendliness                   |       $\times$        |       $\checkmark$       |      $\checkmark$      |  $\times$
+ Collaborativeness                     |       $\times$        |       $\checkmark$       |      $\checkmark$      |  $\sim$
+ Licensing/openness                    |       $\times$        |       $\times$       |      $\checkmark$      |  $\checkmark$
+ Non-nerd friendliness                 |       $\checkmark$        |       $\checkmark$       |      $\sim$        |  $\times$
+
+
+## 
+
+ Feature                           | Desktop GUIs  |   Web frontends  |  FeenoX[^2]  |  Libraries
+:--------------------------------------|:------------------------:|:-----------------------:|:------------------:|:----------------:
+ Flexibility                           |      $\sim$              |         $\times$        |     $\checkmark$       |      $\checkmark$
+ Scalability                           |      $\times$            |         $\sim$          |     $\checkmark$       |      $\checkmark$
+ Traceability                          |      $\times$            |         $\sim$          |     $\checkmark$       |      $\checkmark$
+ Cloud-friendliness                    |      $\times$            |         $\checkmark$        |     $\checkmark$       |      $\checkmark$
+ Collaborativeness                     |      $\times$            |         $\checkmark$        |     $\checkmark$       |      $\sim$
+ Licensing/openness                    | $\checkmark$/$\sim$/$\times$ |         $\times$        |     $\checkmark$       |      $\checkmark$
+ Non-nerd friendliness                 |      $\checkmark$            |         $\checkmark$        |     $\sim$         |      $\times$
+
+ 
+
  
 ## Implementación
 
-Arquitectura y otras secciones
 
-Self-descriptive English
+## Arquitectura
 
-Definiciones e instrucciones
+glue layer
 
-src/pdes
+## Input
 
-Ejemplo de lo que pasa en un input
+## Definiciones e instrucciones
 
-Apéndices: algebraic parser, funciones, etc.
+## ¿Qué pasa cuando ejecutamos FeenoX?
+
+## Extras
+
+ * 
+
 
 ## 
 

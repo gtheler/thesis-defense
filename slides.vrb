@@ -1,0 +1,35 @@
+\frametitle{Extras}
+\protect\hypertarget{extras}{}
+\begin{block}{Elementos de segundo orden}
+\protect\hypertarget{elementos-de-segundo-orden}{}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\includegraphics{shape-function-second-order-45.png}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\includegraphics{shape-function-second-order-102.png}
+\end{column}
+\end{columns}
+
+\pause
+\end{block}
+
+\begin{block}{Condiciones de Dirichlet no homogéneas}
+\protect\hypertarget{condiciones-de-dirichlet-no-homoguxe9neas}{}
+\begin{itemize}
+\tightlist
+\item
+  Prueba de que usar \passthrough{\lstinline!MatZeroRows()!} (o
+  \passthrough{\lstinline!MatZeroRowsColumns()!}) es correcto (páginas
+  124--126)
+\end{itemize}
+
+\url{https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem}
+
+\begin{itemize}
+\tightlist
+\item
+  Segunda respuesta más votada (después de la de Jed Brown)
+\end{itemize}
+\end{block}

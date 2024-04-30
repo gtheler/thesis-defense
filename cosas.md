@@ -1,6 +1,12 @@
 # Capítulos
 
  1. piñón + motivación
+     - inicio
+     - link
+     - desarrollo
+     - final
+     - tweet
+    
  2. séneca + markdown para dar clases
  3. paul graham: lo mismo que séneca pero con "machinery"
     - SRS/SDS
