@@ -1,66 +1,127 @@
-
-
-
-
  
-## Intro
+# 1. Introducción
 
-Calabró.
-Mecánica & electrón.
-Loop.
-Tecna.
-Cites.
-Seamplex.
+Yo crecí en los noventa, donde todo daba vueltas alrededor de la televisión.
+Un día estaba yo mirando "El contra".
 
+## Calabró
 
+El invitado era un director técnico de fútbol, no recuerdo quién.
+En un momento, Calabró pregunta:
+
+"Supongamos que van 45 minutos del segundo tiempo. ¿Qué preferiría? ¿Un córner o un lateral a favor?"
+
+"¿Pero qué pregunta es esa?"---responde rápido Carrizo sin dejar hablar al DT.
+"Con un córner uno tiene la posibilidad de llegar al área rival."
+
+"Lo que pasa es que allá en Villa Dálmine"---explica Calabró---"durante la semana nosotros entrenamos laterales con sandías."
+
+[pausa]
+
+"Cuando el fin de semana agarramos una pelota, ¿sabés hasta dónde tiramos los laterales?"
+
+[pausa]
+
+Bueno, esa idea de entrenar laterales con sandías que escuché cuando tenía 10 años me empezó a perseguir.
+
+## IB 2004
+
+Diez años después estaba entrenando laterales con sandías en el IB.
+
+## Electrón
+
+Bueno.
+
+## Lazo
+
+Acá estoy entrenando laterales con mi tesis de grado sobre lazos de convección natural caóticos en una etapa académica.
+
+## TECNA
+
+Después de la maestría me dediqué a meter las narices en temas de licenciamimento de Atucha II en un etapa industrial de mi carrera profesional.
+
+## Cites
+
+Después de la criticidad, me pasé a temas de startups.
+A veces yo le daba cheques gigantes a emprendedores desde CITES.
+
+## BNA
+
+Y a veces era yo el que pedía cheques. 
 
 ## Mafalda
 
-El desarrollo que voy a contar tiene más de una decena de años de lecciones aprendidas.
-Esta tesis excepcional (en el sentido de que fue atípica en palabras de Christian) no aparece ligada a ninguno de estos tres ámbitos.
-Pero sí haber trabajado profesionalmente en temas académdicos, industriales y de emprendedurismo me permitió tomarme el tiempo para poder separar, como dice Mafalda, lo urgente de lo importante.
-
-Mi anhelo es que todo este trabajo que voy a contar no quede en otra lista de TO-DOs y que los trabajos futuros que lo voy a contar a continuación desencadene no queden en "nice to have"s.
+Esta tesis es excepcional en el sentido de que fue atípica, una excepción a la receta tradicional.
+En lo que voy a contar hay quince años de lecciones aprendidas provenientes de estos tres ámbitos: academia, industria y emprendedurismo.
+Justamente este largo tiempo me permitió poder separar, como dice Mafalda, lo urgente de lo importante.
 
 ---
-
-
-Esta es una tesis
-
- * excepcional en el sentido de que es la excepción, de que es atípica
- * escrita durante los fines de semana (e incluso me tomé unos días de vacaciones en Las Vegas)
- * por un profesional (en el sentido de que me pagan para programar software de elementos finitos) de la industria del software de cálculo que pasó también profesionalmente por estos tres entornos.
- 
-Esto me permite tomarme el tiempo para, como dice Mafalda, poder separar "lo urgente" de "lo importante".
-
+2 min
+---
 
 ## TOC
 
-El contenido de la tesis es una mezcla de 
+Primero que nada, si hubiese podido escribir la tesis en inglés el título habría sido "a cloud-first approach for solving core-level neutron transport over unstructured grids."
 
- i. física de reactores a nivel de núcleo
- ii. programación en HPC
+Pero no encontré una buena traducción, así que elegí "transporte de neutrones en la nube" que indica explícitamente que el contenido de la tesis es una mezcla de 
 
+ i. física de reactores a nivel de núcleo, y
+ ii. programación tipo high-performance
 
-que justamente son las dos mitades del título.
-Está dividida en cinco capítulos donde en el primero explico el "why", en los dos siguientes el "how" y en los últimos dos el "what".
-El why es un tanto subjetivo.
-El how es ya conocido.
-La contribución original aparece recién en el what.
+La tesis está dividida en cinco capítulos más algunos apéndices (que sí están en inglés).
+En en el primero explico el "why", en los dos siguientes el "how" y en los últimos dos el "what".
+El "why" es un tanto subjetivo, si me permiten.
+En el "how" no hay nada nuevo, es todo conocido.
+La contribución original aparece recién en el "what".
+
+---
+3 min
+---
 
 
 ## Why
 
+Empecemos entonces con el "why".
+
 
 ### Diseño de software de cálculo
 
-Consideremos esta tabla de un paper de 1965 sobre computadoras para cálculo de reactores.
+Consideremos esta tabla de un paper de 1965.
+El título del paper es, justamente "Desarrollos recientes en computadoras y sus _consecuencias_ para el cálculo de reactores"
 
+[pausa para que miren la tabla]
 
+Tenemos que hacer el ejercicio mental de viajar 60 años al pasado y entender estos números.
 
-En CNA2 se usaba software diseñado con este paradigma.
-Pero era una base de diseño implícita. O al menos yo nunca vi ninguna documentación que explique el rationale de ciertas decisiones de diseño.
-Hay que adivinarlas y, pero aún, aceptarlas.
+Dejemos de lado consideraciones sobre arquitectura, lenguajes, compiladores, etc.
+Pensemos en cómo había que diseñar el software de cálculo desde el punto de vista de ingeniería en aquella época.
+
+Desde un punto de vista de costos, cada resultado calculado tiene que formar parte de la salida.
+Porque si te gastás varios miles de dólares para hacer una corrida y después necesitás un número que no está en los papeles que imprimió el aparato, tenés que volver a pagar para calcularlo de nuevo.
+
+Pero si viajamos de nuevo "back to the future", resulta que lo caro ahora es la hora de ingeniería y no la hora de CPU.
+No tiene ningún sentido hacer que el calculista tenga que buscar la aguja que necesita en un pajar de números innecesarios.
+
+[pausa]
+
+Así y todo, la mayoría del software de cálculo en general y de reactores en particular, sigue sacando megas de salidas.
+Aún cuando desde hace varios años tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming") que sintetizan un montón de lecciones aprendidas en tema de diseño de software.
+
+## 
+
+Entre ellas, la "regla del silencio".
+
+[silencio]
+
+---
+5 min
+---
+
+## Historia de dos reactores
+
+Pasemos ahora a la otra mitad.
+
+XXXX
 
 
 ### IAEA 3D Benchmark

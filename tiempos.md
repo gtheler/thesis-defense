@@ -1,6 +1,6 @@
 # Tiempos
  
- 1. (5 min) laterales con sandías, 3 ámbitos, TOC, mafalda
+ 1. (3 min) laterales con sandías, 3 ámbitos, mafalda, TOC
     1. (2 min) 100 años de programación
     2. (5 min) historia de dos reactores
     3. (3 min) propuesta: IAEA 3D PWR

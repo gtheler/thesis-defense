@@ -59,6 +59,7 @@ header-includes:
 
 \centering ![](mafalda.png)
 
+
 ## 
 
 ```{=latex}
@@ -160,6 +161,8 @@ $$
  UNIVAC 1108     |         $ 45,000         |     2       |  Aug 65
 
 : "Recent developments in computers and their implication for reactor calculations" (1965)^[1 USD @ 1965 $\approx$ 10 USD @ 2023]
+
+## Unix rule of silence
 
 ## Historia de dos reactores
 
