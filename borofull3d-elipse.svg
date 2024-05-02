@@ -7,7 +7,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="borofull3d.svg"
+   sodipodi:docname="borofull3d-elipse.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -732,5 +732,12 @@
         </g>
       </g>
     </g>
+    <ellipse
+       style="fill:none;fill-opacity:0;stroke:#ffe925;stroke-width:16;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.84550786"
+       id="path2186"
+       cx="226.69293"
+       cy="127.96684"
+       rx="237.30138"
+       ry="87.538757" />
   </g>
 </svg>

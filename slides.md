@@ -171,15 +171,17 @@ $$
 
 ![](slider-cna2.png)
 
-## Esquema de dos pasos
+## Inyección rápida de boro: esquema de dos pasos
 
 ![](borocinetica.svg)
 
-## Esquema acoplado con cinética espacial
+## Inyección rápida de boro: esquema acoplado con cinética espacial
 
 ![](borofull3d.svg)
 
-En los dos casos hay que meter boro en neutrónica
+## Inyección rápida de boro: esquema acoplado con cinética espacial
+
+![](borofull3d-elipse.svg)
 
 ## Los canales de los PHWR
 
@@ -241,7 +243,7 @@ En los dos casos hay que meter boro en neutrónica
 
 
 
-## Celdas...
+## Celdas estructuradas...
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}

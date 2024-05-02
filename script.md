@@ -121,7 +121,71 @@ Entre ellas, la "regla del silencio".
 
 Pasemos ahora a la otra mitad.
 
-XXXX
+Supongamos que tenemos un reactor con un diseño medio único, ya licenciado y que está operando.
+Después aparece otro reactor medio parecido, un poco más grande pero que hay que licenciar.
+Bueno, las partes más sensibles hay que contratarlas afuera porque no tenemos ciertas capacidades.
+Y aunque alguna vez las hayamos tenido, las perdimos por el camino.
+
+Fair enough.
+
+De todas maneras, metemos un poco las narices en el proceso de licenciamiento del reactor nuevo.
+
+Fantástico.
+
+Se licencia el reactor nuevo pero resulta que hay que re-licenciar el viejo.
+Y ahora sí tenemos las capacidades.
+De hecho, si me apurás, te digo que teníamos más capacidad que los "expertos internacionales".
+Pero esa es discusión para otro momento.
+
+## Esquema de dos paso
+
+Long story short: tenemos que modelar la inyección de rápida de boro del segundo sistema de shutdown.
+
+Primer esquema.
+
+ 1. calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un código de núcleo y tenemos una curva de reactividad vs. tiempo
+ 2. metemos esa curva en un código de planta acoplado con control y protección y vemos qué pasa.
+ 
+## Esquema acoplado
+
+Segundo esquema.
+
+Calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un código de núcleo cinético-espacial acoplado con el código de planta y la lógica de control y protección.
+
+
+## Elipse
+
+En cualquiera de los dos casos, tenemos que hacer CFD primero y meter la pluma de boro en la neutrónica.
+Así que prestemos atención a esa parte.
+
+
+## Canales
+
+Sea Atucha o sea Embalse, tenemos el moderador separado del refrigerante.
+Así que la pluma va a rodear los canales.
+El boro no se va a meter en el refrigerante, mucho menos en el combustible.
+
+## Dominio
+
+Cuando tenemos que discretizar una geometría curva como esta,
+si queremos usar una malla estructurada como esta,
+nos vamos a topar con un "stair-case effect" como este.
+
+Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún error pero para la misma cantidad de celdas, la discretización con mallas no estructuradas es muy superior.
+
+## Celdas estructuradas...
+
+Pero si uno mira los códigos de núcleo, ve cosas como estas.
+Esto es Atucha I "vista" desde el código de cinética espacial que nombramos antes.
+
+[pausa]
+
+Modelar numéricamente barras inclinadas se parece bastante a jugar con "Legos" o "Mis ladrillos".
+
+
+## Celdas
+
+
 
 
 ### IAEA 3D Benchmark
