@@ -297,34 +297,21 @@ $$
 
 ## 
 
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](4x4-40.png)
-
-:::
-
-. . .
-
-::: {.column width="50%"}
-
-![](4x4-60.png)
-
-:::
-::::::::::::::
-
+\centering ![](4x4-40.png)
 
 
 
 ## 
 
-![](4x4ref.svg)
+\centering ![](4x4ref.svg)
 
 
 . . . 
 
 
 \centering ¿Vale usar difusión?
+
+  
 
  
 ## Limitaciones
@@ -352,9 +339,15 @@ $$
 \end{cases}
 $$
 
+. . .
+
+$$
+\text{paralelizable} \rightarrow \text{descomposición de dominio} \rightarrow \text{DAG} = \text{malla no estructurada}
+$$
 
 
-## IAEA 3D PWR Benchmark
+
+## IAEA 3D PWR Benchmark (1976)
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -407,7 +400,7 @@ $$
 :::
 ::::::::::::::
 
-## IAEA 3D PWR Benchmark con 1/8, reflector circular & S$_N$ (2023)
+## IAEA 3D PWR Benchmark con 1/8, reflector circular & S$_4$ (2023)
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}

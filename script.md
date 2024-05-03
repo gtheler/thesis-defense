@@ -123,7 +123,7 @@ Pasemos ahora a la otra mitad.
 
 Supongamos que tenemos un reactor con un diseño medio único, ya licenciado y que está operando.
 Después aparece otro reactor medio parecido, un poco más grande pero que hay que licenciar.
-Bueno, las partes más sensibles hay que contratarlas afuera porque no tenemos ciertas capacidades.
+Bueno, las partes más sensibles hay que contratarlas afuera porque no tenemos ciertas capacidades de ingeniería.
 Y aunque alguna vez las hayamos tenido, las perdimos por el camino.
 
 Fair enough.
@@ -136,6 +136,7 @@ Se licencia el reactor nuevo pero resulta que hay que re-licenciar el viejo.
 Y ahora sí tenemos las capacidades.
 De hecho, si me apurás, te digo que teníamos más capacidad que los "expertos internacionales".
 Pero esa es discusión para otro momento.
+
 
 ## Esquema de dos paso
 
@@ -158,10 +159,17 @@ Calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un
 En cualquiera de los dos casos, tenemos que hacer CFD primero y meter la pluma de boro en la neutrónica.
 Así que prestemos atención a esa parte.
 
+---
+6 min 30 seg
+---
 
 ## Canales
 
-Sea Atucha o sea Embalse, tenemos el moderador separado del refrigerante.
+Sea Atucha o sea Embalse, en Argentina tenemos 
+
+ 1. canales cilíndricos
+ 2. moderador separado del refrigerante.
+
 Así que la pluma va a rodear los canales.
 El boro no se va a meter en el refrigerante, mucho menos en el combustible.
 
@@ -180,20 +188,129 @@ Esto es Atucha I "vista" desde el código de cinética espacial que nombramos a
 
 [pausa]
 
-Modelar numéricamente barras inclinadas se parece bastante a jugar con "Legos" o "Mis ladrillos".
+Modelar numéricamente barras inclinadas se parece bastante a jugar con "Legos" o, para los viejos como yo, "mis ladrillitos", ¿no?
 
+---
+7 min 30 seg
+---
 
 ## Celdas
 
+¿Cómo es el enfoque?
+Bueno, agarramos un canal con un poco de moderador.
+Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel de núcleo.
+
+## Gota
+
+Desde el punto de vista del cálculo de celda, al menos hace diez años, si queríamos ver qué pasaba al meter una gota de boro lo único que podemos hacer es repartir estas dos mil ppm en el 5% del volumen como cien ppm en toda la celda.
+
+---
+8 min
+---
+
+## CFD
+
+Dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
+Bueno, esto lo hacen los que saben de fluidos con mallas no estructuradas.
+Está claro que el boro no se mete en los canales. 
 
 
+## Mapeo
 
-### IAEA 3D Benchmark
+Desde el lado de la neutrónica de núcleo, ahora tenemos que mapear para cada instante la pluma del CFD en nuestra malla estructurada.
+
+. . .
+
+Terminamos con cosas como estas.
+
+[pausa]
+
+---
+8 min 30 seg
+---
+
+## Refinado
+
+Podemos refinar un poco la malla de cálculo, pero tampoco es que el panorama mejora mucho.
+
+## Gota
+
+Y además, si bien en el CFD el boro _no_ se mete en el refrigerante, con el esquema de celdas el boro termina metiéndose adentro de los canales.
+
+Además de todas las preguntas sobre la validez del esquema, surge también esta pregunta:
+
+. . .
+
+¿Vale usar difusión?
+
+---
+9 min
+---
+
+## Limitaciones
+
+Resumiendo.
+
+Tenemos limitaciones de
+
+ 1. dilución de secciones eficaces
+ 2. efectos staircase muy marcados
+ 3. validez de la aproximación de difusión
+ 
+. . .
+
+Entonces, ¿qué proponemos? De atrás para adelante, usar SN en lugar de difusión.
+El problema es que SN escala muy rápido, especialmente en memoria.
+Así que necesitamos algo paralelizable, flexible y extensible.
+
+. . .
+
+Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
+
+Con un poco de suerte, podemos re-pensar el esquema de condensación de secciones eficaces del punto uno.
 
 Voy a dejar de hablar generalidades y voy a pasar a un ejemplo que ilustra lo que quiero decir.
 
 
+## IAEA 3D Benchmark
 
+Seguramente conocen ustedes este benchmark 3D de 1976.
+
+## Simetrías
+
+Como es para PWRs, te indican que la geometría tiene simetría un cuarto y se puede mallar perfectamente con cuadraditos.
+Pero si uno mira con detenimimento, resulta que tiene geometría un octavo.
+
+. . .
+
+El chiste es que necesitamos mallas no estructuradas para aprovecharla.
+
+Más aún, ese reflector no debería ser así.
+
+. . .
+
+Debería ser así.
+
+Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" como Leono de los Thundercats.
+
+## IAEA SN
+
+Así que adelantándome al capítulo de resultados, les presento el benchmark 3D de IAEA resuelto con
+ 
+ * simetría 1/8 en lugar de 1/4,
+ * reflector circular en lugar de "recortado", y
+ * S$_4$ en lugar de difusión.
+
+---
+10 min 30 seg
+---
+
+ 
+## How
+
+
+ 
+ 
 
 
 ### Observación
