@@ -412,6 +412,9 @@ Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
 Discretización del espacio: elementos finitos.
 
 Empecemos con la ecuación de Poisson, que es más sencilla.
+
+. . .
+
 Lo primero que hacemos es escribirla en una formulación débil.
 
 Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ es igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
@@ -423,28 +426,36 @@ Empezamos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet
 
 ## Nodos
 
-Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de Neumann.
+Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de Neumann, pero _no_ sobre la frontera de Dirichlet.
 
 ## Funciones
 
-Después buscamos tantas funciones de forma como nodos pusimos de forma tal que cada una valga uno en cada nodo y cero el en resto.
-Esta va a ser la base del espacio vectorial aproximado donde vamos a encontrar la solución de la ecuación de Poisson que estamos resolviendo.
+Después buscamos tantas funciones de forma como nodos pusimos de forma tal de que cada una valga uno en cada nodo y cero el en resto.
+Esta va a ser la base del espacio vectorial aproximado donde vamos a encontrar la solución de la ecuación de Poisson que estamos resolviendo con elementos finitos.
 
 ## Elementos finitos
 
-Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio U. Llamamos a cada uno de estos triangulitos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
+Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio U.
+Llamamos a cada uno de estos triangulitos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
+
+---
+17 min
+---
+
 
 ## $K u = b$
 
-Con un poco de álgebra lineal llegamos a que podemos resolver la ecuación de Poisson con elementos finitos resolviendo el sistema lineal $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
+Con un poco de álgebra lineal llegamos a que podemos obtener una solución de la ecuación de Poisson con elementos finitos resolviendo el sistema lineal $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
 Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
 Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ sobre la matriz de rigidez $K$ y del funcional $B$ larga grande sobre el vector del miembro derecho $b$ larga chica.
 
 . . .
 
-Favor de notar que nunca tuvimos que pasar por la escalerita.
-Todo esto funciona con mallas no estructuradas.
+Favor de notar que
+
+ 1. Nunca tuvimos que pasar por la escalerita. Todo esto funciona con mallas no estructuradas.
+ 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua en el espacio que podemos evaluar en cualquier punto arbitrario.
 
 ## Extras
 
@@ -455,12 +466,16 @@ Primero, que podemos usar elementos segundo orden. Si quieren después profundiz
 
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
 Antes había dicho que en este capítulo no hay "casi" nada nuevo. Bueno, la justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$ no la pude encontrar en la bibliografía.
-De hecho consulté a colegas y nadie me supo dar la justificación. Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué" como en el cuento de los monos.
+De hecho consulté a colegas de la empresa de software de elementos finitos donde trabajo y nadie me supo dar la justificación. Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el cuento de los monos.
 
-En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación.
+En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación matemática.
 De hecho mi respuesta es la segunda más votada (despúes de la primera que es de Jed Brown).
 
 [pausa]
+
+---
+18 min 30 seg
+---
 
 ## Difusión
 
@@ -471,7 +486,7 @@ Los detalles en el capítulo tres, pero dos cosas
  2. Fíjense que la forma es parecida al caso de Poisson.
 
 Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos.
-De todas maneras en difusión no es simétrico y puede no ser coercivo.
+De todas maneras en difusión, el operador no es simétrico y puede llegar a no ser coercivo.
 
 
 ## Transporte
@@ -502,6 +517,11 @@ Bueno, depende de qué tipo de problema estemos queriendo resolver.
 Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
 Bueno, hay que hacer Newton Raphson y la cosa se complica un poco.
 Pero por ahora no nos vamos a meter en eso y damos por terminado el how.
+
+---
+20 min
+---
+
 
 ### Observación
 

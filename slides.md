@@ -918,12 +918,16 @@ $$
     \text{matriz de} \left[ \text{leakage} + \text{absorciones} \right] \cdot \symbf{\varphi} = \text{vector de} \left[ \text{fuentes} \right]
     $$
  
+. . . 
+ 
  2. Medio multiplicativo con fuentes independientes, y
  
     $$
     \text{matriz de} \left[ \text{leakage} + \text{absorciones} - \text{fisiones} \right] \cdot \symbf{\varphi} = \text{vector de} \left[ \text{fuentes} \right]
     $$
- 
+
+. . .
+     
  3. Medio multiplicativo sin fuentes independientes.
  
     $$
@@ -932,7 +936,7 @@ $$
 
 . . .
 
- * Si las XSs dependen de $\symbf{\varphi}$ hacemos lo mismo pero con Newton-Raphson
+ * Si las XSs dependen de $\symbf{\varphi}$ hacemos lo mismo pero con Newton-Raphson (otro día)
 
 ## 
 
@@ -1114,27 +1118,30 @@ $$
 
  Feature                               |     Microsoft Word    |       Google Docs    |      Markdown[^1]  |     (La)TeX
 :--------------------------------------|:---------------------:|:--------------------:|:------------------:|:----------------:
- Aesthetics                            |       $\times$        |       $\times$       |      $\checkmark$      |  $\checkmark$
- Convertibility (to other formats)     |       $\sim$          |       $\sim$         |      $\checkmark$      |  $\sim$
- Traceability                          |       $\times$        |       $\sim$         |      $\checkmark$      |  $\checkmark$
- Mobile-friendliness                   |       $\times$        |       $\checkmark$       |      $\checkmark$      |  $\times$
- Collaborativeness                     |       $\times$        |       $\checkmark$       |      $\checkmark$      |  $\sim$
- Licensing/openness                    |       $\times$        |       $\times$       |      $\checkmark$      |  $\checkmark$
- Non-nerd friendliness                 |       $\checkmark$        |       $\checkmark$       |      $\sim$        |  $\times$
+ Aesthetics                            |       \textcolor{red}{$\times$}        |       \textcolor{red}{$\times$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
+ Convertibility (to other formats)     |       $\sim$          |       $\sim$         |      \textcolor{green}{$\checkmark$}      |  $\sim$
+ Traceability                          |       \textcolor{red}{$\times$}        |       $\sim$         |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
+ Mobile-friendliness                   |       \textcolor{red}{$\times$}        |       \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{red}{$\times$}
+ Collaborativeness                     |       \textcolor{red}{$\times$}        |       \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}      |  $\sim$
+ Licensing/openness                    |       \textcolor{red}{$\times$}        |       \textcolor{red}{$\times$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
+ Non-nerd friendliness                 |       \textcolor{green}{$\checkmark$}        |       \textcolor{green}{$\checkmark$}       |      $\sim$        |  \textcolor{red}{$\times$}
 
+[^1]: Here “[Markdown](https://en.wikipedia.org/wiki/Markdown)” means ([Pandoc](https://pandoc.org/) + [Git](https://git-scm.com/) + [Github](https://github.com/) / [Gitlab](https://about.gitlab.com/) / [Gitea](https://gitea.com/}{Gitea}))
 
+ 
 ## 
 
  Feature                           | Desktop GUIs  |   Web frontends  |  FeenoX[^2]  |  Libraries
 :--------------------------------------|:------------------------:|:-----------------------:|:------------------:|:----------------:
- Flexibility                           |      $\sim$              |         $\times$        |     $\checkmark$       |      $\checkmark$
- Scalability                           |      $\times$            |         $\sim$          |     $\checkmark$       |      $\checkmark$
- Traceability                          |      $\times$            |         $\sim$          |     $\checkmark$       |      $\checkmark$
- Cloud-friendliness                    |      $\times$            |         $\checkmark$        |     $\checkmark$       |      $\checkmark$
- Collaborativeness                     |      $\times$            |         $\checkmark$        |     $\checkmark$       |      $\sim$
- Licensing/openness                    | $\checkmark$/$\sim$/$\times$ |         $\times$        |     $\checkmark$       |      $\checkmark$
- Non-nerd friendliness                 |      $\checkmark$            |         $\checkmark$        |     $\sim$         |      $\times$
+ Flexibility                           |      $\sim$              |         \textcolor{red}{$\times$}        |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
+ Scalability                           |      \textcolor{red}{$\times$}            |         $\sim$          |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
+ Traceability                          |      \textcolor{red}{$\times$}            |         $\sim$          |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
+ Cloud-friendliness                    |      \textcolor{red}{$\times$}            |         \textcolor{green}{$\checkmark$}        |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
+ Collaborativeness                     |      \textcolor{red}{$\times$}            |         \textcolor{green}{$\checkmark$}        |     \textcolor{green}{$\checkmark$}       |      $\sim$
+ Licensing/openness                    | \textcolor{green}{$\checkmark$}/$\sim$/\textcolor{red}{$\times$} |         \textcolor{red}{$\times$}        |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
+ Non-nerd friendliness                 |      \textcolor{green}{$\checkmark$}            |         \textcolor{green}{$\checkmark$}        |     $\sim$         |      \textcolor{red}{$\times$}
 
+[^2]: Here “FeenoX” means ([FeenoX](https://seamplex.com/feenox) + [Gmsh](http://gmsh.info) + [Paraview](https://www.paraview.org/) + [Git](https://git-scm.com/) + [Github](https://github.com/) / [Gitlab](https://about.gitlab.com/) / [Gitea](https://gitea.com/}{Gitea}))
  
 
  
