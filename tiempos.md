@@ -16,10 +16,10 @@
 --- 
  
  3. (2 min) Paul Graham, energía, SN
-    1. () FEM
+    1. (4 min 30) FEM
 
 ---
-
+20 min
 ---
         
  4. (10 min) Historia de Unix
@@ -31,6 +31,7 @@
     
     Arquitectura - bien técnico y aburrido, terciopelo negro
     
+    paper JOSS
     Mostrar compilación?
     Make check?
     cambiar 1 sign - recompilar - make check

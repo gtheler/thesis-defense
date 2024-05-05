@@ -1043,6 +1043,7 @@ $$
 :::
 ::::::::::::::
 
+## 
 
 
 ## Software Requirements Specification $\rightarrow$ Software Design Specification
@@ -1089,8 +1090,9 @@ $$
     - Flexible
     - Extensible
 
-\medskip
 . . .
+
+### SDS
 
  * Cloud first (no sólo "cloud friendly")
  * Código libre & abierto ([free]{lang=en-US} $\neq$ [gratis]{lang=en-US} $\neq$ [open]{lang=en-US})
@@ -1113,13 +1115,41 @@ $$
 
 :::::::::::
 
+## FeenoX: a cloud-first finite-element(ish) computational engineering tool
+
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+![](10.21105.joss.05846-1-pdfjam.pdf)
+:::
+::: {.column width="25%"}
+![](10.21105.joss.05846-2-pdfjam.pdf)
+:::
+::: {.column width="25%"}
+![](10.21105.joss.05846-3-pdfjam.pdf)
+:::
+::: {.column width="25%"}
+![](10.21105.joss.05846-4-pdfjam.pdf)
+:::
+::::::::::::::
+
+
+\centering ![](status-joss.svg)
+
+## Cloud first vs. cloud friendly
+
+chiste what are clouds made of
+
+
+
+
+
 
 ## 
 
  Feature                               |     Microsoft Word    |       Google Docs    |      Markdown[^1]  |     (La)TeX
 :--------------------------------------|:---------------------:|:--------------------:|:------------------:|:----------------:
  Aesthetics                            |       \textcolor{red}{$\times$}        |       \textcolor{red}{$\times$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
- Convertibility (to other formats)     |       $\sim$          |       $\sim$         |      \textcolor{green}{$\checkmark$}      |  $\sim$
+ Convertibility                        |       $\sim$          |       $\sim$         |      \textcolor{green}{$\checkmark$}      |  $\sim$
  Traceability                          |       \textcolor{red}{$\times$}        |       $\sim$         |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
  Mobile-friendliness                   |       \textcolor{red}{$\times$}        |       \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{red}{$\times$}
  Collaborativeness                     |       \textcolor{red}{$\times$}        |       \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}      |  $\sim$
@@ -1143,18 +1173,66 @@ $$
 
 [^2]: Here “FeenoX” means ([FeenoX](https://seamplex.com/feenox) + [Gmsh](http://gmsh.info) + [Paraview](https://www.paraview.org/) + [Git](https://git-scm.com/) + [Github](https://github.com/) / [Gitlab](https://about.gitlab.com/) / [Gitea](https://gitea.com/}{Gitea}))
  
+## Licensing
 
+## Scope 
+ 
+ * dynamical systems
+ * laplace
+ * heat
+ * elasticity
+ * modal
+ * neutron
+ 
+ 
+ 
+## Unix
+
+ * do one thing but make it well
+ * ver mas
+ 
+17 rules 
+
+ * transfer function == Unix filter
+
+ 
+## 
+
+NAFEMS LE10
+
+## 
+
+transfer with glue
+
+## 
+
+mazes
+
+Linkedin 500k
+
+ 
  
 ## Implementación
 
 
 ## Arquitectura
 
-glue layer
+poisson
+
+difusion
+
+SN
+
+Framework + pdes
+
 
 ## Input
 
 ## Definiciones e instrucciones
+
+## Output
+
+Unix rule of silence!
 
 ## ¿Qué pasa cuando ejecutamos FeenoX?
 
@@ -1211,7 +1289,6 @@ glue layer
 
 # Apéndices
 
-## JOSS
 
 ## Dirichlet BCs
 
