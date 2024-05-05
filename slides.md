@@ -536,11 +536,28 @@ $$
 $$
 
 
-. . .
+## Aproximación de difusión
 
-### Aproximación de difusión
+ i.
+    
+    a. el problema sea estacionario, o    
+    b. que $\frac{3}{v}  \frac{\partial \vec{J}}{\partial t} \ll \text{grad} \left[ \phi(\vec{x}, E,t ) \right]$
 
-\vspace{-0.7cm}
+\medskip
+    
+ ii.
+ 
+     a. no haya fuentes independientes, o
+     b. que la fuente independiente sea isótropa
+
+\medskip
+          
+     
+ iii.
+ 
+      a. el scattering sea isótropo (en el marco de referencia del reactor), o
+      b. que $\int_0^\infty \Sigma_{s_1}(\vec{x}, E^\prime \rightarrow E) \cdot \vec{J}(\vec{x}, E^\prime, t) \, dE^\prime \simeq \int_0^\infty \Sigma_{s_1}(\vec{x}, E \rightarrow E^\prime) \cdot \vec{J}(\vec{x}, E, t) \, dE^\prime$
+
 
 $$
 \begin{gathered}
@@ -717,7 +734,6 @@ $$
 + \int_{\Gamma_N} p(\vec{x}) \cdot v(\vec{x}) \,d^{D-1}\vec{x}
 $$
 
-. . .
 
 $$
 \text{encontrar~} u(\vec{x}) \in V: \quad
@@ -792,23 +808,8 @@ $$
 \medskip
 . . .
 
-:::::::::::::: {.columns}
-::: {.column width="25%"}
-![](dominio-continuo.svg)
-:::
-
-::: {.column width="25%"}
-![](dominio-continuo-estructurado.svg)
-:::
-
-::: {.column width="25%"}
-![](dominio-estructurado.svg)
-:::
-
-::: {.column width="25%"}
-![](dominio-no-estructurado.svg)
-:::
-::::::::::::::
+\vspace{-0.8cm}
+![](dominio-continuo-4.svg)
 
 
 
@@ -854,7 +855,6 @@ $$
 \end{gathered}
 $$ 
 
-. . . 
 
 $$
 \begin{aligned}
@@ -899,8 +899,6 @@ $$
 \end{aligned}
 $$
 
-. . .
-
 $$
 \begin{aligned}
 \mat{L}_i &= \mat{P}_{MGc}^T(\symbf{\xi}_q) \cdot \mat{D} \cdot \mat{H}_{MGc}(\symbf{\xi}_q)  \\
@@ -931,6 +929,10 @@ $$
     $$
     \text{matriz de} \left[ \text{leakage} + \text{absorciones} \right] \cdot \symbf{\varphi} = \frac{1}{k_\text{eff}} \cdot \text{matriz de} \left[ \text{fisiones} \right] \cdot \symbf{\varphi}
     $$
+
+. . .
+
+ * Si las XSs dependen de $\symbf{\varphi}$ hacemos lo mismo pero con Newton-Raphson
 
 ## 
 
@@ -1217,3 +1219,19 @@ El título sería "A cloud-first approach for solving core-level neutron transpo
 
 núcleo / nuclei / core / kernel
 
+## What does FeenoX mean?
+
+It does not mean anything particular, but
+
+ * The last X makes it rhyme with Unix and Linux.
+ * "noX" means that there is no graphical (i.e. _X_) interface
+ * Fee-no means that there are no fees involved (free as in "free beer")
+ * FeenoX is the successor of the now-superseded FEA program Fino
+ * It rhymes with FEniCS
+ * With some luck one can read "Finite ElEments NO-X"
+ * With mode luck, "FrEE" (as in "free speech")
+
+### How should FeenoX be pronounced.
+
+It would be something like _fee_-_naaks_: /fiːnɒks/
+But whatever works for you is fine. 

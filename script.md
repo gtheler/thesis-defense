@@ -291,7 +291,7 @@ Más aún, ese reflector no debería ser así.
 
 Debería ser así.
 
-Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" como Leono de los Thundercats.
+Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" como Leon-O de los Thundercats.
 
 ## IAEA SN
 
@@ -309,9 +309,199 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
 ## How
 
 
+Terminado el why, pasemos al cómo hacemos todo esto. 
  
  
+---
+11 min
+---
 
+## Séneca
+
+Dice Séneca en una de las cartas a su discípulo Lucilio:
+
+"No debemos tan sólo escribir ni tan sólo leer.
+Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin de que, cuantos pensamientos ha recogido la lectura, los reduzca a la unidad."
+
+Sigue, Séneca:
+
+"Lo que comprobamos que realiza en nuestro cuerpo la naturaleza sin ninguna colaboración nuestra, es eso lo que tenemos que hacer con la lectura. Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
+Mas cuando se ha producido su trasformación, entonces y sólo entonces, se convierten en fuerza y sangre."
+
+## Transporte y difusión de neutrones
+
+Bueno, este capítulo no tiene nada nuevo.
+Lo escribí para que la literatura de análisis de reactores no sea una carga para mí, sino que se convierta en fuerza y sangre.
+
+. . .
+
+Como ustedes sabrán, yo 
+
+ * escribo en Markdown,
+ * trackeo todo con Git y
+ * ---cuando me dejan---publico en Github con licencia Creative Commons.
+ 
+Entonces---como efecto colateral de lo que propone Séneca---si alguien necesita notas para dar clase puede acceder al markdown, modificarlo y compilarlo a PDF, HTML o el formato que guste.
+Martín Silva ya me dijo que va a hacer eso en sus clases.
+Fede Mezio, si te sirve... be my guest!
+
+## Ecuación de transporte
+
+Algunos detalles.
+
+Empiezo con la derivación de la ecuación de transporte a partir de una "contabilidad" de neutrones.
+
+## Armónicos
+ 
+Expando la dependencia angular de la sección eficaz de scattering en polinomios de Legendre y la dependencia angular del flujo escalar en armónicos esféricos.
+ 
+## Transporte linealmente anisótropo
+ 
+Con eso llego a la ecuación de transporte linealmente anisotrópico (se dice así o anisótropo?) tratando de rellenar todos los pasos intermedios que no aparecen en la literatura.
+ 
+## Difusión
+
+Y también tratando de rellenar los pasos intermedios, especialmente los que en los libros dicen "esto se anula", bueno, mostrando cómo es que "esto se anula" y además llegando explícitamente a estas tres condiciones para obtener la celebrada aproximación de difusión.
+
+---
+13 min 30
+---
+ 
+## Paul Graham
+
+El siguiente capítulo es cómo discretizamos estas ecuaciones.
+Al igual que el anterior, este no tiene (casi) nada nuevo.
+
+Pero hay un par de diferencias.
+La primera la explica Paul Graham.
+
+Esencialmente dice algo parecido a Séneca, seguramente ya conociendo la cita del capítulo anterior porque Graham suele citar a Séneca en sus ensayos.
+Lo que me gustó de este párrafo es el pie de pagina, donde nos recuerda que "programar" es equivalente a "escribir".
+
+La segunda es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
+
+## Esquemas
+
+La discretización en energía es bastante straightforward.
+Formulación multi-grupo, que es como si fuese volúmenes finitos sin operadores diferenciales.
+
+. . .
+
+Discretización en ángulo.
+Para transporte, revisitamos las ordenadas discretas.
+
+## Cuadraturas de nivel simétrico
+
+De todo el menú, nos quedamos con las cuadraturas de nivel simétrico.
+
+Este slide es un ejemplo de algo que _no_ hay que hacer.
+
+Como me tomó un cierto tiempo llegar al algoritmo para fabricar los triangulitos estos para un $N$ arbitrario quería mostrárselos.
+Pero la verdad es que esto no tiene por qué agregarle valor a ustedes.
+Ni tienen por qué apreciar el hecho de que el software funcione para un $N$ arbitrario, porque después de todo es algo que se debería dar por sentado.
+Es como publicitar un hotel diciendo "las habitaciones tienen baño privado".
+
+Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
+
+---
+15 min 30
+---
+
+## Discretización en espacio
+
+Discretización del espacio: elementos finitos.
+
+Empecemos con la ecuación de Poisson, que es más sencilla.
+Lo primero que hacemos es escribirla en una formulación débil.
+
+Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ es igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
+  
+## Dominio
+
+Todo esto sobre un dominio $U$ con una frontera con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
+Empezamos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet arbitraria.
+
+## Nodos
+
+Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de Neumann.
+
+## Funciones
+
+Después buscamos tantas funciones de forma como nodos pusimos de forma tal que cada una valga uno en cada nodo y cero el en resto.
+Esta va a ser la base del espacio vectorial aproximado donde vamos a encontrar la solución de la ecuación de Poisson que estamos resolviendo.
+
+## Elementos finitos
+
+Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio U. Llamamos a cada uno de estos triangulitos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
+
+## $K u = b$
+
+Con un poco de álgebra lineal llegamos a que podemos resolver la ecuación de Poisson con elementos finitos resolviendo el sistema lineal $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
+Las contribuciones del elemento $i$-ésimo tienen esta pinta.
+
+Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ sobre la matriz de rigidez $K$ y del funcional $B$ larga grande sobre el vector del miembro derecho $b$ larga chica.
+
+. . .
+
+Favor de notar que nunca tuvimos que pasar por la escalerita.
+Todo esto funciona con mallas no estructuradas.
+
+## Extras
+
+Dos bonus tracks.
+Primero, que podemos usar elementos segundo orden. Si quieren después profundizamos.
+
+. . .
+
+Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
+Antes había dicho que en este capítulo no hay "casi" nada nuevo. Bueno, la justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$ no la pude encontrar en la bibliografía.
+De hecho consulté a colegas y nadie me supo dar la justificación. Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué" como en el cuento de los monos.
+
+En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación.
+De hecho mi respuesta es la segunda más votada (despúes de la primera que es de Jed Brown).
+
+[pausa]
+
+## Difusión
+
+Haciendo lo mismo que hicimos para Poisson pero para difusión multigrupo llegamos a unas expresiones para las contribuciones elementales.
+Los detalles en el capítulo tres, pero dos cosas
+
+ 1. $L$ es leakage, $A$ es absorción y $F$ es fisión, abajo $s$ son las fuentes independientes
+ 2. Fíjense que la forma es parecida al caso de Poisson.
+
+Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos.
+De todas maneras en difusión no es simétrico y puede no ser coercivo.
+
+
+## Transporte
+
+Podemos hacer lo mismo con ordenadas discretas.
+
+Otra vez, la forma es parecida pero
+
+ 1. El operador $a$ no es elíptico.
+ 2. La ecuación es hiperbólica de primer orden.
+
+Así que es matriz $P$ que aparece en las matrices de pérdidas, absorciones y fisiones es una matriz estabilizada tipo Petrov-Galerkin.
+Más detalles en el texto.
+
+## Estado estacionario
+
+¿Qué hacemos con todo esto?
+Bueno, depende de qué tipo de problema estemos queriendo resolver.
+
+ 1. Si tenemos medio no multiplicativo con fuentes independientes, las pérdidas y las absorciones son proporcionales al flujo y las fuentes son, justamente, independientes. Esto da un problema lineal.
+
+ 2. Si tenemos medio multiplicativo con fuentes independientes, tenemos que agregar un término de fisiones proporcional al flujo. En lugar de ponerlo el el miembro derecho lo pasamos al izquierdo con signo negativo. Otra vez, problema lineal.
+ 
+ 3. Ahora, si no hay fuentes independientes entonces todo es proporcional al flujo. Volvemos a mandar las fisiones al miembro derecho y resolvemos un problema de autovalores para encontrar el $k_\text{eff}$ del reactor crítico asociado en $k$. El primer autovector nos da el flujo de estado estacionario.
+ 
+. . .
+
+Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
+Bueno, hay que hacer Newton Raphson y la cosa se complica un poco.
+Pero por ahora no nos vamos a meter en eso y damos por terminado el how.
 
 ### Observación
 
@@ -488,12 +678,17 @@ Elegir algunos, preguntar cuáles
 5 min por problema
 
 
-## Conclusiones y trabajos futuros
+## Conclusiones
 
  * como descartes, esto es lo que me sirve a mí, si a alguien más le sirve y quiere agregar cosas al manual, be my guest
 
+## Tweets 
+
+## Trabajos futuros
+
+
 Dejo el sendero de jardines que se bifurcan de trabajos futuros, con el anhelo de que no queden simplemente en "nice to haves".
-¿Cómo hacemos todo esto? Como le explica Séneca a Lucilio: "con dedicación y esfuerzo".
+¿Cómo hacemos todo esto? Como le explica Séneca a Lucilio: "con una constante dedicación".
 Porque si cuando estás haciendo consultoría y te está yendo relativamente bien, llegara a venir un cisne negro como dice Taleb y te cambia la número cinco por una bola de bowling, si le hiciste caso a Calabró y entrenaste laterales con sandías, tal vez te quede resto y puedas terminar una tesis de doctorado a los 41 años y volver a Cancún con tu familia. Muchas gracias.
 
 
@@ -509,6 +704,8 @@ Porque si cuando estás haciendo consultoría y te está yendo relativamente bie
 # Inglés
 
 Pensar en inglés te hace esforzarte más y se te activan áreas cognitivas del cerebro que no se activan si pensás y escribís en castellano.
+
+# What does FeenoX mean
 
 
 

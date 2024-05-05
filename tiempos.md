@@ -1,17 +1,27 @@
 # Tiempos
  
  1. (3 min) laterales con sandías, 3 ámbitos, mafalda, TOC
-    1. (2 min) 100 años de programación
-    2. (5 min) historia de dos reactores
-    3. (3 min) propuesta: IAEA 3D PWR
+    1. (2 min) why, 100 años de programación
+    2. (4 min) historia de dos reactores
+    3. (2 min) propuesta: IAEA 3D PWR
     
- 2. (3 min) Séneca, markdown, CC-BY, ecuaciones de transporte y difusión
+---
+11 min
+---    
+    
+ 2. (2 min 30) Séneca, markdown, CC-BY, ecuaciones de transporte y difusión
  
- 3. (5 min) Paul Graham
-    1. energía multigrupo
-    2. ángulo SN
-    3. espacio FEM: mostrar contribuciones elementales, dirichlet BCs como appendix
-    
+---
+13 min 30 seg
+--- 
+ 
+ 3. (2 min) Paul Graham, energía, SN
+    1. () FEM
+
+---
+
+---
+        
  4. (10 min) Historia de Unix
     
     Acá debe venir el momento 1/phi
