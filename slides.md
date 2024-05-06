@@ -1051,7 +1051,10 @@ $$
 . . .
 
 :::::::::::::: {.columns}
-::: {.column width="48%"}
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
 
  1. Introduction
      1. Objective
@@ -1064,6 +1067,10 @@ $$
      5. Flexibility
      6. Extensibility
      7. Interoperability
+:::
+
+::: {.column width="45%"}
+     
  3. Interfaces
      1. Problem input
      2. Results output
@@ -1075,45 +1082,13 @@ $$
      5. Validation
      6. Documentation
 :::
-
-. . .
-
-::: {.column width="53%"}
-
-\medskip
-
- * Que resuelva problemas de ingeniería
- * Que corra en la nube
- * Buenas prácticas de desarrollo de software
-    - Trazable
-    - Escalable
-    - Flexible
-    - Extensible
-
-. . .
-
-### SDS
-
- * Cloud first (no sólo "cloud friendly")
- * Código libre & abierto ([free]{lang=en-US} $\neq$ [gratis]{lang=en-US} $\neq$ [open]{lang=en-US})
-   - GPLv3+
- * Filosofía Unix
-
-. . .
-
-\medskip
-
-\centering <https://github.com/seamplex/feenox>
-
-\medskip
-
-\centering “Desktop solver development is the _opposite_ of cloud development”
- 
- 
+    
+::: {.column width="5%"}
 :::
+     
+::::::::::::::
 
-
-:::::::::::
+    
 
 ## FeenoX: a cloud-first finite-element(ish) computational engineering tool
 
@@ -1140,11 +1115,14 @@ $$
 chiste what are clouds made of
 
 
+. . . 
+
+\centering “Desktop solver development is the _opposite_ of cloud development”
+ 
 
 
 
-
-## 
+## Unfair advantage: markdown
 
  Feature                               |     Microsoft Word    |       Google Docs    |      Markdown[^1]  |     (La)TeX
 :--------------------------------------|:---------------------:|:--------------------:|:------------------:|:----------------:
@@ -1159,7 +1137,7 @@ chiste what are clouds made of
 [^1]: Here “[Markdown](https://en.wikipedia.org/wiki/Markdown)” means ([Pandoc](https://pandoc.org/) + [Git](https://git-scm.com/) + [Github](https://github.com/) / [Gitlab](https://about.gitlab.com/) / [Gitea](https://gitea.com/}{Gitea}))
 
  
-## 
+## Unfair advantage: FeenoX
 
  Feature                           | Desktop GUIs  |   Web frontends  |  FeenoX[^2]  |  Libraries
 :--------------------------------------|:------------------------:|:-----------------------:|:------------------:|:----------------:
@@ -1212,18 +1190,10 @@ Linkedin 500k
 
  
  
-## Implementación
-
-
 ## Arquitectura
 
-poisson
+SDS
 
-difusion
-
-SN
-
-Framework + pdes
 
 
 ## Input
