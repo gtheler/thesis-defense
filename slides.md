@@ -1040,10 +1040,16 @@ $$
 \vspace{2cm}
 
 ![](cancun2018.jpg){height=7cm}
+
+. . .
+
+DO IT FOR HIM
 :::
 ::::::::::::::
 
 ## 
+
+apagar la carrera profesional por un año
 
 
 ## Software Requirements Specification $\rightarrow$ Software Design Specification
@@ -1110,19 +1116,9 @@ $$
 
 \centering ![](status-joss.svg)
 
-## Cloud first vs. cloud friendly
-
-chiste what are clouds made of
 
 
-. . . 
-
-\centering “Desktop solver development is the _opposite_ of cloud development”
- 
-
-
-
-## Unfair advantage: markdown
+## Unfair advantage: Markdown
 
  Feature                               |     Microsoft Word    |       Google Docs    |      Markdown[^1]  |     (La)TeX
 :--------------------------------------|:---------------------:|:--------------------:|:------------------:|:----------------:
@@ -1151,9 +1147,27 @@ chiste what are clouds made of
 
 [^2]: Here “FeenoX” means ([FeenoX](https://seamplex.com/feenox) + [Gmsh](http://gmsh.info) + [Paraview](https://www.paraview.org/) + [Git](https://git-scm.com/) + [Github](https://github.com/) / [Gitlab](https://about.gitlab.com/) / [Gitea](https://gitea.com/}{Gitea}))
  
-## Licensing
+## Licensing (sec. 4.3.1 & ap. B.1)
 
-## Scope 
+FOSS
+
+$\neq$ precio 
+ 
+ * a caballo regalado
+ * cuando la limosna es grande
+ 
+
+ 
+
+## Scope (ap. B.2)
+
+Third-system effect
+
+ * v1: milonga
+ * v2: wasora, Fino, mochin, besssugo, waspy, xdfrrpf
+ * v3: FeenoX
+ 
+screenshot de examples html 
  
  * dynamical systems
  * laplace
@@ -1164,23 +1178,46 @@ chiste what are clouds made of
  
  
  
-## Unix
+## Unix philosophy (sec 4.3.2, ap. B.1.2 & ap. C)
 
  * do one thing but make it well
  * ver mas
- 
-17 rules 
 
  * transfer function == Unix filter
+ 
+ * script & macro friendly (simulación programática)
+ * UI (desktop, web)
+   - front / back
+ * parametric & opt
+ 
+   for i in xxxx; do feenox input.fee as; done
+ 
+## 17 rules (apéndice C)
+
+
+
+## Cloud first $\neq$ cloud friendly (sec. 4.3.6  & ap. B.1)
+
+chiste what are clouds made of
+
+CAEplex
+
+APIs, thin clients, etc.
+
+
+. . . 
+
+\centering “Desktop solver development is the _opposite_ of cloud development”
+ 
 
  
 ## 
 
-NAFEMS LE10
+\centering 
 
-## 
+![](nafems-le10-problem-input.svg)
 
-transfer with glue
+developer easy / user hard
 
 ## 
 
@@ -1192,23 +1229,233 @@ Linkedin 500k
  
 ## Arquitectura
 
-SDS
+¿qué hay que hacer?
 
+ 1. construir K & b
+ 2. resolver K u = b -> Petsc
 
+FeenoX se enfoca en 1
+ 
+fig. transfer glue
+
+## Languages
+
+en orden cronológico
+
+add complexity only when you must
+
+ * Fortran -> complejidad innecesaria
+ * C
+ * C++ - complejidad innecesaria
+ * Rust
+
+## Algoritmos
+
+para construir K poisson
+para neutrónica es lo mismo
+
+la pde está dada por las llaves
+
+podemos hacer una cáscara?
+
+## 
+
+¿Qué necesitamos?
+
+ i.
+ ii.
+ iii.
+ iv. 
+ 
+p 169, los primeros 3 no dependen de la podemos
+iv sí pero es evaluar materiales y BCs
+
+=> sí podemos separar en framework + particular
+
+## Implementación
+
+Posible implementación
+
+if pde == algo
+ asdas 
+ 
+p 171
+
+para cada q para cada i
+
+ 1. feo
+ 2. ineficiente
+ 3. dificil de mantener
+
+## Polimorfismo con apuntadores a función
+
+C++ clases
+C, function pointers
+
+Un único if feo, ineficiente y dificil de mantener
+
+ 1. lo genera un script al que no le importa la belleza ni la mantención
+ 2. es uno sólo en toda la ejecución
+
+mostramos autogen? sí
 
 ## Input
 
-## Definiciones e instrucciones
+input, decisión de diseño
 
+ * english-like
+ * self-descriptive
+ * etc.
+ 
+ * macro friendly
+ * git friendly
+ 
+p 173 
+  
+ 1. 
+ 2. 
+ 3. 
+ 4. 
+ 5. 
+ 
+ 
+## Instrucciones y definiciones
+
+ a. definiciones (sustantivos) -> parse time
+ b. instrucciones (verbos) -> run time with an actual IP
+ 
+## Conducción de calor 1D
+
+p 175
+
+ 1. 
+ 2.  
+ 3. 
+ 
+columns
+
+p 176
+
+## Non-uniform k
+
+1+x
+
+
+1+T
+
+## Reed
+
+feenox reed.fee 2
+4
+6
+8
+
+
+
+
+## Entry professionalfonts
+
+
+PROBLEM neutron_sn dim xxxx
+
+p 182
+
+p 185
+
+PRINT
+
+## Entry points para
+
+ 1. parse
+ 2. init
+ 3. build
+ 4. solution, TS, SNES, KSP, EPS
+ 5. post
+ 
+show the header p 184
+
+## IAEA
+
+momento 1/phi = 28 min
+
+resolver 2d iaea
+borrar src/pdes/diff
+recompilar
+make check
+
+mostrar que no existe mas dif
+
+cambiar un signo
+recompilar
+make check
+
+## Algoritmos auxiliares
+
+## Everything's an expressiones
+
+funcionales
+
+p 195
+
+comparar soluciones analíticas
+
+## Funciones ($\neq$ "tabla")
+
+least surprise
+
+ 1. algebra
+ 2. pointwise
+    a. sin topología
+    b. con topología implítica
+    c. con topología explícita
+    
 ## Output
 
 Unix rule of silence!
 
-## ¿Qué pasa cuando ejecutamos FeenoX?
 
-## Extras
+## Otras cosas
 
- * 
+ 4.3.1. licencia
+ 4.3.2. unix
+ 4.3.3. sim prog
+ 4.3.4. performance
+ 4.3.5. escalabilidad
+ 4.3.6. cloud
+ 4.3.7. extensibilidad
+ 4.3.8. CI
+ 4.3.9. doc
+ 
+## Escalabilidad
+
+
+MPI = para memoria
+
+Turing-complete se puede hacer, como? out-of-memory 
+
+
+### Perfomance
+
+le ganamos a casi todos, pero hay que volver
+
+    
+## TODO
+
+secondary fields, gauss-node extrapolation
+
+interpolation of pointwise data
+
+ver qué más quedó afuera
+
+
+## QA
+
+CI
+
+make check
+
+doc
+
 
 
 ## 
@@ -1289,3 +1536,9 @@ It does not mean anything particular, but
 
 It would be something like _fee_-_naaks_: /fiːnɒks/
 But whatever works for you is fine. 
+
+## History
+
+## GDB session
+
+

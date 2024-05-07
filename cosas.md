@@ -18,6 +18,29 @@
     - o hacer un gdb?
  6. lo que sea pero terminar up in the sky con la foto en cancun 2024
 
+# Llevar
+
+ * Libro Unix
+ * Libro TAOCP
+ * botella de auga
+ * pasador de slides
+ * kde connect pasador y apuntador
+ * agrandar terminal
+ * ir al baño antes
+ * apagar whatsapp
+
+ 
+# Averiguar
+
+ * micrófano
+ * proyector
+ * red, internet
+ * HDMI
+ * a qué hora ir
+ * zoom, cámara
+
+ 
+ 
  
 # Ideas
  
