@@ -1041,15 +1041,14 @@ $$
 
 ![](cancun2018.jpg){height=7cm}
 
-. . .
-
-DO IT FOR HIM
 :::
 ::::::::::::::
 
 ## 
 
-apagar la carrera profesional por un año
+\centering ![](nov2019.jpg){height=9cm}
+
+## 
 
 
 ## Software Requirements Specification $\rightarrow$ Software Design Specification
@@ -1122,13 +1121,13 @@ apagar la carrera profesional por un año
 
  Feature                               |     Microsoft Word    |       Google Docs    |      Markdown[^1]  |     (La)TeX
 :--------------------------------------|:---------------------:|:--------------------:|:------------------:|:----------------:
- Aesthetics                            |       \textcolor{red}{$\times$}        |       \textcolor{red}{$\times$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
- Convertibility                        |       $\sim$          |       $\sim$         |      \textcolor{green}{$\checkmark$}      |  $\sim$
- Traceability                          |       \textcolor{red}{$\times$}        |       $\sim$         |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
- Mobile-friendliness                   |       \textcolor{red}{$\times$}        |       \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{red}{$\times$}
- Collaborativeness                     |       \textcolor{red}{$\times$}        |       \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}      |  $\sim$
- Licensing/openness                    |       \textcolor{red}{$\times$}        |       \textcolor{red}{$\times$}       |      \textcolor{green}{$\checkmark$}      |  \textcolor{green}{$\checkmark$}
- Non-nerd friendliness                 |       \textcolor{green}{$\checkmark$}        |       \textcolor{green}{$\checkmark$}       |      $\sim$        |  \textcolor{red}{$\times$}
+ Aesthetics                            |       \textcolor{red}{$\times$}        |       \textcolor{red}{$\times$}       |      \textcolor{OliveGreen}{$\checkmark$}      |  \textcolor{OliveGreen}{$\checkmark$}
+ Convertibility                        |       $\sim$          |       $\sim$         |      \textcolor{OliveGreen}{$\checkmark$}      |  $\sim$
+ Traceability                          |       \textcolor{red}{$\times$}        |       $\sim$         |      \textcolor{OliveGreen}{$\checkmark$}      |  \textcolor{OliveGreen}{$\checkmark$}
+ Mobile-friendliness                   |       \textcolor{red}{$\times$}        |       \textcolor{OliveGreen}{$\checkmark$}       |      \textcolor{OliveGreen}{$\checkmark$}      |  \textcolor{red}{$\times$}
+ Collaborativeness                     |       \textcolor{red}{$\times$}        |       \textcolor{OliveGreen}{$\checkmark$}       |      \textcolor{OliveGreen}{$\checkmark$}      |  $\sim$
+ Licensing/openness                    |       \textcolor{red}{$\times$}        |       \textcolor{red}{$\times$}       |      \textcolor{OliveGreen}{$\checkmark$}      |  \textcolor{OliveGreen}{$\checkmark$}
+ Non-nerd friendliness                 |       \textcolor{OliveGreen}{$\checkmark$}        |       \textcolor{OliveGreen}{$\checkmark$}       |      $\sim$        |  \textcolor{red}{$\times$}
 
 [^1]: Here “[Markdown](https://en.wikipedia.org/wiki/Markdown)” means ([Pandoc](https://pandoc.org/) + [Git](https://git-scm.com/) + [Github](https://github.com/) / [Gitlab](https://about.gitlab.com/) / [Gitea](https://gitea.com/}{Gitea}))
 
@@ -1137,70 +1136,208 @@ apagar la carrera profesional por un año
 
  Feature                           | Desktop GUIs  |   Web frontends  |  FeenoX[^2]  |  Libraries
 :--------------------------------------|:------------------------:|:-----------------------:|:------------------:|:----------------:
- Flexibility                           |      $\sim$              |         \textcolor{red}{$\times$}        |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
- Scalability                           |      \textcolor{red}{$\times$}            |         $\sim$          |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
- Traceability                          |      \textcolor{red}{$\times$}            |         $\sim$          |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
- Cloud-friendliness                    |      \textcolor{red}{$\times$}            |         \textcolor{green}{$\checkmark$}        |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
- Collaborativeness                     |      \textcolor{red}{$\times$}            |         \textcolor{green}{$\checkmark$}        |     \textcolor{green}{$\checkmark$}       |      $\sim$
- Licensing/openness                    | \textcolor{green}{$\checkmark$}/$\sim$/\textcolor{red}{$\times$} |         \textcolor{red}{$\times$}        |     \textcolor{green}{$\checkmark$}       |      \textcolor{green}{$\checkmark$}
- Non-nerd friendliness                 |      \textcolor{green}{$\checkmark$}            |         \textcolor{green}{$\checkmark$}        |     $\sim$         |      \textcolor{red}{$\times$}
+ Flexibility                           |      $\sim$              |         \textcolor{red}{$\times$}        |     \textcolor{OliveGreen}{$\checkmark$}       |      \textcolor{OliveGreen}{$\checkmark$}
+ Scalability                           |      \textcolor{red}{$\times$}            |         $\sim$          |     \textcolor{OliveGreen}{$\checkmark$}       |      \textcolor{OliveGreen}{$\checkmark$}
+ Traceability                          |      \textcolor{red}{$\times$}            |         $\sim$          |     \textcolor{OliveGreen}{$\checkmark$}       |      \textcolor{OliveGreen}{$\checkmark$}
+ Cloud-friendliness                    |      \textcolor{red}{$\times$}            |         \textcolor{OliveGreen}{$\checkmark$}        |     \textcolor{OliveGreen}{$\checkmark$}       |      \textcolor{OliveGreen}{$\checkmark$}
+ Collaborativeness                     |      \textcolor{red}{$\times$}            |         \textcolor{OliveGreen}{$\checkmark$}        |     \textcolor{OliveGreen}{$\checkmark$}       |      $\sim$
+ Licensing/openness                    | \textcolor{OliveGreen}{$\checkmark$}/$\sim$/\textcolor{red}{$\times$} |         \textcolor{red}{$\times$}        |     \textcolor{OliveGreen}{$\checkmark$}       |      \textcolor{OliveGreen}{$\checkmark$}
+ Non-nerd friendliness                 |      \textcolor{OliveGreen}{$\checkmark$}            |         \textcolor{OliveGreen}{$\checkmark$}        |     $\sim$         |      \textcolor{red}{$\times$}
 
 [^2]: Here “FeenoX” means ([FeenoX](https://seamplex.com/feenox) + [Gmsh](http://gmsh.info) + [Paraview](https://www.paraview.org/) + [Git](https://git-scm.com/) + [Github](https://github.com/) / [Gitlab](https://about.gitlab.com/) / [Gitea](https://gitea.com/}{Gitea}))
  
 ## Licensing (sec. 4.3.1 & ap. B.1)
 
-FOSS
 
-$\neq$ precio 
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+
+ * FeenoX es GPLv3+ = libre & abierto
+   - free $\neq$ gratis
+   
+     - "Free" as in "free speech" not as in "free beer"
+     - Hay software gratis que no es libre
+     - Hay software que se dice "abierto" pero que no lo es
+     - El software libre puede ser caro
+     - Lo opuesto de "software libre" *NO* es "software comercial"
+     
+   - free $\neq$ open (pero casi)
  
- * a caballo regalado
- * cuando la limosna es grande
+ * Software libre = bases éticas
+   - Cuatro libertades básicas
  
+ * Open source = bases tecnicas
+   - Given enough eyeballs all bugs are shallow.
+
+. . .
+   
+ * A caballo regalado no se le miran los dientes.
+ * Cuando la limosna es grande, hasta el santo desconfía.
+
+:::
+::: {.column width="30%"}
+
+RMS
+
+ESR
+
+:::
+::::::::::::::
 
  
 
 ## Scope (ap. B.2)
 
-Third-system effect
+:::::::::::::: {.columns}
+::: {.column width="65%"}
+
+### Third-system effect
 
  * v1: milonga
- * v2: wasora, Fino, mochin, besssugo, waspy, xdfrrpf
+ 
+   \centering ![](milonga.svg){height=1cm}
+   
+. . .
+ 
+ * v2: wasora, Fino, mochin, besssugo, waspy, xdfrrpf, ...
+ 
+   \centering ![](wasora.svg){height=2cm} ![](fino.svg){height=2cm} ![](mochin.svg){height=2cm}
+   
+. . .
+ 
  * v3: FeenoX
  
-screenshot de examples html 
+   \centering ![](repository-open-graph.svg){height=2cm}
  
- * dynamical systems
- * laplace
- * heat
- * elasticity
- * modal
- * neutron
+. . .
+:::
+
+::: {.column width="35%"}
+
+[seamplex.com/feenox/examples](https://www.seamplex.com/feenox/examples/)
+
+\bigskip
+
+ #. [Basic mathematics](https://www.seamplex.com/feenox/examples/basic.html)
+ #. [Systems of ODEs/DAEs](https://www.seamplex.com/feenox/examples/daes.html)
+ #. [Laplace’s equation](https://www.seamplex.com/feenox/examples/laplace.html)
+ #. [Heat conduction](https://www.seamplex.com/feenox/examples/thermal.html)
+ #. [Linear elasticity](https://www.seamplex.com/feenox/examples/mechanical.html)
+ #. [Modal analysis](https://www.seamplex.com/feenox/examples/modal.html)
+ #. [Neutron diffusion](https://www.seamplex.com/feenox/examples/neutron_diffusion.html)
+ #. [Neutron $S_N$](https://www.seamplex.com/feenox/examples/neutron_sn.html)
  
- 
+ * ... (mecanismo de extensión)
+:::
+::::::::::::::
+
  
 ## Unix philosophy (sec 4.3.2, ap. B.1.2 & ap. C)
 
- * do one thing but make it well
- * ver mas
+:::: {lang=en-US}
+ i. Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new features.
+ ii. Expect the output of every program to become the input to another, as yet unknown, program.
+     * Don't clutter output with extraneous information.
+     * Avoid stringently columnar or binary input formats.
+     * Don't insist on interactive input.
 
- * transfer function == Unix filter
- 
+ * This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
+::::
+
+. . .
+
+```
+                             +------------+
+ mesh (*.msh)  }             |            |             { terminal
+ data (*.dat)  } input ----> |   FeenoX   |----> output { data files
+ input (*.fee) }             |            |             { post (vtk/msh)
+                             +------------+
+```
+
+## Filosofía Unix (apéndice C)
+
+:::::::::::::: {.columns}
+::: {.column width="30%"}
+
+ #. Rule of Modularity
+ #. Rule of Clarity
+ #. **Rule of Composition**
+ #. **Rule of Separation**
+ #. **Rule of Simplicity**
+ #. **Rule of Parsimony**
+ #. **Rule of Transparency**
+ #. Rule of Robustness
+ #. Rule of Representation
+ #. Rule of Least Surprise
+ #. Rule of Silence
+ #. Rule of Repair
+ #. **Rule of Economy**
+ #. **Rule of Generation**
+ #. Rule of Optimization
+ #. **Rule of Diversity**
+ #. Rule of Extensibility
+:::
+
+. . .
+
+::: {.column width="70%"}
+
  * script & macro friendly (simulación programática)
- * UI (desktop, web)
-   - front / back
- * parametric & opt
  
-   for i in xxxx; do feenox input.fee as; done
+   - play along con otras herramientas
+   - optimizador
+   - mallador
+   - post-procesador
  
-## 17 rules (apéndice C)
+ * UI/UX friendly (desktop, web, VR?)
+ 
+   - separar front de back end
+   - inputs fáciles de generar
+     - m4? sed? Awk? PHP?
+ 
+ * Parametric & optimization runs
+ 
+   ```terminal
+   $ cat hello.fee 
+   PRINT "Hello $1"
+   $ for i in $(seq 1 4); do feenox hello.fee $i; done
+   Hello 1
+   Hello 2
+   Hello 3
+   Hello 4
+   $ 
+   ```
+
+:::
+
+::::::::::::::
 
 
+## 
 
-## Cloud first $\neq$ cloud friendly (sec. 4.3.6  & ap. B.1)
+\centering ![](front-back.png)
+
+ 
+
+
+## La "nube"
 
 chiste what are clouds made of
 
+. . .
+
+Somebody else's computer(s)
+
+Rent don't buy
+Pay as you go
+CAPEX -> OPEX
+
+## Cloud first $\neq$ cloud friendly (sec. 4.3.6  & ap. B.1)
+
+deployment
+
 CAEplex
+
 
 APIs, thin clients, etc.
 
@@ -1242,7 +1379,7 @@ fig. transfer glue
 
 en orden cronológico
 
-add complexity only when you must
+> Add complexity only where you must.
 
  * Fortran -> complejidad innecesaria
  * C

@@ -551,8 +551,26 @@ Veamos ahora el what.
 ## SRS
 
 
+## Unfair advantage
+
+## Licensing
+
+Ninguno de los dos conceptos, código abierto o software libre, se refiere a la idea de _precio_.
+es más caro pagarle al que sabe dónde poner el punto y coma en el archivo de configuración que pagar la licencia y configurarlo con el [mouse]{lang=en-US}
+
+la _libertad_ de poder contratar a uno o más programadores que modifiquen el código para que el software se comporte como uno necesita
+
+Quisiera enfatizar en esta sección la importancia del software libre y abierto en general y del relacionado a cálculos de ingeniería en particular.
+
+Las libertades dos y tres son esencialmente importantes en el ámbito académico.
+
+ la calidad de un [solver]{lang=en-US} [open source]{lang=en-US} debería ser, objetivamente hablando, superior a cualquier otra herramienta privativa (en el sentido de que _priva_ a los usuarios de las libertades básicas).
 
 
+no quiere decir que
+
+ 1. haya que aceptar cualquier tipo de software libre
+ 2. el software libre no pueda ser "comercial"
 
 
 
