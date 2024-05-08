@@ -572,6 +572,34 @@ no quiere decir que
  1. haya que aceptar cualquier tipo de software libre
  2. el software libre no pueda ser "comercial"
 
+## Scope
+
+v1, v2, v3
+
+## Unix
+
+transfer function == unix pipe
+
+## 17 rules
+
+## Front-back
+
+"the claw is for backward compatibility"
+
+## Cloud
+
+Don's quote
+
+## CAEplex
+
+## LE10
+
+## Mazes
+
+Basta de marketing que Enzo se me enoja.
+
+Show me the code!
+
 
 
 ## Resultados

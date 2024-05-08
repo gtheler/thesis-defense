@@ -1151,17 +1151,17 @@ $$
 
 :::::::::::::: {.columns}
 
-::: {.column width="30%"}
+::: {.column width="20%"}
 
-\onslide<2->{RMS}
+\onslide<2->{\includegraphics{rms.jpg}}
 
-\onslide<3->{ESR}
+\onslide<3->{\includegraphics{esr.jpg}}
 
 
 :::
 
 
-::: {.column width="70%"}
+::: {.column width="80%"}
 
  * FeenoX es GPLv3+ = libre & abierto
    - free $\neq$ gratis
@@ -1169,7 +1169,7 @@ $$
      - "Free" as in "free speech" not as in "free beer"
      - Hay software gratis que no es libre
      - Hay software que se dice "abierto" pero que no lo es
-     - El software libre puede ser caro
+     - El software libre puede terminar siendo caro
      - Lo opuesto de "software libre" *NO* es "software comercial"
      
    - free $\neq$ open (pero casi)
@@ -1177,14 +1177,18 @@ $$
 . . .
     
  * Software libre = bases éticas
+   - GNU Manifesto (1985)
    - Cuatro libertades básicas
  
 . . . 
 
  * Open source = bases tecnicas
-   - Given enough eyeballs all bugs are shallow.
+   - The Cathedral and the Bazaar (1998)
+   - Given enough eyeballs all bugs are shallow
 
 . . .
+
+\medskip
 
  * A caballo regalado no se le miran los dientes.
  * Cuando la limosna es grande, hasta el santo desconfía.
@@ -1233,7 +1237,7 @@ $$
  #. [Linear elasticity](https://www.seamplex.com/feenox/examples/mechanical.html)
  #. [Modal analysis](https://www.seamplex.com/feenox/examples/modal.html)
  #. [Neutron diffusion](https://www.seamplex.com/feenox/examples/neutron_diffusion.html)
- #. [Neutron $S_N$](https://www.seamplex.com/feenox/examples/neutron_sn.html)
+ #. [Neutron S$_N$](https://www.seamplex.com/feenox/examples/neutron_sn.html)
  
  * ... (mecanismo de extensión)
 :::
@@ -1310,8 +1314,6 @@ $$
    ```
     
    ```terminal
-   $ cat hello.fee 
-   PRINT "Hello $1"
    $ for i in $(seq 1 4); do feenox hello.fee $i; done
    Hello 1
    Hello 2
@@ -1332,47 +1334,73 @@ $$
  
 
 
-## La "nube"
+## La "nube" (sec. 4.3.6  & ap. B.1)
 
-chiste what are clouds made of
+:::::::::::::: {.columns}
+::: {.column width="60%"}
 
+\centering ![](linux-servers.jpg)
+
+:::
+
+::: {.column width="40%"}
+
+ * Somebody else's computer(s)
+ * Rent, don't buy!
+ * Pay as you go
+ * CAPEX $\rightarrow$ OPEX
+
+\medskip 
 . . .
 
-Somebody else's computer(s)
+ * Cloud first $\neq$ cloud friendly 
+   - Deployment
+   - APIs
+   - Autenticación
+   - Thin clients
+   - ...
 
-Rent don't buy
-Pay as you go
-CAPEX -> OPEX
-
-## Cloud first $\neq$ cloud friendly (sec. 4.3.6  & ap. B.1)
-
-deployment
-
-CAEplex
-
-
-APIs, thin clients, etc.
-
-
-. . . 
-
-\centering “Desktop solver development is the _opposite_ of cloud development”
+\medskip 
+. . .
  
+\centering “Desktop solver development is the **opposite** of cloud development”
+ 
+:::
+::::::::::::::
+
+
+## 
+
+\centering ![](caeplex-ipad.jpg){height=8cm}
+
+<https://www.caeplex.com>
 
  
 ## 
 
-\centering 
-
-![](nafems-le10-problem-input.svg)
+\centering ![](nafems-le10-problem-input.svg)
 
 developer easy / user hard
 
 ## 
 
-mazes
+:::::::::::::: {.columns}
+::: {.column width="30%"}
 
-Linkedin 500k
+\vspace{0.5cm}
+
+\centering ![](maze-homer.png)
+:::
+
+::: {.column width="70%"}
+\centering ![](maze-linkedin.png){height=7cm}
+
+4,498 likes, 355 comments & 143 reposts
+:::
+::::::::::::::
+
+\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
+
 
  
  
@@ -1644,40 +1672,90 @@ doc
 
 ## Conclusiones
 
-why - how - what
+\centering ![](what-how-why.svg){height=7cm}
 
-SRS - SDS
+. . .
 
-En general, en términos de emprendedurismo, el [_unfair advantage_]{lang=en-US} consiste en que el la herramienta...
+\centering Software Requirements Specification $\rightarrow$ Software Design Specification
 
- * es libre y abierta @feenox-2024---remarcando la importancia que esto tiene tanto en la academia como en la industria
- * está pensada como [_cloud-first_]{lang=en-US}, concepto que no solamente implica [_cloud-friendliness_]{lang=en-US} 
- * puede escalar arbitrariamente en paralelo apalancándose en el estándar MPI
- * es un [back end]{lang=en-US} diseñado para poder ser manejado con diferentes [front ends]{lang=en-US}
- * sigue la filosofía de diseño Unix que es perfectamente aplicable al concepto de [_cloud-first_]{lang=en-US}
- * provee una interfaz amena a la simulación programática
- * es extremadamente flexible y puede resolver una gran variedad de problemas, desde los más simples con propiedades uniformes hasta los más complejos donde las propiedades de los materiales pueden depender del espacio de maneras no triviales
- * es a los programas tradicionales (CalculiX, CodeAster) y a las bibliotecas de elementos finitos (Sparselizard, MoFEM) lo que [Markdown]{lang=en-US} es a procesadores de texto (Word, Google Docs) y a sistemas de tipografía (TeX), respectivamente
- * está diseñada para que sea posible agregar más tipos de PDEs sin tener que escribir un [solver]{lang=en-US} desde cero
- 
-En particular, para las aplicaciones de neutrónica a nivel de núcleo sus características distintivas son que...
 
- 1. trabaja sobre mallas no estructuradas
- 2. puede resolver transporte mediante el método de ordenadas discretas S$_N$
- 3. es capaz de resolver problemas de tamaño arbitrario haciendo descomposición de dominio y resolviendo cada parte en un proceso MPI
+## Unfair advantanges
+
+:::::::::::::: {.columns}
+::: {.column width="60%"}
+
+ * herramienta libre y abierta (de suma importancia!)
+ * [_cloud-first_]{lang=en-US} ($\neq$ [_cloud-friendly_]{lang=en-US})
+ * paralelización MPI
+ * [back end]{lang=en-US} para diferentes [front ends]{lang=en-US}
+ * filosofía de diseño Unix (compatbile con [_cloud-first_]{lang=en-US})
+ * interfaz amena para la simulación programática
+ * flexible para propiedades materiales no triviales
+ * tablitas vs. software tradicional y bibliotecas
+ * extensible con apuntadores a funciones `src/pdes`
+
+:::
+
+::: {.column width="40%"}
+
+\vspace{1cm}
+
+ 1. transporte con S$_N$
+ 2. mallas no estructuradas
+ 3. de tamaño arbitrario con MPI
+
+:::
+::::::::::::::
+
  
 ## Tweets
 
-logo X
+:::::::::::::: {.columns}
+::: {.column width="15%"}
+![](X11.svg)
+:::
+
+::: {.column width="60%"}
 
  * cloud first != cloud friendly
  * free != gratis
  * MPI != speed
- * 
+ * extensibilidad con `src/pdes`
+ * lo que Markdown es a Word, Docs & TeX
+
+:::
+
+::: {.column width="15%"}
+![](x.svg)
+:::
+
+::::::::::::::
+
+\vspace{1cm}
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+\centering ![](unfair-md.png)
+:::
+
+::: {.column width="50%"}
+\centering ![](unfair-feenox.png)
+:::
+::::::::::::::
+
+
+ 
+
+
+
 
 
 
 ## Trabajos futuros
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
 
  * comparar difusión y S$_N$
  * otros conjuntos de cuadraturas
@@ -1690,19 +1768,47 @@ logo X
  * interfaces y capas de abstracción
  * refinamiento automático de malla
  * otras discretizaciones espaciales
+:::
+::: {.column width="50%"}
+
  * problemas de optimización
- * condiciones de contorno de Dirichlet multi-punto
+ * condiciones de contorno multi-punto
  * otras PDEs
  * mejoramiento de la integración continua
  * secciones eficaces para mallas no estructuradas
  * FeenoX en cadenas de cálculo neutrónico
  * acoplamiento con otros códigos de cálculo
- * creación de comunidades libres, abiertas y anti-frágiles
- * deep-tech startup
+ * comunidades abiertas y anti-frágiles
+ * deep-tech startup @ CITES
+ 
+:::
+::::::::::::::
+
+cada uno de estos es varios años hombre
+
 
 ## 
 
-\centering Foto mía dando la charla  ![](cancun2024.jpg)
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+\centering  ![](phd.jpg)
+
+:::
+
+. . .
+
+::: {.column width="50%"}
+
+\centering  ![](cancun2024.jpg)
+
+:::
+::::::::::::::
+
+
+## 
+
+
 
 
 
