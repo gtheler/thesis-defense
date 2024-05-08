@@ -1150,6 +1150,17 @@ $$
 
 
 :::::::::::::: {.columns}
+
+::: {.column width="30%"}
+
+\onslide<2->{RMS}
+
+\onslide<3->{ESR}
+
+
+:::
+
+
 ::: {.column width="70%"}
 
  * FeenoX es GPLv3+ = libre & abierto
@@ -1162,24 +1173,21 @@ $$
      - Lo opuesto de "software libre" *NO* es "software comercial"
      
    - free $\neq$ open (pero casi)
- 
+
+. . .
+    
  * Software libre = bases éticas
    - Cuatro libertades básicas
  
+. . . 
+
  * Open source = bases tecnicas
    - Given enough eyeballs all bugs are shallow.
 
 . . .
-   
+
  * A caballo regalado no se le miran los dientes.
  * Cuando la limosna es grande, hasta el santo desconfía.
-
-:::
-::: {.column width="30%"}
-
-RMS
-
-ESR
 
 :::
 ::::::::::::::
@@ -1282,7 +1290,7 @@ ESR
 
 ::: {.column width="70%"}
 
- * script & macro friendly (simulación programática)
+ * Script & macro friendly (simulación programática)
  
    - play along con otras herramientas
    - optimizador
@@ -1297,6 +1305,10 @@ ESR
  
  * Parametric & optimization runs
  
+   ```feenox
+   PRINT "Hello $1"
+   ```
+    
    ```terminal
    $ cat hello.fee 
    PRINT "Hello $1"
@@ -1632,8 +1644,61 @@ doc
 
 ## Conclusiones
 
+why - how - what
+
+SRS - SDS
+
+En general, en términos de emprendedurismo, el [_unfair advantage_]{lang=en-US} consiste en que el la herramienta...
+
+ * es libre y abierta @feenox-2024---remarcando la importancia que esto tiene tanto en la academia como en la industria
+ * está pensada como [_cloud-first_]{lang=en-US}, concepto que no solamente implica [_cloud-friendliness_]{lang=en-US} 
+ * puede escalar arbitrariamente en paralelo apalancándose en el estándar MPI
+ * es un [back end]{lang=en-US} diseñado para poder ser manejado con diferentes [front ends]{lang=en-US}
+ * sigue la filosofía de diseño Unix que es perfectamente aplicable al concepto de [_cloud-first_]{lang=en-US}
+ * provee una interfaz amena a la simulación programática
+ * es extremadamente flexible y puede resolver una gran variedad de problemas, desde los más simples con propiedades uniformes hasta los más complejos donde las propiedades de los materiales pueden depender del espacio de maneras no triviales
+ * es a los programas tradicionales (CalculiX, CodeAster) y a las bibliotecas de elementos finitos (Sparselizard, MoFEM) lo que [Markdown]{lang=en-US} es a procesadores de texto (Word, Google Docs) y a sistemas de tipografía (TeX), respectivamente
+ * está diseñada para que sea posible agregar más tipos de PDEs sin tener que escribir un [solver]{lang=en-US} desde cero
+ 
+En particular, para las aplicaciones de neutrónica a nivel de núcleo sus características distintivas son que...
+
+ 1. trabaja sobre mallas no estructuradas
+ 2. puede resolver transporte mediante el método de ordenadas discretas S$_N$
+ 3. es capaz de resolver problemas de tamaño arbitrario haciendo descomposición de dominio y resolviendo cada parte en un proceso MPI
+ 
+## Tweets
+
+logo X
+
+ * cloud first != cloud friendly
+ * free != gratis
+ * MPI != speed
+ * 
+
+
 
 ## Trabajos futuros
+
+ * comparar difusión y S$_N$
+ * otros conjuntos de cuadraturas
+ * evitar o mitigar el efecto rayo
+ * discretización angular tipo FEM
+ * otras formulaciones neutrónicas
+ * evaluar eficiencia y mejorar performance
+ * métodos iterativos para S$_N$
+ * mejorar escalabilidad
+ * interfaces y capas de abstracción
+ * refinamiento automático de malla
+ * otras discretizaciones espaciales
+ * problemas de optimización
+ * condiciones de contorno de Dirichlet multi-punto
+ * otras PDEs
+ * mejoramiento de la integración continua
+ * secciones eficaces para mallas no estructuradas
+ * FeenoX en cadenas de cálculo neutrónico
+ * acoplamiento con otros códigos de cálculo
+ * creación de comunidades libres, abiertas y anti-frágiles
+ * deep-tech startup
 
 ## 
 
