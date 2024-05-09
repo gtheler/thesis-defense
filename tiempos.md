@@ -22,21 +22,13 @@
 20 min
 ---
         
- 4. (10 min) Historia de Unix
+ 4. (18 min) Historia de Unix
+ 
+    1. Do it for him.
+    2. SRS/SDS
+    3. Arquitectura (terciopelo negro)
     
-    Acá debe venir el momento 1/phi
-    Después de Unix, contar que yo estaba pum para arriba y pasa lo de max
-    Foto do it for him?
-    Aprender cosas nuevas: SRS/SDS
-    
-    Arquitectura - bien técnico y aburrido, terciopelo negro
-    
-    paper JOSS
-    Mostrar compilación?
-    Make check?
-    cambiar 1 sign - recompilar - make check
-    
- 5. (10 min) Dr. Pepe Lolich, manuales
+ 5. (4 min) Dr. Pepe Lolich, manuales
  
     Tabla de casos, accediendo a gentiles pedidos
     
@@ -44,14 +36,12 @@
     IAEA 3D?
     PHWR?
     
- 6. (2 min) conclusiones y trabajos futuros
+---
+42 min
+---
+    
+ 6. (2 min) Conclusiones, tweets y trabajos futuros
  
-    contribución siguiendo SRS/SDS
-    
-    word cloud: FOSS cloud-first untructured-grids programatic parallel Unix
-
-    explicitar los tweets
-    
-    Trabajos futuros: que no queden en TO-DOs o nice-to-haves
-    
-    [...] CITES.
+---
+44 min
+---
