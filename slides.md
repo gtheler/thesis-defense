@@ -1239,7 +1239,7 @@ $$
  #. [Neutron diffusion](https://www.seamplex.com/feenox/examples/neutron_diffusion.html)
  #. [Neutron S$_N$](https://www.seamplex.com/feenox/examples/neutron_sn.html)
  
- * ... (mecanismo de extensión)
+ * ... `src/pdes`
 :::
 ::::::::::::::
 
@@ -1266,7 +1266,7 @@ $$
                              +------------+
 ```
 
-## Filosofía Unix (apéndice C)
+## Las 17 reglas (apéndice C)
 
 :::::::::::::: {.columns}
 ::: {.column width="30%"}
@@ -1314,11 +1314,10 @@ $$
    ```
     
    ```terminal
-   $ for i in $(seq 1 4); do feenox hello.fee $i; done
+   $ for i in $(seq 1 3); do feenox hello.fee $i; done
    Hello 1
    Hello 2
    Hello 3
-   Hello 4
    $ 
    ```
 
@@ -1527,11 +1526,7 @@ feenox reed.fee 2
 6
 8
 
-
-
-
-## Entry professionalfonts
-
+## Entry points
 
 PROBLEM neutron_sn dim xxxx
 
@@ -1568,7 +1563,7 @@ make check
 
 ## Algoritmos auxiliares
 
-## Everything's an expressiones
+## Everything's an expression
 
 funcionales
 
@@ -1672,10 +1667,21 @@ doc
 
 ## Conclusiones
 
-\centering ![](what-how-why.svg){height=7cm}
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+\centering ![](descartes.jpg){width=70%}
+:::
 
 . . .
 
+::: {.column width="50%"}
+\centering ![](what-how-why.svg){width=80%}
+:::
+::::::::::::::
+
+. . .
+
+\medskip
 \centering Software Requirements Specification $\rightarrow$ Software Design Specification
 
 
@@ -1696,6 +1702,8 @@ doc
 
 :::
 
+. . .
+
 ::: {.column width="40%"}
 
 \vspace{1cm}
@@ -1708,14 +1716,17 @@ doc
 ::::::::::::::
 
  
-## Tweets
+## Tweets / Mastodons
 
 :::::::::::::: {.columns}
-::: {.column width="15%"}
-![](X11.svg)
+::: {.column width="10%"}
+
+\bigskip
+
+![](mastodon.svg)
 :::
 
-::: {.column width="60%"}
+::: {.column width="55%"}
 
  * cloud first != cloud friendly
  * free != gratis
@@ -1723,6 +1734,10 @@ doc
  * extensibilidad con `src/pdes`
  * lo que Markdown es a Word, Docs & TeX
 
+:::
+
+::: {.column width="15%"}
+![](X11.svg)
 :::
 
 ::: {.column width="15%"}
@@ -1751,12 +1766,12 @@ doc
 
 
 
-## Trabajos futuros
+## El jardín de los trabajos futuros que se bifurcan
 
 :::::::::::::: {.columns}
-::: {.column width="50%"}
+::: {.column width="48%"}
 
-
+ * implementar cinética espacial
  * comparar difusión y S$_N$
  * otros conjuntos de cuadraturas
  * evitar o mitigar el efecto rayo
@@ -1767,24 +1782,23 @@ doc
  * mejorar escalabilidad
  * interfaces y capas de abstracción
  * refinamiento automático de malla
- * otras discretizaciones espaciales
 :::
-::: {.column width="50%"}
+::: {.column width="52%"}
 
+ * otras discretizaciones espaciales
  * problemas de optimización
  * condiciones de contorno multi-punto
  * otras PDEs
  * mejoramiento de la integración continua
- * secciones eficaces para mallas no estructuradas
+ * XSs condensadas en mallas no estructuradas
  * FeenoX en cadenas de cálculo neutrónico
  * acoplamiento con otros códigos de cálculo
  * comunidades abiertas y anti-frágiles
- * deep-tech startup @ CITES
+ * fundar una deep-tech startup CITES-like
  
 :::
 ::::::::::::::
 
-cada uno de estos es varios años hombre
 
 
 ## 

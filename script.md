@@ -138,11 +138,11 @@ De hecho, si me apurás, te digo que teníamos más capacidad que los "expertos 
 Pero esa es discusión para otro momento.
 
 
-## Esquema de dos paso
+## Esquema de dos pasos
 
 Long story short: tenemos que modelar la inyección de rápida de boro del segundo sistema de shutdown.
 
-Primer esquema.
+Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es...
 
  1. calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un código de núcleo y tenemos una curva de reactividad vs. tiempo
  2. metemos esa curva en un código de planta acoplado con control y protección y vemos qué pasa.
@@ -548,10 +548,13 @@ Veamos ahora el what.
 
 ## 
 
-## SRS
+## SRS & SDS
 
+## FeenoX @ JOSS
 
-## Unfair advantage
+## Unfair advantage: Markdown
+
+## Unfair advantage: FeenoX
 
 ## Licensing
 
@@ -586,7 +589,7 @@ transfer function == unix pipe
 
 "the claw is for backward compatibility"
 
-## Cloud
+## La "nube"
 
 Don's quote
 
@@ -599,6 +602,50 @@ Don's quote
 Basta de marketing que Enzo se me enoja.
 
 Show me the code!
+
+## Arquitectura
+
+## Languages
+
+## Algoritmos
+
+## ¿Qué necesitamos?
+
+## Implementación
+
+## Polimorfismo
+
+## Input
+
+## Instrucciones y definiciones
+
+## Conducción de calor 1D
+
+## Non-uniform $k$
+
+## Reed
+
+## Entry points
+
+## Entry points para..
+
+## IAEA
+
+## Algoritmos auxiliares
+
+## Everything's an expression
+
+## Funciones
+
+## Output
+
+## Otras cosas
+
+## Escalabilidad
+
+## TODO
+
+## QA
 
 
 
@@ -618,20 +665,62 @@ Elegir algunos, preguntar cuáles
 5 min por problema
 
 
+---
+X min
+---
+
 ## Conclusiones
 
- * como descartes, esto es lo que me sirve a mí, si a alguien más le sirve y quiere agregar cosas al manual, be my guest
+Antes que nada, todo esto que presenté va en el sentido del método de Descartes.
+Como dice René, esto es lo que me sirvió a mí y lo comparto con ustedes.
+Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y quieren seguir otro método, en todo su derecho.
+
+
+Seguimos el poco académico pero---a veces--útil orden why-how-what.
+Y la metodología de diseño de software SRS/SDS.
+
+## Unfair advantages
+
+La herramienta que desarrollamos tiene, otra vez en el sentido de Descartes, algunas ventajas competitivas.
+
+En particular, para neutrónica a nivel de núcleo soporta
+
+ 1. SN,
+ 2. mallas no estructuradas, y
+ 3. MPI.
 
 ## Tweets 
 
+Si tuviesen que escribir un tweet o un mastodon contando que vienieron a esta charla, me gustaría que nombren alguno de estos cinco conceptos.
+
+O esta idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
+
 ## Trabajos futuros
 
+La tesis y estas charla termina con un sendero de trabajos futuros que se bifrucan.
+Cada unos de estos bullets implica varios años-persona y un presupuesto no despreciable.
+En particular, el último es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
 
-Dejo el sendero de jardines que se bifurcan de trabajos futuros, con el anhelo de que no queden simplemente en "nice to haves".
-¿Cómo hacemos todo esto? Como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si cuando estás haciendo consultoría y te está yendo relativamente bien, llegara a venir un cisne negro como dice Taleb y te cambia la número cinco por una bola de bowling, si le hiciste caso a Calabró y entrenaste laterales con sandías, tal vez te quede resto y puedas terminar una tesis de doctorado a los 41 años y volver a Cancún con tu familia. Muchas gracias.
+Seguramente ustedes se preguntan lo mismo que yo.
+¿Cómo hacemos todo esto?
+
+Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
+Porque si llegara a venir un cisne negro que te cambia la número cinco por una bola de bowling, pero le hiciste caso a Calabró y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+
+## PhD / Cancún
+
+y puedas defender una tesis de doctorado a los 41...
+
+y puedas volver a Cancún con tu familia.
 
 
+## 
+
+Muchas gracias.
+
+---
+X + 2 min
+---
 
 
 # Apéndices
