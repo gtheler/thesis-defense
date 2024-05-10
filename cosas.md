@@ -25,6 +25,7 @@
  * botella de auga
  * pasador de slides
  * kde connect pasador y apuntador
+ * cronómetro
  * agrandar terminal
  * ir al baño antes
  * apagar whatsapp
@@ -38,7 +39,7 @@
  * HDMI
  * a qué hora ir
  * zoom, cámara
-
+ * biblioteca, impresión de las tesis
  
  
  

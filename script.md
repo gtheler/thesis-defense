@@ -1,11 +1,13 @@
+
  
 # 1. Introducción
 
 Yo crecí en los noventa, donde todo daba vueltas alrededor de la televisión.
-Un día estaba yo mirando "El contra".
+Era el instagram de la época, donde yo perdía mi tiempo.
 
 ## Calabró
 
+Estos dos monstruos tenían un programa llamado "El contra".
 El invitado era un director técnico de fútbol, no recuerdo quién.
 En un momento, Calabró pregunta:
 
@@ -705,7 +707,7 @@ Seguramente ustedes se preguntan lo mismo que yo.
 ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si llegara a venir un cisne negro que te cambia la número cinco por una bola de bowling, pero le hiciste caso a Calabró y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+Porque si llegara a venir un cisne negro que te cambia la número cinco por una bola de bowling, pero le habías hecho caso a Calabró y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 
