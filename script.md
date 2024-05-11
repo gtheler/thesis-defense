@@ -3,7 +3,6 @@
 # 1. Introducción
 
 Yo crecí en los noventa, donde todo daba vueltas alrededor de la televisión.
-Era el instagram de la época, donde yo perdía mi tiempo.
 
 ## Calabró
 
@@ -28,7 +27,7 @@ Bueno, esa idea de entrenar laterales con sandías que escuché cuando tenía 10
 
 ## IB 2004
 
-Diez años después estaba entrenando laterales con sandías en el IB.
+Diez años después estaba entrenando laterales con sandías en la clase de mecánica de Barrachina.
 
 ## Electrón
 
@@ -36,7 +35,7 @@ Bueno.
 
 ## Lazo
 
-Acá estoy entrenando laterales con mi tesis de grado sobre lazos de convección natural caóticos en una etapa académica.
+Acá estoy entrenando laterales en mi tesis de grado sobre lazos de convección natural caóticos en una etapa académica.
 
 ## TECNA
 
@@ -343,7 +342,9 @@ Como ustedes sabrán, yo
  * trackeo todo con Git y
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
  
-Entonces---como efecto colateral de lo que propone Séneca---si alguien necesita notas para dar clase puede acceder al markdown, modificarlo y compilarlo a PDF, HTML o el formato que guste.
+De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdwon. En la tesis lo mismo, así que si aparece un PDF, o un HTML "in the wild" o un ejemplar impreso en la biblitoeca, el footer indica el commit.
+ 
+Entonces---como efecto colateral de lo que propone Séneca---si alguien necesita notas para dar clases tiene la libertad de acceder al markdown y modificarlo según necesite.
 Martín Silva ya me dijo que va a hacer eso en sus clases.
 Fede Mezio, si te sirve... be my guest!
 
@@ -534,88 +535,367 @@ Veamos ahora el what.
 
 [pausa]
 
+Hace un tiempo escuché que la bicicleta es un dispositivo que tiene, entre otras, la siguiente particularidad:
+resuelve problemas que no existían cuando se inventó.
+El tema de movilidad en grandes ciudades y toda la sarasa de la new age.
+Completen con media hora de mala literatura.
+
 ## Dennis & Ken
+
+Resulta que Unix también es un diseño que resuelve problemas que no existían cuando fue inventado.
+
+A medidados de los 60, estos muchachos trabajaban en los laboratorios Bell.
+En esa época habían desarrollado un sistema operativo medio artesanal pero que andaba bastante bien.
+Entonces se metieron los gerentes y organizaron un proyecto ambicioso para hacer una segunda versión "bien pulenta".
+Pero el proyecto, llamado MULTICS (siglas _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
+Entonces a fines de los 60 estos dos muchachos empezaron desde cero y teniendo en cuenta las lecciones aprendidas sobre lo que NO hay que hacer y ahora sí, la tercera es la vencida, diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
+
+Y como ustedes saben, este diseño casi sin modificaciones, es lo que hace que Internet y "la nube" funcionen como lo hace hoy.
+Que no es ni remotamente parecido a cómo funcionaba hace 50 años, cuando Unix fue inventado.
+
+. . .
+
+Abro un concurso: una taza de Atlético de Rafaela para los dos primeros que digan cómo se llaman cada uno los dos de la foto.
+
+---
+21 min 30
+---
 
 ## Jon
 
+Pero esperen, porque no les voy a contar la historia de esos dos muchachos, sino de este otro muchacho.
+Acá aparece en un documental de Discovery explicando cóm hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT.
+Es uno de los personajes reales de la película de Kevin Spacey.
+
+
+Cuestión que en las Vegas ganó un palo y con esa guita puso una startup de software para diseño mecánico 3D.
+Hasta ese momento---principios de los 90---todos los programas de este tipo funcionaban en el Unix de los barbudos de la foto anterior.
+Pero este Jon sin hache sabía que otro había otro nerd que se venía con todo: Bill Gates.
+
+
 ## Solidworks
+
+Vio venir que en los 90 la moda iba a ser "X para Windows", así que su programa de diseño 3D corría en Windows.
+Y Solidworks pasó de tener el 0 al 90% del mercado en un par de años.
+En el 97 vendió su compañía por 300 millones de dólares y se quedó como CEO, consolidando el producto.
 
 ## Onshape
 
+Pasa el tiempo. Año 2011. Jon se da cuenta de que la tecnología está cambiando nuevamente.
+Renuncia y pone otra startup de software de diseño pero ahora, "en la nube".
+Digamos un Google Docs para la ingeniería mecánica.
+En 2019 vende Onshape por 480 millones y se queda como CEO, consolidando el producto.
+
+Quien la compró era una de las empresas que tenían todo en los 80 y se quedaron sin nada en los 90.
+Según me contaron off the record, la compraron porque: "no quisimos que nos vuelva a pasar lo mismo".
+
+
+
 ## Nerds
+
+En resumen, este nerd ganó 1 millón gracias a otros nerds del MIT que estudiaron la matemática del Blackjack.
+Los siguientes 300 gracias al nerd Bill Gates.
+Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema que hoy resuelve problemas que no existían hace más 50 años.
+Como la bicicleta.
+
+---
+23 min 30
+---
+
+Cierro concurso.
+¿Nombre de los últimos dos?
+
+Entre paréntesis, Dennis Ritchie (el que está parado) se murió en 2011 la misma semana que Steve Jobs.
+Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres, el columnista de La Nación.
+
+---
+24 min
+---
 
 ## Cheque
 
+Por si se lo preguntaban, resulta que sí me dieron el cheque gigante.
+
 ## IB50k, CNE, cancún
+
+Era mi época de emprendedor, IB50k...
+
+. . .
+
+Si bien nunca funcionó muy bien el emprendimiento, me permitió hacer consultoría en temas de mecánica de piping para la central de embalse.
+
+. . .
+
+Y poder ir a Cancún con mi familia.
+
+
+## Do it for him
+
+Pero bueno, a veces las cosas no salen como uno las planea.
 
 ## 
 
+Y la enfermedad de un hijo te puede hacer apagar tu carrera profesional por un año.
+
+[pausa]
+
+---
+24 min 30
+---
+
 ## SRS & SDS
+
+A la vuelta, tuve que empezar desde cero y, literalmente, agarrar lo que venía.
+Esto implicó tener que aprender cosas nuevas.
+
+Una de estas cosas fue un esquema de la industria del software muy interesante.
+Consiste en un documento tipo "pliego" que lista los requerimientos que el comprador pide para un cierto desarrollo.
+Y otro tipo "oferta" que indica cómo el software propuesto aborda e implementa cada requerimiento.
+
+. . .
+
+Para la herramienta desarrollada en esta tesis lo que hice fue jugar de los dos lados del mostrador.
+Empecé escribiendo un SRS con estas secciones como si fuese un pliego de un llamado a licitación para una herramienta computacional.
+
+Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada requisito.
+
+
+
 
 ## FeenoX @ JOSS
 
+Les presento entonces a FeenoX, a cloud-first finite-element(ish) computational engineering tool, publicada en el Journal of Open Source Software.
+
+Originalmente se llamaba "a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool pero me hicieron achicarlo, como a Johan Sebastian Mastropiero.
+
+---
+25 min 30
+---
+
+
 ## Unfair advantage: Markdown
+
+Empecemos preguntándonos qué opciones tendríamos si necesitáramos escribir un documento técnico. Un informe o un paper.
+En el lado más "fácil" del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
+Del otro lado algo como LaTeX o incluso TeX.
+En el medio, Markdown.
+
 
 ## Unfair advantage: FeenoX
 
+Bueno, piensen a FeenoX como si fuese el Markdown de las herramientas tipo elementos finitos.
+FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
+
 ## Licensing
 
-Ninguno de los dos conceptos, código abierto o software libre, se refiere a la idea de _precio_.
-es más caro pagarle al que sabe dónde poner el punto y coma en el archivo de configuración que pagar la licencia y configurarlo con el [mouse]{lang=en-US}
+Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
 
-la _libertad_ de poder contratar a uno o más programadores que modifiquen el código para que el software se comporte como uno necesita
+El SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPLv3+.
+Y acá quiero hacer especial énfasis en que ninguno de los dos conceptos, código abierto o software libre, se refiere a la idea de _precio_.
+"Free" no quiere decir "gratis". En inglés es "free as in freedom", no "free as in free beer".
+Seguramente ya lo saben, pero nunca está de más repetirlo, especialmente en la industria nuclear.
 
-Quisiera enfatizar en esta sección la importancia del software libre y abierto en general y del relacionado a cálculos de ingeniería en particular.
+De hecho, un gerente de sistemas en una reunión dijo "acá en esta empresa no usamos software libre por un tema de costos".
+Cuando lo interrumpí para que elabore me explicó, palabras más palabras menos, "es más caro pagarle al que sabe dónde poner el punto y coma en el archivo de configuración del servidor de base de datos que pagar la licencia y configurarlo con el [mouse]{lang=en-US}".
 
-Las libertades dos y tres son esencialmente importantes en el ámbito académico.
+. . .
 
- la calidad de un [solver]{lang=en-US} [open source]{lang=en-US} debería ser, objetivamente hablando, superior a cualquier otra herramienta privativa (en el sentido de que _priva_ a los usuarios de las libertades básicas).
+Según Richard Stallman, lo importante es la _libertad_ de poder modificar el código para que el software se comporte como uno necesita.
+Y si uno no sabe programar, poder tener la _libertad_ de contratar a alguien que lo haga.
+
+. . .
+
+Por otro lado, Eric Raymond (el del libro de Unix) hace énfasis en la superioridad técnica del software open source.
+Y esto es especialmente importante en software científico y de ingeniería.
+
+. . .
+
+Esta discusión podría necesitar más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares.
+
+[pausa]
 
 
-no quiere decir que
-
- 1. haya que aceptar cualquier tipo de software libre
- 2. el software libre no pueda ser "comercial"
+---
+27 min 30
+---
 
 ## Scope
 
-v1, v2, v3
+Resulta que FeenoX es un tercer intento, tal como Unix.
+
+Todo empezó con el milonga, que algunos de ustedes conocerán e incluso habrán usado.
+
+Como eso andaba más o menos bien, me pasó lo que a los gerentes de la Bell.
+
+. . .
+
+Empecé a agregar complejidad, features, etc. 
+
+. . .
+
+Hasta que decidí  empezar desde cero.
+
+. . . 
+
+El scope actual es que FeenoX puede resolver estos problemas.
+Pero hay un mecanismo de extensión en src/pdes que voy a explicar en detalle en un momento.
 
 ## Unix
 
-transfer function == unix pipe
+Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pena apalancarse explícitamente en la filosofía Unix y hacerle caso al libro de Raymond.
+
+Esencialmente, la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
+
+Como usualmente hay que hacer varias cosas, la idea central es la de "composición" de forma tal de que la salida de un programa sea la entrada de otro.
+
+. . . 
+
+En términos de ingeniería "analógica" yo veo a FeenoX como una función de transferencia entre uno o más archivos de entrada y cero o más archivos de salida. Recuerden que en Unix, "todo es un archivo".
 
 ## 17 rules
 
+En su libro, Raymond explicita 17 reglas.
+Todas tienen algún grado de impacto en el diseño y/o implementación de FeenoX.
+Las marcadas en boldface son las más importantes.
+
+. . .
+
+Un par de comentarios.
+
+FeenoX se enfoca en resolver ecuaciones en derivadas parciales.
+Se tiene que llevar bien con otras herramientas, tales como malladores y post-procesadores.
+Y se tiene que llevar bien con el concepto de "simulación programática", cuyo nombre no me gusta pero es como se lo llama en la industria.
+En resumen, que sea script friendly.
+
+También tiene que llevarse bien con interfaces gráficas. Siguiendo la regla de separación, FeenoX es un back end pero que tiene que hacer que el desarrollo de front ends sea relativamente fácil. ¿Qué implica esto? Que los inputs sean flexibles y fáciles de generar.
+Y que no se enfoque en una sola forma de front end. Debería poder "hablar" con front ends desktop, web, no sé de los que ahora hay con esos visores de realidad virtual, en el futuro con un holograma láser o lo que sea.
+
+Y tiene que ser ameno a corridas paramétricas.
+
+Supongamos que tenemos este archivo de entrada: print hello pesos uno.
+Bueno, si lo corremos desde bash do feenox hello punto fee pesos i nos dice hello 1, hello 2 y hello 3.
+
+---
+29 min 30
+---
+
 ## Front-back
 
-"the claw is for backward compatibility"
+Por si no quedó claro, este es el concepto de separación entre front end y back end.
+
+[pausa]
 
 ## La "nube"
 
-Don's quote
+Pasemos a "la nube".
+
+¿Qué demonios es "la nube"? Básicamente es "somebody else's computers".
+El plural es importante. Después me explayo.
+
+Este concepto de cloud es importante porque permite bajar los costos de oportunidad.
+Financieramente te dicen que alquiles en lugar de comprarte una casa.
+Imagínense en términos de servidores de cálculo.
+
+. . .
+
+Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly".
+Hay varios detalles que te pueden dejar fuera de juego.
+Por ejemplo, si para hacer el deployment tenés que re-compilar el código antes de correrlo porque tu solver es un biblioteca entonces tenés un overhead que capaz que te mata el esquema de costos.
+Por eso por diseño, FeenoX es un ejecutable que lee el problema a resolver en tiempo de ejecución.
+Esto nunca se lo pude hacer entender a uno de los reviewers del JOSS. Espero poder explicarlo mejor acá.
+
+. . .
+
+Y ni que hablar de solvers tipo Desktop que quieren dockerizarlos para hacerlos "cloud friendly".
+Esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones al año.
 
 ## CAEplex
 
+Como prueba de concepto de una interfaz web pueden entrar a caeplex punto com.
+
+
 ## LE10
+
+Déjenme ilustrar uno de los puntos de FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
+Fíjense que todo lo que aparece en la formulación "human friendly" aparece en el archivo de entrada.
+¡Y nada más!
+
+Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
+Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
+
 
 ## Mazes
 
-Basta de marketing que Enzo se me enoja.
+Una nota de color antes de meternos en el código.
+Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida.
+Podemos explotar la elipticidad del operador de Laplace.
 
-Show me the code!
+. . .
+
+Este caso es uno de los tutoriales de FeenoX. Ahí en el link incluso se muestra como resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
+
+Bueno, basta de marketing.
+Pasemos al código.
+
+[pausa]
+
+---
+32 min 30
+---
 
 ## Arquitectura
 
-## Languages
+¿Qué hay que hacer?
+
+ 1. construir la matriz global de rigidez $\mat{K}$ y el vector $\vec{b}$ (o la matriz de masa $\mat{M}$), y
+ 2. resolver el sistema de ecuaciones $\mat{K} \cdot \vec{u} = \vec{b}$ (o $\mat{K} \cdot \vec{u} = \lambda \cdot \mat{M} \cdot \vec{u}$)
+ 3. construir los flujos $\phi$ y $\psi$
+
+FeenoX se enfoca en 1
+
 
 ## Algoritmos
 
-## ¿Qué necesitamos?
+
+para construir K poisson
+para neutrónica es lo mismo
+
+la pde está dada por las llaves
+
+podemos hacer una cáscara?
+sí!
+
 
 ## Implementación
 
+Posible implementación
+
+if pde == algo
+ asdas 
+ 
+p 171
+
+para cada q para cada i
+
+ 1. feo
+ 2. ineficiente
+ 3. dificil de mantener
+
+
 ## Polimorfismo
+
+ * C++: métodos virtuales clases
+ * C: apuntadores a función
+
+
+
+Un único if feo, ineficiente y dificil de mantener
+
+ 1. lo genera un script al que no le importa la belleza ni la mantención
+ 2. es uno sólo en toda la ejecución en tiempo de parseo
+
+mostramos autogen? sí
+ 
 
 ## Input
 
@@ -727,16 +1007,25 @@ X + 2 min
 
 # Apéndices
 
-# JOSS
-
-# Dirichlet BCs
+## JOSS
 
 
-# Inglés
+## Dirichlet BCs
+
+<https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
+
+## English vs. Castellano
+
 
 Pensar en inglés te hace esforzarte más y se te activan áreas cognitivas del cerebro que no se activan si pensás y escribís en castellano.
 
-# What does FeenoX mean
+## What does FeenoX mean
 
+
+## How should FeenoX be pronounced.
+
+## History
+
+## GDB session
 
 

@@ -67,6 +67,31 @@
   frameround=tttt,
 }
 
+\lstdefinestyle{feenox-tiny}{
+  language=feenox,
+  basicstyle=\ttfamily\tiny,
+  commentstyle={\color{was_comment}\normalfont\textit},
+  keywordstyle=[1]{\color{was_keyword1}\ttfamily\textbf},
+  keywordstyle=[2]{\color{was_keyword2}\ttfamily\textbf},
+  keywordstyle=[3]{\color{was_variable}\textit},
+  keywordstyle=[4]{\color{was_function}\textbf},
+  backgroundcolor=\color{was_fondo},
+  showstringspaces=true,
+  breaklines=true,
+  breakatwhitespace=true,
+  prebreak={\space\MyHookSign},
+  lineskip=-1pt,
+  captionpos=b,
+%   numbers=left,
+%   stepnumber=5,
+  xleftmargin=0.3cm,
+  xrightmargin=0.4cm,
+  framesep=0.2cm,
+  frame=single,
+  frameround=tttt,
+}
+
+
 
 \lstdefinestyle{bash}{
   language=bash,
@@ -102,9 +127,46 @@
   frame=single,
 }
 
+\lstdefinestyle{terminal-tiny}{
+  language=,
+  basicstyle=\ttfamily\tiny\color{terminal_fore},
+  backgroundcolor=\color{terminal_fondo},
+  breaklines=true,
+  prebreak={\space\MyHookSign},
+  xleftmargin=0.3cm,
+  xrightmargin=0.3cm,
+  framesep=0.2cm,
+  frame=single,
+}
+
+
 \lstdefinestyle{c}{
   language=C,
   basicstyle=\ttfamily\footnotesize,                                
+  commentstyle={\color{c_comment}\normalfont\textit},     
+  keywordstyle=[1]{\color{c_keyword1}\ttfamily\textbf},   
+  keywordstyle=[2]{\color{c_keyword2}\ttfamily\textbf},   
+  keywordstyle=[3]{\color{c_variable}\textit},            
+  keywordstyle=[4]{\color{c_function}\textbf},            
+  backgroundcolor=\color{c_fondo},                       
+  showstringspaces=true,                                    
+  breaklines=true,                                          
+  breakatwhitespace=true,                                   
+  prebreak={\space\MyHookSign},                             
+  lineskip=-1pt,                                            
+  captionpos=b,
+%   numbers=left,
+%   stepnumber=5,
+  xleftmargin=0.4cm,
+  xrightmargin=0.4cm,                                       
+  framesep=0.2cm,                                           
+  frame=single,                                             
+  frameround=tttt,
+}
+
+\lstdefinestyle{c-tiny}{
+  language=C,
+  basicstyle=\ttfamily\tiny,
   commentstyle={\color{c_comment}\normalfont\textit},     
   keywordstyle=[1]{\color{c_keyword1}\ttfamily\textbf},   
   keywordstyle=[2]{\color{c_keyword2}\ttfamily\textbf},   
@@ -136,13 +198,59 @@
   frame=none,
 }
 
-\lstdefinestyle{python}{
-  language=python,
+% 
+% \lstdefinestyle{python}{
+%   language=python,
+%   basicstyle=\ttfamily\footnotesize,
+%   commentstyle={\color{bash_comment}\normalfont\textit},
+%   keywordstyle=[1]{\color{bash_keyword1}\ttfamily\textbf},
+%   keywordstyle=[2]{\color{python_keyword2}\ttfamily\textbf},
+%   backgroundcolor=\color{awk_fondo},
+%   showstringspaces=true,
+%   breaklines=true,
+%   breakatwhitespace=true,
+%   prebreak={\space\MyHookSign},
+%   lineskip=-1pt,
+%   captionpos=b,
+% %   numbers=left,
+% %   stepnumber=5,
+%   xleftmargin=0.1cm,
+%   xrightmargin=0.1cm,
+%   framesep=0.1cm,
+%   frame=single,
+% }
+% 
+
+% \lstdefinestyle{geo}{
+%   language=geo,
+%   basicstyle=\ttfamily\footnotesize,
+%   commentstyle={\color{bash_comment}\normalfont\textit},
+%   keywordstyle=[1]{\color{bash_keyword1}\ttfamily\textbf},
+%   keywordstyle=[2]{\color{was_keyword2}\ttfamily\textbf},
+%   keywordstyle=[3]{\color{python_keyword2}\textit},
+%   keywordstyle=[4]{\color{was_function}\textbf},
+%   backgroundcolor=\color{gmsh_fondo},
+%   showstringspaces=true,
+%   breaklines=true,
+%   breakatwhitespace=true,
+%   prebreak={\space\MyHookSign},
+%   lineskip=-1pt,
+%   captionpos=b,
+% %   numbers=left,
+% %   stepnumber=5,
+%   xleftmargin=0.1cm,
+%   xrightmargin=0.1cm,
+%   framesep=0.1cm,
+%   frame=single,
+% }
+
+\lstdefinestyle{bib}{
+%   language=bibtex,
   basicstyle=\ttfamily\footnotesize,
   commentstyle={\color{bash_comment}\normalfont\textit},
   keywordstyle=[1]{\color{bash_keyword1}\ttfamily\textbf},
-  keywordstyle=[2]{\color{python_keyword2}\ttfamily\textbf},
-  backgroundcolor=\color{awk_fondo},
+  keywordstyle=[2]{\color{bash_keyword2}\ttfamily\textbf},
+  backgroundcolor=\color{bash_fondo},
   showstringspaces=true,
   breaklines=true,
   breakatwhitespace=true,
@@ -151,32 +259,9 @@
   captionpos=b,
 %   numbers=left,
 %   stepnumber=5,
-  xleftmargin=0.1cm,
-  xrightmargin=0.1cm,
-  framesep=0.1cm,
+  xleftmargin=0.3cm,
+  xrightmargin=0.3cm,
+  framesep=0.2cm,
   frame=single,
 }
 
-
-\lstdefinestyle{geo}{
-  language=geo,
-  basicstyle=\ttfamily\footnotesize,
-  commentstyle={\color{bash_comment}\normalfont\textit},
-  keywordstyle=[1]{\color{bash_keyword1}\ttfamily\textbf},
-  keywordstyle=[2]{\color{was_keyword2}\ttfamily\textbf},
-  keywordstyle=[3]{\color{python_keyword2}\textit},
-  keywordstyle=[4]{\color{was_function}\textbf},
-  backgroundcolor=\color{gmsh_fondo},
-  showstringspaces=true,
-  breaklines=true,
-  breakatwhitespace=true,
-  prebreak={\space\MyHookSign},
-  lineskip=-1pt,
-  captionpos=b,
-%   numbers=left,
-%   stepnumber=5,
-  xleftmargin=0.1cm,
-  xrightmargin=0.1cm,
-  framesep=0.1cm,
-  frame=single,
-}

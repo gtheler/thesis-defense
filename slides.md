@@ -13,6 +13,7 @@ colorlinks: true
 sansfont: Carlito
 monofont: DejaVuSansMono
 header-includes:
+  - \usepackage{algorithm2e}
   - \newcommand{\omegaversor}{\hat{\symbf{\Omega}}}
   - \newcommand{\omegaprimaversor}{\hat{\symbf{\Omega}}^\prime}
   - \renewcommand{\vec}[1]{\mathbf{#1}}
@@ -22,6 +23,7 @@ header-includes:
   - \input{syntax.tex}
 ...
 
+# Prolegómeno
 
 ## 
 
@@ -959,6 +961,9 @@ $$
 
 ![](ritchie-thompson.jpg)
 
+. . .
+
+\centering Se abre concurso de las tazas
 
 
 ## 
@@ -968,8 +973,9 @@ $$
 
 ## 
 
-![](history-of-solidworks-1995.png){width=50%}
-![](history-of-solidworks-1996.png){width=45%} 
+\centering
+![](history-of-solidworks-1995.png){height=5cm}
+![](history-of-solidworks-1996.png){height=5cm} 
 
 ## 
 
@@ -1009,6 +1015,9 @@ $$
 :::
 ::::::::::::::
 
+. . .
+
+\centering Se cierra concurso de las tazas
 
 ## 
 
@@ -1093,9 +1102,19 @@ $$
      
 ::::::::::::::
 
-    
+\medskip
+
+ * Apéndice A: Software Requirements Specification (páginas 337--346)  
+   <https://www.seamplex.com/feenox/doc/srs.html>
+   
+ * Apéndice B: Software Design Specification (páginas 347--436)  
+   <https://www.seamplex.com/feenox/doc/sds.html> 
 
 ## FeenoX: a cloud-first finite-element(ish) computational engineering tool
+
+ * Theler, J. (2024). FeenoX: a cloud-first finite-element(ish) computational engineering tool. Journal of Open Source Software, 9(95), 5846. <https://doi.org/10.21105/joss.05846>
+
+   \centering ![](status-joss.svg)
 
 :::::::::::::: {.columns}
 ::: {.column width="25%"}
@@ -1112,8 +1131,8 @@ $$
 :::
 ::::::::::::::
 
+  * (a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool)
 
-\centering ![](status-joss.svg)
 
 
 
@@ -1203,21 +1222,21 @@ $$
 :::::::::::::: {.columns}
 ::: {.column width="65%"}
 
-### Third-system effect
+### Third-system effect (like Unix itself)
 
- * v1: milonga
+ * v1 (2009): milonga 
  
    \centering ![](milonga.svg){height=1cm}
    
 . . .
  
- * v2: wasora, Fino, mochin, besssugo, waspy, xdfrrpf, ...
+ * v2 (2011): wasora, Fino, mochin, besssugo, waspy, xdfrrpf
  
    \centering ![](wasora.svg){height=2cm} ![](fino.svg){height=2cm} ![](mochin.svg){height=2cm}
    
 . . .
  
- * v3: FeenoX
+ * v3 (2021--): FeenoX
  
    \centering ![](repository-open-graph.svg){height=2cm}
  
@@ -1266,7 +1285,7 @@ $$
                              +------------+
 ```
 
-## Las 17 reglas (apéndice C)
+## Las 17 reglas de la filosofía Unix (apéndice C)
 
 :::::::::::::: {.columns}
 ::: {.column width="30%"}
@@ -1345,8 +1364,8 @@ $$
 ::: {.column width="40%"}
 
  * Somebody else's computer(s)
- * Rent, don't buy!
  * Pay as you go
+ * Rent, don't buy!
  * CAPEX $\rightarrow$ OPEX
 
 \medskip 
@@ -1372,14 +1391,14 @@ $$
 
 \centering ![](caeplex-ipad.jpg){height=8cm}
 
-<https://www.caeplex.com>
+\vspace{-0.3cm}
+
+\centering <https://www.caeplex.com>
 
  
 ## 
 
 \centering ![](nafems-le10-problem-input.svg)
-
-developer easy / user hard
 
 ## 
 
@@ -1392,7 +1411,7 @@ developer easy / user hard
 :::
 
 ::: {.column width="70%"}
-\centering ![](maze-linkedin.png){height=7cm}
+\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
 
 4,498 likes, 355 comments & 143 reposts
 :::
@@ -1405,75 +1424,115 @@ developer easy / user hard
  
 ## Arquitectura
 
-¿qué hay que hacer?
+ 1. construir la matriz global de rigidez $\mat{K}$ y el vector $\vec{b}$ (o la matriz de masa $\mat{M}$), y
+ 2. resolver el sistema de ecuaciones $\mat{K} \cdot \vec{u} = \vec{b}$ (o $\mat{K} \cdot \vec{u} = \lambda \cdot \mat{M} \cdot \vec{u}$)
 
- 1. construir K & b
- 2. resolver K u = b -> Petsc
-
-FeenoX se enfoca en 1
+. . .
  
-fig. transfer glue
+![](transfer-zoom.svg)
 
-## Languages
+. . .
 
-en orden cronológico
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+ * Fortran
+ * C
+ * C++
+ * Go?
+ * Rust?
+:::
+::: {.column width="50%"}
 
 > Add complexity only where you must.
 
- * Fortran -> complejidad innecesaria
- * C
- * C++ - complejidad innecesaria
- * Rust
+:::
+::::::::::::::
 
-## Algoritmos
+## Algoritmo para construir $\mat{K}$ y $\vec{b}$
 
-para construir K poisson
-para neutrónica es lo mismo
+:::::::::::::: {.columns}
+::: {.column width="70%"}
 
-la pde está dada por las llaves
+\DontPrintSemicolon
 
-podemos hacer una cáscara?
+\ForEach{ elemento volumétrico $e_i$}{ 
+ $\mat{K}_i \leftarrow 0$\; \\
+ $\mat{b}_i \leftarrow 0$\; \\
+ \ForEach{ punto de cuadratura $q = 1, \dots, Q_i$}{
+  $\mat{J}_i(\symbf{\xi}_q) \leftarrow \mat{B}_c(\symbf{\xi}_q) \cdot \mat{C}_i$ \\
+  $\mat{B}_i(\symbf{\xi}_q) \leftarrow \mat{J}_i^{-T}(\symbf{\xi}_q) \cdot \mat{B}_c(\symbf{\xi}_q)$ \\
+  $\vec{x}_q(\symbf{\xi}_q) \leftarrow \sum_{j=1}^{J_i} h_j(\symbf{\xi}_q) \cdot \vec{x}_j$ \\
+  $\mat{K}_i \leftarrow \mat{K}_i + \omega_q \cdot \Big|\det{\left[\mat{J}_i\left(\symbf{\xi}_q\right)\right]}\Big| \left\{ \mat{B}_i^T(\symbf{\xi}_q) \cdot k(\vec{x}_q) \cdot \mat{B}_i(\symbf{\xi}_q) \right\}$ \\
+  $\vec{b}_i \leftarrow \vec{b}_i + \omega_q \cdot \Big|\det{\left[\mat{J}_i\left(\symbf{\xi}_q\right)\right]}\Big| \left\{\mat{H}_c^T(\symbf{\xi}_q) \cdot f(\vec{x}_q) \right\}$ \\
+ }
+ ensamblar $\mat{K}_i \rightarrow \mat{K}$\; \\
+ ensamblar $\vec{b}_i \rightarrow \vec{b}$\; \\
+}
 
-## 
+:::
+::: {.column width="30%"}
 
-¿Qué necesitamos?
+### Necesitamos
 
- i.
- ii.
- iii.
- iv. 
- 
-p 169, los primeros 3 no dependen de la podemos
-iv sí pero es evaluar materiales y BCs
+ i. $\omega_q, \symbf{\xi}_q$ $\forall e_i$
+ ii. $\mat{H}_{c}$, $\mat{B}_{c}$ y $\mat{H}_{Gc}$
+ iii. $\mat{C}_i$, $\mat{B}_{Gi}$,
+ iv. evaluar en $\vec{x}_q$
+     a. $k(\vec{x})$ (o XSs)
+     b. $f(\vec{x})$ (o fuentes)
+     c. BCs $p(\vec{x})$ y $g(\vec{x})$
+     
+. . .
 
-=> sí podemos separar en framework + particular
+\bigskip
+     
+ * La PDE está dada por las llaves $\{ \}$
+     
+:::
+::::::::::::::
 
-## Implementación
 
-Posible implementación
+## Posible implementación naïve
 
-if pde == algo
- asdas 
- 
-p 171
 
-para cada q para cada i
+\DontPrintSemicolon
+\begin{algorithm}[H]
+\uIf{ la PDE es la ecuación de Poisson } { evaluar $\mat{B}_i^T \cdot k(\vec{x}_q) \cdot \mat{B}_i$ \tcc*[r]{ec. de Poisson} }
+\uElseIf{ la PDE es difusión de neutrones } { evaluar $\mat{L}_i(\symbf{\xi}_q) + \mat{A}_i(\symbf{\xi}_q) + \mat{F}_i(\symbf{\xi}_q)$ \tcc*[r]{ec. de difusión} } 
+\uElseIf{ la PDE es S$_N$ } { evaluar $\mat{L}_i(\symbf{\xi}_q) + \mat{A}_i(\symbf{\xi}_q) + \mat{F}_i(\symbf{\xi}_q)$ \tcc*[r]{ec. de ordenadas discretas} }
+\Else{ quejarse “no sé resolver esta PDE” \; }
+\end{algorithm}
+
+. . .
 
  1. feo
- 2. ineficiente
- 3. dificil de mantener
+ 2. ineficiente: hay que procesar el bloque $\forall q ~ \forall i$
+ 3. dificil de mantener: hay que actualizar el bloque cuando cambien las PDEs
 
 ## Polimorfismo con apuntadores a función
 
-C++ clases
-C, function pointers
+```c
+if (strcasecmp(token, "laplace") == 0) {
+  feenox.pde.init_parser_particular = feenox_problem_init_parser_laplace;
+} else if (strcasecmp(token, "mechanical") == 0) {
+  feenox.pde.init_parser_particular = feenox_problem_init_parser_mechanical;
+} else if (strcasecmp(token, "modal") == 0) {
+  feenox.pde.init_parser_particular = feenox_problem_init_parser_modal;
+} else if (strcasecmp(token, "neutron_diffusion") == 0) {
+  feenox.pde.init_parser_particular = feenox_problem_init_parser_neutron_diffusion;
+} else if (strcasecmp(token, "neutron_sn") == 0) {
+  feenox.pde.init_parser_particular = feenox_problem_init_parser_neutron_sn;
+} else if (strcasecmp(token, "thermal") == 0) {
+  feenox.pde.init_parser_particular = feenox_problem_init_parser_thermal;
+} else {
+  feenox_push_error_message("unknown problem type '%s'", token);
+  return FEENOX_ERROR;
+}
+```
 
-Un único if feo, ineficiente y dificil de mantener
-
- 1. lo genera un script al que no le importa la belleza ni la mantención
- 2. es uno sólo en toda la ejecución
-
-mostramos autogen? sí
+ 1. Un único bloque en tiempo de parseo
+ 2. Lo genera `autogen.sh` a partir de `src/pdes`
 
 ## Input
 
@@ -1629,22 +1688,23 @@ make check
 doc
 
 
+# Resultados
 
 ## 
 
                                            |    a    |    b    |    c    |    d
 :------------------------------------------|:-------:|:-------:|:-------:|:-------:
- 6.1. Mapeo en mallas no conformes         |    ●    |    ●    |         |    ○
- 6.2. El problema de Reed                  |    ◌    |    ○    |    ●    |
- 6.3. Benchmark PWR IAEA                   |    ○    |    ●    |         |    ○
- 6.4. El problema de Azmy                  |    ●    |    ●    |    ●    |    ◌
- 6.5. Benchmarks de Los Alamos             |    ●    |    ○    |    ●    |
- 6.6. Slab a dos zonas                     |    ●    |    ●    |         |
- 6.7. Reactor cubo-esfera                  |    ●    |    ●    |         |
- 6.8. El problema de los pescaditos        |    ●    |    ●    |    ◌    |
- 6.9. MMS con el Stanford bunny            |    ●    |    ●    |    ◌    |    ◌
- 6.10. PHWR vertical con barras inclinadas |    ●    |    ●    |    ●    |    ●
- 6.11. Cinética puntual                    |         |         |         |
+ 5.1. Mapeo en mallas no conformes         |    ●    |    ●    |         |    ○
+ 5.2. El problema de Reed                  |    ◌    |    ○    |    ●    |
+ 5.3. Benchmark PWR IAEA                   |    ○    |    ●    |         |    ○
+ 5.4. El problema de Azmy                  |    ●    |    ●    |    ●    |    ◌
+ 5.5. Benchmarks de Los Alamos             |    ●    |    ○    |    ●    |
+ 5.6. Slab a dos zonas                     |    ●    |    ●    |         |
+ 5.7. Reactor cubo-esfera                  |    ●    |    ●    |         |
+ 5.8. El problema de los pescaditos        |    ●    |    ●    |    ◌    |
+ 5.9. MMS con el Stanford bunny            |    ●    |    ●    |    ◌    |    ◌
+ 5.10. PHWR vertical con barras inclinadas |    ●    |    ●    |    ●    |    ●
+ 5.11. Cinética puntual                    |         |         |         |
 
 :::::::::::::: {.columns}
 ::: {.column width="75%"}
@@ -1657,12 +1717,177 @@ doc
 :::
 ::: {.column width="25%"}
 
- ● requerido  
- ○ recomendado  
+ ● requerido
+ ○ recomendado
  ◌ opcional
 
 :::
 ::::::::::::::
+
+
+## 5.1. Mapeo en mallas no conformes
+
+> **TL;DR:** Sobre la importancia de que FeenoX siga la filosofía Unix.
+
+![$n=10$](cube-20-10.png){width=49%} ![$n=20$](cube-10-20.png){width=49%}
+
+
+## 5.1. Mapeo en mallas no conformes
+
+```feenox
+READ_MESH cube-$2.msh
+f(x,y,z) = $1
+WRITE_MESH cube-$2-src.msh f
+```
+
+```feenox
+READ_MESH cube-$2-src.msh DIM 3 READ_FUNCTION f
+READ_MESH cube-$3.msh
+WRITE_MESH cube-$2-$3-dst.vtk f NAME error "abs(f(x,y,z)-($1))" MESH cube-$3.msh
+```
+
+```feenox
+READ_MESH cube-$2-src.msh DIM 3 READ_FUNCTION f
+READ_MESH cube-$3.msh
+WRITE_MESH cube-$2-$3-dst.vtk f NAME error "abs(f(x,y,z)-($1))" MESH cube-$3.msh
+```
+
+## 5.1. Mapeo en mallas no conformes
+
+                        |     Otro     |    FeenoX
+:-----------------------|:------------:|:------------:
+ Tiempo                 |  $33.4$ seg    |    $7.24$ seg
+ Error $L_2$            |   $2.859 \times 10^{-5}$  |   $2.901 \times 10^{-5}$
+ Dif. más negativa      |  $-2.509 \times 10^{-4}$  |  $-5.544 \times 10^{-3}$
+ Dif. más positiva      |  $+1.477 \times 10^{-4}$  |  $+7.412 \times 10^{-4}$
+
+
+                        |     Otro     |    FeenoX
+:-----------------------|:------------:|:------------:
+ Tiempo                 |     $54.2$ seg    |    $1.63$ seg
+ Error $L_2$            |   $6.937 \times 10^{-6}$  |   $6.797 \times 10^{-6}$
+ Dif. más negativa      |  $-6.504 \times 10^{-5}$  |  $-5.164 \times 10^{-5}$
+ Dif. más positiva      |  $+2.605 \times 10^{-5}$  |  $+3.196 \times 10^{-5}$
+
+
+
+## 5.2. El problema de Reed
+
+> **TL;DR:** Este problema tiene más curiosidad histórica que numérica. Es uno de los problemas más sencillos no triviales que podemos encontrar y sirve para mostrar que para tener en cuenta regiones vacías no se puede utilizar una formulación de difusión.
+
+![](reed-problem.svg)
+
+## 5.2. El problema de Reed
+
+```feenox
+# ordenadas discretas en una dimensión a un grupo de energías
+# leer N de la línea de comandos
+PROBLEM neutron_sn DIM 1 GROUPS 1 SN $1
+
+READ_MESH reed.msh  # leer la malla de este archivo
+ 
+# propiedades de materiales (todas uniformes por zona)
+MATERIAL source1       S1=50 Sigma_t1=50 Sigma_s1.1=0
+MATERIAL absorber      S1=0  Sigma_t1=5  Sigma_s1.1=0
+MATERIAL void          S1=0  Sigma_t1=0  Sigma_s1.1=0
+MATERIAL source2       S1=1  Sigma_t1=1  Sigma_s1.1=0.9
+MATERIAL reflector     S1=0  Sigma_t1=1  Sigma_s1.1=0.9
+
+# condiciones de contorno
+BC left  mirror
+BC right vacuum
+
+SOLVE_PROBLEM   # resolver el problema = construir matrices y resolver el sistema
+
+PRINT_FUNCTION phi1  # escribir la funcion phi1(x) en dos columnas ASCII
+```
+
+## 
+
+```terminal
+$ for N in 2 4 8; do feenox reed.fee $N | sort -g > reed-s$N.csv; done
+$
+```
+
+\centering ![](reed-flux.svg){height=7cm}
+
+
+## 5.3. IAEA PWR Benchmark
+
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+
+\vspace{1cm}
+
+> **TL;DR:** El problema original de 1976 propone resolver un cuarto de núcleo cuando en realidad la simetría es 1/8.
+
+:::
+
+::: {.column width="30%"}
+\centering ![](iaea-2dpwr-figure.svg)
+:::
+::::::::::::::
+
+
+Región | $D_1$ | $D_2$ | $\Sigma_{s1 \rightarrow 2}$ | $\Sigma_{a1}$ | $\Sigma_{a2}$ | $\nu\Sigma_{f2}$ | Material
+:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-------------:
+   1   |  1.5  |  0.4  | 0.02  | 0.01  | 0.08  | 0.135 | Fuel 1
+   2   |  1.5  |  0.4  | 0.02  | 0.01  | 0.085 | 0.135 | Fuel 2
+   3   |  1.5  |  0.4  | 0.02  | 0.01  | 0.13  | 0.135 | Fuel 2 + Rod
+   4   |  2.0  |  0.3  | 0.04  |  0    | 0.01  |   0   | Reflector
+   5   |  2.0  |  0.3  | 0.04  |  0    | 0.055 |   0   | Refl. + Rod
+
+## 5.3. IAEA PWR Benchmark (2D)
+
+```feenox-tiny
+PROBLEM neutron_diffusion 2D GROUPS 2
+
+DEFAULT_ARGUMENT_VALUE 1 quarter   # quarter o eighth
+READ_MESH iaea-2dpwr-$1.msh
+
+Bg2 = 0.8e-4  # buckling geometrico en la dirección z
+MATERIAL fuel1 {
+  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
+  D2=0.4    Sigma_a2=0.080+D2(x,y)*Bg2    nuSigma_f2=0.135   }
+
+MATERIAL fuel2 {
+  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
+  D2=0.4    Sigma_a2=0.085+D2(x,y)*Bg2    nuSigma_f2=0.135   }
+
+MATERIAL fuel2rod {
+  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
+  D2=0.4    Sigma_a2=0.130+D2(x,y)*Bg2    nuSigma_f2=0.135   }
+
+MATERIAL reflector {
+  D1=2.0    Sigma_a1=0.000+D1(x,y)*Bg2    Sigma_s1.2=0.04
+  D2=0.3    Sigma_a2=0.010+D2(x,y)*Bg2 }
+  
+BC external vacuum=0.4692
+BC mirror   mirror
+
+SOLVE_PROBLEM
+
+PRINT      "grados de libertad = " total_dofs
+PRINT %.5f "keff = " keff
+WRITE_RESULTS FORMAT vtk
+```
+
+## 5.4. El problema de Azmy
+
+## 5.5. [Benchmarks]{lang=en-US} de criticidad de Los Alamos
+
+## 5.6. Slab a dos zonas: efecto cúspide por dilución de XSs
+
+## 5.7. Estudios paramétricos: el reactor cubo-esferoidal
+
+## 5.8. Optimización: el problema de los pescaditos
+
+## 5.9. Verificación con el método de soluciones fabricadas
+
+## 5.10. PHWR de siete canales y tres barras de control inclinadas
+
+## 5.11. [Bonus track]{lang=en-US}: cinética puntual*
+
 
 
 ## Conclusiones
@@ -1828,10 +2053,33 @@ doc
 
 # Apéndices
 
+## JOSS
+
+```bib
+@article{feenox-2024,
+author = {Theler, Jeremy},
+doi = {10.21105/joss.05846},
+journal = {Journal of Open Source Software},
+month = mar,
+number = {95},
+pages = {5846},
+title = {{FeenoX: a cloud-first finite-element(ish) computational engineering tool}},
+url = {https://joss.theoj.org/papers/10.21105/joss.05846},
+volume = {9},
+year = {2024}
+}
+```
+
+<https://github.com/seamplex/feenox/blob/main/doc/joss/paper.md>
+
+<https://github.com/openjournals/joss-reviews/issues/5846#issuecomment-2090744884>
+
 
 ## Dirichlet BCs
 
-stack overflow
+\centering ![](stack.png){height=7cm}
+
+<https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
 
 ## English vs. Castellano
 
@@ -1854,7 +2102,7 @@ It does not mean anything particular, but
  * With some luck one can read "Finite ElEments NO-X"
  * With mode luck, "FrEE" (as in "free speech")
 
-### How should FeenoX be pronounced.
+### How should FeenoX be pronounced?
 
 It would be something like _fee_-_naaks_: /fiːnɒks/
 But whatever works for you is fine. 

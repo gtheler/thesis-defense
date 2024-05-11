@@ -29,6 +29,8 @@
  * agrandar terminal
  * ir al baño antes
  * apagar whatsapp
+ * configurar okular, no progress
+ * premio para el que sepa los nombres de ken & ritchie
 
  
 # Averiguar
@@ -45,11 +47,12 @@
  
 # Ideas
  
- * usar objetos! el libro de raymond?
+ * usar objetos! el libro de raymond y el de knuth
  * props
    a. objetivo: hace mejor la charla
    b. subjetivo: te hace tener más confianza a vos
-   
+ * regalar dos tazas
+ 
    
    
     
