@@ -1541,7 +1541,7 @@ if (strcasecmp(token, "laplace") == 0) {
 
 ## Input
 
-Input con [_keywords_]{lang=en-US} en inglés que deben 
+Entrada plain-text file con [_keywords_]{lang=en-US} en inglés que deben 
 
  #. definir completamente el problema de resolver
  #. ser lo más auto-descriptivas posible
@@ -1550,19 +1550,45 @@ Input con [_keywords_]{lang=en-US} en inglés que deben
  #. hacer que el archivo de entrada de un problema simple sea simple
  #. ... (ap. B.3.1)
 
+### Tipos de keywords 
  
  a. definiciones  (sustantivos)
- b. instrucciones (verbos)
+ b. instrucciones (verbos y condicionales)
 
 ## 
- 
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
 ```feenox
 f(x) = x^2
 PRINT f(1/2) f(1) f(2)
 ```
 
- 
- ```c
+```feenox
+INPUT_FILE surprise PATH nafems-le1%g.msh round(random(0,1))
+READ_MESH surprise
+PRINT cells
+```
+
+```feenox
+IF abs(b)<1e-20 THEN
+  PRINT "division by zero"
+  ABORT
+ENDIF
+PRINT a/b
+```
+:::
+
+. . .
+
+::: {.column width="55%"}
+
+\vspace{0.25cm}
+
+### There's an actual instruction pointer!
+
+```c
 // sweep the first & last range but minding the conditional blocks
 instruction_t *ip = first;
 while (ip != last) {
@@ -1576,34 +1602,190 @@ while (ip != last) {
   }
 }
 ```
-  
+:::
+::::::::::::::
+
+
 ## Conducción de calor 1D
 
-p 175
+```feenox
+PROBLEM thermal 1D               # 1. definir que la PDE es calor 1D
+READ_MESH slab.msh               # 2. leer la malla
+k = 1                            # 3. definir conductividad uniforme igual a uno
+BC left  T=0                     # 4. condiciones de contorno de Dirichlet
+BC right T=1                     #    "left" y "right" son nombres en la malla
+SOLVE_PROBLEM                    # 5. y 6. construir y resolver
+PRINT T(0.5)                     # 7. y 8. escribir en stdout la temperatura en x=0.5
+```
 
- 1. 
- 2.  
- 3. 
+. . .
+
+```terminal
+$ feenox thermal-slab-uniform-nosource.fee 
+0.5
+$ 
+```
+
+## Conductividad no uniforme
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+```feenox
+PROBLEM thermal 1D
+READ_MESH slab.msh
+k(x) = 1+x
+BC left  T=0
+BC right T=1
+SOLVE_PROBLEM
+PRINT T(1/2) log(1+1/2)/log(2)
+```
+
+```terminal
+$ feenox slab-space.fee 
+0.584959        0.584963
+$ 
+```
+
+:::
+::: {.column width="50%"}
+
+```feenox
+PROBLEM thermal 1D
+READ_MESH slab.msh
+k(x) = 1+T(x)
+BC left  T=0
+BC right T=1
+SOLVE_PROBLEM
+PRINT T(1/2) sqrt(1+(3*0.5))-1
+```
+
+```terminal
+$ feenox slab-temperature.fee 
+0.581139        0.581139
+$ 
+```
+:::
+::::::::::::::
+
+
+## El problema de Reed
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+```feenox-tiny
+#
+#     |         |    |         |    |         |
+#  m  | src= 50 | 0  |    0    | 1  |    0    |    v
+#  i  |         |    |         |    |         |    a
+#  r  | tot= 50 | 5  |    0    | 1  |    1    |    c
+#  r  |         |    |         |    |         |    u
+#  o  | scat=0  | 0  |    0    | 0.9|   0.9   |    u
+#  r  |         |    |         |    |         |    m
+#     |         |    |         |    |         |
+#     |    1    | 2  |    3    | 4  |    5    |
+#     |         |    |         |    |         |
+#     +---------+----+---------+----+---------+-------> x
+#    x=0       x=2  x=3       x=5  x=6       x=8   
+
+PROBLEM neutron_sn DIM 1 GROUPS 1 SN $1
+
+READ_MESH reed.msh
  
-columns
+MATERIAL source_abs    S1=50 Sigma_t1=50 Sigma_s1.1=0
+MATERIAL absorber      S1=0  Sigma_t1=5  Sigma_s1.1=0
+MATERIAL void          S1=0  Sigma_t1=0  Sigma_s1.1=0
+MATERIAL source_scat   S1=1  Sigma_t1=1  Sigma_s1.1=0.9
+MATERIAL reflector     S1=0  Sigma_t1=1  Sigma_s1.1=0.9
 
-p 176
+BC left  mirror
+BC right vacuum
 
-## Non-uniform k
+SOLVE_PROBLEM
 
-1+x
+FUNCTION ref(x) FILE reed-ref.csv INTERPOLATION steffen
+PRINT sqrt(integral((ref(x)-phi1(x))^2,x,0,8))/8
+```
+
+:::
+::: {.column width="50%"}
+
+\vspace{1.25cm}
+
+```terminal
+$ gmsh -1 reed.geo 
+[...]
+$ feenox reed.fee 2
+0.0505655
+$ feenox reed.fee 4
+0.0143718
+$ feenox reed.fee 6
+0.010242
+$ feenox reed.fee 8
+0.0102363
+$ 
+```
+:::
+::::::::::::::
+
+## Boostrap, configure & make
+
+:::::::::::::: {.columns}
+::: {.column width="80%"}
+
+```terminal-tiny
+$ git clone https://github.com/seamplex/feenox/
+[...]
+$ cd feenox
+$ ./autogen.sh
+[...]
+$ ./configure
+[...]
+$ make
+[...]
+$ make check
+[...]
+$
+```
+:::
+::: {.column width="20%"}
+![](bootstrap_marked.jpg)
+:::
+::::::::::::::
 
 
-1+T
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+![](tree.png)
+:::
 
-## Reed
+::: {.column width="75%"}
 
-feenox reed.fee 2
-4
-6
-8
+```bash-tiny
+for pde in *; do
+ if [ -d ${pde} ]; then
+  if [ ${first} -eq 0 ]; then
+    echo -n "  } else " >> parse.c
+  else
+    echo -n "  " >> parse.c
+  fi
+  cat << EOF >> parse.c
+if (strcasecmp(token, "${pde}") == 0) {
+  feenox.pde.parse_problem = feenox_problem_parse_problem_${pde};
+    
+EOF
+    
+  first=0
+ fi
+done
+```
+:::
+::::::::::::::
+
 
 ## Entry points
+
 
 PROBLEM neutron_sn dim xxxx
 

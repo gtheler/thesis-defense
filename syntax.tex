@@ -23,8 +23,8 @@
 \definecolor{awk_fondo}{rgb}{0.95,0.90,0.95}
 \definecolor{bash_fondo}{rgb}{0.85,0.95,0.85}
 
-\definecolor{terminal_fondo}{rgb}{0.95,0.95,0.95}
-\definecolor{terminal_fore}{rgb}{0,0,0}
+\definecolor{terminal_fondo}{rgb}{0.1,0.1,0.1}
+\definecolor{terminal_fore}{rgb}{1,1,1}
 
 
 \lstset{frameshape={RYR}{Y}{Y}{RYR}}
@@ -96,6 +96,28 @@
 \lstdefinestyle{bash}{
   language=bash,
   basicstyle=\ttfamily\footnotesize,
+  commentstyle={\color{bash_comment}\normalfont\textit},
+  keywordstyle=[1]{\color{bash_keyword1}\ttfamily\textbf},
+  keywordstyle=[2]{\color{bash_keyword2}\ttfamily\textbf},
+  backgroundcolor=\color{bash_fondo},
+  showstringspaces=true,
+  breaklines=true,
+  breakatwhitespace=true,
+  prebreak={\space\MyHookSign},
+  lineskip=-1pt,
+  captionpos=b,
+%   numbers=left,
+%   stepnumber=5,
+  xleftmargin=0.3cm,
+  xrightmargin=0.3cm,
+  framesep=0.2cm,
+  frame=single,
+}
+
+
+\lstdefinestyle{bash-tiny}{
+  language=bash,
+  basicstyle=\ttfamily\tiny,
   commentstyle={\color{bash_comment}\normalfont\textit},
   keywordstyle=[1]{\color{bash_keyword1}\ttfamily\textbf},
   keywordstyle=[2]{\color{bash_keyword2}\ttfamily\textbf},
