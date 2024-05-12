@@ -1431,6 +1431,7 @@ $$
  
 ![](transfer-zoom.svg)
 
+\bigskip
 . . .
 
 :::::::::::::: {.columns}
@@ -1444,7 +1445,9 @@ $$
 :::
 ::: {.column width="50%"}
 
-> Add complexity only where you must.
+### Unix philosophy
+
+Add complexity only where you must.
 
 :::
 ::::::::::::::
@@ -1488,6 +1491,8 @@ $$
 \bigskip
      
  * La PDE está dada por las llaves $\{ \}$
+ * i, ii y iii no dependen de la PDE
+ * el iv es mixto
      
 :::
 ::::::::::::::
@@ -1536,29 +1541,42 @@ if (strcasecmp(token, "laplace") == 0) {
 
 ## Input
 
-input, decisión de diseño
+Input con [_keywords_]{lang=en-US} en inglés que deben 
 
- * english-like
- * self-descriptive
- * etc.
+ #. definir completamente el problema de resolver
+ #. ser lo más auto-descriptivas posible
+ #. permitir una expresión algebraica en cualquier lugar donde se necesite un valor numérico
+ #. mantener una correspondencia uno a uno entre la definición "humana" del problema y el archivo de entrada
+ #. hacer que el archivo de entrada de un problema simple sea simple
+ #. ... (ap. B.3.1)
+
  
- * macro friendly
- * git friendly
+ a. definiciones  (sustantivos)
+ b. instrucciones (verbos)
+
+## 
  
-p 173 
+```feenox
+f(x) = x^2
+PRINT f(1/2) f(1) f(2)
+```
+
+ 
+ ```c
+// sweep the first & last range but minding the conditional blocks
+instruction_t *ip = first;
+while (ip != last) {
+  feenox_call(ip->routine(ip->argument));
   
- 1. 
- 2. 
- 3. 
- 4. 
- 5. 
- 
- 
-## Instrucciones y definiciones
-
- a. definiciones (sustantivos) -> parse time
- b. instrucciones (verbos) -> run time with an actual IP
- 
+  if (feenox.next_instruction != NULL) {
+    ip = feenox.next_instruction;
+    feenox.next_instruction = NULL;
+  } else {
+    ip = ip->next;
+  }
+}
+```
+  
 ## Conducción de calor 1D
 
 p 175
