@@ -963,7 +963,7 @@ $$
 
 . . .
 
-\centering Se abre concurso de las tazas
+\centering Se abre concurso
 
 
 ## 
@@ -1017,7 +1017,7 @@ $$
 
 . . .
 
-\centering Se cierra concurso de las tazas
+\centering Se cierra concurso
 
 ## 
 
@@ -1042,13 +1042,17 @@ $$
 \centering ![](temp-gen-4-0025.png)
 :::
 
-. . .
-
 ::: {.column width="33%"}
 
-\vspace{2cm}
+\vspace{1cm}
 
-![](cancun2018.jpg){height=7cm}
+\centering ![](fino.svg){width=65%}
+
+. . .
+
+\bigskip
+
+\centering ![](cancun2018.jpg){width=90%}
 
 :::
 ::::::::::::::
@@ -1786,49 +1790,164 @@ done
 
 ## Entry points
 
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 
-PROBLEM neutron_sn dim xxxx
 
-p 182
+```c-tiny
+// parse
+int (*parse_problem)(const char *token);
+int (*parse_write_results)(mesh_write_t *mesh_write, const char *token);
+int (*parse_bc)(bc_data_t *bc_data, const char *lhs, char *rhs);
 
-p 185
+// init
+int (*init_before_run)(void);
+int (*setup_pc)(PC pc);
+int (*setup_ksp)(KSP ksp);
+int (*setup_eps)(EPS eps);
+int (*setup_ts)(TS ksp);
 
-PRINT
+// build
+int (*element_build_volumetric)(element_t *e);
+int (*element_build_volumetric_at_gauss)(element_t *e, unsigned int q);
 
-## Entry points para
+// solve
+int (*solve)(void);
 
- 1. parse
- 2. init
- 3. build
- 4. solution, TS, SNES, KSP, EPS
- 5. post
- 
-show the header p 184
+// post
+int (*solve_post)(void);
+int (*gradient_fill)(void);
+int (*gradient_nodal_properties)(element_t *e, mesh_t *mesh);
+int (*gradient_alloc_nodal_fluxes)(node_t *node);
+int (*gradient_add_elemental_contribution_to_node)(node_t *node, element_t *e, unsigned int j, double rel_weight);
+int (*gradient_fill_fluxes)(mesh_t *mesh, size_t j_global);
+```
 
-## IAEA
+:::
+::: {.column width="50%"}
 
-momento 1/phi = 28 min
+```feenox 
+PROBLEM neutron_sn DIM 3 GROUPS 2 SN 8
+```
 
-resolver 2d iaea
-borrar src/pdes/diff
-recompilar
-make check
+```feenox-tiny
+PRINT "keff = " keff
+PRINT " rho = " (1-keff)/keff
+PRINT psi1.1(0,0,0) psi8.2(0,0,0)
+profile(x) = phi1(x,x,0)
+PRINT_FUNCTION profile phi1(x,0,0) MIN 0 MAX 20 NSTEPS 100
+```
 
-mostrar que no existe mas dif
+```c-tiny
+int Q = this->type->gauss[feenox.pde.mesh->integration].Q;
+for (unsigned int q = 0; q < Q; q++) {
+  feenox_call(feenox.pde.element_build_volumetric_at_gauss(this, q));
+}
+```
 
-cambiar un signo
-recompilar
-make check
+:::
+::::::::::::::
 
-## Algoritmos auxiliares
 
-## Everything's an expression
 
-funcionales
+## Everything’s an expression
 
-p 195
+```feenox
+PROBLEM neutron_diffusion DIMENSIONS 1+2 GROUPS sqrt(4)
+MATERIAL fuel nuSigma_f1=1+T(x,y,z)  nuSigma_f2=10-1e-2*(T(x,y,z)-T0)^2
+```
 
-comparar soluciones analíticas
+```feenox
+VAR t'
+f'(t) = derivative(f(t'),t',t)
+```
+
+```feenox
+# this integral is equal to 22/7-pi
+piapprox = 22/7-integral((x^4*(1-x)^4)/(1+x^2), x, 0, 1)
+```
+
+```feenox
+# the abraham sharp sum (twenty-one terms)
+piapprox = sum(2*(-1)^i * 3^(1/2-i)/(2*i+1), i, 0, 20)
+```
+
+```feenox
+PRINT %.7f func_min(cos(x)+1,x,0,6)
+```
+
+```feenox
+VECTOR kl[5]
+kl[i] = root(cosh(t)*cos(t)+1, t, 3*i-2,3*i+1)
+```
+
+## Comparación con soluciones analíticas
+
+:::::::::::::: {.columns}
+::: {.column width="60%"}
+
+
+```feenox-tiny
+# example of a 1D heat transient problem
+# from https://www.math.ubc.ca/~peirce/M257_316_2012_Lecture_20.pdf
+# T(0,t) = 0       for t < 1
+#          A*(t-1) for t > 1  
+# T(L,t) = 0
+# T(x,0) = 0
+READ_MESH slab-1d-0.1m.msh DIMENSIONS 1
+PROBLEM thermal
+end_time = 2
+
+k = 1                   # unitary non-dimensional properties
+rhocp = 1
+alpha = k/rhocp
+
+# initial condition
+T_0(x) = 0
+# analytical solution
+# example 20.2 equation 20.25
+A = 1.23456789
+L = 0.1
+N = 100
+T_a(x,t) = A*(t-1)*(1-x/L) + 2*A*L^2/(pi^3*alpha^2) * sum((exp(-alpha^2*(i*pi/L)^2*(t-1))-1)/i^3 * sin(i*pi*x/L), i, 1, N) 
+
+# boundary conditions
+BC left  T=if(t>1,A*(t-1),0)
+BC right T=0
+
+SOLVE_PROBLEM
+
+IF t>1 # the analytical solution overflows t<1
+ PRINT %.7f t T(0.5*L) T_a(0.5*L,t) T(0.5*L)-T_a(0.5*L,t)
+ENDIF
+```
+
+:::
+::: {.column width="40%"}
+
+```terminal-tiny
+$ feenox thermal-slab-transient.fee 
+1.0018730  0.0006274  0.0005100  0.0001174
+1.0047112  0.0021005  0.0021442  -0.0000436
+1.0072771  0.0036783  0.0037210  -0.0000427
+1.0097632  0.0052402  0.0052551  -0.0000150
+1.0131721  0.0073607  0.0073593  0.0000014
+1.0192879  0.0111393  0.0111345  0.0000048
+1.0315195  0.0186881  0.0186849  0.0000032
+1.0500875  0.0301491  0.0301466  0.0000025
+1.0872233  0.0530725  0.0530700  0.0000025
+1.1614950  0.0989193  0.0989167  0.0000026
+1.3100385  0.1906127  0.1906102  0.0000026
+1.6071253  0.3739997  0.3739971  0.0000026
+2.0000000  0.6165149  0.6165123  0.0000026
+$
+```
+
+:::
+::::::::::::::
+
+
+
 
 ## Funciones ($\neq$ "tabla")
 
@@ -1924,169 +2043,6 @@ doc
 :::
 ::::::::::::::
 
-
-## 5.1. Mapeo en mallas no conformes
-
-> **TL;DR:** Sobre la importancia de que FeenoX siga la filosofía Unix.
-
-![$n=10$](cube-20-10.png){width=49%} ![$n=20$](cube-10-20.png){width=49%}
-
-
-## 5.1. Mapeo en mallas no conformes
-
-```feenox
-READ_MESH cube-$2.msh
-f(x,y,z) = $1
-WRITE_MESH cube-$2-src.msh f
-```
-
-```feenox
-READ_MESH cube-$2-src.msh DIM 3 READ_FUNCTION f
-READ_MESH cube-$3.msh
-WRITE_MESH cube-$2-$3-dst.vtk f NAME error "abs(f(x,y,z)-($1))" MESH cube-$3.msh
-```
-
-```feenox
-READ_MESH cube-$2-src.msh DIM 3 READ_FUNCTION f
-READ_MESH cube-$3.msh
-WRITE_MESH cube-$2-$3-dst.vtk f NAME error "abs(f(x,y,z)-($1))" MESH cube-$3.msh
-```
-
-## 5.1. Mapeo en mallas no conformes
-
-                        |     Otro     |    FeenoX
-:-----------------------|:------------:|:------------:
- Tiempo                 |  $33.4$ seg    |    $7.24$ seg
- Error $L_2$            |   $2.859 \times 10^{-5}$  |   $2.901 \times 10^{-5}$
- Dif. más negativa      |  $-2.509 \times 10^{-4}$  |  $-5.544 \times 10^{-3}$
- Dif. más positiva      |  $+1.477 \times 10^{-4}$  |  $+7.412 \times 10^{-4}$
-
-
-                        |     Otro     |    FeenoX
-:-----------------------|:------------:|:------------:
- Tiempo                 |     $54.2$ seg    |    $1.63$ seg
- Error $L_2$            |   $6.937 \times 10^{-6}$  |   $6.797 \times 10^{-6}$
- Dif. más negativa      |  $-6.504 \times 10^{-5}$  |  $-5.164 \times 10^{-5}$
- Dif. más positiva      |  $+2.605 \times 10^{-5}$  |  $+3.196 \times 10^{-5}$
-
-
-
-## 5.2. El problema de Reed
-
-> **TL;DR:** Este problema tiene más curiosidad histórica que numérica. Es uno de los problemas más sencillos no triviales que podemos encontrar y sirve para mostrar que para tener en cuenta regiones vacías no se puede utilizar una formulación de difusión.
-
-![](reed-problem.svg)
-
-## 5.2. El problema de Reed
-
-```feenox
-# ordenadas discretas en una dimensión a un grupo de energías
-# leer N de la línea de comandos
-PROBLEM neutron_sn DIM 1 GROUPS 1 SN $1
-
-READ_MESH reed.msh  # leer la malla de este archivo
- 
-# propiedades de materiales (todas uniformes por zona)
-MATERIAL source1       S1=50 Sigma_t1=50 Sigma_s1.1=0
-MATERIAL absorber      S1=0  Sigma_t1=5  Sigma_s1.1=0
-MATERIAL void          S1=0  Sigma_t1=0  Sigma_s1.1=0
-MATERIAL source2       S1=1  Sigma_t1=1  Sigma_s1.1=0.9
-MATERIAL reflector     S1=0  Sigma_t1=1  Sigma_s1.1=0.9
-
-# condiciones de contorno
-BC left  mirror
-BC right vacuum
-
-SOLVE_PROBLEM   # resolver el problema = construir matrices y resolver el sistema
-
-PRINT_FUNCTION phi1  # escribir la funcion phi1(x) en dos columnas ASCII
-```
-
-## 
-
-```terminal
-$ for N in 2 4 8; do feenox reed.fee $N | sort -g > reed-s$N.csv; done
-$
-```
-
-\centering ![](reed-flux.svg){height=7cm}
-
-
-## 5.3. IAEA PWR Benchmark
-
-:::::::::::::: {.columns}
-::: {.column width="70%"}
-
-\vspace{1cm}
-
-> **TL;DR:** El problema original de 1976 propone resolver un cuarto de núcleo cuando en realidad la simetría es 1/8.
-
-:::
-
-::: {.column width="30%"}
-\centering ![](iaea-2dpwr-figure.svg)
-:::
-::::::::::::::
-
-
-Región | $D_1$ | $D_2$ | $\Sigma_{s1 \rightarrow 2}$ | $\Sigma_{a1}$ | $\Sigma_{a2}$ | $\nu\Sigma_{f2}$ | Material
-:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-------------:
-   1   |  1.5  |  0.4  | 0.02  | 0.01  | 0.08  | 0.135 | Fuel 1
-   2   |  1.5  |  0.4  | 0.02  | 0.01  | 0.085 | 0.135 | Fuel 2
-   3   |  1.5  |  0.4  | 0.02  | 0.01  | 0.13  | 0.135 | Fuel 2 + Rod
-   4   |  2.0  |  0.3  | 0.04  |  0    | 0.01  |   0   | Reflector
-   5   |  2.0  |  0.3  | 0.04  |  0    | 0.055 |   0   | Refl. + Rod
-
-## 5.3. IAEA PWR Benchmark (2D)
-
-```feenox-tiny
-PROBLEM neutron_diffusion 2D GROUPS 2
-
-DEFAULT_ARGUMENT_VALUE 1 quarter   # quarter o eighth
-READ_MESH iaea-2dpwr-$1.msh
-
-Bg2 = 0.8e-4  # buckling geometrico en la dirección z
-MATERIAL fuel1 {
-  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
-  D2=0.4    Sigma_a2=0.080+D2(x,y)*Bg2    nuSigma_f2=0.135   }
-
-MATERIAL fuel2 {
-  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
-  D2=0.4    Sigma_a2=0.085+D2(x,y)*Bg2    nuSigma_f2=0.135   }
-
-MATERIAL fuel2rod {
-  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
-  D2=0.4    Sigma_a2=0.130+D2(x,y)*Bg2    nuSigma_f2=0.135   }
-
-MATERIAL reflector {
-  D1=2.0    Sigma_a1=0.000+D1(x,y)*Bg2    Sigma_s1.2=0.04
-  D2=0.3    Sigma_a2=0.010+D2(x,y)*Bg2 }
-  
-BC external vacuum=0.4692
-BC mirror   mirror
-
-SOLVE_PROBLEM
-
-PRINT      "grados de libertad = " total_dofs
-PRINT %.5f "keff = " keff
-WRITE_RESULTS FORMAT vtk
-```
-
-## 5.4. El problema de Azmy
-
-## 5.5. [Benchmarks]{lang=en-US} de criticidad de Los Alamos
-
-## 5.6. Slab a dos zonas: efecto cúspide por dilución de XSs
-
-## 5.7. Estudios paramétricos: el reactor cubo-esferoidal
-
-## 5.8. Optimización: el problema de los pescaditos
-
-## 5.9. Verificación con el método de soluciones fabricadas
-
-## 5.10. PHWR de siete canales y tres barras de control inclinadas
-
-## 5.11. [Bonus track]{lang=en-US}: cinética puntual*
 
 
 
@@ -2310,5 +2266,170 @@ But whatever works for you is fine.
 ## History
 
 ## GDB session
+
+## Resultados
+
+## 5.1. Mapeo en mallas no conformes
+
+> **TL;DR:** Sobre la importancia de que FeenoX siga la filosofía Unix.
+
+![$n=10$](cube-20-10.png){width=49%} ![$n=20$](cube-10-20.png){width=49%}
+
+
+## 5.1. Mapeo en mallas no conformes
+
+```feenox
+READ_MESH cube-$2.msh
+f(x,y,z) = $1
+WRITE_MESH cube-$2-src.msh f
+```
+
+```feenox
+READ_MESH cube-$2-src.msh DIM 3 READ_FUNCTION f
+READ_MESH cube-$3.msh
+WRITE_MESH cube-$2-$3-dst.vtk f NAME error "abs(f(x,y,z)-($1))" MESH cube-$3.msh
+```
+
+```feenox
+READ_MESH cube-$2-src.msh DIM 3 READ_FUNCTION f
+READ_MESH cube-$3.msh
+WRITE_MESH cube-$2-$3-dst.vtk f NAME error "abs(f(x,y,z)-($1))" MESH cube-$3.msh
+```
+
+## 5.1. Mapeo en mallas no conformes
+
+                        |     Otro     |    FeenoX
+:-----------------------|:------------:|:------------:
+ Tiempo                 |  $33.4$ seg    |    $7.24$ seg
+ Error $L_2$            |   $2.859 \times 10^{-5}$  |   $2.901 \times 10^{-5}$
+ Dif. más negativa      |  $-2.509 \times 10^{-4}$  |  $-5.544 \times 10^{-3}$
+ Dif. más positiva      |  $+1.477 \times 10^{-4}$  |  $+7.412 \times 10^{-4}$
+
+
+                        |     Otro     |    FeenoX
+:-----------------------|:------------:|:------------:
+ Tiempo                 |     $54.2$ seg    |    $1.63$ seg
+ Error $L_2$            |   $6.937 \times 10^{-6}$  |   $6.797 \times 10^{-6}$
+ Dif. más negativa      |  $-6.504 \times 10^{-5}$  |  $-5.164 \times 10^{-5}$
+ Dif. más positiva      |  $+2.605 \times 10^{-5}$  |  $+3.196 \times 10^{-5}$
+
+
+
+## 5.2. El problema de Reed
+
+> **TL;DR:** Este problema tiene más curiosidad histórica que numérica. Es uno de los problemas más sencillos no triviales que podemos encontrar y sirve para mostrar que para tener en cuenta regiones vacías no se puede utilizar una formulación de difusión.
+
+![](reed-problem.svg)
+
+## 5.2. El problema de Reed
+
+```feenox
+# ordenadas discretas en una dimensión a un grupo de energías
+# leer N de la línea de comandos
+PROBLEM neutron_sn DIM 1 GROUPS 1 SN $1
+
+READ_MESH reed.msh  # leer la malla de este archivo
+ 
+# propiedades de materiales (todas uniformes por zona)
+MATERIAL source1       S1=50 Sigma_t1=50 Sigma_s1.1=0
+MATERIAL absorber      S1=0  Sigma_t1=5  Sigma_s1.1=0
+MATERIAL void          S1=0  Sigma_t1=0  Sigma_s1.1=0
+MATERIAL source2       S1=1  Sigma_t1=1  Sigma_s1.1=0.9
+MATERIAL reflector     S1=0  Sigma_t1=1  Sigma_s1.1=0.9
+
+# condiciones de contorno
+BC left  mirror
+BC right vacuum
+
+SOLVE_PROBLEM   # resolver el problema = construir matrices y resolver el sistema
+
+PRINT_FUNCTION phi1  # escribir la funcion phi1(x) en dos columnas ASCII
+```
+
+## 
+
+```terminal
+$ for N in 2 4 8; do feenox reed.fee $N | sort -g > reed-s$N.csv; done
+$
+```
+
+\centering ![](reed-flux.svg){height=7cm}
+
+
+## 5.3. IAEA PWR Benchmark
+
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+
+\vspace{1cm}
+
+> **TL;DR:** El problema original de 1976 propone resolver un cuarto de núcleo cuando en realidad la simetría es 1/8.
+
+:::
+
+::: {.column width="30%"}
+\centering ![](iaea-2dpwr-figure.svg)
+:::
+::::::::::::::
+
+
+Región | $D_1$ | $D_2$ | $\Sigma_{s1 \rightarrow 2}$ | $\Sigma_{a1}$ | $\Sigma_{a2}$ | $\nu\Sigma_{f2}$ | Material
+:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-------------:
+   1   |  1.5  |  0.4  | 0.02  | 0.01  | 0.08  | 0.135 | Fuel 1
+   2   |  1.5  |  0.4  | 0.02  | 0.01  | 0.085 | 0.135 | Fuel 2
+   3   |  1.5  |  0.4  | 0.02  | 0.01  | 0.13  | 0.135 | Fuel 2 + Rod
+   4   |  2.0  |  0.3  | 0.04  |  0    | 0.01  |   0   | Reflector
+   5   |  2.0  |  0.3  | 0.04  |  0    | 0.055 |   0   | Refl. + Rod
+
+## 5.3. IAEA PWR Benchmark (2D)
+
+```feenox-tiny
+PROBLEM neutron_diffusion 2D GROUPS 2
+
+DEFAULT_ARGUMENT_VALUE 1 quarter   # quarter o eighth
+READ_MESH iaea-2dpwr-$1.msh
+
+Bg2 = 0.8e-4  # buckling geometrico en la dirección z
+MATERIAL fuel1 {
+  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
+  D2=0.4    Sigma_a2=0.080+D2(x,y)*Bg2    nuSigma_f2=0.135   }
+
+MATERIAL fuel2 {
+  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
+  D2=0.4    Sigma_a2=0.085+D2(x,y)*Bg2    nuSigma_f2=0.135   }
+
+MATERIAL fuel2rod {
+  D1=1.5    Sigma_a1=0.010+D1(x,y)*Bg2    Sigma_s1.2=0.02
+  D2=0.4    Sigma_a2=0.130+D2(x,y)*Bg2    nuSigma_f2=0.135   }
+
+MATERIAL reflector {
+  D1=2.0    Sigma_a1=0.000+D1(x,y)*Bg2    Sigma_s1.2=0.04
+  D2=0.3    Sigma_a2=0.010+D2(x,y)*Bg2 }
+  
+BC external vacuum=0.4692
+BC mirror   mirror
+
+SOLVE_PROBLEM
+
+PRINT      "grados de libertad = " total_dofs
+PRINT %.5f "keff = " keff
+WRITE_RESULTS FORMAT vtk
+```
+
+## 5.4. El problema de Azmy
+
+## 5.5. [Benchmarks]{lang=en-US} de criticidad de Los Alamos
+
+## 5.6. Slab a dos zonas: efecto cúspide por dilución de XSs
+
+## 5.7. Estudios paramétricos: el reactor cubo-esferoidal
+
+## 5.8. Optimización: el problema de los pescaditos
+
+## 5.9. Verificación con el método de soluciones fabricadas
+
+## 5.10. PHWR de siete canales y tres barras de control inclinadas
+
+## 5.11. [Bonus track]{lang=en-US}: cinética puntual*
 
 
