@@ -1943,68 +1943,36 @@ $ feenox thermal-slab-transient.fee
 $
 ```
 
+. . .
+
+\centering “Verification of multigroup neutron diffusion codes with MMS”
+
+\centering \small <https://github.com/gtheler/2023-garcar>
+
+
 :::
 ::::::::::::::
 
 
+## Extras
 
+ * 4.2.2. Funciones ($\neq$ "tabla")
+    a. Definidas algebraicamente
+    b. Definidas por puntos
+       - sin topología
+       - con topología implítica
+       - con topología explícita
+ * 4.3.1. Licencia libre y abierta
+ * 4.3.2. Filosofía Unix
+ * 4.3.3. Simulación programática
+ * 4.3.4. Performance
+ * 4.3.5. Escalabilidad
+ * 4.3.6. Ejecución en la nube
+ * 4.3.7. Extensibilidad
+ * 4.3.8. Integración continua
+ * 4.3.9. Documentación
 
-## Funciones ($\neq$ "tabla")
-
-least surprise
-
- 1. algebra
- 2. pointwise
-    a. sin topología
-    b. con topología implítica
-    c. con topología explícita
-    
-## Output
-
-Unix rule of silence!
-
-
-## Otras cosas
-
- 4.3.1. licencia
- 4.3.2. unix
- 4.3.3. sim prog
- 4.3.4. performance
- 4.3.5. escalabilidad
- 4.3.6. cloud
- 4.3.7. extensibilidad
- 4.3.8. CI
- 4.3.9. doc
- 
-## Escalabilidad
-
-
-MPI = para memoria
-
-Turing-complete se puede hacer, como? out-of-memory 
-
-
-### Perfomance
-
-le ganamos a casi todos, pero hay que volver
-
-    
-## TODO
-
-secondary fields, gauss-node extrapolation
-
-interpolation of pointwise data
-
-ver qué más quedó afuera
-
-
-## QA
-
-CI
-
-make check
-
-doc
+### Ver qué más quedó afuera 
 
 
 # Resultados
