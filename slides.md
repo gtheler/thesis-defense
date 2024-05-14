@@ -2185,6 +2185,11 @@ input fee & python
 :::
 ::::::::::::::
 
+. . .
+
+\centering 
+>  “No es lo mismo _escribir_ manuales que leer manuales”
+
  
 ## Tweets / Mastodons
 
@@ -2198,9 +2203,9 @@ input fee & python
 
 ::: {.column width="55%"}
 
- * cloud first != cloud friendly
- * free != gratis
- * MPI != speed
+ * cloud first $\neq$ cloud friendly
+ * free $\neq$gratis
+ * MPI $\neq$ speed
  * extensibilidad con `src/pdes`
  * lo que Markdown es a Word, Docs & TeX
 

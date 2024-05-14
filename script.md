@@ -700,7 +700,7 @@ Cuando lo interrumpí para que elabore me explicó, palabras más palabras menos
 
 . . .
 
-Según Richard Stallman, lo importante es la _libertad_ de poder modificar el código para que el software se comporte como uno necesita.
+Según Richard Stallman (no es Roqueta, es Stallman), lo importante es la _libertad_ de poder modificar el código para que el software se comporte como uno necesita.
 Y si uno no sabe programar, poder tener la _libertad_ de contratar a alguien que lo haga.
 
 . . .
@@ -933,6 +933,9 @@ mostramos autogen? sí
 
 ## Resultados
 
+
+
+
 cap 6
 lolich dijo en una reuniñon de consejo académico que este instituto tenía que formar los profesionales que escriben los manuales y los otros institutos tenían que formar los que los lean
 leer y escribir manuales = entender la teoria de la relatividad y descubrirla
@@ -945,6 +948,26 @@ Y peor aún, a veces veo que el que yo pensaba que estaba adentro, está afuera.
 
 Elegir algunos, preguntar cuáles
 5 min por problema
+
+## IAEA
+
+Onshape
+mostrar 3d interactivo?
+
+##  Slab a dos zonas
+
+unificar el svg para alinear los slabs
+
+## Cube-sphere
+
+se mantiene el volumen
+
+tenemos que hacer con el chaco el circular/hexahedrico
+
+## Tres pescaditos
+
+## PHWR
+
 
 
 ---
