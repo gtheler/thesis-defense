@@ -961,10 +961,6 @@ $$
 
 ![](ritchie-thompson.jpg)
 
-. . .
-
-\centering Se abre concurso
-
 
 ## 
 
@@ -1015,9 +1011,6 @@ $$
 :::
 ::::::::::::::
 
-. . .
-
-\centering Se cierra concurso
 
 ## 
 
@@ -1496,7 +1489,7 @@ Add complexity only where you must.
      
  * La PDE está dada por las llaves $\{ \}$
  * i, ii y iii no dependen de la PDE
- * el iv es mixto
+ * el iv un poco y un poco
      
 :::
 ::::::::::::::
@@ -1826,9 +1819,13 @@ int (*gradient_fill_fluxes)(mesh_t *mesh, size_t j_global);
 :::
 ::: {.column width="50%"}
 
+\bigskip
+
 ```feenox 
 PROBLEM neutron_sn DIM 3 GROUPS 2 SN 8
 ```
+
+\bigskip
 
 ```feenox-tiny
 PRINT "keff = " keff
@@ -1838,10 +1835,12 @@ profile(x) = phi1(x,x,0)
 PRINT_FUNCTION profile phi1(x,0,0) MIN 0 MAX 20 NSTEPS 100
 ```
 
+\bigskip
+
 ```c-tiny
 int Q = this->type->gauss[feenox.pde.mesh->integration].Q;
 for (unsigned int q = 0; q < Q; q++) {
-  feenox_call(feenox.pde.element_build_volumetric_at_gauss(this, q));
+  feenox.pde.element_build_volumetric_at_gauss(this, q);
 }
 ```
 
@@ -1925,6 +1924,8 @@ ENDIF
 :::
 ::: {.column width="40%"}
 
+\bigskip
+
 ```terminal-tiny
 $ feenox thermal-slab-transient.fee 
 1.0018730  0.0006274  0.0005100  0.0001174
@@ -1945,6 +1946,8 @@ $
 
 . . .
 
+\bigskip
+
 \centering “Verification of multigroup neutron diffusion codes with MMS”
 
 \centering \small <https://github.com/gtheler/2023-garcar>
@@ -1953,10 +1956,43 @@ $
 :::
 ::::::::::::::
 
+## No `PRINT` no shirt
+
+```feenox-tiny
+t0 = clock() # start measuring wall time
+PROBLEM neutron_diffusion 3D GROUPS 2
+
+DEFAULT_ARGUMENT_VALUE 1 quarter
+READ_MESH iaea-3dpwr-$1.msh
+
+MATERIAL fuel1     D1=1.5 D2=0.4 Sigma_s1.2=0.02 Sigma_a1=0.01 Sigma_a2=0.08  nuSigma_f2=0.135
+MATERIAL fuel2     D1=1.5 D2=0.4 Sigma_s1.2=0.02 Sigma_a1=0.01 Sigma_a2=0.085 nuSigma_f2=0.135
+MATERIAL fuel2rod  D1=1.5 D2=0.4 Sigma_s1.2=0.02 Sigma_a1=0.01 Sigma_a2=0.13  nuSigma_f2=0.135
+MATERIAL reflector D1=2.0 D2=0.3 Sigma_s1.2=0.04 Sigma_a1=0    Sigma_a2=0.01  nuSigma_f2=0
+MATERIAL reflrod   D1=2.0 D2=0.3 Sigma_s1.2=0.04 Sigma_a1=0    Sigma_a2=0.055 nuSigma_f2=0
+  
+BC vacuum   vacuum=0.4692
+BC mirror   mirror
+
+SOLVE_PROBLEM
+
+# --- print results   ----------------------------------------------------
+WRITE_RESULTS FORMAT vtk
+PRINTF "  keff = %.5f" keff
+PRINTF " nodes = %g"   nodes
+PRINTF "memory = %.1f Gb" memory()
+PRINTF "  wall = %.1f sec" clock()-t0
+# ------------------------------------------------------------------------
+```
+
+
 
 ## Extras
 
- * 4.2.2. Funciones ($\neq$ "tabla")
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+ * 4.2.2. Funciones ($\neq$ "tablas")
     a. Definidas algebraicamente
     b. Definidas por puntos
        - sin topología
@@ -1972,10 +2008,15 @@ $
  * 4.3.8. Integración continua
  * 4.3.9. Documentación
 
+:::
+::: {.column width="50%"}
 ### Ver qué más quedó afuera 
 
+:::
+:::::::::::::: 
 
-# Resultados
+
+# Resultados (algunos)
 
 ## 
 
@@ -2011,6 +2052,86 @@ $
 :::
 ::::::::::::::
 
+## 
+
+![](iaea-3dpwr-onshape.png)
+
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="33%"}
+\centering ![](iaea-3dpwr-eighth-circular-mesh1.png)
+:::
+::: {.column width="34%"}
+\centering ![](iaea-3dpwr-eighth-circular-mesh2.png)
+:::
+::: {.column width="33%"}
+\centering ![](iaea-3dpwr-eighth-circular-mesh3.png)
+:::
+::::::::::::::
+
+
+## 
+
+
+![](uno-dos.png)
+
+## Slab a dos zonas
+
+:::::::::::::: {.columns}
+::: {.column width="40%"}
+
+\centering ![](two-zone-slab.svg)
+
+\centering ![](dilucion4.svg){width=75%}
+
+:::
+::: {.column width="60%"}
+
+\bigskip
+
+![](two-zone-slab-error.svg)
+
+
+\vspace{1cm}
+
+> “The best way to solve a problem is to avoid it in the first place.”
+>
+> \hfill RMS
+
+:::
+::::::::::::::
+
+## El reactor Cubo-esferoidal
+
+:::::::::::::: {.columns}
+::: {.column width="20%"}
+\centering \onslide<1->{\includegraphics{cubesphere-0.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<3->{\includegraphics{cubesphere-25.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<3->{\includegraphics{cubesphere-50.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<3->{\includegraphics{cubesphere-75.png}}
+:::
+::: {.column width="20%"}
+\centering \onslide<2->{\includegraphics{cubesphere-100.png}}
+:::
+::::::::::::::
+
+\centering \onslide<4->{\includegraphics[width=0.9\linewidth]{cubesphere.pdf}}
+
+
+## 
+
+input fee & python
+
+## El problema de los tres pescaditos
+
+## PHWR de siete canales y tres barras de control inclinadas
 
 
 
