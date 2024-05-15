@@ -1931,7 +1931,7 @@ $
 :::
 ::::::::::::::
 
-## No `PRINT` no shirt
+## Unix rule of silence: no `PRINT` no shirt
 
 ```feenox-tiny
 t0 = clock() # start measuring wall time
@@ -2051,18 +2051,43 @@ PRINTF "  wall = %.1f sec" clock()-t0
 
 ![](uno-dos.png)
 
-## 
+## MPI $\neq$ speed but _memory_
 
-mostrar mpi
+```terminal-tiny
+$ mpiexec -n 1 feenox iaea-3dpwr.fee quarter
+geometry = quarter
+    keff = 1.02918
+   nodes = 70779
+    DOFs = 141558
+[0/1 tux]   memory = 2.3 Gb (local) 2.3 Gb (global)
+    wall = 26.2 sec
+$ mpiexec -n 2 feenox iaea-3dpwr.fee quarter
+geometry = quarter
+    keff = 1.02918
+   nodes = 70779
+    DOFs = 141558
+[0/2 tux]   memory = 1.5 Gb (local) 3.0 Gb (global)
+[1/2 tux]   memory = 1.5 Gb (local) 3.0 Gb (global)
+    wall = 17.0 sec
+$ mpiexec -n 4 feenox iaea-3dpwr.fee quarter
+geometry = quarter
+    keff = 1.02918
+   nodes = 70779
+    DOFs = 141558
+[0/4 tux]   memory = 1.0 Gb (local) 3.9 Gb (global)
+[1/4 tux]   memory = 0.9 Gb (local) 3.9 Gb (global)
+[2/4 tux]   memory = 1.1 Gb (local) 3.9 Gb (global)
+[3/4 tux]   memory = 0.9 Gb (local) 3.9 Gb (global)
+    wall = 13.0 sec
+$ 
+```
 
 ## Slab a dos zonas
 
 :::::::::::::: {.columns}
 ::: {.column width="40%"}
 
-\centering ![](two-zone-slab.svg)
-
-\centering ![](dilucion4.svg){width=75%}
+![](two-zone-slab.svg)
 
 :::
 ::: {.column width="60%"}
@@ -2106,12 +2131,266 @@ mostrar mpi
 
 ## 
 
-input fee & python
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+\vspace{1cm}
+
+```feenox
+PROBLEM neutron_diffusion DIM 3
+READ_MESH cubesphere-$1.msh DIM 3
+
+D1 = 1.03453E+00
+Sigma_a1 = 5.59352E-03
+nuSigma_f1 = 6.68462E-03
+Sigma_s1.1 = 3.94389E-01
+
+PHYSICAL_GROUP fuel DIM 3
+BC internal    mirror
+BC external    vacuum
+
+SOLVE_PROBLEM
+
+PRINT HEADER $1 keff 1e5*(keff-1)/keff fuel_volume
+```
+:::
+
+::: {.column width="50%"}
+```python-tiny
+import os
+import math
+import gmsh
+
+def create_mesh(vol, f100):
+  gmsh.initialize()
+  gmsh.option.setNumber("General.Terminal", 0)  
+  
+  f = 0.01*f100
+  # cuánto tiene que vale a para mantener el volumen constante?
+  a = (vol / (1/8*4/3*math.pi*f**3 + 3*1/4*math.pi*f**2*(1-f) + 3*f*(1-f)**2 + (1-f)**3))**(1.0/3.0)
+  
+  gmsh.model.add("cubesphere")
+  gmsh.model.occ.addBox(0, 0, 0, a, a, a, 1)
+  gmsh.model.occ.fillet([1], [12, 7, 6], [f*a], True)
+  internal = [1,4,6]
+  external = [2,3,5,7,8,9,10]
+
+  gmsh.model.addPhysicalGroup(3, [1], 1)  
+  gmsh.model.setPhysicalName(3, 1, "fuel")
+    
+  gmsh.model.addPhysicalGroup(2, internal, 2)  
+  gmsh.model.setPhysicalName(2, 2, "internal")
+  gmsh.model.addPhysicalGroup(2, external, 3)  
+  gmsh.model.setPhysicalName(2, 3, "external")
+  
+  gmsh.model.occ.synchronize()
+  gmsh.model.mesh.generate(3)
+  gmsh.write("cubesphere-%g.msh"%(f))  
+  gmsh.finalize()
+  return
+
+
+for f100 in range(0,101,5):
+  create_mesh(100**3, f100)
+  os.system("feenox cubesphere.fee %g"%(f100))
+``` 
+:::
+::::::::::::::
+
+
 
 ## El problema de los tres pescaditos
 
-## PHWR de siete canales y tres barras de control inclinadas
+\centering ![](tres-pescaditos.svg){height=8cm}
 
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+```python-tiny
+#!/usr/bin/python
+from scipy.optimize import minimize 
+import numpy as np
+import subprocess
+
+def keff(x3):
+  r = subprocess.run(["bash", "tres.sh", "(%s)" % str(x3[0]), "(%s)" % str(x3[1])], stdout=subprocess.PIPE)
+  k = float(r.stdout.decode('utf-8'))
+  return k
+
+x3_0 = [+25, -25]
+result = minimize(keff, x3_0, method="nelder-mead")
+print(result)
+```
+
+:::
+
+::: {.column width="50%"}
+```bash-tiny
+#!/bin/bash
+cat << EOF > x3.geo 
+x3 = $1;
+y3 = $2;
+EOF
+gmsh -2 -v 0 tres-pescaditos.geo
+feenox tres-pescaditos.fee
+```
+
+```feenox-tiny
+PROBLEM neutron_diffusion 2D
+READ_MESH tres-pescaditos.msh
+MATERIAL fuel       D1=1   Sigma_a1=0.02  nuSigma_f1=0.03
+MATERIAL pescadito  D1=0.9 Sigma_a1=0.10
+BC external null
+SOLVE_PROBLEM
+PRINT %.8f keff
+```
+
+:::
+::::::::::::::
+
+
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+![](tres3d-1.svg) 
+:::
+
+::: {.column width="50%"}
+![](tres3d-2.svg)
+:::
+::::::::::::::
+
+
+
+
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="22%"}
+![](phwr-geo.png){width=85%}
+:::
+
+::: {.column width="22%"}
+![](phwr-geo-cad3.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-geo-cad2.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-geo-cad1.png)
+:::
+::::::::::::::
+
+
+:::::::::::::: {.columns}
+::: {.column width="22%"}
+![](phwr-mesh1.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-mesh2.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-mesh3.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-mesh4.png)
+:::
+::::::::::::::
+
+## $\Sigma_\text{mod}(T)$
+
+:::::::::::::: {.columns}
+::: {.column width="20%"}
+:::
+
+::: {.column width="80%"}
+
+```feenox
+Tmod0 = 100
+Tmod(z) = 100 + (200-100)*(z/400)
+FUNCTION sigmat_mod(T) INTERPOLATION linear DATA {
+90  0.108
+100 0.112
+110 0.116
+130 0.118
+180 0.120
+200 0.122 }
+
+MATERIAL moderator {
+  Sigma_t1=0.068
+  Sigma_t2=sigmat_mod(Tmod(z))
+  Sigma_s1.1=0.06+1e-5*(Tmod(z)-Tmod0)
+  Sigma_s1.2=0.002
+  Sigma_s2.1=0
+  Sigma_s2.2=sigmat_mod(Tmod(z))-0.005
+  nuSigma_f1=0
+  nuSigma_f2=0
+}
+```
+:::
+::::::::::::::
+
+
+
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="22%"}
+![](phwr-dif-phi1-200.png){width=85%}
+:::
+
+::: {.column width="22%"}
+![](phwr-dif-phi1-300.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-dif-phi1-400.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-dif-phi1-500.png)
+:::
+::::::::::::::
+
+
+:::::::::::::: {.columns}
+::: {.column width="22%"}
+![](phwr-dif-phi2-200.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-dif-phi2-300.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-dif-phi2-400.png)
+:::
+
+::: {.column width="22%"}
+![](phwr-dif-phi2-500.png)
+:::
+::::::::::::::
+
+## 
+
+
+Formulación     |  DOFs   | Problema  |   Build   |   Solve   |   Total   |   Mem.
+:-------------------|:---------:|:------------:|------------:|------------:|------------:|------------:
+Difusión        |  257k   |   KSP     |     3.2 s  |     7.9 s  |    12.5 s   |    0.7 Gb
+                |         |   EPS     |     6.3 s  |    87.4 s  |    95.2 s   |    6.5 Gb
+S$_2$           |  257k   |   KSP     |    24.8 s  |   219.3 s  |   246.3 s   |   18.0 Gb
+                |         |   EPS     |    30.6 s  |   256.3 s  |   290.9 s   |   18.0 Gb
+S$_4$           |  256k   |   KSP     |    54.3 s  |   171.8 s  |   227.1 s   |   16.3 Gb
+                |         |   EPS     |    57.2 s  |   357.2 s  |   415.5 s   |   20.1 Gb
+
+
+\centering ![](mpi.pdf){height=4cm}
 
 
 ## Conclusiones
@@ -2248,6 +2527,7 @@ input fee & python
  * problemas de optimización
  * condiciones de contorno multi-punto
  * otras PDEs
+ * estudio de solvers en GPUs/APUs
  * mejoramiento de la integración continua
  * XSs condensadas en mallas no estructuradas
  * FeenoX en cadenas de cálculo neutrónico

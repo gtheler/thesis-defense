@@ -3,7 +3,7 @@
 
 <svg
    width="456.94138"
-   height="327.70975"
+   height="572.5108"
    id="svg2"
    version="1.1"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
@@ -23,15 +23,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3753906"
-     inkscape:cx="187.21954"
-     inkscape:cy="154.13803"
+     inkscape:zoom="0.97254802"
+     inkscape:cx="69.919427"
+     inkscape:cy="313.60919"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1051"
-     inkscape:window-x="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="2"
@@ -60,10 +60,10 @@
     </marker>
     <inkscape:perspective
        id="perspective24"
-       inkscape:persp3d-origin="372.04724 : -373.86505 : 1"
-       inkscape:vp_z="744.09448 : -198.47135 : 1"
+       inkscape:persp3d-origin="372.04724 : -129.06399 : 1"
+       inkscape:vp_z="744.09448 : 46.329706 : 1"
        inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_x="0 : -198.47135 : 1"
+       inkscape:vp_x="0 : 46.329706 : 1"
        sodipodi:type="inkscape:persp3d" />
     <marker
        style="overflow:visible"
@@ -443,6 +443,106 @@
                id="id-d9ee7847-ada0-4358-9827-2b30b54b051b" />
           </g>
         </g>
+      </g>
+    </g>
+    <g
+       id="g703"
+       transform="translate(0,42)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path14"
+         style="fill:#5da7cc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.40234"
+         d="M 221.61388,386.28756 H 380.61574 V 545.28942 H 221.61388 Z" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path16"
+         style="fill:#a1d6cb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.40234"
+         d="M 380.61574,386.28756 H 539.6176 V 545.28942 H 380.61574 Z" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path18"
+         style="fill:#ffeb80;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.40234"
+         d="m 380.61574,386.28756 h 39.74801 v 159.00186 h -39.74801 z" />
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g20">
+        <path
+           inkscape:connector-curvature="0"
+           id="path22"
+           style="fill:none;stroke:#000000;stroke-width:2.83455;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           d="M 1.418,0 V -141.727" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g24">
+        <path
+           inkscape:connector-curvature="0"
+           id="path26"
+           style="fill:none;stroke:#000000;stroke-width:2.83455;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           d="M 228.184,0 V -141.727" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g28">
+        <path
+           inkscape:connector-curvature="0"
+           id="path30"
+           style="fill:none;stroke:#000000;stroke-width:0.472425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0.94485, 2.83455;stroke-dashoffset:2.83455;stroke-opacity:1"
+           d="M 29.766,-14.172 V -127.555" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g32">
+        <path
+           inkscape:connector-curvature="0"
+           id="path34"
+           style="fill:none;stroke:#000000;stroke-width:0.472425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0.94485, 2.83455;stroke-dashoffset:2.83455;stroke-opacity:1"
+           d="M 58.109,-14.172 V -127.555" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g36">
+        <path
+           inkscape:connector-curvature="0"
+           id="path38"
+           style="fill:none;stroke:#000000;stroke-width:0.472425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0.94485, 2.83455;stroke-dashoffset:2.83455;stroke-opacity:1"
+           d="M 86.453,-14.172 V -127.555" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g40">
+        <path
+           inkscape:connector-curvature="0"
+           id="path42"
+           style="fill:none;stroke:#000000;stroke-width:0.472425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0.94485, 2.83455;stroke-dashoffset:2.83455;stroke-opacity:1"
+           d="M 114.801,-14.172 V -127.555" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g44">
+        <path
+           inkscape:connector-curvature="0"
+           id="path46"
+           style="fill:none;stroke:#000000;stroke-width:0.472425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0.94485, 2.83455;stroke-dashoffset:2.83455;stroke-opacity:1"
+           d="M 171.492,-14.172 V -127.555" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g48">
+        <path
+           inkscape:connector-curvature="0"
+           id="path50"
+           style="fill:none;stroke:#000000;stroke-width:0.472425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0.94485, 2.83455;stroke-dashoffset:2.83455;stroke-opacity:1"
+           d="M 199.836,-14.172 V -127.555" />
+      </g>
+      <g
+         transform="matrix(1.402343,0,0,-1.402343,219.62536,366.41339)"
+         id="g52">
+        <path
+           inkscape:connector-curvature="0"
+           id="path54"
+           style="fill:none;stroke:#000000;stroke-width:0.472425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0.94485, 2.83455;stroke-dashoffset:2.83455;stroke-opacity:1"
+           d="M 143.145,-14.172 V -127.555" />
       </g>
     </g>
   </g>
