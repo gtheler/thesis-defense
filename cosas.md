@@ -52,7 +52,7 @@
    a. objetivo: hace mejor la charla
    b. subjetivo: te hace tener más confianza a vos
  * regalar dos tazas
- 
+ * en front cover poner mazes y domain staircase
    
    
     

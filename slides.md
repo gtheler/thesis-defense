@@ -1849,38 +1849,17 @@ for (unsigned int q = 0; q < Q; q++) {
 
 
 
-## Everything’s an expression
+
+## 
+
+\medskip
 
 ```feenox
 PROBLEM neutron_diffusion DIMENSIONS 1+2 GROUPS sqrt(4)
 MATERIAL fuel nuSigma_f1=1+T(x,y,z)  nuSigma_f2=10-1e-2*(T(x,y,z)-T0)^2
 ```
 
-```feenox
-VAR t'
-f'(t) = derivative(f(t'),t',t)
-```
-
-```feenox
-# this integral is equal to 22/7-pi
-piapprox = 22/7-integral((x^4*(1-x)^4)/(1+x^2), x, 0, 1)
-```
-
-```feenox
-# the abraham sharp sum (twenty-one terms)
-piapprox = sum(2*(-1)^i * 3^(1/2-i)/(2*i+1), i, 0, 20)
-```
-
-```feenox
-PRINT %.7f func_min(cos(x)+1,x,0,6)
-```
-
-```feenox
-VECTOR kl[5]
-kl[i] = root(cosh(t)*cos(t)+1, t, 3*i-2,3*i+1)
-```
-
-## Comparación con soluciones analíticas
+. . .
 
 :::::::::::::: {.columns}
 ::: {.column width="60%"}
@@ -1888,7 +1867,6 @@ kl[i] = root(cosh(t)*cos(t)+1, t, 3*i-2,3*i+1)
 
 ```feenox-tiny
 # example of a 1D heat transient problem
-# from https://www.math.ubc.ca/~peirce/M257_316_2012_Lecture_20.pdf
 # T(0,t) = 0       for t < 1
 #          A*(t-1) for t > 1  
 # T(L,t) = 0
@@ -1897,21 +1875,18 @@ READ_MESH slab-1d-0.1m.msh DIMENSIONS 1
 PROBLEM thermal
 end_time = 2
 
-k = 1                   # unitary non-dimensional properties
+k = 1                         # unitary non-dimensional properties
 rhocp = 1
 alpha = k/rhocp
 
-# initial condition
-T_0(x) = 0
-# analytical solution
-# example 20.2 equation 20.25
-A = 1.23456789
+T_0(x) = 0                    # initial condition
+
+A = 1.23456789                # analytical solution
 L = 0.1
 N = 100
 T_a(x,t) = A*(t-1)*(1-x/L) + 2*A*L^2/(pi^3*alpha^2) * sum((exp(-alpha^2*(i*pi/L)^2*(t-1))-1)/i^3 * sin(i*pi*x/L), i, 1, N) 
 
-# boundary conditions
-BC left  T=if(t>1,A*(t-1),0)
+BC left  T=if(t>1,A*(t-1),0)  # boundary conditions
 BC right T=0
 
 SOLVE_PROBLEM
@@ -2045,9 +2020,9 @@ PRINTF "  wall = %.1f sec" clock()-t0
 :::
 ::: {.column width="25%"}
 
- ● requerido
- ○ recomendado
- ◌ opcional
+ ● requerido  
+ ○ recomendado  
+ ◌ opcional  
 
 :::
 ::::::::::::::
@@ -2075,6 +2050,10 @@ PRINTF "  wall = %.1f sec" clock()-t0
 
 
 ![](uno-dos.png)
+
+## 
+
+mostrar mpi
 
 ## Slab a dos zonas
 
@@ -2182,13 +2161,17 @@ input fee & python
  2. mallas no estructuradas
  3. de tamaño arbitrario con MPI
 
+\vspace{1cm}
+
+. . . 
+ 
+\centering “No es lo mismo leer manuales que _escribir_ manuales”
+
 :::
 ::::::::::::::
 
-. . .
 
-\centering 
->  “No es lo mismo _escribir_ manuales que leer manuales”
+
 
  
 ## Tweets / Mastodons
@@ -2203,11 +2186,12 @@ input fee & python
 
 ::: {.column width="55%"}
 
- * cloud first $\neq$ cloud friendly
- * free $\neq$gratis
- * MPI $\neq$ speed
- * extensibilidad con `src/pdes`
- * lo que Markdown es a Word, Docs & TeX
+ #. cloud first $\neq$ cloud friendly
+ #. free $\neq$gratis
+ #. MPI $\neq$ speed
+ #. extensibilidad $\therefore$ `src/pdes`
+ #. lo que Markdown $\propto$ Word $\wedge$ TeX
+ #. $\exists$ paper $\in$ JOSS
 
 :::
 
