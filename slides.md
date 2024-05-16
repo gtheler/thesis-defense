@@ -1262,17 +1262,22 @@ $$
  
 ## Unix philosophy (sec 4.3.2, ap. B.1.2 & ap. C)
 
-:::: {lang=en-US}
+:::::::::::::: {.columns}
+::: {.column width="42.5%"}
  i. Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new features.
  ii. Expect the output of every program to become the input to another, as yet unknown, program.
-     * Don't clutter output with extraneous information.
-     * Avoid stringently columnar or binary input formats.
-     * Don't insist on interactive input.
-
- * This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
-::::
-
-. . .
+:::
+::: {.column width="57.5%"}
+ * Don't clutter output with extraneous information.
+ * Avoid stringently columnar or binary input formats.
+ * Don't insist on interactive input.
+     
+ * Write programs...
+   - that do one thing and do it well
+   - to work together
+   - to handle text streams
+:::
+::::::::::::::
 
 ```
                              +------------+
@@ -1281,6 +1286,15 @@ $$
  input (*.fee) }             |            |             { post (vtk/msh)
                              +------------+
 ```
+
+```terminal-tiny
+$ a=1; b=3; echo PRINT $a/$b | feenox -
+0.333333
+$ a=0.1; b=0.09999; echo PRINT "(abs($a)-abs($b))<1e-4" | feenox -
+1
+$ 
+```
+
 
 ## Las 17 reglas de la filosofía Unix (apéndice C)
 
@@ -1583,7 +1597,7 @@ PRINT a/b
 
 \vspace{0.25cm}
 
-### There's an actual instruction pointer!
+### FeenoX has an actual instruction pointer!
 
 ```c
 // sweep the first & last range but minding the conditional blocks
