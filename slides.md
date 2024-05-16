@@ -1985,7 +1985,18 @@ PRINTF "  wall = %.1f sec" clock()-t0
 
 :::
 ::: {.column width="50%"}
-### Ver qué más quedó afuera 
+
+### Otros temas 
+
+ * Non-conformal mesh interpolation
+ * Secondary field recovery
+   - Gauss-to-node extrapolation
+   - Nodal averaging
+ * CPU $\leftrightarrow$ RAM
+ 
+\medskip 
+
+ * Charlamos en detalle durante el Q&A
 
 :::
 :::::::::::::: 
