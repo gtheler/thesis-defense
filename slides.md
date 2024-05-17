@@ -1101,10 +1101,10 @@ $$
 
 \medskip
 
- * Apéndice A: Software Requirements Specification (páginas 337--346)  
+ * Apéndice A: Software Requirements Specification (páginas 339--348)  
    <https://www.seamplex.com/feenox/doc/srs.html>
    
- * Apéndice B: Software Design Specification (páginas 347--436)  
+ * Apéndice B: Software Design Specification (páginas 349--438)  
    <https://www.seamplex.com/feenox/doc/sds.html> 
 
 ## FeenoX: a cloud-first finite-element(ish) computational engineering tool
@@ -1522,7 +1522,7 @@ Add complexity only where you must.
 
 . . .
 
- 1. feo
+ 1. feo: este código da dolor de ojos
  2. ineficiente: hay que procesar el bloque $\forall q ~ \forall i$
  3. dificil de mantener: hay que actualizar el bloque cuando cambien las PDEs
 
@@ -1979,7 +1979,7 @@ PRINTF "  wall = %.1f sec" clock()-t0
 ## Extras
 
 :::::::::::::: {.columns}
-::: {.column width="50%"}
+::: {.column width="45%"}
 
  * 4.2.2. Funciones ($\neq$ "tablas")
     a. Definidas algebraicamente
@@ -1998,7 +1998,7 @@ PRINTF "  wall = %.1f sec" clock()-t0
  * 4.3.9. Documentación
 
 :::
-::: {.column width="50%"}
+::: {.column width="55%"}
 
 ### Otros temas para el Q&A
 
@@ -2008,6 +2008,7 @@ PRINTF "  wall = %.1f sec" clock()-t0
    - Nodal averaging
  * CPU $\leftrightarrow$ RAM
  * Link-time optimization
+ * [github.com/seamplex/feenox-benchmark](https://github.com/seamplex/feenox-benchmark)
  * Function pointers $\rightarrow$ preprocessor macros
  * Iterative/Direct solvers
  * 3D pre & post
@@ -2449,7 +2450,7 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
  * [_cloud-first_]{lang=en-US} ($\neq$ [_cloud-friendly_]{lang=en-US})
  * paralelización MPI
  * [back end]{lang=en-US} para diferentes [front ends]{lang=en-US}
- * filosofía de diseño Unix (compatbile con [_cloud-first_]{lang=en-US})
+ * filosofía de diseño Unix (compatibile con [_cloud-first_]{lang=en-US})
  * interfaz amena para la simulación programática
  * flexible para propiedades materiales no triviales
  * tablitas vs. software tradicional y bibliotecas
@@ -2463,6 +2464,10 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 
 \vspace{1cm}
 
+ 0. **programa**, no biblioteca
+ 
+\medskip
+ 
  1. transporte con S$_N$
  2. mallas no estructuradas
  3. de tamaño arbitrario con MPI
@@ -2492,12 +2497,12 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 
 ::: {.column width="55%"}
 
+ #. $\exists$ paper $\in$ JOSS
+ #. lo que Markdown $\propto$ Word $\wedge$ TeX
+ #. extensibilidad $\therefore$ `src/pdes`
  #. cloud first $\neq$ cloud friendly
  #. free $\neq$gratis
  #. MPI $\neq$ speed
- #. extensibilidad $\therefore$ `src/pdes`
- #. lo que Markdown $\propto$ Word $\wedge$ TeX
- #. $\exists$ paper $\in$ JOSS
 
 :::
 
