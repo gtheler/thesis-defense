@@ -1179,7 +1179,7 @@ $$
 
 ::: {.column width="80%"}
 
- * FeenoX es GPLv3+ = libre & abierto
+ * FeenoX es GPLv3+ $=$ libre & abierto
    - free $\neq$ gratis
    
      - "Free" as in "free speech" not as in "free beer"
@@ -1192,13 +1192,13 @@ $$
 
 . . .
     
- * Software libre = bases éticas
+ * Software libre: bases éticas
    - GNU Manifesto (1985)
    - Cuatro libertades básicas
  
 . . . 
 
- * Open source = bases tecnicas
+ * Open source: bases técnicas
    - The Cathedral and the Bazaar (1998)
    - Given enough eyeballs all bugs are shallow
 
@@ -1255,7 +1255,14 @@ $$
  #. [Neutron diffusion](https://www.seamplex.com/feenox/examples/neutron_diffusion.html)
  #. [Neutron S$_N$](https://www.seamplex.com/feenox/examples/neutron_sn.html)
  
+\medskip 
+ 
  * ... `src/pdes`
+ 
+\bigskip
+
+(FeenoX needs a logo)
+ 
 :::
 ::::::::::::::
 
@@ -1437,6 +1444,7 @@ $
 
  1. construir la matriz global de rigidez $\mat{K}$ y el vector $\vec{b}$ (o la matriz de masa $\mat{M}$), y
  2. resolver el sistema de ecuaciones $\mat{K} \cdot \vec{u} = \vec{b}$ (o $\mat{K} \cdot \vec{u} = \lambda \cdot \mat{M} \cdot \vec{u}$)
+ 3. convertir $\vec{u}$ en flujos $\psi(\vec{x})$ y/o $\phi(\vec{x})$ 
 
 . . .
  

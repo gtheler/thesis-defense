@@ -1,6 +1,5 @@
-
  
-# 1. Introducción
+# Prolegómeno
 
 Yo crecí en los noventa, donde todo daba vueltas alrededor de la televisión.
 
@@ -85,7 +84,7 @@ La contribución original aparece recién en el "what".
 Empecemos entonces con el "why".
 
 
-### Diseño de software de cálculo
+## Cien años de programación
 
 Consideremos esta tabla de un paper de 1965.
 El título del paper es, justamente "Desarrollos recientes en computadoras y sus _consecuencias_ para el cálculo de reactores"
@@ -108,7 +107,7 @@ No tiene ningún sentido hacer que el calculista tenga que buscar la aguja que n
 Así y todo, la mayoría del software de cálculo en general y de reactores en particular, sigue sacando megas de salidas.
 Aún cuando desde hace varios años tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming") que sintetizan un montón de lecciones aprendidas en tema de diseño de software.
 
-## 
+## Unix rule of silence
 
 Entre ellas, la "regla del silencio".
 
@@ -155,7 +154,7 @@ Segundo esquema.
 Calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un código de núcleo cinético-espacial acoplado con el código de planta y la lógica de control y protección.
 
 
-## Elipse
+. . .
 
 En cualquiera de los dos casos, tenemos que hacer CFD primero y meter la pluma de boro en la neutrónica.
 Así que prestemos atención a esa parte.
@@ -492,7 +491,7 @@ Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos cas
 De todas maneras en difusión, el operador no es simétrico y puede llegar a no ser coercivo.
 
 
-## Transporte
+## Ordenadas discretas
 
 Podemos hacer lo mismo con ordenadas discretas.
 
@@ -752,6 +751,8 @@ Como usualmente hay que hacer varias cosas, la idea central es la de "composici�
 
 En términos de ingeniería "analógica" yo veo a FeenoX como una función de transferencia entre uno o más archivos de entrada y cero o más archivos de salida. Recuerden que en Unix, "todo es un archivo".
 
+Y fijensé que dice "programa" y no "biblioteca".
+
 ## 17 rules
 
 En su libro, Raymond explicita 17 reglas.
@@ -899,74 +900,54 @@ mostramos autogen? sí
 
 ## Input
 
-## Instrucciones y definiciones
+## Ejemplos + IP
 
 ## Conducción de calor 1D
 
-## Non-uniform $k$
+## Conductividad no uniforme
 
 ## Reed
 
+## Bootstrap
+
 ## Entry points
 
-## Entry points para..
+## Expressions
 
-## IAEA
+## No print no shirt
 
-## Algoritmos auxiliares
+## Extras
 
-## Everything's an expression
-
-## Funciones
-
-## Output
-
-## Otras cosas
-
-## Escalabilidad
-
-## TODO
-
-## QA
+# Resultados
 
 
+## Tabla de problemas
 
-## Resultados
+## IAEA 3D PWR Onshape
 
+## Malla
 
+## Meld
 
+## MPI
 
-cap 6
-lolich dijo en una reuniñon de consejo académico que este instituto tenía que formar los profesionales que escriben los manuales y los otros institutos tenían que formar los que los lean
-leer y escribir manuales = entender la teoria de la relatividad y descubrirla
-
-Yo siempre pienso que estoy pensado afuera de la caja. Y veo que hay otros adentro de la caja.
-Pero a veces veo que yo estoy adentro de la caja, y hay otros que están afuera.
-Y peor aún, a veces veo que el que yo pensaba que estaba adentro, está afuera.
-
-
-
-Elegir algunos, preguntar cuáles
-5 min por problema
-
-## IAEA
-
-Onshape
-mostrar 3d interactivo?
-
-##  Slab a dos zonas
-
-unificar el svg para alinear los slabs
+## Slab a dos zonas
 
 ## Cube-sphere
 
-se mantiene el volumen
-
-tenemos que hacer con el chaco el circular/hexahedrico
+## Input + python
 
 ## Tres pescaditos
 
+## Input
+
 ## PHWR
+
+## XS
+
+## Flujos
+
+## Tabla y MPI
 
 
 

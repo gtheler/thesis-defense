@@ -310,3 +310,41 @@ word
 how was life before feenox?
 relap, wims, etc.
 (relap 5, cené al lado de derek gaston)
+
+
+
+
+
+cap 6
+lolich dijo en una reuniñon de consejo académico que este instituto tenía que formar los profesionales que escriben los manuales y los otros institutos tenían que formar los que los lean
+leer y escribir manuales = entender la teoria de la relatividad y descubrirla
+
+Yo siempre pienso que estoy pensado afuera de la caja. Y veo que hay otros adentro de la caja.
+Pero a veces veo que yo estoy adentro de la caja, y hay otros que están afuera.
+Y peor aún, a veces veo que el que yo pensaba que estaba adentro, está afuera.
+
+
+
+Elegir algunos, preguntar cuáles
+5 min por problema
+
+## IAEA
+
+Onshape
+mostrar 3d interactivo?
+
+##  Slab a dos zonas
+
+unificar el svg para alinear los slabs
+
+## Cube-sphere
+
+se mantiene el volumen
+
+tenemos que hacer con el chaco el circular/hexahedrico
+
+## Tres pescaditos
+
+## PHWR
+
+
