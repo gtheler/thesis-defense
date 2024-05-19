@@ -1,3 +1,7 @@
+---
+title: Transporte de neutrones en la nube
+numbersections: true
+...
  
 # Prolegómeno
 
@@ -849,7 +853,7 @@ Pasemos al código.
 Preguntémonos, ¿qué es que lo que tenemos que hacer?
 
  1. construir los objetos globales $K$ y $b$
- 2. resolver $\mat{K} \cdot \vec{u} = \vec{b}$
+ 2. resolver ${K} \cdot \vec{u} = \vec{b}$
  3. re-construir los flujos $\phi$ y $\psi$ a partir de $u$
 
 El punto 2 es el foco de un solver, que por regla de Unix no vamos a escribir nosotros.

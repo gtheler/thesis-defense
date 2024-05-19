@@ -1,22 +1,3 @@
-# Capítulos
-
- 1. piñón + motivación
-     - inicio
-     - link
-     - desarrollo
-     - final
-     - tweet
-    
- 2. séneca + markdown para dar clases
- 3. paul graham: lo mismo que séneca pero con "machinery"
-    - SRS/SDS
-    - meter foto cancún 2018
- 4. historia de unix y jon hirstick
-    - bien técnico y aburrido, terciopelo negro
- 5. escribir manuales != leer manuales
-    - accediendo a gentiles pedidos mostrar algún caso
-    - o hacer un gdb?
- 6. lo que sea pero terminar up in the sky con la foto en cancun 2024
 
 # Llevar
 
@@ -25,7 +6,7 @@
  * botella de auga
  * pasador de slides
  * kde connect pasador y apuntador
- * cronómetro
+ * cronómetro - otro celular? galaxy watch?
  * agrandar terminal
  * ir al baño antes
  * apagar whatsapp
@@ -52,7 +33,7 @@
    a. objetivo: hace mejor la charla
    b. subjetivo: te hace tener más confianza a vos
  * regalar dos tazas
- * en front cover poner mazes y domain staircase
+ * en front cover domain staircase
    
    
     
@@ -332,18 +313,9 @@ Elegir algunos, preguntar cuáles
 Onshape
 mostrar 3d interactivo?
 
-##  Slab a dos zonas
-
-unificar el svg para alinear los slabs
 
 ## Cube-sphere
 
-se mantiene el volumen
-
 tenemos que hacer con el chaco el circular/hexahedrico
-
-## Tres pescaditos
-
-## PHWR
 
 
