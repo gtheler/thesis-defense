@@ -628,94 +628,6 @@ Paul Graham
 
 
 
-## Cuadraturas de nivel simétrico
-
-
-:::::::::::::: {.columns}
-::: {.column width="25%"}
-```sn
-
-
-       1    
-```
-
-:::
-::: {.column width="25%"}
-```sn
-
-       1   
-      1 1  
-```
-
-:::
-::: {.column width="25%"}
-```sn 
-
-       1   
-      2 2  
-     1 2 1 
-```
-:::
-::: {.column width="20%"}
-```sn  
-       1   
-      2 2  
-     2 3 2 
-    1 2 2 1
-```
-
-:::
-::::::::::::::
-
-:::::::::::::: {.columns}
-::: {.column width="25%"}
-```sn    
-
-
-       1    
-      2 2   
-     3 4 3  
-    2 4 4 2 
-   1 2 3 2 1
-```
-:::
-::: {.column width="25%"}
-```sn      
-
-       1     
-      2 2    
-     3 4 3   
-    3 5 5 3  
-   2 4 5 4 2 
-  1 2 3 3 2 1
-```
-:::
-::: {.column width="25%"}
-```sn
-
-       1      
-      2 2     
-     3 5 3    
-    4 6 6 4   
-   3 6 7 6 3  
-  2 5 6 6 5 2 
- 1 2 3 4 3 2 1
-```
-:::
-::: {.column width="20%"}
-
-```sn          
-       1       
-      2 2      
-     3 5 3     
-    4 6 6 4    
-   4 7 8 7 4   
-  3 6 8 8 6 3  
- 2 5 6 7 6 5 2 
-1 2 3 4 4 3 2 1
-```
-:::
-::::::::::::::
 
 ## Discretización en espacio: elementos finitos
 
@@ -967,13 +879,13 @@ $$
 ![](jon.jpg) 
 
 
-## 
+## Solidworks
 
 \centering
 ![](history-of-solidworks-1995.png){height=5cm}
 ![](history-of-solidworks-1996.png){height=5cm} 
 
-## 
+## Onshape
 
 ```{=latex}
 \begin{center}
@@ -1473,8 +1385,6 @@ Add complexity only where you must.
 
 ## Algoritmo para construir $\mat{K}$ y $\vec{b}$
 
-:::::::::::::: {.columns}
-::: {.column width="70%"}
 
 \DontPrintSemicolon
 
@@ -1492,32 +1402,7 @@ Add complexity only where you must.
  ensamblar $\vec{b}_i \rightarrow \vec{b}$\; \\
 }
 
-:::
 
-. . .
-
-::: {.column width="30%"}
-
-### Necesitamos
-
- i. $\omega_q, \symbf{\xi}_q$ $\forall e_i$
- ii. $\mat{H}_{c}$ y $\mat{B}_{c}$
- iii. $\mat{C}_i$,
- iv. evaluar en $\vec{x}_q$
-     a. $k(\vec{x})$ (o XSs)
-     b. $f(\vec{x})$ (o fuentes)
-     c. BCs $p(\vec{x})$ y $g(\vec{x})$
-     
-. . .
-
-\bigskip
-     
- * La PDE está dada por las llaves $\{ \}$
- * i, ii y iii no dependen de la PDE
- * el iv un poco y un poco
-     
-:::
-::::::::::::::
 
 
 ## Posible implementación naïve
@@ -2105,7 +1990,7 @@ PRINTF "  wall = %.1f sec" clock()-t0
 ## 
 
 
-![](uno-dos.png)
+![](uno-dos-marca.png){height=8.57cm}
 
 ## MPI $\neq$ speed but _memory_
 
@@ -2851,3 +2736,91 @@ WRITE_RESULTS FORMAT vtk
 ## 5.11. [Bonus track]{lang=en-US}: cinética puntual*
 
 
+## Cuadraturas de nivel simétrico
+
+
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+```sn
+
+
+       1    
+```
+
+:::
+::: {.column width="25%"}
+```sn
+
+       1   
+      1 1  
+```
+
+:::
+::: {.column width="25%"}
+```sn 
+
+       1   
+      2 2  
+     1 2 1 
+```
+:::
+::: {.column width="20%"}
+```sn  
+       1   
+      2 2  
+     2 3 2 
+    1 2 2 1
+```
+
+:::
+::::::::::::::
+
+:::::::::::::: {.columns}
+::: {.column width="25%"}
+```sn    
+
+
+       1    
+      2 2   
+     3 4 3  
+    2 4 4 2 
+   1 2 3 2 1
+```
+:::
+::: {.column width="25%"}
+```sn      
+
+       1     
+      2 2    
+     3 4 3   
+    3 5 5 3  
+   2 4 5 4 2 
+  1 2 3 3 2 1
+```
+:::
+::: {.column width="25%"}
+```sn
+
+       1      
+      2 2     
+     3 5 3    
+    4 6 6 4   
+   3 6 7 6 3  
+  2 5 6 6 5 2 
+ 1 2 3 4 3 2 1
+```
+:::
+::: {.column width="20%"}
+
+```sn          
+       1       
+      2 2      
+     3 5 3     
+    4 6 6 4    
+   4 7 8 7 4   
+  3 6 8 8 6 3  
+ 2 5 6 7 6 5 2 
+1 2 3 4 4 3 2 1
+```
+:::
+::::::::::::::

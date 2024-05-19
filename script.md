@@ -59,10 +59,6 @@ Esta tesis es excepcional en el sentido de que fue atípica, una excepción a la
 En lo que voy a contar hay quince años de lecciones aprendidas provenientes de estos tres ámbitos: academia, industria y emprendedurismo.
 Justamente este largo tiempo me permitió poder separar, como dice Mafalda, lo urgente de lo importante.
 
----
-2 min
----
-
 ## TOC
 
 Primero que nada, si hubiese podido escribir la tesis en inglés el título habría sido "a cloud-first approach for solving core-level neutron transport over unstructured grids."
@@ -77,10 +73,6 @@ En en el primero explico el "why", en los dos siguientes el "how" y en los últi
 El "why" es un tanto subjetivo, si me permiten.
 En el "how" no hay nada nuevo, es todo conocido.
 La contribución original aparece recién en el "what".
-
----
-3 min
----
 
 
 ## Why
@@ -117,9 +109,6 @@ Entre ellas, la "regla del silencio".
 
 [silencio]
 
----
-5 min
----
 
 ## Historia de dos reactores
 
@@ -163,9 +152,6 @@ Calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un
 En cualquiera de los dos casos, tenemos que hacer CFD primero y meter la pluma de boro en la neutrónica.
 Así que prestemos atención a esa parte.
 
----
-6 min 30 seg
----
 
 ## Canales
 
@@ -194,9 +180,6 @@ Esto es Atucha I "vista" desde el código de cinética espacial que nombramos a
 
 Modelar numéricamente barras inclinadas se parece bastante a jugar con "Legos" o, para los viejos como yo, "mis ladrillitos", ¿no?
 
----
-7 min 30 seg
----
 
 ## Celdas
 
@@ -208,9 +191,6 @@ Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel
 
 Desde el punto de vista del cálculo de celda, al menos hace diez años, si queríamos ver qué pasaba al meter una gota de boro lo único que podemos hacer es repartir estas dos mil ppm en el 5% del volumen como cien ppm en toda la celda.
 
----
-8 min
----
 
 ## CFD
 
@@ -229,9 +209,6 @@ Terminamos con cosas como estas.
 
 [pausa]
 
----
-8 min 30 seg
----
 
 ## Refinado
 
@@ -247,9 +224,6 @@ Además de todas las preguntas sobre la validez del esquema, surge también esta
 
 ¿Vale usar difusión?
 
----
-9 min
----
 
 ## Limitaciones
 
@@ -305,9 +279,6 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
  * reflector circular en lugar de "recortado", y
  * S$_4$ en lugar de difusión.
 
----
-10 min 30 seg
----
 
  
 ## How
@@ -315,10 +286,6 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
 
 Terminado el why, pasemos al cómo hacemos todo esto. 
  
- 
----
-11 min
----
 
 ## Séneca
 
@@ -334,7 +301,7 @@ Mas cuando se ha producido su trasformación, entonces y sólo entonces, se conv
 
 ## Transporte y difusión de neutrones
 
-Bueno, este capítulo no tiene nada nuevo.
+Este capítulo no tiene _nada_ nuevo.
 Lo escribí para que la literatura de análisis de reactores no sea una carga para mí, sino que se convierta en fuerza y sangre.
 
 . . .
@@ -347,42 +314,36 @@ Como ustedes sabrán, yo
  
 De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdwon. En la tesis lo mismo, así que si aparece un PDF, o un HTML "in the wild" o un ejemplar impreso en la biblitoeca, el footer indica el commit.
  
-Entonces---como efecto colateral de lo que propone Séneca---si alguien necesita notas para dar clases tiene la libertad de acceder al markdown y modificarlo según necesite.
-Martín Silva ya me dijo que va a hacer eso en sus clases.
-Fede Mezio, si te sirve... be my guest!
+Si alguien necesita notas para dar clases tiene la libertad de acceder al markdown y modificarlo según necesite.
 
 ## Ecuación de transporte
 
-Algunos detalles.
-
-Empiezo con la derivación de la ecuación de transporte a partir de una "contabilidad" de neutrones.
+Resumen del capituolo: derivación de la ecuación de transporte a partir de una "contabilidad" de neutrones.
 
 ## Armónicos
  
-Expando la dependencia angular de la sección eficaz de scattering en polinomios de Legendre y la dependencia angular del flujo escalar en armónicos esféricos.
+Expansión de la dependencia angular de la sección eficaz de scattering en polinomios de Legendre y la dependencia angular del flujo escalar en armónicos esféricos.
  
 ## Transporte linealmente anisótropo
  
-Con eso llego a la ecuación de transporte linealmente anisotrópico (se dice así o anisótropo?) tratando de rellenar todos los pasos intermedios que no aparecen en la literatura.
+Ecuación de transporte linealmente anisotrópico.
  
 ## Difusión
 
-Y también tratando de rellenar los pasos intermedios, especialmente los que en los libros dicen "esto se anula", bueno, mostrando cómo es que "esto se anula" y además llegando explícitamente a estas tres condiciones para obtener la celebrada aproximación de difusión.
+Aproximación de difusión.
+Fin del capítulo.
 
----
-13 min 30
----
  
 ## Paul Graham
 
 El siguiente capítulo es cómo discretizamos estas ecuaciones.
-Al igual que el anterior, este no tiene (casi) nada nuevo.
+Este tampoco tiene (casi) nada nuevo.
 
 Pero hay un par de diferencias.
 La primera la explica Paul Graham.
 
-Esencialmente dice algo parecido a Séneca, seguramente ya conociendo la cita del capítulo anterior porque Graham suele citar a Séneca en sus ensayos.
-Lo que me gustó de este párrafo es el pie de pagina, donde nos recuerda que "programar" es equivalente a "escribir".
+En uno de sus ensayos dice lo mismo que Séneca. No sorprende por Graham suele citar a Séneca.
+Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
 
 La segunda es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
 
@@ -393,31 +354,14 @@ Formulación multi-grupo, que es como si fuese volúmenes finitos sin operadores
 
 . . .
 
-Discretización en ángulo.
-Para transporte, revisitamos las ordenadas discretas.
+Discretización en ángulo para transporte. Revisitamos las ordenadas discretas, también volúmenes finitos sin operadores diferenciales.
 
-## Cuadraturas de nivel simétrico
-
-De todo el menú, nos quedamos con las cuadraturas de nivel simétrico.
-
-Este slide es un ejemplo de algo que _no_ hay que hacer.
-
-Como me tomó un cierto tiempo llegar al algoritmo para fabricar los triangulitos estos para un $N$ arbitrario quería mostrárselos.
-Pero la verdad es que esto no tiene por qué agregarle valor a ustedes.
-Ni tienen por qué apreciar el hecho de que el software funcione para un $N$ arbitrario, porque después de todo es algo que se debería dar por sentado.
-Es como publicitar un hotel diciendo "las habitaciones tienen baño privado".
-
-Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
-
----
-15 min 30
----
 
 ## Discretización en espacio
 
-Discretización del espacio: elementos finitos.
+Discretización del espacio: elegimos elementos finitos.
 
-Empecemos con la ecuación de Poisson, que es más sencilla.
+Hagamos un breve repaso usando la ecuación de Poisson, que es más sencilla.
 
 . . .
 
@@ -437,21 +381,17 @@ Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de N
 ## Funciones
 
 Después buscamos tantas funciones de forma como nodos pusimos de forma tal de que cada una valga uno en cada nodo y cero el en resto.
-Esta va a ser la base del espacio vectorial aproximado donde vamos a encontrar la solución de la ecuación de Poisson que estamos resolviendo con elementos finitos.
 
 ## Elementos finitos
 
 Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio U.
 Llamamos a cada uno de estos triangulitos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
 
----
-17 min
----
 
 
-## $K u = b$
+## $K \cdot u = b$
 
-Con un poco de álgebra lineal llegamos a que podemos obtener una solución de la ecuación de Poisson con elementos finitos resolviendo el sistema lineal $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
+Con un poco de álgebra lineal llegamos que tenemos que resolver el sistema lineal $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
 Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
 Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ sobre la matriz de rigidez $K$ y del funcional $B$ larga grande sobre el vector del miembro derecho $b$ larga chica.
@@ -471,17 +411,16 @@ Primero, que podemos usar elementos segundo orden. Si quieren después profundiz
 . . .
 
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
-Antes había dicho que en este capítulo no hay "casi" nada nuevo. Bueno, la justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$ no la pude encontrar en la bibliografía.
-De hecho consulté a colegas de la empresa de software de elementos finitos donde trabajo y nadie me supo dar la justificación. Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el cuento de los monos.
+Este es el "casi" nada nuevo.
+Nunca pude encontrar en la bibliografía una justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$.
+De hecho consulté a colegas del palo de los elementos finitos y nadie me cantar la posta.
+Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el cuento de los monos.
 
 En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación matemática.
 De hecho mi respuesta es la segunda más votada (despúes de la primera que es de Jed Brown).
 
 [pausa]
 
----
-18 min 30 seg
----
 
 ## Difusión
 
@@ -492,7 +431,7 @@ Los detalles en el capítulo tres, pero dos cosas
  2. Fíjense que la forma es parecida al caso de Poisson.
 
 Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos.
-De todas maneras en difusión, el operador no es simétrico y puede llegar a no ser coercivo.
+De todas maneras en difusión multrigupo, el operador no es simétrico y puede llegar a no ser coercivo.
 
 
 ## Ordenadas discretas
@@ -505,7 +444,6 @@ Otra vez, la forma es parecida pero
  2. La ecuación es hiperbólica de primer orden.
 
 Así que es matriz $P$ que aparece en las matrices de pérdidas, absorciones y fisiones es una matriz estabilizada tipo Petrov-Galerkin.
-Más detalles en el texto.
 
 ## Estado estacionario
 
@@ -523,10 +461,6 @@ Bueno, depende de qué tipo de problema estemos queriendo resolver.
 Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
 Bueno, hay que hacer Newton Raphson y la cosa se complica un poco.
 Pero por ahora no nos vamos a meter en eso y damos por terminado el how.
-
----
-20 min
----
 
 ## What
 
@@ -547,22 +481,15 @@ Completen con media hora de mala literatura.
 
 Resulta que Unix también es un diseño que resuelve problemas que no existían cuando fue inventado.
 
-A medidados de los 60, estos muchachos trabajaban en los laboratorios Bell.
-En esa época habían desarrollado un sistema operativo medio artesanal pero que andaba bastante bien.
-Entonces se metieron los gerentes y organizaron un proyecto ambicioso para hacer una segunda versión "bien pulenta".
+A medidados de los 60 los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
+Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
-Entonces a fines de los 60 estos dos muchachos empezaron desde cero y teniendo en cuenta las lecciones aprendidas sobre lo que NO hay que hacer y ahora sí, la tercera es la vencida, diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
-
-Y como ustedes saben, este diseño casi sin modificaciones, es lo que hace que Internet y "la nube" funcionen como lo hace hoy.
-Que no es ni remotamente parecido a cómo funcionaba hace 50 años, cuando Unix fue inventado.
+Entonces a fines de los 60 estos dos muchachos empezaron desde cero.
+Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
 
 . . .
 
-Abro un concurso: una taza de Atlético de Rafaela para los dos primeros que digan cómo se llaman cada uno los dos de la foto.
-
----
-21 min 30
----
+Abro un concurso: una taza de Atlético de Rafaela para las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
 
 ## Jon
 
@@ -580,14 +507,14 @@ Pero este Jon sin hache sabía que otro había otro nerd que se venía con todo:
 
 Vio venir que en los 90 la moda iba a ser "X para Windows", así que su programa de diseño 3D corría en Windows.
 Y Solidworks pasó de tener el 0 al 90% del mercado en un par de años.
-En el 97 vendió su compañía por 300 millones de dólares y se quedó como CEO, consolidando el producto.
+En el 97 vendió su compañía por 300 millones de dólares y se quedó como CEO.
 
 ## Onshape
 
 Pasa el tiempo. Año 2011. Jon se da cuenta de que la tecnología está cambiando nuevamente.
-Renuncia y pone otra startup de software de diseño pero ahora, "en la nube".
-Digamos un Google Docs para la ingeniería mecánica.
-En 2019 vende Onshape por 480 millones y se queda como CEO, consolidando el producto.
+Renuncia y pone otra startup de software de diseño pero ahora, "en la nube y directamente desde el browser".
+Digamos un Google Docs para ingeniería mecánica.
+En 2019 vendió Onshape por 480 millones y se queda como CEO.
 
 Quien la compró era una de las empresas que tenían todo en los 80 y se quedaron sin nada en los 90.
 Según me contaron off the record, la compraron porque: "no quisimos que nos vuelva a pasar lo mismo".
@@ -601,9 +528,6 @@ Los siguientes 300 gracias al nerd Bill Gates.
 Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema que hoy resuelve problemas que no existían hace más 50 años.
 Como la bicicleta.
 
----
-23 min 30
----
 
 Cierro concurso.
 ¿Nombre de los últimos dos?
@@ -611,9 +535,6 @@ Cierro concurso.
 Entre paréntesis, Dennis Ritchie (el que está parado) se murió en 2011 la misma semana que Steve Jobs.
 Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres, el columnista de La Nación.
 
----
-24 min
----
 
 ## Cheque
 
@@ -642,9 +563,6 @@ Y la enfermedad de un hijo te puede hacer apagar tu carrera profesional por un a
 
 [pausa]
 
----
-24 min 30
----
 
 ## SRS & SDS
 
@@ -669,11 +587,7 @@ Y después escribí el SDS explicando cómo es que mi propuesta de diseño e imp
 
 Les presento entonces a FeenoX, a cloud-first finite-element(ish) computational engineering tool, publicada en el Journal of Open Source Software.
 
-Originalmente se llamaba "a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool pero me hicieron achicarlo, como a Johan Sebastian Mastropiero.
-
----
-25 min 30
----
+Originalmente se llamaba "a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool pero me hicieron achicarlo, como a "La bella y graciosa moza" de Johan Sebastian Mastropiero.
 
 
 ## Unfair advantage: Markdown
@@ -695,11 +609,7 @@ Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" 
 
 El SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPLv3+.
 Y acá quiero hacer especial énfasis en que ninguno de los dos conceptos, código abierto o software libre, se refiere a la idea de _precio_.
-"Free" no quiere decir "gratis". En inglés es "free as in freedom", no "free as in free beer".
 Seguramente ya lo saben, pero nunca está de más repetirlo, especialmente en la industria nuclear.
-
-De hecho, un gerente de sistemas en una reunión dijo "acá en esta empresa no usamos software libre por un tema de costos".
-Cuando lo interrumpí para que elabore me explicó, palabras más palabras menos, "es más caro pagarle al que sabe dónde poner el punto y coma en el archivo de configuración del servidor de base de datos que pagar la licencia y configurarlo con el [mouse]{lang=en-US}".
 
 . . .
 
@@ -708,8 +618,9 @@ Y si uno no sabe programar, poder tener la _libertad_ de contratar a alguien que
 
 . . .
 
+
 Por otro lado, Eric Raymond (el del libro de Unix) hace énfasis en la superioridad técnica del software open source.
-Y esto es especialmente importante en software científico y de ingeniería.
+Y esto es importante en software científico y de ingeniería. Especialmente en la industria nuclear.
 
 . . .
 
@@ -718,15 +629,12 @@ Esta discusión podría necesitar más de 45 minutos en sí misma, así que la t
 [pausa]
 
 
----
-27 min 30
----
 
 ## Scope
 
 Resulta que FeenoX es un tercer intento, tal como Unix.
 
-Todo empezó con el milonga, que algunos de ustedes conocerán e incluso habrán usado.
+Todo empezó con el milonga, que algunos de ustedes conocerán e incluso tal vez usado.
 
 Como eso andaba más o menos bien, me pasó lo que a los gerentes de la Bell.
 
@@ -736,7 +644,7 @@ Empecé a agregar complejidad, features, etc.
 
 . . .
 
-Hasta que decidí  empezar desde cero.
+Hasta que decidí empezar de cero.
 
 . . . 
 
@@ -757,6 +665,12 @@ En términos de ingeniería "analógica" yo veo a FeenoX como una función de tr
 
 Y fijensé que dice "programa" y no "biblioteca".
 
+. . .
+
+De hecho podemos usar a FeenoX como un filtro de Unix pasando el input por la entrada estándar.
+
+
+
 ## 17 rules
 
 En su libro, Raymond explicita 17 reglas.
@@ -776,13 +690,11 @@ También tiene que llevarse bien con interfaces gráficas. Siguiendo la regla de
 Y que no se enfoque en una sola forma de front end. Debería poder "hablar" con front ends desktop, web, no sé de los que ahora hay con esos visores de realidad virtual, en el futuro con un holograma láser o lo que sea.
 
 Y tiene que ser ameno a corridas paramétricas.
+El mejor mecanismo es con argumentos en la línea de comandos.
 
 Supongamos que tenemos este archivo de entrada: print hello pesos uno.
 Bueno, si lo corremos desde bash do feenox hello punto fee pesos i nos dice hello 1, hello 2 y hello 3.
 
----
-29 min 30
----
 
 ## Front-back
 
@@ -798,15 +710,14 @@ Pasemos a "la nube".
 El plural es importante. Después me explayo.
 
 Este concepto de cloud es importante porque permite bajar los costos de oportunidad.
-Financieramente te dicen que alquiles en lugar de comprarte una casa.
+Los que saben de finanzas dicen que alquiles en lugar de comprarte una casa.
 Imagínense en términos de servidores de cálculo.
 
 . . .
 
 Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly".
-Hay varios detalles que te pueden dejar fuera de juego.
-Por ejemplo, si para hacer el deployment tenés que re-compilar el código antes de correrlo porque tu solver es un biblioteca entonces tenés un overhead que capaz que te mata el esquema de costos.
-Por eso por diseño, FeenoX es un ejecutable que lee el problema a resolver en tiempo de ejecución.
+Por ejemplo, en deployment hay que evitar re-compilar.
+Por eso por diseño, FeenoX es un ejecutable (y no una bibliotea) que lee el problema a resolver en tiempo de ejecución.
 Esto nunca se lo pude hacer entender a uno de los reviewers del JOSS. Espero poder explicarlo mejor acá.
 
 . . .
@@ -837,16 +748,14 @@ Podemos explotar la elipticidad del operador de Laplace.
 
 . . .
 
-Este caso es uno de los tutoriales de FeenoX. Ahí en el link incluso se muestra como resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
+Este caso es uno de los tutoriales de FeenoX.
+Ahí en el link incluso se muestra como resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
 
 Bueno, basta de marketing.
 Pasemos al código.
 
 [pausa]
 
----
-32 min 30
----
 
 ## Arquitectura
 
@@ -856,60 +765,42 @@ Preguntémonos, ¿qué es que lo que tenemos que hacer?
  2. resolver ${K} \cdot \vec{u} = \vec{b}$
  3. re-construir los flujos $\phi$ y $\psi$ a partir de $u$
 
-El punto 2 es el foco de un solver, que por regla de Unix no vamos a escribir nosotros.
+El punto 2 es el foco de una biblioteca numérica.
+Por regla de Unix no la vamos a escribir nosotros.
 Nosotros nos tenemos que enfocar en 1 y en 3.
 
 . . .
   
-No voy a explicar las razones acá, pero el solver del punto 2 es PETSc (o SLEPc para criticidad).
-Entonces FeenoX es esencialmente dos capas, "glue layers" en terminología Unix:
+La biblioteca del punto 2 es PETSc (o SLEPc para criticidad).
+Entonces FeenoX son esencialmente dos capas, "glue layers" en terminología Unix:
  
  1. que construye $K$ y $b$ a partir de la malla y del input 
- 2. otra que convierte $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview
+ 2. otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview
  
 . . .
 
-Una decisión central es el lenguaje de programación.
+Breve mención a la elección del lenguaje de programación.
 Esencialmente tenemos que elegir entre Fortran, C y C++.
-Tal vez Go y Rust también podrían ser alternativas, pero no los conozco lo suficiente como para decidir.
 
 La filosofía Unix nos dice que debemos agregar complejidad solamente cuando la necesitemos
-Por razones diferentes, Fortran y C++ agregan complejidad innecesaria, así que FeenoX está escrito en C que, entre paréntesis, es el lenguaje ideal para las glue layers según Eric Raymond.
-
----
-33 min 30
----
+Por razones diferentes, Fortran y C++ agregan complejidad innecesaria.
+Así que FeenoX está escrito en C que, entre paréntesis, es el lenguaje ideal para las glue layers según Eric Raymond.
 
 
-## Algoritmos
+## Algoritmo para construir
 
 Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de rigidez y el vector de fuentes.
-Barremos los elementos  acumulamos sobre los puntos de Gauss las contribuciones elementales.
+Barremos los elementos, acumulamos sobre los puntos de Gauss las contribuciones elementales.
 En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
-. . . 
+La ecuación diferemcial esencialmente está dada por las llaves.
 
-¿Qué necesitamos?
-
- 1. los pesos y coordenadas de Gauss
- 2. las matrices de forma y de gradiente
- 3. las coordenadas $C$ de los nodos
- 4. una forma de evaluar la conductividad, la fuente y eventualmente las condiciones de contorno en un punto $x_q$
-
-. . . 
- 
-Podemos notar
-
- 1. que la ecuación a resolver está dada por lo que aparece entre llaves.
- 2. los puntos 1 2 y 3 no dependen de la ecuación sino solamente de la malla
- 3. la evaluación de las propiedades materiales y las condiciones de borde, bueno, un poco y un poco. Ahora explico mejor.
-
-Entonces en prinpcio, podemos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver y algún mecanismo que le provea lo que depende de la ecuación particular.
+Entonces en principio, podemos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
  
 ## Implementación
 
 Supongamos entonces que quisiéramos elegir la ecuación a resolver en tiempo de ejecución.
-Digamos que tenemos una variable $pde$ que indica qué ecuación queremos resolver.
+Digamos que tenemos una variable `pde` que indica qué ecuación queremos resolver.
 Entonces podríamos implementar la evaluación de las llaves así.
 
 . . . 
@@ -919,7 +810,7 @@ Por favor, nunca hagan algo así.
 
 Segundo, es tremendamente ineficiente. Hay que hacer todas estas comparaciones para cada punto de gauss de cada elemento.
 
-Tercer, es difícil de mantener.
+Tercero, es difícil de mantener.
 
 
 ## Polimorfismo
@@ -935,9 +826,6 @@ Pero,
  
 Esencialmente en este único bloque if se hace apuntar un apuntador a función a una función que depende de cada ecuación a resolver, y a su vez en esa función se hacen apuntar los puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación particular.
 
----
-35 min 30
----
 
 ## Input
 
@@ -1276,7 +1164,7 @@ Muchas gracias.
 
 ---
 49 min
----
+---1
 
 
 # Apéndices
@@ -1301,5 +1189,22 @@ Pensar en inglés te hace esforzarte más y se te activan áreas cognitivas del 
 ## History
 
 ## GDB session
+
+
+
+
+
+## Cuadraturas de nivel simétrico
+
+De todo el menú, nos quedamos con las cuadraturas de nivel simétrico.
+
+Este slide es un ejemplo de algo que _no_ hay que hacer.
+
+Como me tomó un cierto tiempo llegar al algoritmo para fabricar los triangulitos estos para un $N$ arbitrario quería mostrárselos.
+Pero la verdad es que esto no tiene por qué agregarle valor a ustedes.
+Ni tienen por qué apreciar el hecho de que el software funcione para un $N$ arbitrario, porque después de todo es algo que se debería dar por sentado.
+Es como publicitar un hotel diciendo "las habitaciones tienen baño privado".
+
+Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
 
 
