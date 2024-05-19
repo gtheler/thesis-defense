@@ -97,8 +97,7 @@
 
 
 
-The cloud: somebody else's computer(s).
-
+In case of fire, git commit, git push.
 
 
 Hacer lo que hizo el que contaba lo de xuxa con esto:

@@ -6,42 +6,46 @@
     3. (2 min) propuesta: IAEA 3D PWR
     
 ---
-11 min
+parcial 11 min
+total   11 min
 ---    
     
  2. (2 min 30) Séneca, markdown, CC-BY, ecuaciones de transporte y difusión
  
 ---
-13 min 30 seg
+parcial 2 min 30
+total  13 min 30 seg
 --- 
  
  3. (2 min) Paul Graham, energía, SN
     1. (4 min 30) FEM
 
 ---
-20 min
+parcial 6 min 30
+total  20 min
 ---
         
- 4. (18 min) Historia de Unix
+ 4. Implementación
  
-    1. Do it for him.
-    2. SRS/SDS
-    3. Arquitectura (terciopelo negro)
-    
- 5. (4 min) Dr. Pepe Lolich, manuales
- 
-    Tabla de casos, accediendo a gentiles pedidos
-    
-    gdb session?
-    IAEA 3D?
-    PHWR?
+    1. (4 min 30) Bicicleta -> Do it for him.
+    2. (8 min) SRS/SDS -> maze
+    3. (10 min 30) Arquitectura (terciopelo negro)
     
 ---
-42 min
+parcial 23 min
+total 43 min
+---    
+    
+ 5. (4 min) Resultados
+     
+---
+parcial 4 min
+total  47 min
 ---
     
  6. (2 min) Conclusiones, tweets y trabajos futuros
  
 ---
-44 min
+parcial 2 min
+total  49 min
 ---

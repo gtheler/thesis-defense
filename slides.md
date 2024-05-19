@@ -818,28 +818,28 @@ $$
 
 ## Extras
 
-### Elementos de segundo orden
+ a. Elementos de segundo orden
 
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-![](shape-function-second-order-45.png)
-:::
-::: {.column width="50%"}
-![](shape-function-second-order-102.png)
-:::
-::::::::::::::
+    :::::::::::::: {.columns}
+    ::: {.column width="50%"}
+    ![](shape-function-second-order-45.png)
+    :::
+    ::: {.column width="50%"}
+    ![](shape-function-second-order-102.png)
+    :::
+    ::::::::::::::
 
 
 . . . 
 
 
-### Condiciones de Dirichlet no homogéneas
+ b. Condiciones de Dirichlet no homogéneas
 
- * Prueba de que usar `MatZeroRows()` (o `MatZeroRowsColumns()`) es correcto (páginas 124--126)
+    * Prueba de que usar `MatZeroRows()` (o `MatZeroRowsColumns()`) es correcto (páginas 124--126)
 
-<https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
+      <https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
 
- * Segunda respuesta más votada (después de la de Jed Brown)
+    * Segunda respuesta más votada (después de la de Jed Brown)
 
 
 
@@ -1493,13 +1493,16 @@ Add complexity only where you must.
 }
 
 :::
+
+. . .
+
 ::: {.column width="30%"}
 
 ### Necesitamos
 
  i. $\omega_q, \symbf{\xi}_q$ $\forall e_i$
- ii. $\mat{H}_{c}$, $\mat{B}_{c}$ y $\mat{H}_{Gc}$
- iii. $\mat{C}_i$, $\mat{B}_{Gi}$,
+ ii. $\mat{H}_{c}$ y $\mat{B}_{c}$
+ iii. $\mat{C}_i$,
  iv. evaluar en $\vec{x}_q$
      a. $k(\vec{x})$ (o XSs)
      b. $f(\vec{x})$ (o fuentes)
@@ -1522,9 +1525,9 @@ Add complexity only where you must.
 
 \DontPrintSemicolon
 \begin{algorithm}[H]
-\uIf{ la PDE es la ecuación de Poisson } { evaluar $\mat{B}_i^T \cdot k(\vec{x}_q) \cdot \mat{B}_i$ \tcc*[r]{ec. de Poisson} }
-\uElseIf{ la PDE es difusión de neutrones } { evaluar $\mat{L}_i(\symbf{\xi}_q) + \mat{A}_i(\symbf{\xi}_q) + \mat{F}_i(\symbf{\xi}_q)$ \tcc*[r]{ec. de difusión} } 
-\uElseIf{ la PDE es S$_N$ } { evaluar $\mat{L}_i(\symbf{\xi}_q) + \mat{A}_i(\symbf{\xi}_q) + \mat{F}_i(\symbf{\xi}_q)$ \tcc*[r]{ec. de ordenadas discretas} }
+\uIf{ \texttt{pde} $=$ ecuación de Poisson } { evaluar $\mat{B}_i^T \cdot k(\vec{x}_q) \cdot \mat{B}_i$ \tcc*[r]{ec. de Poisson} }
+\uElseIf{ \texttt{pde} $=$ difusión de neutrones } { evaluar $\mat{L}_i(\symbf{\xi}_q) + \mat{A}_i(\symbf{\xi}_q) + \mat{F}_i(\symbf{\xi}_q)$ \tcc*[r]{ec. de difusión} } 
+\uElseIf{ \texttt{pde} $=$ S$_N$ } { evaluar $\mat{L}_i(\symbf{\xi}_q) + \mat{A}_i(\symbf{\xi}_q) + \mat{F}_i(\symbf{\xi}_q)$ \tcc*[r]{ec. de ordenadas discretas} }
 \Else{ quejarse “no sé resolver esta PDE” \; }
 \end{algorithm}
 
@@ -1584,11 +1587,15 @@ f(x) = x^2
 PRINT f(1/2) f(1) f(2)
 ```
 
+. . .
+
 ```feenox
 INPUT_FILE surprise PATH nafems-le1%g.msh round(random(0,1))
 READ_MESH surprise
 PRINT cells
 ```
+
+. . .
 
 ```feenox
 IF abs(b)<1e-20 THEN
@@ -1634,7 +1641,7 @@ k = 1                            # 3. definir conductividad uniforme igual a uno
 BC left  T=0                     # 4. condiciones de contorno de Dirichlet
 BC right T=1                     #    "left" y "right" son nombres en la malla
 SOLVE_PROBLEM                    # 5. y 6. construir y resolver
-PRINT T(0.5)                     # 7. y 8. escribir en stdout la temperatura en x=0.5
+PRINT T(1/2)                     # 7. y 8. escribir en stdout la temperatura en x=0.5
 ```
 
 . . .
@@ -1667,6 +1674,9 @@ $
 ```
 
 :::
+
+. . .
+
 ::: {.column width="50%"}
 
 ```feenox
@@ -1839,6 +1849,9 @@ int (*gradient_fill_fluxes)(mesh_t *mesh, size_t j_global);
 ```
 
 :::
+
+. . .
+
 ::: {.column width="50%"}
 
 \bigskip
@@ -1846,6 +1859,8 @@ int (*gradient_fill_fluxes)(mesh_t *mesh, size_t j_global);
 ```feenox 
 PROBLEM neutron_sn DIM 3 GROUPS 2 SN 8
 ```
+
+. . .
 
 \bigskip
 
@@ -1856,6 +1871,8 @@ PRINT psi1.1(0,0,0) psi8.2(0,0,0)
 profile(x) = phi1(x,x,0)
 PRINT_FUNCTION profile phi1(x,0,0) MIN 0 MAX 20 NSTEPS 100
 ```
+
+. . .
 
 \bigskip
 
@@ -1921,8 +1938,6 @@ ENDIF
 :::
 ::: {.column width="40%"}
 
-\bigskip
-
 ```terminal-tiny
 $ feenox thermal-slab-transient.fee 
 1.0018730  0.0006274  0.0005100  0.0001174
@@ -1943,11 +1958,13 @@ $
 
 . . .
 
-\bigskip
+\medskip
 
 \centering “Verification of multigroup neutron diffusion codes with MMS”
 
-\centering \small <https://github.com/gtheler/2023-garcar>
+\centering \footnotesize <https://github.com/gtheler/2023-garcar>
+
+\centering \tiny <https://www.youtube.com/watch?v=ywnicOrRtmQ>
 
 
 :::
@@ -1984,7 +2001,7 @@ PRINTF "  wall = %.1f sec" clock()-t0
 
 
 
-## Extras
+## Temas fuera de programa
 
 :::::::::::::: {.columns}
 ::: {.column width="45%"}
@@ -2006,6 +2023,9 @@ PRINTF "  wall = %.1f sec" clock()-t0
  * 4.3.9. Documentación
 
 :::
+
+. . .
+
 ::: {.column width="55%"}
 
 ### Otros temas para el Q&A
@@ -2149,20 +2169,20 @@ $
 \centering \onslide<1->{\includegraphics{cubesphere-0.png}}
 :::
 ::: {.column width="20%"}
-\centering \onslide<3->{\includegraphics{cubesphere-25.png}}
+\centering \onslide<2->{\includegraphics{cubesphere-25.png}}
 :::
 ::: {.column width="20%"}
-\centering \onslide<3->{\includegraphics{cubesphere-50.png}}
+\centering \onslide<2->{\includegraphics{cubesphere-50.png}}
 :::
 ::: {.column width="20%"}
-\centering \onslide<3->{\includegraphics{cubesphere-75.png}}
+\centering \onslide<2->{\includegraphics{cubesphere-75.png}}
 :::
 ::: {.column width="20%"}
-\centering \onslide<2->{\includegraphics{cubesphere-100.png}}
+\centering \onslide<1->{\includegraphics{cubesphere-100.png}}
 :::
 ::::::::::::::
 
-\centering \onslide<4->{\includegraphics[width=0.9\linewidth]{cubesphere.pdf}}
+\centering \onslide<3->{\includegraphics[width=0.9\linewidth]{cubesphere.pdf}}
 
 
 ## 
@@ -2350,7 +2370,7 @@ PRINT %.8f keff
 ```feenox
 Tmod0 = 100
 Tmod(z) = 100 + (200-100)*(z/400)
-FUNCTION sigmat_mod(T) INTERPOLATION linear DATA {
+FUNCTION sigmat_mod(T) INTERPOLATION splines DATA {
 90  0.108
 100 0.112
 110 0.116

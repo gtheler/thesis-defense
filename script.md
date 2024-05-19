@@ -846,113 +846,379 @@ Pasemos al código.
 
 ## Arquitectura
 
-¿Qué hay que hacer?
+Preguntémonos, ¿qué es que lo que tenemos que hacer?
 
- 1. construir la matriz global de rigidez $\mat{K}$ y el vector $\vec{b}$ (o la matriz de masa $\mat{M}$), y
- 2. resolver el sistema de ecuaciones $\mat{K} \cdot \vec{u} = \vec{b}$ (o $\mat{K} \cdot \vec{u} = \lambda \cdot \mat{M} \cdot \vec{u}$)
- 3. construir los flujos $\phi$ y $\psi$
+ 1. construir los objetos globales $K$ y $b$
+ 2. resolver $\mat{K} \cdot \vec{u} = \vec{b}$
+ 3. re-construir los flujos $\phi$ y $\psi$ a partir de $u$
 
-FeenoX se enfoca en 1
+El punto 2 es el foco de un solver, que por regla de Unix no vamos a escribir nosotros.
+Nosotros nos tenemos que enfocar en 1 y en 3.
+
+. . .
+  
+No voy a explicar las razones acá, pero el solver del punto 2 es PETSc (o SLEPc para criticidad).
+Entonces FeenoX es esencialmente dos capas, "glue layers" en terminología Unix:
+ 
+ 1. que construye $K$ y $b$ a partir de la malla y del input 
+ 2. otra que convierte $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview
+ 
+. . .
+
+Una decisión central es el lenguaje de programación.
+Esencialmente tenemos que elegir entre Fortran, C y C++.
+Tal vez Go y Rust también podrían ser alternativas, pero no los conozco lo suficiente como para decidir.
+
+La filosofía Unix nos dice que debemos agregar complejidad solamente cuando la necesitemos
+Por razones diferentes, Fortran y C++ agregan complejidad innecesaria, así que FeenoX está escrito en C que, entre paréntesis, es el lenguaje ideal para las glue layers según Eric Raymond.
+
+---
+33 min 30
+---
 
 
 ## Algoritmos
 
+Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de rigidez y el vector de fuentes.
+Barremos los elementos  acumulamos sobre los puntos de Gauss las contribuciones elementales.
+En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
-para construir K poisson
-para neutrónica es lo mismo
+. . . 
 
-la pde está dada por las llaves
+¿Qué necesitamos?
 
-podemos hacer una cáscara?
-sí!
+ 1. los pesos y coordenadas de Gauss
+ 2. las matrices de forma y de gradiente
+ 3. las coordenadas $C$ de los nodos
+ 4. una forma de evaluar la conductividad, la fuente y eventualmente las condiciones de contorno en un punto $x_q$
 
+. . . 
+ 
+Podemos notar
 
+ 1. que la ecuación a resolver está dada por lo que aparece entre llaves.
+ 2. los puntos 1 2 y 3 no dependen de la ecuación sino solamente de la malla
+ 3. la evaluación de las propiedades materiales y las condiciones de borde, bueno, un poco y un poco. Ahora explico mejor.
+
+Entonces en prinpcio, podemos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver y algún mecanismo que le provea lo que depende de la ecuación particular.
+ 
 ## Implementación
 
-Posible implementación
+Supongamos entonces que quisiéramos elegir la ecuación a resolver en tiempo de ejecución.
+Digamos que tenemos una variable $pde$ que indica qué ecuación queremos resolver.
+Entonces podríamos implementar la evaluación de las llaves así.
 
-if pde == algo
- asdas 
- 
-p 171
+. . . 
 
-para cada q para cada i
+Bueno, esto es, primero que nada, feo.
+Por favor, nunca hagan algo así.
 
- 1. feo
- 2. ineficiente
- 3. dificil de mantener
+Segundo, es tremendamente ineficiente. Hay que hacer todas estas comparaciones para cada punto de gauss de cada elemento.
+
+Tercer, es difícil de mantener.
 
 
 ## Polimorfismo
 
- * C++: métodos virtuales clases
- * C: apuntadores a función
+Si hubiésemos elegido C++ podríamos haber implementado las llaves como métodos virtuales.
+Como estamos en C, lo hacemos con apuntadores a funciones.
 
+Entonces reemplazamos ese feo bloque de ifs por este otro bloque feo de ifs.
+Pero,
 
-
-Un único if feo, ineficiente y dificil de mantener
-
- 1. lo genera un script al que no le importa la belleza ni la mantención
- 2. es uno sólo en toda la ejecución en tiempo de parseo
-
-mostramos autogen? sí
+ 1. lo genera un script al que no le importa la belleza
+ 2. es uno sólo en toda la ejecución en tiempo de parseo.
  
+Esencialmente en este único bloque if se hace apuntar un apuntador a función a una función que depende de cada ecuación a resolver, y a su vez en esa función se hacen apuntar los puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación particular.
+
+---
+35 min 30
+---
 
 ## Input
+
+Pero antes de explicar en detalle esa implementación, déjenme hablar sobre el archivo de entrada.
+
+Recuerden que FeenoX es un ejecutable, no una biblioteca.
+El problema que tiene que resolver tiene que estar completamente definido por este archivo de entrada, es decir, definido en tiempo de ejecución.
+
+Siguiendo la filosofía Unix, este input es un archivo de texto plano.
+Tiene palabras claves en inglés, de forma tal de
+
+ 1. definir completamente el problema
+ 2. ser lo más auto-descriptivo y compacto posible, es decir están prohibidos los argumentos posicionales
+ 3. permitir expresiones algebraicas en cada lugar donde se espere un parámetro numérico
+ 4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input
+ 5. seguir la regla de que "problemas simples necesitan inputs simples"
+ 
+y algunas más que discutimos en el SDS.
+
+Estas palabras clave pueden ser definiciones o instrucciones.
+
 
 ## Ejemplos + IP
 
+Por ejemplo. Efe de equis igual a equis cuadrado. Acá no hay sustantivo pero el igual funciona como una definición.
+Acá definimos una función agebraica de un argumento.
+
+. . .
+
+Siguiente. Input file sorpresa con path una expresión tipo printf con un argumento random. Definición porque file es un sustantivo.
+Read mesh es una instrucción que lee la malla en el archivo sorpresa.
+Print cells es una instrucción. 
+
+. . .
+
+
+Acá tenemos un condicional. Si b es muy chiquito, instrucción print instrucción abort.
+Terimina condicional, instrucción print.
+
+. . .
+
+De hecho FeenoX tiene un instruction pointer. 
+
+
 ## Conducción de calor 1D
+
+Problema simple, input simple.
+
+Línea 1, definimos que queremos condución 1D.
+Línea 2, instrucción: leeme la malla.
+Línea 3, definimos una variable k igual a 1. En problema thermal, si existe la variable k indica conductividad uniforme.
+Líneas 4 y 5,  boundary condition (sustantivo) en left T igual a cero y en right T igual a 1.
+Línea 6: instrucción, por favor resolvé el problema
+Línea 7: instrucción imprimí la solución T evaluada en x=1/2
+
+. . .
+
+Si corremos esto con FeenoX, deberíamos obtener 0.5
+
 
 ## Conductividad no uniforme
 
+¿Qué pasa si la conductividad no es uniforme?
+Bueno, si tenemos una función de x lo que hacemos es definir una ka de equis y el resto todo igual.
+Ahora el resultado ya no es 0.5 sino eso que está ahí.
+
+. . .
+
+¿Y si k depende de la temperatura?
+Ningún problema, escribimos ka de equis en función de T de equis.
+Ahora el problema es no lineal. FeenoX se da cuenta de que si en thermal la conductividad (o alguna condición de contorno) depende de T, que es la solución, tiene que resolver un problema no lineal.
+Este caso tiene solución analítica, que es esa raíz cuadradada que está ahí.
+
+
 ## Reed
+
+Pasemos a un problema neutrónico.
+Caso 1D con diferentes materiales y secciones eficaces uniformes en cada trozo.
+
+Problem ahora es neutron_sn con dim uno gropus 1 pero SN es pesos 1.
+Recuerden que eso quiere decir que ese argumento viene de la línea de comandos.
+Así que le tenemos que decir si queremos S2, S4, etc.
+
+La salida de este input es la raíz cuadrada de la integral del cuadrado de la diferencia entre el flujo calculado por FeenoX y un perfil de referencia tomado de un blog académico.
+
+---
+38 min 30
+---
 
 ## Bootstrap
 
+Habiendo entendido tema input, volvamos al bloque de ifs feo.
+Habíamos dicho que lo generaba un script al que no le importaba la belleza.
+Bueno, ese script es parte del bootstrapping del repositorio, en este caso `autogen.sh`.
+Ese script parsea los subdirectorios dentro de `src/pdes`. La idea es que cada ecuación tenga un subdirectorio con el nombre del PROBLEM a resolver.
+Y además, cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Es un script de Bash que genera un poco de código en C que finalmente se compila en FeenoX.
+
+Después si tienen tiempo y ganas les muestro como funciona. En principio podríamos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
+
+Está claro que no ganamos mucho removiendo. Pero es mucho más interesante agregar, que remover.
+
+
 ## Entry points
+
+Cada subdirectorio debería entonces proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
+
+Alguna relacionada al parser, para leer opciones al keyowrod PROBLEM y para interpretar las condiciones de contorno.
+
+Otras para inicializar.
+
+Las centrales para evaluar las llaves en cada punto de Gauss.
+
+Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver un problema lineal, uno no lineal, un problema de autovalores o uno transitorio. En el caso thermal, eso lo deciden las funciones de inicialización dependiendo de si la conductividad depende de la temperatura o no. En neutrónica, si es un problema con fuentes o de criticidad.
+
+Y después otros entry points para implementar la segunda capa y construir los fujos o las tensiones y deformaciones a partir de lo que resolvió PETSc.
+
+. . .
+
+Ejemplo. El keyword PROBLEM lo lee el parser general. Mira si hay alguna pde llamada neutron SN.
+El siguiente keyword DIM es genérico, lo parsea el framework. El siguiente keyword "groups" no lo entiende el general, entonces se lo pasa al particular que sí lo entiende. Lo mismo para "SN".
+
+. . .
+
+Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad. Esa variabe keff la define implícitamente el parser específico, y al hacer solve problem se rellena con el primer autovalor. Lo mismo los flujos psi y phi. Después ya están para ser usados como variables o como funciones del espacio, respectivamente. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
+
+. . .
+
+Finalmente, esta es la pinta de la parte del framework que llama al entry point que evalúa las contribuciones elementales en los puntos de Gauss.
+Un for sobre q, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
+
 
 ## Expressions
 
+Otro principio fundamental de la base de diseño de FeenoX: "everything is an expression".
+Incluso la dimensión o la cantidad de grupos.
+Desde ya, las propiedades de los materiales y las condiciones de contorno.
+
+. . .
+
+Esto de poder evaluar expresiones algebraicas, inlcuyendo funcionales como integrales, derivadas y sumatorias nos permite por ejemplo comparar la solución numérica con la solución analítica en los casos que la tienen. Este es un ejemplo de condución de calor 1D transitoria. La solución, como ustedes saben, es una sumatoria de exponenciales que podemos evaluar perfectamente. Después restamos una de otra antes de imprimir y ya.
+
+. . .
+
+Este "feature" es especialmente importante para hacer verificación de código. En noviembre hice una presentación en la reunión Garcar del año pasado sobre verificación con MMS. De hecho es un de los resultados del capítulo 5, pero necesitaríamos 20 minutos. Dejo el link al video y al source de las slides.
+
+---
+41 min 30
+---
+
+
 ## No print no shirt
+
+Volvamos a una de las reglas centrales. La regla del silencio. ¿Recuerdan la tabla de 1965?
+En FeenoX, sin PRINT no hay salida.
+Le podemos pedir al software que haga un montón de cosas complicadas. 
+Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
+La salida es 100% user-defined usando las instrucciones PRINT, PRINTF, WRITE_RESULTS, etc.
+
+Es más, algunas cosas ni las calcularía. Por ejemplo, si en un problema mecánico no hay ninguna expresión que involucre las tensiones, entonces FeenoX ni se molesta en calcularlas.
+
+
+
 
 ## Extras
 
+Lista de temas que tienen una sección de la tesis donde las discutimos por escrito.
+
+. . .
+
+Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
+
+[pausa]
+
+---
+43 min
+---
+
 # Resultados
 
+Capítulo de resultados.
 
 ## Tabla de problemas
 
+Esta tabla muestra los problemas resueltos en la tesis.
+Todos, excepto el último, requieren al menos una de las características distintivas de FeenoX.
+
 ## IAEA 3D PWR Onshape
+
+El problema que ya mostramos del benchmark de IAEA.
+En esta caso la geometría viene de un CAD modelado en Onshape 100% web y cloud.
+El que contamos en la historia de Jon sin hache.
 
 ## Malla
 
+A partir de ese CAD hacemos una malla 3D.
+
 ## Meld
+
+Este es un dif de las salidas del caso original con simetría un cuarto y con simetría un octavo.
+Tanto la memoria como el tiempo de ejecución bajan a la mitad.
 
 ## MPI
 
+Y si corremos en paralelo, vemos que si bien el tiempo baja lo más importante es que baja la memoria por proceso.
+Recuerden que ese era nuestro objetivo.
+
 ## Slab a dos zonas
+
+Otro problema. Slab 1D con dos materiales, uno con k infinito menor que uno y el otro mayor que uno.
+Ancho total b, ancho del absorbente a. Queremos estudiar el $k$ efectivo en función de $a$.
+Si el solver soporta mallas no estructuradas y por ende no uniformes, podemos poner un nodo exactamente en $x=a$.
+Si el solver solamente soporta espaciado uniforme (es decir, ladrillitos) entonces hay que detectar en qué celda cae la punta de la barra de control y asignarle a esa celda amarilla una sección eficaz ficticia que sea un promedio pesado de la de los dos materiales.
+Esto da lugar el "efecto cúspide".
+
+Como este problema tiene solución analítica (y FeenoX la puede evaluar) entonces podemos comparar el error cometido por los dos casos,
+
+ 1. poniendo un nodo exacamente en $x=a$
+ 2. simulando el comportamiento de la sección eficaz ficticida
+ 
+Como dice Richard Stallman, la mejor manera de resolver un problema es evitándolo.
+
+---
+44 min 30 seg
+---
 
 ## Cube-sphere
 
+Todos sabemos que para un volumen fijo, una esfera tiene más reactividad que un cubo.
+
+. . .
+
+¿Y en el medio?
+Bueno, podemos ir haciéndole fillets al cubo.
+
+. . .
+
+Buena suerte resolviendo esto con mallas estructuradas.
+
 ## Input + python
+
+La filosofía Unix en acción.
+El input de FeenoX es realmente sencillo.
+La complejidad está puesta en un script de Python que usa el API de Gmsh para fabricar la malla y llamar paramétricamente a FeenoX.
+
 
 ## Tres pescaditos
 
+Otro problema.
+Supogamos que tenemos tres pescaditos absorbentes.
+Dos están fijos. El problema es ubicar el tercero de forma tal que la reactividad total sea mínima.
+
 ## Input
+
+Otra vez dividimos y conquistamos.
+El driver es un Python que usa una biblioteca de optimización con el método de Nelder & Mead.
+El Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para mallar y después a FeenoX para resolver.
+Algunas iteraciones y el $k$ efectivo es mínimo.
+
 
 ## PHWR
 
+Último caso.
+Un PHWR ficticio de siete canales y tres barras de control inclinadas.
+
+[pausa]
+
 ## XS
+
+Como el problema es inventado, también inventamos las secciones eficaces.
+En particular, para el moderador ponemos un perfil de temperaturas en función de $z$.
+Y hacemos que algunas secciones eficaces dependan algebraicamente y otras a través de puntos "experimentales" de esta temperatura.
 
 ## Flujos
 
+Dibujitos tipo "CFD" (que quiere decir "colors for directors").
+
+
 ## Tabla y MPI
 
+Y finalmente otra ilustración de que al correr esto en paralelo lo que logramos es bajar la memoria por proceso.
 
+[pausa]
 
 ---
-X min
+47 min
 ---
 
 ## Conclusiones
@@ -1005,7 +1271,7 @@ y puedas volver a Cancún con tu familia.
 Muchas gracias.
 
 ---
-X + 2 min
+49 min
 ---
 
 
