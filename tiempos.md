@@ -1,39 +1,39 @@
 # Tiempos
  
- 1. (3 min) laterales con sandías, 3 ámbitos, mafalda, TOC
-    1. (2 min) why, 100 años de programación
-    2. (4 min) historia de dos reactores
-    3. (2 min) propuesta: IAEA 3D PWR
+ 1. laterales con sandías, 3 ámbitos, mafalda, TOC
+    1. why, 100 años de programación
+    2. historia de dos reactores
+    3. propuesta: IAEA 3D PWR
     
 ---
-parcial 11 min
-total   11 min
+parcial 10 min
+total   10 min
 ---    
     
- 2. (2 min 30) Séneca, markdown, CC-BY, ecuaciones de transporte y difusión
+ 2. Séneca, markdown, CC-BY, ecuaciones de transporte y difusión
  
 ---
-parcial 2 min 30
-total  13 min 30 seg
+parcial 2 min
+total  12 min
 --- 
  
- 3. (2 min) Paul Graham, energía, SN
-    1. (4 min 30) FEM
+ 3. Paul Graham, energía, SN
+    1. FEM
 
 ---
-parcial 6 min 30
-total  20 min
+parcial 6 min
+total  18 min
 ---
         
  4. Implementación
  
-    1. (4 min 30) Bicicleta -> Do it for him.
-    2. (8 min) SRS/SDS -> maze
-    3. (10 min 30) Arquitectura (terciopelo negro)
+    1. Bicicleta -> Do it for him.
+    2. SRS/SDS -> maze
+    3. Arquitectura (terciopelo negro)
     
 ---
 parcial 23 min
-total 43 min
+total 41 min
 ---    
     
  5. (4 min) Resultados

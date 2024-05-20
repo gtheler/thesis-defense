@@ -83,7 +83,7 @@ Empecemos entonces con el "why".
 ## Cien años de programación
 
 Consideremos esta tabla de un paper de 1965.
-El título del paper es, justamente "Desarrollos recientes en computadoras y sus _consecuencias_ para el cálculo de reactores"
+El título del paper es, justamente "Desarrollos _recientes_ en computadoras y sus _consecuencias_ para el cálculo de reactores"
 
 [pausa para que miren la tabla]
 
@@ -133,7 +133,7 @@ Pero esa es discusión para otro momento.
 
 ## Esquema de dos pasos
 
-Long story short: tenemos que modelar la inyección de rápida de boro del segundo sistema de shutdown.
+Long story short: tenemos que modelar la inyección rápida de boro del segundo sistema de shutdown.
 
 Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es...
 
@@ -160,6 +160,7 @@ Sea Atucha o sea Embalse, en Argentina tenemos
  1. canales cilíndricos
  2. moderador separado del refrigerante.
 
+El boro se inyecta en el tanque del moderador.
 Así que la pluma va a rodear los canales.
 El boro no se va a meter en el refrigerante, mucho menos en el combustible.
 
@@ -222,7 +223,7 @@ Además de todas las preguntas sobre la validez del esquema, surge también esta
 
 . . .
 
-¿Vale usar difusión?
+¿Vale usar difusión en estas condiciones?
 
 
 ## Limitaciones
@@ -269,7 +270,7 @@ Más aún, ese reflector no debería ser así.
 
 Debería ser así.
 
-Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" como Leon-O de los Thundercats.
+Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" como los Thundercats.
 
 ## IAEA SN
 
@@ -279,7 +280,10 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
  * reflector circular en lugar de "recortado", y
  * S$_4$ en lugar de difusión.
 
-
+---
+10 min
+---
+ 
  
 ## How
 
@@ -318,11 +322,11 @@ Si alguien necesita notas para dar clases tiene la libertad de acceder al markdo
 
 ## Ecuación de transporte
 
-Resumen del capituolo: derivación de la ecuación de transporte a partir de una "contabilidad" de neutrones.
+Resumen del capítulo: derivación de la ecuación de transporte a partir de una "contabilidad" de neutrones.
 
 ## Armónicos
  
-Expansión de la dependencia angular de la sección eficaz de scattering en polinomios de Legendre y la dependencia angular del flujo escalar en armónicos esféricos.
+Expansión de la dependencia angular de la sección eficaz de scattering en polinomios de Legendre y de la dependencia angular del flujo escalar en armónicos esféricos.
  
 ## Transporte linealmente anisótropo
  
@@ -333,6 +337,9 @@ Ecuación de transporte linealmente anisotrópico.
 Aproximación de difusión.
 Fin del capítulo.
 
+---
+12 min
+---
  
 ## Paul Graham
 
@@ -342,15 +349,14 @@ Este tampoco tiene (casi) nada nuevo.
 Pero hay un par de diferencias.
 La primera la explica Paul Graham.
 
-En uno de sus ensayos dice lo mismo que Séneca. No sorprende por Graham suele citar a Séneca.
+En uno de sus ensayos dice lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
 Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
 
 La segunda es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
 
 ## Esquemas
 
-La discretización en energía es bastante straightforward.
-Formulación multi-grupo, que es como si fuese volúmenes finitos sin operadores diferenciales.
+La discretización en energía es bastante straightforward: formulación multi-grupo, que es como si tuviésemos volúmenes finitos sin operadores diferenciales.
 
 . . .
 
@@ -359,7 +365,7 @@ Discretización en ángulo para transporte. Revisitamos las ordenadas discretas,
 
 ## Discretización en espacio
 
-Discretización del espacio: elegimos elementos finitos.
+Discretización del espacio: del menú, elegimos _elementos_ finitos.
 
 Hagamos un breve repaso usando la ecuación de Poisson, que es más sencilla.
 
@@ -380,21 +386,21 @@ Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de N
 
 ## Funciones
 
-Después buscamos tantas funciones de forma como nodos pusimos de forma tal de que cada una valga uno en cada nodo y cero el en resto.
+Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en el nodo y cero el en resto.
 
 ## Elementos finitos
 
 Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio U.
-Llamamos a cada uno de estos triangulitos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
+Llamamos a cada uno de éstos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
 
 
 
 ## $K \cdot u = b$
 
-Con un poco de álgebra lineal llegamos que tenemos que resolver el sistema lineal $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
+Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
 Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
-Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ sobre la matriz de rigidez $K$ y del funcional $B$ larga grande sobre el vector del miembro derecho $b$ larga chica.
+Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
 
 . . .
 
@@ -413,10 +419,10 @@ Primero, que podemos usar elementos segundo orden. Si quieren después profundiz
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
 Este es el "casi" nada nuevo.
 Nunca pude encontrar en la bibliografía una justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$.
-De hecho consulté a colegas del palo de los elementos finitos y nadie me cantar la posta.
+De hecho consulté a colegas del palo de los elementos finitos y nadie me pudo cantar la posta.
 Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el cuento de los monos.
 
-En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación matemática.
+En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación matemática, que es la parte "nueva".
 De hecho mi respuesta es la segunda más votada (despúes de la primera que es de Jed Brown).
 
 [pausa]
@@ -424,7 +430,7 @@ De hecho mi respuesta es la segunda más votada (despúes de la primera que es d
 
 ## Difusión
 
-Haciendo lo mismo que hicimos para Poisson pero para difusión multigrupo llegamos a unas expresiones para las contribuciones elementales.
+Haciendo lo mismo que hicimos para Poisson pero para difusión multigrupo llegamos a estas expresiones para las contribuciones elementales.
 Los detalles en el capítulo tres, pero dos cosas
 
  1. $L$ es leakage, $A$ es absorción y $F$ es fisión, abajo $s$ son las fuentes independientes
@@ -443,18 +449,20 @@ Otra vez, la forma es parecida pero
  1. El operador $a$ no es elíptico.
  2. La ecuación es hiperbólica de primer orden.
 
-Así que es matriz $P$ que aparece en las matrices de pérdidas, absorciones y fisiones es una matriz estabilizada tipo Petrov-Galerkin.
+Así que esa matriz $P$ que aparece en los términos de pérdidas, absorciones y fisiones es una matriz estabilizada tipo Petrov-Galerkin.
+Una vez más, los detalles en el texto.
+
 
 ## Estado estacionario
 
 ¿Qué hacemos con todo esto?
 Bueno, depende de qué tipo de problema estemos queriendo resolver.
 
- 1. Si tenemos medio no multiplicativo con fuentes independientes, las pérdidas y las absorciones son proporcionales al flujo y las fuentes son, justamente, independientes. Esto da un problema lineal.
+ * Si tenemos medio no multiplicativo con fuentes independientes, las pérdidas y las absorciones son proporcionales al flujo pero las fuentes son, justamente, independientes. Esto da un problema lineal.
 
- 2. Si tenemos medio multiplicativo con fuentes independientes, tenemos que agregar un término de fisiones proporcional al flujo. En lugar de ponerlo el el miembro derecho lo pasamos al izquierdo con signo negativo. Otra vez, problema lineal.
+ * Si tenemos medio multiplicativo con fuentes independientes, tenemos que agregar un término de fisiones proporcional al flujo. En lugar de ponerlo el el miembro derecho lo pasamos al izquierdo con signo negativo. Otra vez, problema lineal.
  
- 3. Ahora, si no hay fuentes independientes entonces todo es proporcional al flujo. Volvemos a mandar las fisiones al miembro derecho y resolvemos un problema de autovalores para encontrar el $k_\text{eff}$ del reactor crítico asociado en $k$. El primer autovector nos da el flujo de estado estacionario.
+ * Ahora, si no hay fuentes independientes entonces todo es proporcional al flujo. Volvemos a mandar las fisiones al miembro derecho y resolvemos un problema de autovalores para encontrar el $k_\text{eff}$ del reactor crítico asociado en $k$. El primer autovector nos da el flujo de estado estacionario.
  
 . . .
 
@@ -481,15 +489,15 @@ Completen con media hora de mala literatura.
 
 Resulta que Unix también es un diseño que resuelve problemas que no existían cuando fue inventado.
 
-A medidados de los 60 los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
+A medidados de los 60, la época de la tablita anterior, los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
 Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "bien pulenta".
-Pero el proyecto, llamado MULTICS (siglas _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
+Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
 Entonces a fines de los 60 estos dos muchachos empezaron desde cero.
 Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
 
 . . .
 
-Abro un concurso: una taza de Atlético de Rafaela para las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
+Abro un concurso: una taza de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
 
 ## Jon
 
@@ -532,7 +540,7 @@ Como la bicicleta.
 Cierro concurso.
 ¿Nombre de los últimos dos?
 
-Entre paréntesis, Dennis Ritchie (el que está parado) se murió en 2011 la misma semana que Steve Jobs.
+Entre paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
 Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres, el columnista de La Nación.
 
 
@@ -620,7 +628,7 @@ Y si uno no sabe programar, poder tener la _libertad_ de contratar a alguien que
 
 
 Por otro lado, Eric Raymond (el del libro de Unix) hace énfasis en la superioridad técnica del software open source.
-Y esto es importante en software científico y de ingeniería. Especialmente en la industria nuclear.
+Y esto es importante en software científico y de ingeniería. Especialmente, de nuevo, en la industria nuclear.
 
 . . .
 
@@ -634,7 +642,7 @@ Esta discusión podría necesitar más de 45 minutos en sí misma, así que la t
 
 Resulta que FeenoX es un tercer intento, tal como Unix.
 
-Todo empezó con el milonga, que algunos de ustedes conocerán e incluso tal vez usado.
+Todo empezó con el milonga, que algunos de ustedes conocerán e incluso tal vez habrán usado.
 
 Como eso andaba más o menos bien, me pasó lo que a los gerentes de la Bell.
 
@@ -649,7 +657,7 @@ Hasta que decidí empezar de cero.
 . . . 
 
 El scope actual es que FeenoX puede resolver estos problemas.
-Pero hay un mecanismo de extensión en src/pdes que voy a explicar en detalle en un momento.
+Pero hay un mecanismo de extensión que voy a explicar en detalle en un momento.
 
 ## Unix
 
@@ -674,7 +682,7 @@ De hecho podemos usar a FeenoX como un filtro de Unix pasando el input por la en
 ## 17 rules
 
 En su libro, Raymond explicita 17 reglas.
-Todas tienen algún grado de impacto en el diseño y/o implementación de FeenoX.
+Todas tienen algún grado de impacto en el diseño o en la implementación de FeenoX.
 Las marcadas en boldface son las más importantes.
 
 . . .
@@ -717,13 +725,13 @@ Imagínense en términos de servidores de cálculo.
 
 Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly".
 Por ejemplo, en deployment hay que evitar re-compilar.
-Por eso por diseño, FeenoX es un ejecutable (y no una bibliotea) que lee el problema a resolver en tiempo de ejecución.
+Por eso por diseño, FeenoX es un ejecutable---y no una bibliotea. Este ejecutable lee el problema a resolver en tiempo de ejecución.
 Esto nunca se lo pude hacer entender a uno de los reviewers del JOSS. Espero poder explicarlo mejor acá.
 
 . . .
 
 Y ni que hablar de solvers tipo Desktop que quieren dockerizarlos para hacerlos "cloud friendly".
-Esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones al año.
+Esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año.
 
 ## CAEplex
 
@@ -743,13 +751,14 @@ Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 ## Mazes
 
 Una nota de color antes de meternos en el código.
-Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida.
-Podemos explotar la elipticidad del operador de Laplace.
+Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida, pero no el camino que las une.
+Podemos explotar la elipticidad del operador de Laplace con FeenoX.
 
 . . .
 
-Este caso es uno de los tutoriales de FeenoX.
-Ahí en el link incluso se muestra como resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
+Este es un post de LinkedIn y uno de los tutoriales.
+Ahí en el link se muestran los detalles de cómo hacer el dibujito ese para un laberitno arbitrario.
+Incluso cómo resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
 
 Bueno, basta de marketing.
 Pasemos al código.
@@ -772,10 +781,10 @@ Nosotros nos tenemos que enfocar en 1 y en 3.
 . . .
   
 La biblioteca del punto 2 es PETSc (o SLEPc para criticidad).
-Entonces FeenoX son esencialmente dos capas, "glue layers" en terminología Unix:
+Entonces FeenoX juega el papel dos "glue layers" en terminología Unix:
  
- 1. que construye $K$ y $b$ a partir de la malla y del input 
- 2. otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview
+ * una que construye $K$ y $b$ a partir de la malla y del input 
+ * otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview.
  
 . . .
 
@@ -793,7 +802,7 @@ Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de ri
 Barremos los elementos, acumulamos sobre los puntos de Gauss las contribuciones elementales.
 En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
-La ecuación diferemcial esencialmente está dada por las llaves.
+La ecuación diferencial esencialmente está dada por las llaves.
 
 Entonces en principio, podemos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
  
@@ -911,13 +920,10 @@ Así que le tenemos que decir si queremos S2, S4, etc.
 
 La salida de este input es la raíz cuadrada de la integral del cuadrado de la diferencia entre el flujo calculado por FeenoX y un perfil de referencia tomado de un blog académico.
 
----
-38 min 30
----
 
 ## Bootstrap
 
-Habiendo entendido tema input, volvamos al bloque de ifs feo.
+Habiendo entendido tema input, volvamos ahora al bloque de ifs feo.
 Habíamos dicho que lo generaba un script al que no le importaba la belleza.
 Bueno, ese script es parte del bootstrapping del repositorio, en este caso `autogen.sh`.
 Ese script parsea los subdirectorios dentro de `src/pdes`. La idea es que cada ecuación tenga un subdirectorio con el nombre del PROBLEM a resolver.
@@ -925,14 +931,14 @@ Y además, cada subdirectorio tiene que tener ciertos archivos en C con ciertas 
 
 Después si tienen tiempo y ganas les muestro como funciona. En principio podríamos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
 
-Está claro que no ganamos mucho removiendo. Pero es mucho más interesante agregar, que remover.
+Está claro que no ganamos mucho removiendo. Es mucho más interesante agregar, que remover.
 
 
 ## Entry points
 
 Cada subdirectorio debería entonces proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
 
-Alguna relacionada al parser, para leer opciones al keyowrod PROBLEM y para interpretar las condiciones de contorno.
+Alguna relacionada al parser, para leer opciones al keyword PROBLEM y para interpretar las condiciones de contorno.
 
 Otras para inicializar.
 
@@ -949,7 +955,7 @@ El siguiente keyword DIM es genérico, lo parsea el framework. El siguiente keyw
 
 . . .
 
-Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad. Esa variabe keff la define implícitamente el parser específico, y al hacer solve problem se rellena con el primer autovalor. Lo mismo los flujos psi y phi. Después ya están para ser usados como variables o como funciones del espacio, respectivamente. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
+Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad. Esa variabe keff la define implícitamente el parser específico, y al hacer solve problem se rellena con el primer autovalor. Lo mismo los flujos psi y phi. Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
 
 . . .
 
@@ -971,18 +977,14 @@ Esto de poder evaluar expresiones algebraicas, inlcuyendo funcionales como integ
 
 Este "feature" es especialmente importante para hacer verificación de código. En noviembre hice una presentación en la reunión Garcar del año pasado sobre verificación con MMS. De hecho es un de los resultados del capítulo 5, pero necesitaríamos 20 minutos. Dejo el link al video y al source de las slides.
 
----
-41 min 30
----
-
 
 ## No print no shirt
 
-Volvamos a una de las reglas centrales. La regla del silencio. ¿Recuerdan la tabla de 1965?
+Volvamos a otra de las reglas centrales. La regla del silencio. ¿Recuerdan la tablita de 1965?
 En FeenoX, sin PRINT no hay salida.
 Le podemos pedir al software que haga un montón de cosas complicadas. 
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
-La salida es 100% user-defined usando las instrucciones PRINT, PRINTF, WRITE_RESULTS, etc.
+La salida es 100% definida por el usuario usando las instrucciones PRINT, PRINTF, WRITE_RESULTS, etc.
 
 Es más, algunas cosas ni las calcularía. Por ejemplo, si en un problema mecánico no hay ninguna expresión que involucre las tensiones, entonces FeenoX ni se molesta en calcularlas.
 
@@ -999,9 +1001,6 @@ Lista de temas que no están explícitamente discutidos en el texto pero que pod
 
 [pausa]
 
----
-43 min
----
 
 # Resultados
 
@@ -1047,9 +1046,6 @@ Como este problema tiene solución analítica (y FeenoX la puede evaluar) entonc
  
 Como dice Richard Stallman, la mejor manera de resolver un problema es evitándolo.
 
----
-44 min 30 seg
----
 
 ## Cube-sphere
 

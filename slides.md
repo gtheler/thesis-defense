@@ -170,6 +170,7 @@ $$
 
 ![](slider-cna1.png)
 
+. . .
 
 ![](slider-cna2.png)
 
