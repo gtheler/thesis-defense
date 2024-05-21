@@ -700,7 +700,7 @@ Y que no se enfoque en una sola forma de front end. Debería poder "hablar" con 
 Y tiene que ser ameno a corridas paramétricas.
 El mejor mecanismo es con argumentos en la línea de comandos.
 
-Supongamos que tenemos este archivo de entrada: print hello pesos uno.
+Supongamos que tenemos este archivo de entrada: PRINT HELLO pesos uno.
 Bueno, si lo corremos desde bash do feenox hello punto fee pesos i nos dice hello 1, hello 2 y hello 3.
 
 
@@ -724,10 +724,8 @@ Imagínense en términos de servidores de cálculo.
 . . .
 
 Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly".
-Por ejemplo, en deployment hay que evitar re-compilar.
-Por eso por diseño, FeenoX es un ejecutable---y no una bibliotea. Este ejecutable lee el problema a resolver en tiempo de ejecución.
-Esto nunca se lo pude hacer entender a uno de los reviewers del JOSS. Espero poder explicarlo mejor acá.
 
+XXXXX
 . . .
 
 Y ni que hablar de solvers tipo Desktop que quieren dockerizarlos para hacerlos "cloud friendly".
@@ -864,15 +862,15 @@ Acá definimos una función agebraica de un argumento.
 
 . . .
 
-Siguiente. Input file sorpresa con path una expresión tipo printf con un argumento random. Definición porque file es un sustantivo.
+Siguiente. Input file sorpresa con PATH una expresión tipo PRINTF con un argumento random. Definición porque FILE es un sustantivo.
 Read mesh es una instrucción que lee la malla en el archivo sorpresa.
-Print cells es una instrucción. 
+PRINT cells es una instrucción. 
 
 . . .
 
 
-Acá tenemos un condicional. Si b es muy chiquito, instrucción print instrucción abort.
-Terimina condicional, instrucción print.
+Acá tenemos un condicional. Si $b$ es muy chiquito, instrucción PRINT instrucción ABORT.
+Terimina condicional, instrucción PRINT.
 
 . . .
 
@@ -951,16 +949,16 @@ Y después otros entry points para implementar la segunda capa y construir los f
 . . .
 
 Ejemplo. El keyword PROBLEM lo lee el parser general. Mira si hay alguna pde llamada neutron SN.
-El siguiente keyword DIM es genérico, lo parsea el framework. El siguiente keyword "groups" no lo entiende el general, entonces se lo pasa al particular que sí lo entiende. Lo mismo para "SN".
+El siguiente keyword DIM es genérico, lo parsea el framework. El siguiente keyword GROUPS no lo entiende el general, entonces se lo pasa al particular que sí lo entiende. Lo mismo para "SN".
 
 . . .
 
-Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad. Esa variabe keff la define implícitamente el parser específico, y al hacer solve problem se rellena con el primer autovalor. Lo mismo los flujos psi y phi. Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
+Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad. Esa variabe `keff` la define implícitamente el parser específico, y al hacer SOLVE_PROBLEM se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$. Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
 
 . . .
 
 Finalmente, esta es la pinta de la parte del framework que llama al entry point que evalúa las contribuciones elementales en los puntos de Gauss.
-Un for sobre q, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
+Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
 
 
 ## Expressions
