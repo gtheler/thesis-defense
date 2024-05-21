@@ -42,7 +42,17 @@ header-includes:
 
 ## 
 
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 \centering ![](yo_lazo.jpg)
+:::
+::: {.column width="50%"}
+\centering ![](2007-enief-welander.pdf)
+:::
+::::::::::::::
+
+
+
 
 ## 
 
@@ -576,7 +586,7 @@ $$
 
 
 
-## 
+## 3. Esquemas de discretización numérica
 
 
 :::::::::::::: {.columns}
@@ -1041,8 +1051,7 @@ $$
 :::
 ::::::::::::::
 
-  * (a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool)
-
+\centering <https://www.seamplex.com/feenox>
 
 
 
@@ -1199,6 +1208,8 @@ $$
 :::
 ::::::::::::::
 
+. . .
+
 ```
                              +------------+
  mesh (*.msh)  }             |            |             { terminal
@@ -1206,6 +1217,8 @@ $$
  input (*.fee) }             |            |             { post (vtk/msh)
                              +------------+
 ```
+
+. . .
 
 ```terminal-tiny
 $ a=1; b=3; echo PRINT $a/$b | feenox -
@@ -1247,16 +1260,11 @@ $
  * Script & macro friendly (simulación programática)
  
    - play along con otras herramientas
-   - optimizador
    - mallador
    - post-procesador
- 
- * UI/UX friendly (desktop, web, VR?)
- 
-   - separar front de back end
-   - inputs fáciles de generar
-     - m4? sed? Awk? PHP?
- 
+
+. . .
+   
  * Parametric & optimization runs
  
    ```feenox
@@ -1271,6 +1279,9 @@ $
    $ 
    ```
 
+. . .
+
+ * Separate front & back ends
 :::
 
 ::::::::::::::
@@ -1295,19 +1306,20 @@ $
 ::: {.column width="40%"}
 
  * Somebody else's computer(s)
- * Pay as you go
- * Rent, don't buy!
- * CAPEX $\rightarrow$ OPEX
+   - Pay as you go
+   - Rent, don't buy!
+   - CAPEX $\rightarrow$ OPEX
 
-\medskip 
+\bigskip 
 . . .
 
  * Cloud first $\neq$ cloud friendly 
-   - Deployment
-   - APIs
-   - Autenticación
-   - Thin clients
-   - ...
+
+ * No es solamente
+   - `ssh ...`
+   - `docker ...`
+   
+ * Mucho menos remote desktops!
 
 \medskip 
 . . .
@@ -1316,6 +1328,48 @@ $
  
 :::
 ::::::::::::::
+
+## Cloud first $\neq$ cloud friendly
+
+:::::::::::::: {.columns}
+::: {.column width="60%"}
+
+ * Los inputs tienen que ser...
+   * fáciles de generar por front ends
+     - Desktop (M4, AWK, ...)
+     - Web (PHP, nodeJS, ...)
+     - Scripts (Python, Julia, ...)
+     - VRs, hologramas 3D, etc.
+   * traceables con Git
+     - BCs en superficies, no en nodos
+     - ¡no trackear la malla!
+ * Las salidas tienen que ser fáciles de procesar...
+   * con bibliotecas 
+     - `.msh`
+     - `.vtk`
+   * con filtros de texto
+
+:::
+
+::: {.column width="50%"}
+
+ * Deployment
+   - Evitar tener que compilar
+   - Dockerizable (nativo Linux)
+   - Thin remote clients
+   - Rest APIs
+   - Autenticación
+   
+ * Escalabilidad
+   - Multi-node MPI
+   - Hardware y topología de red
+   - Queue-managers
+   - Reportes de estado
+   - Signal handlers
+
+:::
+::::::::::::::
+
 
 
 ## 
@@ -1330,26 +1384,6 @@ $
 ## 
 
 \centering ![](nafems-le10-problem-input.svg)
-
-## 
-
-:::::::::::::: {.columns}
-::: {.column width="30%"}
-
-\vspace{0.5cm}
-
-\centering ![](maze-homer.png)
-:::
-
-::: {.column width="70%"}
-\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
-
-4,498 likes, 355 comments & 143 reposts
-:::
-::::::::::::::
-
-\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
-
 
  
  
@@ -1377,7 +1411,7 @@ $
 :::
 ::: {.column width="50%"}
 
-### Unix philosophy
+### Unix rule of simplicity
 
 Add complexity only where you must.
 
@@ -2825,3 +2859,30 @@ WRITE_RESULTS FORMAT vtk
 ```
 :::
 ::::::::::::::
+
+
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="30%"}
+
+\vspace{0.5cm}
+
+\centering ![](maze-homer.png)
+:::
+
+::: {.column width="70%"}
+\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
+
+4,498 likes, 355 comments & 143 reposts
+:::
+::::::::::::::
+
+\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
+
+
+
+## 
+
+  * (a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool)
+

@@ -10,12 +10,12 @@ Yo crecí en los noventa, donde todo daba vueltas alrededor de la televisión.
 ## Calabró
 
 Estos dos monstruos tenían un programa llamado "El contra".
-El invitado era un director técnico de fútbol, no recuerdo quién.
-En un momento, Calabró pregunta:
+Un día, el invitado era un director técnico de fútbol, no recuerdo quién.
+En un momento, Calabró le pregunta:
 
 "Supongamos que van 45 minutos del segundo tiempo. ¿Qué preferiría? ¿Un córner o un lateral a favor?"
 
-"¿Pero qué pregunta es esa?"---responde rápido Carrizo sin dejar hablar al DT.
+"¿Pero qué pregunta es esa?"---responde rápido Carrizo sin dejar hablar al técnico.
 "Con un córner uno tiene la posibilidad de llegar al área rival."
 
 "Lo que pasa es que allá en Villa Dálmine"---explica Calabró---"durante la semana nosotros entrenamos laterales con sandías."
@@ -26,11 +26,11 @@ En un momento, Calabró pregunta:
 
 [pausa]
 
-Bueno, esa idea de entrenar laterales con sandías que escuché cuando tenía 10 años me empezó a perseguir.
+Bueno, esa idea de entrenar laterales con sandías que escuché cuando tenía 11 años me empezó a perseguir.
 
 ## IB 2004
 
-Diez años después estaba entrenando laterales con sandías en la clase de mecánica de Barrachina.
+Exactamente diez años después, estaba entrenando laterales con sandías en la clase de mecánica de Barrachina.
 
 ## Electrón
 
@@ -42,7 +42,7 @@ Acá estoy entrenando laterales en mi tesis de grado sobre lazos de convección 
 
 ## TECNA
 
-Después de la maestría me dediqué a meter las narices en temas de licenciamimento de Atucha II en un etapa industrial de mi carrera profesional.
+Terminada mi maestría en el IB, me dediqué a meter las narices en temas de licenciamimento de Atucha II en un etapa industrial de mi carrera profesional.
 
 ## Cites
 
@@ -63,10 +63,16 @@ Justamente este largo tiempo me permitió poder separar, como dice Mafalda, lo u
 
 Primero que nada, si hubiese podido escribir la tesis en inglés el título habría sido "a cloud-first approach for solving core-level neutron transport over unstructured grids."
 
-Pero no encontré una buena traducción, así que elegí "transporte de neutrones en la nube" que indica explícitamente que el contenido de la tesis es una mezcla de 
+Pero no encontré una buena traducción, así que elegí...
 
- i. física de reactores a nivel de núcleo, y
- ii. programación tipo high-performance
+---
+
+"transporte de neutrones en la nube" que indica explícitamente que el contenido de la tesis es una mezcla de 
+
+ * física de reactores a nivel de núcleo, y
+ * programación tipo high-performance.
+ 
+---
 
 La tesis está dividida en cinco capítulos más algunos apéndices (que sí están en inglés).
 En en el primero explico el "why", en los dos siguientes el "how" y en los últimos dos el "what".
@@ -87,20 +93,21 @@ El título del paper es, justamente "Desarrollos _recientes_ en computadoras y s
 
 [pausa para que miren la tabla]
 
-Tenemos que hacer el ejercicio mental de viajar 60 años al pasado y entender estos números.
+Tenemos que hacer el ejercicio mental de viajar 60 años al pasado para entender estos números.
 
-Dejemos de lado consideraciones sobre arquitectura, lenguajes, compiladores, etc.
-Pensemos en cómo había que diseñar el software de cálculo desde el punto de vista de ingeniería en aquella época.
+Dejemos de lado consideraciones sobre arquitecturas, lenguajes, compiladores, etc.
+Pensemos en cómo había que diseñar software de ingeniería nuclear.
 
 Desde un punto de vista de costos, cada resultado calculado tiene que formar parte de la salida.
-Porque si te gastás varios miles de dólares para hacer una corrida y después necesitás un número que no está en los papeles que imprimió el aparato, tenés que volver a pagar para calcularlo de nuevo.
+Porque si te gastás varios miles de dólares para hacer una corrida y después necesitás un número que no está en los papeles que imprimió el aparato, tenés que volver a pagar.
 
-Pero si viajamos de nuevo "back to the future", resulta que lo caro ahora es la hora de ingeniería y no la hora de CPU.
-No tiene ningún sentido hacer que el calculista tenga que buscar la aguja que necesita en un pajar de números innecesarios.
+Viajemos "back to the future". Resulta que hoy, lo caro es la hora de ingeniería y no la hora de CPU.
+No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
 
-[pausa]
+[pausa para buscar libros]
 
 Así y todo, la mayoría del software de cálculo en general y de reactores en particular, sigue sacando megas de salidas.
+
 Aún cuando desde hace varios años tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming") que sintetizan un montón de lecciones aprendidas en tema de diseño de software.
 
 ## Unix rule of silence
@@ -113,8 +120,10 @@ Entre ellas, la "regla del silencio".
 ## Historia de dos reactores
 
 Pasemos ahora a la otra mitad.
-
 Supongamos que tenemos un reactor con un diseño medio único, ya licenciado y que está operando.
+
+---
+
 Después aparece otro reactor medio parecido, un poco más grande pero que hay que licenciar.
 Bueno, las partes más sensibles hay que contratarlas afuera porque no tenemos ciertas capacidades de ingeniería.
 Y aunque alguna vez las hayamos tenido, las perdimos por el camino.
@@ -125,29 +134,27 @@ De todas maneras, metemos un poco las narices en el proceso de licenciamiento de
 
 Fantástico.
 
-Se licencia el reactor nuevo pero resulta que hay que re-licenciar el viejo.
+Se licencia el reactor nuevo pero resulta que también hay que re-licenciar el viejo.
 Y ahora sí tenemos las capacidades.
-De hecho, si me apurás, te digo que teníamos más capacidad que los "expertos internacionales".
+De hecho, si me apurás, te digo que al final teníamos más capacidades que los "expertos internacionales".
 Pero esa es discusión para otro momento.
 
 
 ## Esquema de dos pasos
 
 Long story short: tenemos que modelar la inyección rápida de boro del segundo sistema de shutdown.
-
 Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es...
 
- 1. calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un código de núcleo y tenemos una curva de reactividad vs. tiempo
- 2. metemos esa curva en un código de planta acoplado con control y protección y vemos qué pasa.
+ 1. calcular la pluma de boro en el tanque del moderador con CFD, meterla en un código de núcleo y obtener una curva de reactividad vs. tiempo
+ 2. meter esa curva en un código de planta acoplado con control y protección y resolver el transitorio.
  
 ## Esquema acoplado
 
 Segundo esquema.
 
-Calculamos la pluma de boro en el tanque del moderador con CFD, la metemos en un código de núcleo cinético-espacial acoplado con el código de planta y la lógica de control y protección.
+Calcular la pluma de boro en el tanque del moderador con CFD y meterla directametne en un código de núcleo cinético-espacial acoplado con el código de planta y la lógica de control y protección.
 
-
-. . .
+---
 
 En cualquiera de los dos casos, tenemos que hacer CFD primero y meter la pluma de boro en la neutrónica.
 Así que prestemos atención a esa parte.
@@ -157,7 +164,7 @@ Así que prestemos atención a esa parte.
 
 Sea Atucha o sea Embalse, en Argentina tenemos 
 
- 1. canales cilíndricos
+ 1. canales cilíndricos, y
  2. moderador separado del refrigerante.
 
 El boro se inyecta en el tanque del moderador.
@@ -166,20 +173,28 @@ El boro no se va a meter en el refrigerante, mucho menos en el combustible.
 
 ## Dominio
 
-Cuando tenemos que discretizar una geometría curva como esta,
-si queremos usar una malla estructurada como esta,
+Cuando tenemos que discretizar una geometría curva como esta...
+
+---
+
+si queremos usar una malla estructurada como esta...
+
+---
+
 nos vamos a topar con un "stair-case effect" como este.
 
-Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún error pero para la misma cantidad de celdas, la discretización con mallas no estructuradas es muy superior.
+---
+
+Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún error pero para la misma cantidad de celdas, pero podemos ver que la discretización con mallas no estructuradas es muy superior.
 
 ## Celdas estructuradas...
 
-Pero si uno mira los códigos de núcleo, ve cosas como estas.
+Ahroa, si miráramos los códigos de núcleo, aparecerían cosas como estas.
 Esto es Atucha I "vista" desde el código de cinética espacial que nombramos antes.
 
 [pausa]
 
-Modelar numéricamente barras inclinadas se parece bastante a jugar con "Legos" o, para los viejos como yo, "mis ladrillitos", ¿no?
+Las barras de control inclinadas parecen hechas de "Legos" o, para los viejos como yo, "mis ladrillitos", ¿no?
 
 
 ## Celdas
@@ -196,7 +211,7 @@ Desde el punto de vista del cálculo de celda, al menos hace diez años, si quer
 ## CFD
 
 Dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
-Bueno, esto lo hacen los que saben de fluidos con mallas no estructuradas.
+Este paso lo hacen los que saben de fluidos con mallas no estructuradas.
 Está claro que el boro no se mete en los canales. 
 
 
@@ -204,9 +219,9 @@ Está claro que el boro no se mete en los canales.
 
 Desde el lado de la neutrónica de núcleo, ahora tenemos que mapear para cada instante la pluma del CFD en nuestra malla estructurada.
 
-. . .
+---
 
-Terminamos con cosas como estas.
+Terminamos con Legos como estos.
 
 [pausa]
 
@@ -217,11 +232,11 @@ Podemos refinar un poco la malla de cálculo, pero tampoco es que el panorama me
 
 ## Gota
 
-Y además, si bien en el CFD el boro _no_ se mete en el refrigerante, con el esquema de celdas el boro termina metiéndose adentro de los canales.
+Y además, si bien en el CFD el boro _no_ se mete en el refrigerante, con el esquema de celdas el boro termina metiéndose "numéricamente" adentro de los canales.
 
 Además de todas las preguntas sobre la validez del esquema, surge también esta pregunta:
 
-. . .
+---
 
 ¿Vale usar difusión en estas condiciones?
 
@@ -236,13 +251,12 @@ Tenemos limitaciones de
  2. efectos staircase muy marcados
  3. validez de la aproximación de difusión
  
-. . .
+---
 
-Entonces, ¿qué proponemos? De atrás para adelante, usar SN en lugar de difusión.
-El problema es que SN escala muy rápido, especialmente en memoria.
-Así que necesitamos algo paralelizable, flexible y extensible.
+Entonces, ¿qué proponemos? De atrás para adelante: primero usar SN en lugar de difusión.
+El problema es que SN escala muy rápido, especialmente en memoria. Así que necesitamos algo paralelizable, flexible y extensible.
 
-. . .
+---
 
 Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
 
@@ -260,17 +274,17 @@ Seguramente conocen ustedes este benchmark 3D de 1976.
 Como es para PWRs, te indican que la geometría tiene simetría un cuarto y se puede mallar perfectamente con cuadraditos.
 Pero si uno mira con detenimimento, resulta que tiene geometría un octavo.
 
-. . .
+---
 
 El chiste es que necesitamos mallas no estructuradas para aprovecharla.
 
 Más aún, ese reflector no debería ser así.
 
-. . .
+---
 
 Debería ser así.
 
-Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" como los Thundercats.
+Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" (como los... [preguntar] Thundercats).
 
 ## IAEA SN
 
@@ -288,12 +302,15 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
 ## How
 
 
-Terminado el why, pasemos al cómo hacemos todo esto. 
+Terminado el why, pasemos al "how". 
  
 
 ## Séneca
 
-Dice Séneca en una de las cartas a su discípulo Lucilio:
+Dice Séneca en una de las cartas a su discípulo Lucilio.
+Acá la tengo. 
+
+[mostrar el papel]
 
 "No debemos tan sólo escribir ni tan sólo leer.
 Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin de que, cuantos pensamientos ha recogido la lectura, los reduzca a la unidad."
@@ -308,7 +325,7 @@ Mas cuando se ha producido su trasformación, entonces y sólo entonces, se conv
 Este capítulo no tiene _nada_ nuevo.
 Lo escribí para que la literatura de análisis de reactores no sea una carga para mí, sino que se convierta en fuerza y sangre.
 
-. . .
+---
 
 Como ustedes sabrán, yo 
 
@@ -356,29 +373,29 @@ La segunda es que el menú de este capítulo es mucho más amplio que el del ant
 
 ## Esquemas
 
-La discretización en energía es bastante straightforward: formulación multi-grupo, que es como si tuviésemos volúmenes finitos sin operadores diferenciales.
+La discretización en energía es bastante straightforward: formulación multi-grupo, que es como si tuviésemos volúmenes finitos sin operadores diferenciales sobre la energía.
 
-. . .
+---
 
-Discretización en ángulo para transporte. Revisitamos las ordenadas discretas, también volúmenes finitos sin operadores diferenciales.
+Discretización en ángulo para transporte. Revisitamos las ordenadas discretas, también es equivalente a volúmenes finitos sin operadores diferenciales.
 
 
 ## Discretización en espacio
 
 Discretización del espacio: del menú, elegimos _elementos_ finitos.
 
-Hagamos un breve repaso usando la ecuación de Poisson, que es más sencilla.
+Hagamos un breve repaso usando la ecuación de Poisson.
 
-. . .
+---
 
 Lo primero que hacemos es escribirla en una formulación débil.
 
-Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ es igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
+Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ tiene que ser igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
   
 ## Dominio
 
 Todo esto sobre un dominio $U$ con una frontera con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
-Empezamos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet arbitraria.
+Empecemos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet arbitraria.
 
 ## Nodos
 
@@ -386,7 +403,7 @@ Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de N
 
 ## Funciones
 
-Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en el nodo y cero el en resto.
+Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto.
 
 ## Elementos finitos
 
@@ -402,7 +419,7 @@ Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
 Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
 
-. . .
+---
 
 Favor de notar que
 
@@ -414,13 +431,13 @@ Favor de notar que
 Dos bonus tracks.
 Primero, que podemos usar elementos segundo orden. Si quieren después profundizamos.
 
-. . .
+---
 
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
 Este es el "casi" nada nuevo.
-Nunca pude encontrar en la bibliografía una justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$.
+Nunca pude encontrar una buena justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$.
 De hecho consulté a colegas del palo de los elementos finitos y nadie me pudo cantar la posta.
-Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el cuento de los monos.
+Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el experimento de los monos.
 
 En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación matemática, que es la parte "nueva".
 De hecho mi respuesta es la segunda más votada (despúes de la primera que es de Jed Brown).
@@ -430,7 +447,7 @@ De hecho mi respuesta es la segunda más votada (despúes de la primera que es d
 
 ## Difusión
 
-Haciendo lo mismo que hicimos para Poisson pero para difusión multigrupo llegamos a estas expresiones para las contribuciones elementales.
+Haciendo lo mismo que hicimos para Poisson pero para difusión multigrupo, llegamos a estas expresiones para las contribuciones elementales.
 Los detalles en el capítulo tres, pero dos cosas
 
  1. $L$ es leakage, $A$ es absorción y $F$ es fisión, abajo $s$ son las fuentes independientes
@@ -458,13 +475,13 @@ Una vez más, los detalles en el texto.
 ¿Qué hacemos con todo esto?
 Bueno, depende de qué tipo de problema estemos queriendo resolver.
 
- * Si tenemos medio no multiplicativo con fuentes independientes, las pérdidas y las absorciones son proporcionales al flujo pero las fuentes son, justamente, independientes. Esto da un problema lineal.
+ * Si tenemos un medio no multiplicativo con fuentes independientes, las pérdidas y las absorciones son proporcionales al flujo pero las fuentes son, justamente, independientes. Esto da un problema lineal.
 
  * Si tenemos medio multiplicativo con fuentes independientes, tenemos que agregar un término de fisiones proporcional al flujo. En lugar de ponerlo el el miembro derecho lo pasamos al izquierdo con signo negativo. Otra vez, problema lineal.
  
  * Ahora, si no hay fuentes independientes entonces todo es proporcional al flujo. Volvemos a mandar las fisiones al miembro derecho y resolvemos un problema de autovalores para encontrar el $k_\text{eff}$ del reactor crítico asociado en $k$. El primer autovector nos da el flujo de estado estacionario.
  
-. . .
+---
 
 Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
 Bueno, hay que hacer Newton Raphson y la cosa se complica un poco.
@@ -480,68 +497,66 @@ Veamos ahora el what.
 
 [pausa]
 
-Hace un tiempo escuché que la bicicleta es un dispositivo que tiene, entre otras, la siguiente particularidad:
-resuelve problemas que no existían cuando se inventó.
-El tema de movilidad en grandes ciudades y toda la sarasa de la new age.
-Completen con media hora de mala literatura.
+Hace un tiempo escuché que la bicicleta es un dispositivo que tiene la siguiente particularidad: resuelve problemas que no existían cuando se inventó.
+El tema de movilidad en grandes ciudades y toda la sarasa de la new age. Completen con media hora de mala literatura.
 
 ## Dennis & Ken
 
 Resulta que Unix también es un diseño que resuelve problemas que no existían cuando fue inventado.
 
-A medidados de los 60, la época de la tablita anterior, los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
-Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "bien pulenta".
+Veamos.
+
+A medidados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
+Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
 Entonces a fines de los 60 estos dos muchachos empezaron desde cero.
 Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
 
-. . .
+---
 
 Abro un concurso: una taza de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
 
 ## Jon
 
-Pero esperen, porque no les voy a contar la historia de esos dos muchachos, sino de este otro muchacho.
-Acá aparece en un documental de Discovery explicando cóm hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT.
+Pero esperen, porque no les voy a contar la historia de esos dos muchachos, sino de este otro.
+Acá aparece en un documental de Discovery explicando cómo hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT.
 Es uno de los personajes reales de la película de Kevin Spacey.
 
 
-Cuestión que en las Vegas ganó un palo y con esa guita puso una startup de software para diseño mecánico 3D.
-Hasta ese momento---principios de los 90---todos los programas de este tipo funcionaban en el Unix de los barbudos de la foto anterior.
-Pero este Jon sin hache sabía que otro había otro nerd que se venía con todo: Bill Gates.
+Cuestión que en las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks
+Hasta ese momento---principios de los 90---todos los programas CAD funcionaban en el Unix de los muchachos.
+Pero este Jon (sin hache) sabía que otro había otro nerd que se venía con todo: Bill Gates.
 
 
 ## Solidworks
 
-Vio venir que en los 90 la moda iba a ser "X para Windows", así que su programa de diseño 3D corría en Windows.
-Y Solidworks pasó de tener el 0 al 90% del mercado en un par de años.
-En el 97 vendió su compañía por 300 millones de dólares y se quedó como CEO.
+Vio venir que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
+Y pasó de tener el 0 al 90% del mercado en un par de años.
+En el 97, Jon vendió su compañía por 300 millones de dólares y se quedó como CEO.
 
 ## Onshape
 
 Pasa el tiempo. Año 2011. Jon se da cuenta de que la tecnología está cambiando nuevamente.
-Renuncia y pone otra startup de software de diseño pero ahora, "en la nube y directamente desde el browser".
-Digamos un Google Docs para ingeniería mecánica.
-En 2019 vendió Onshape por 480 millones y se queda como CEO.
-
-Quien la compró era una de las empresas que tenían todo en los 80 y se quedaron sin nada en los 90.
-Según me contaron off the record, la compraron porque: "no quisimos que nos vuelva a pasar lo mismo".
-
-
+Renuncia a Solidworks y pone otra startup de CAD pero ahora, "en la nube y directamente desde el browser".
+Bueno, en 2019 vendió Onshape por 480 millones.
 
 ## Nerds
 
-En resumen, este nerd ganó 1 millón gracias a otros nerds del MIT que estudiaron la matemática del Blackjack.
-Los siguientes 300 gracias al nerd Bill Gates.
-Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema que hoy resuelve problemas que no existían hace más 50 años.
-Como la bicicleta.
+En resumen, 
+
+ * Este nerd del MIT ganó 1 millón gracias a otros nerds del MIT
+
+--- 
+ 
+ * Los siguientes 300 gracias al nerd Bill Gates.
+ 
+---
+
+ * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos problemas que presenta "la nube" que definitivamente no existían hace más 50 años. Como la bicicleta.
 
 
 Cierro concurso.
 ¿Nombre de los últimos dos?
-
-Entre paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
-Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres, el columnista de La Nación.
 
 
 ## Cheque
@@ -552,13 +567,13 @@ Por si se lo preguntaban, resulta que sí me dieron el cheque gigante.
 
 Era mi época de emprendedor, IB50k...
 
-. . .
+---
 
-Si bien nunca funcionó muy bien el emprendimiento, me permitió hacer consultoría en temas de mecánica de piping para la central de embalse.
+Si bien nunca funcionó muy bien el emprendimiento, me permitió hacer consultoría en temas de mecánica de piping para la central de embalse con mi propio solver.
 
-. . .
+---
 
-Y poder ir a Cancún con mi familia.
+Incluso poder ir a Cancún con mi familia.
 
 
 ## Do it for him
@@ -581,26 +596,27 @@ Una de estas cosas fue un esquema de la industria del software muy interesante.
 Consiste en un documento tipo "pliego" que lista los requerimientos que el comprador pide para un cierto desarrollo.
 Y otro tipo "oferta" que indica cómo el software propuesto aborda e implementa cada requerimiento.
 
-. . .
+---
 
 Para la herramienta desarrollada en esta tesis lo que hice fue jugar de los dos lados del mostrador.
 Empecé escribiendo un SRS con estas secciones como si fuese un pliego de un llamado a licitación para una herramienta computacional.
 
-Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada requisito.
+Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada un de los requisitos que yo mismo me puse.
 
 
 
 
 ## FeenoX @ JOSS
 
-Les presento entonces a FeenoX, a cloud-first finite-element(ish) computational engineering tool, publicada en el Journal of Open Source Software.
+Les presento entonces a FeenoX, un software publicado este año en Journal of Open Source Software.
 
-Originalmente se llamaba "a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool pero me hicieron achicarlo, como a "La bella y graciosa moza" de Johan Sebastian Mastropiero.
 
 
 ## Unfair advantage: Markdown
 
-Empecemos preguntándonos qué opciones tendríamos si necesitáramos escribir un documento técnico. Un informe o un paper.
+Síganme en esta.
+
+¿Qué opciones tendríamos si necesitáramos escribir un documento técnico. Un informe o un paper.
 En el lado más "fácil" del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
 Del otro lado algo como LaTeX o incluso TeX.
 En el medio, Markdown.
@@ -616,23 +632,23 @@ FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos l
 Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
 
 El SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPLv3+.
-Y acá quiero hacer especial énfasis en que ninguno de los dos conceptos, código abierto o software libre, se refiere a la idea de _precio_.
+Y acá quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
 Seguramente ya lo saben, pero nunca está de más repetirlo, especialmente en la industria nuclear.
 
-. . .
+---
 
 Según Richard Stallman (no es Roqueta, es Stallman), lo importante es la _libertad_ de poder modificar el código para que el software se comporte como uno necesita.
-Y si uno no sabe programar, poder tener la _libertad_ de contratar a alguien que lo haga.
+Y si uno no sabe programar, tiene la _libertad_ de contratar a alguien que lo haga. Esto es re profundo.
 
-. . .
+---
 
 
-Por otro lado, Eric Raymond (el del libro de Unix) hace énfasis en la superioridad técnica del software open source.
+Por otro lado, Eric Raymond (el del libro de Unix) hace énfasis en la superioridad técnica del software open source. Y tiene un punto.
 Y esto es importante en software científico y de ingeniería. Especialmente, de nuevo, en la industria nuclear.
 
-. . .
+---
 
-Esta discusión podría necesitar más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares.
+Esta discusión podría necesitar más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares, que se pueden aplicar al software abierto.
 
 [pausa]
 
@@ -640,21 +656,21 @@ Esta discusión podría necesitar más de 45 minutos en sí misma, así que la t
 
 ## Scope
 
-Resulta que FeenoX es un tercer intento, tal como Unix.
+Resulta que FeenoX es, tal como Unix, un tercer intento. Third-system effect.
 
 Todo empezó con el milonga, que algunos de ustedes conocerán e incluso tal vez habrán usado.
 
 Como eso andaba más o menos bien, me pasó lo que a los gerentes de la Bell.
 
-. . .
+---
 
 Empecé a agregar complejidad, features, etc. 
 
-. . .
+---
 
 Hasta que decidí empezar de cero.
 
-. . . 
+---
 
 El scope actual es que FeenoX puede resolver estos problemas.
 Pero hay un mecanismo de extensión que voy a explicar en detalle en un momento.
@@ -663,17 +679,15 @@ Pero hay un mecanismo de extensión que voy a explicar en detalle en un momento.
 
 Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pena apalancarse explícitamente en la filosofía Unix y hacerle caso al libro de Raymond.
 
-Esencialmente, la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
-
-Como usualmente hay que hacer varias cosas, la idea central es la de "composición" de forma tal de que la salida de un programa sea la entrada de otro.
-
-. . . 
-
-En términos de ingeniería "analógica" yo veo a FeenoX como una función de transferencia entre uno o más archivos de entrada y cero o más archivos de salida. Recuerden que en Unix, "todo es un archivo".
+Too long; didn't read it: la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
 
 Y fijensé que dice "programa" y no "biblioteca".
 
-. . .
+---
+
+Como usualmente hay que hacer varias cosas, hay conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
+
+---
 
 De hecho podemos usar a FeenoX como un filtro de Unix pasando el input por la entrada estándar.
 
@@ -685,28 +699,28 @@ En su libro, Raymond explicita 17 reglas.
 Todas tienen algún grado de impacto en el diseño o en la implementación de FeenoX.
 Las marcadas en boldface son las más importantes.
 
-. . .
+---
 
 Un par de comentarios.
 
-FeenoX se enfoca en resolver ecuaciones en derivadas parciales.
-Se tiene que llevar bien con otras herramientas, tales como malladores y post-procesadores.
+FeenoX se enfoca solamente en resolver "bien" ecuaciones en derivadas parciales.
+Se tiene que llevar bien con otras herramientas del palo, en particular malladores y post-procesadores.
 Y se tiene que llevar bien con el concepto de "simulación programática", cuyo nombre no me gusta pero es como se lo llama en la industria.
-En resumen, que sea script friendly.
+A mí me gusta más decir "script friendly".
 
-También tiene que llevarse bien con interfaces gráficas. Siguiendo la regla de separación, FeenoX es un back end pero que tiene que hacer que el desarrollo de front ends sea relativamente fácil. ¿Qué implica esto? Que los inputs sean flexibles y fáciles de generar.
-Y que no se enfoque en una sola forma de front end. Debería poder "hablar" con front ends desktop, web, no sé de los que ahora hay con esos visores de realidad virtual, en el futuro con un holograma láser o lo que sea.
+En particular, tiene que permitir corridas paramétricas de forma más o menos sencilla.
+FeenoX lo hace expandiendo argumentos en la línea de comandos en el input.
 
-Y tiene que ser ameno a corridas paramétricas.
-El mejor mecanismo es con argumentos en la línea de comandos.
+Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
+Bueno, si lo corremos desde Bash como `do` FeenoX `hello.fee` pesos $i$ dentro de un seq uno tres, nos dice hello 1, hello 2 y hello 3.
 
-Supongamos que tenemos este archivo de entrada: PRINT HELLO pesos uno.
-Bueno, si lo corremos desde bash do feenox hello punto fee pesos i nos dice hello 1, hello 2 y hello 3.
+---
 
+Otra regla importantísima, la regla de separación.
 
 ## Front-back
 
-Por si no quedó claro, este es el concepto de separación entre front end y back end.
+Excelentemente ilustrada en esta figura conceptual.
 
 [pausa]
 
@@ -714,22 +728,27 @@ Por si no quedó claro, este es el concepto de separación entre front end y bac
 
 Pasemos a "la nube".
 
-¿Qué demonios es "la nube"? Básicamente es "somebody else's computers".
-El plural es importante. Después me explayo.
+¿Qué demonios es "la nube"? Básicamente son computadoras de otra gente corriendo Linux.
+El plural es importante, porque queremos resolver problemas grandes y necesitamos varias computadoras.
 
-Este concepto de cloud es importante porque permite bajar los costos de oportunidad.
+Y que sea de otra gente permite bajar los costos de oportunidad.
 Los que saben de finanzas dicen que alquiles en lugar de comprarte una casa.
-Imagínense en términos de servidores de cálculo.
+Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a horas de CPU?
 
-. . .
+---
 
 Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly".
-
-XXXXX
-. . .
+No es solamente SSH o docker.
+--- 
 
 Y ni que hablar de solvers tipo Desktop que quieren dockerizarlos para hacerlos "cloud friendly".
 Esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año.
+
+## Cloud first $\neq$ cloud friendly
+
+¿Por qué no es lo mismo?
+
+XXX
 
 ## CAEplex
 
@@ -745,23 +764,6 @@ Fíjense que todo lo que aparece en la formulación "human friendly" aparece en 
 Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
-
-## Mazes
-
-Una nota de color antes de meternos en el código.
-Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida, pero no el camino que las une.
-Podemos explotar la elipticidad del operador de Laplace con FeenoX.
-
-. . .
-
-Este es un post de LinkedIn y uno de los tutoriales.
-Ahí en el link se muestran los detalles de cómo hacer el dibujito ese para un laberitno arbitrario.
-Incluso cómo resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
-
-Bueno, basta de marketing.
-Pasemos al código.
-
-[pausa]
 
 
 ## Arquitectura
@@ -1011,8 +1013,8 @@ Todos, excepto el último, requieren al menos una de las características distin
 
 ## IAEA 3D PWR Onshape
 
-El problema que ya mostramos del benchmark de IAEA.
-En esta caso la geometría viene de un CAD modelado en Onshape 100% web y cloud.
+Este es el problema que ya mostramos del benchmark de IAEA.
+En este caso la geometría viene de un CAD modelado en Onshape, que es 100% web y cloud.
 El que contamos en la historia de Jon sin hache.
 
 ## Malla
@@ -1026,7 +1028,7 @@ Tanto la memoria como el tiempo de ejecución bajan a la mitad.
 
 ## MPI
 
-Y si corremos en paralelo, vemos que si bien el tiempo baja lo más importante es que baja la memoria por proceso.
+Y si corremos en paralelo, vemos que si bien el tiempo baja lo más importante es que también baja la memoria por proceso.
 Recuerden que ese era nuestro objetivo.
 
 ## Slab a dos zonas
@@ -1040,7 +1042,7 @@ Esto da lugar el "efecto cúspide".
 Como este problema tiene solución analítica (y FeenoX la puede evaluar) entonces podemos comparar el error cometido por los dos casos,
 
  1. poniendo un nodo exacamente en $x=a$
- 2. simulando el comportamiento de la sección eficaz ficticida
+ 2. simulando el comportamiento de la sección eficaz ficticia
  
 Como dice Richard Stallman, la mejor manera de resolver un problema es evitándolo.
 
@@ -1103,10 +1105,6 @@ Y finalmente otra ilustración de que al correr esto en paralelo lo que logramos
 
 [pausa]
 
----
-47 min
----
-
 ## Conclusiones
 
 Antes que nada, todo esto que presenté va en el sentido del método de Descartes.
@@ -1121,21 +1119,28 @@ Y la metodología de diseño de software SRS/SDS.
 
 La herramienta que desarrollamos tiene, otra vez en el sentido de Descartes, algunas ventajas competitivas.
 
+. . .
+
 En particular, para neutrónica a nivel de núcleo soporta
 
  1. SN,
  2. mallas no estructuradas, y
  3. MPI.
 
+. . .
+
+Como dijo una vez un director del IB en una reunión de consejo académico: no es lo mismo leer manuales que escribir manuales.
+ 
+ 
 ## Tweets 
 
-Si tuviesen que escribir un tweet o un mastodon contando que vienieron a esta charla, me gustaría que nombren alguno de estos cinco conceptos.
+Si tuviesen que escribir un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que nombren alguno de estos seis conceptos.
 
-O esta idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
+En particular idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
 ## Trabajos futuros
 
-La tesis y estas charla termina con un sendero de trabajos futuros que se bifrucan.
+La tesis y esta presentación terminan con un sendero de trabajos futuros que se bifrucan.
 Cada unos de estos bullets implica varios años-persona y un presupuesto no despreciable.
 En particular, el último es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
 
@@ -1156,9 +1161,9 @@ y puedas volver a Cancún con tu familia.
 
 Muchas gracias.
 
----
-49 min
----1
+
+
+----------------
 
 
 # Apéndices
@@ -1201,4 +1206,21 @@ Es como publicitar un hotel diciendo "las habitaciones tienen baño privado".
 
 Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
 
+
+## Mazes
+
+Una nota de color antes de meternos en el código.
+Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida, pero no el camino que las une.
+Podemos explotar la elipticidad del operador de Laplace con FeenoX.
+
+. . .
+
+Este es un post de LinkedIn y uno de los tutoriales.
+Ahí en el link se muestran los detalles de cómo hacer el dibujito ese para un laberitno arbitrario.
+Incluso cómo resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
+
+Bueno, basta de marketing.
+Pasemos al código.
+
+[pausa]
 

@@ -1,4 +1,13 @@
 
+# Hacer
+ 
+ * Un video de homero con el "another placemat sir?" y el post de linkedin
+ * Mostrar el video de CAEplex @ Onshape
+ * Sesión de git clone autogen configure make make check (rápido) nafems le10
+ 
+ 
+ 
+
 # Llevar
 
  * Libro Unix
@@ -12,6 +21,9 @@
  * apagar whatsapp
  * configurar okular, no progress
  * premio para el que sepa los nombres de ken & ritchie
+ * cable usb para el teléfono
+ * tarjeta sube re-cargada
+ * tener impresa la carta de Séneca.
 
  
 # Averiguar

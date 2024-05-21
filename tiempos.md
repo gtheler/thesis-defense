@@ -32,20 +32,20 @@ total  18 min
     3. Arquitectura (terciopelo negro)
     
 ---
-parcial 23 min
-total 41 min
+parcial 22 min
+total 40 min
 ---    
     
- 5. (4 min) Resultados
+ 5. Resultados
      
 ---
 parcial 4 min
-total  47 min
+total  44 min
 ---
     
- 6. (2 min) Conclusiones, tweets y trabajos futuros
+ 6. Conclusiones, tweets y trabajos futuros
  
 ---
 parcial 2 min
-total  49 min
+total  46 min
 ---
