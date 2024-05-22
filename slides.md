@@ -308,11 +308,6 @@ $$
 :::
 ::::::::::::::
 
-## 
-
-\centering ![](4x4-40.png)
-
-
 
 ## 
 
@@ -1236,20 +1231,20 @@ $
 
  #. Rule of Modularity
  #. Rule of Clarity
- #. **Rule of Composition**
- #. **Rule of Separation**
- #. **Rule of Simplicity**
- #. **Rule of Parsimony**
- #. **Rule of Transparency**
+ #. Rule of Composition
+ #. Rule of Separation
+ #. Rule of Simplicity
+ #. Rule of Parsimony
+ #. Rule of Transparency
  #. Rule of Robustness
  #. Rule of Representation
  #. Rule of Least Surprise
  #. Rule of Silence
  #. Rule of Repair
- #. **Rule of Economy**
- #. **Rule of Generation**
+ #. Rule of Economy
+ #. Rule of Generation
  #. Rule of Optimization
- #. **Rule of Diversity**
+ #. Rule of Diversity
  #. Rule of Extensibility
 :::
 

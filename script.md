@@ -1,6 +1,7 @@
 ---
 title: Transporte de neutrones en la nube
 numbersections: true
+fontsize: 12pt
 ...
  
 # Prolegómeno
@@ -22,11 +23,11 @@ En un momento, Calabró le pregunta:
 
 [pausa]
 
-"Cuando el fin de semana agarramos una pelota, ¿sabés hasta dónde tiramos los laterales?"
+"Cuando el fin de semana agarramos la pelota, ¿sabés hasta dónde tiramos los laterales?"
 
 [pausa]
 
-Bueno, esa idea de entrenar laterales con sandías que escuché cuando tenía 11 años me empezó a perseguir.
+Bueno, esa idea de entrenar laterales con sandías que escuché en la televisión cuando era chico me empezó a perseguir.
 
 ## IB 2004
 
@@ -42,7 +43,7 @@ Acá estoy entrenando laterales en mi tesis de grado sobre lazos de convección 
 
 ## TECNA
 
-Terminada mi maestría en el IB, me dediqué a meter las narices en temas de licenciamimento de Atucha II en un etapa industrial de mi carrera profesional.
+Terminada mi maestría en el IB, me dediqué a meter las narices en temas de licenciamiento de Atucha II en un etapa industrial de mi carrera profesional.
 
 ## Cites
 
@@ -76,9 +77,6 @@ Pero no encontré una buena traducción, así que elegí...
 
 La tesis está dividida en cinco capítulos más algunos apéndices (que sí están en inglés).
 En en el primero explico el "why", en los dos siguientes el "how" y en los últimos dos el "what".
-El "why" es un tanto subjetivo, si me permiten.
-En el "how" no hay nada nuevo, es todo conocido.
-La contribución original aparece recién en el "what".
 
 
 ## Why
@@ -108,36 +106,26 @@ No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que ne
 
 Así y todo, la mayoría del software de cálculo en general y de reactores en particular, sigue sacando megas de salidas.
 
-Aún cuando desde hace varios años tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming") que sintetizan un montón de lecciones aprendidas en tema de diseño de software.
+Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que sintetizan un montón de lecciones aprendidas en tema de diseño de software.
 
 ## Unix rule of silence
 
 Entre ellas, la "regla del silencio".
 
-[silencio]
+[silencio, tomar agua]
 
 
 ## Historia de dos reactores
 
 Pasemos ahora a la otra mitad.
-Supongamos que tenemos un reactor con un diseño medio único, ya licenciado y que está operando.
+Supongamos que tenemos una central nuclear con un diseño medio único, ya licenciada y que está operando.
 
 ---
 
 Después aparece otro reactor medio parecido, un poco más grande pero que hay que licenciar.
-Bueno, las partes más sensibles hay que contratarlas afuera porque no tenemos ciertas capacidades de ingeniería.
-Y aunque alguna vez las hayamos tenido, las perdimos por el camino.
+Y una vez licenciado el nuevo, hay que re-licenciar el primero.
 
-Fair enough.
-
-De todas maneras, metemos un poco las narices en el proceso de licenciamiento del reactor nuevo.
-
-Fantástico.
-
-Se licencia el reactor nuevo pero resulta que también hay que re-licenciar el viejo.
-Y ahora sí tenemos las capacidades.
-De hecho, si me apurás, te digo que al final teníamos más capacidades que los "expertos internacionales".
-Pero esa es discusión para otro momento.
+Discusión para otro momento sobre capacidades de ingeniería propias que teníamos, que perdimos, que recuperamos y cómo se comparan con la de los "expertos de afuera".
 
 
 ## Esquema de dos pasos
@@ -152,7 +140,7 @@ Como la fluidodinámica está desacoplada del resto de la planta durante el par 
 
 Segundo esquema.
 
-Calcular la pluma de boro en el tanque del moderador con CFD y meterla directametne en un código de núcleo cinético-espacial acoplado con el código de planta y la lógica de control y protección.
+Calcular la pluma de boro en el tanque del moderador con CFD y meterla directamente en un código de núcleo cinético-espacial acoplado con el código de planta y la lógica de control y protección.
 
 ---
 
@@ -185,33 +173,34 @@ nos vamos a topar con un "stair-case effect" como este.
 
 ---
 
-Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún error pero para la misma cantidad de celdas, pero podemos ver que la discretización con mallas no estructuradas es muy superior.
+Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún error pero para la misma cantidad de celdas la discretización va a ser muy superior.
 
 ## Celdas estructuradas...
 
-Ahroa, si miráramos los códigos de núcleo, aparecerían cosas como estas.
+Ahora, en los códigos de núcleo, aparecen cosas como estas.
 Esto es Atucha I "vista" desde el código de cinética espacial que nombramos antes.
 
 [pausa]
 
-Las barras de control inclinadas parecen hechas de "Legos" o, para los viejos como yo, "mis ladrillitos", ¿no?
+Antes de mirar "El contra" yo jugaba con "mis ladrillitos".
+Es exactamente esto, ¿no?
 
 
 ## Celdas
 
-¿Cómo es el enfoque?
+¿Cómo es el esquema de cálculo?
 Bueno, agarramos un canal con un poco de moderador.
 Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel de núcleo.
 
 ## Gota
 
-Desde el punto de vista del cálculo de celda, al menos hace diez años, si queríamos ver qué pasaba al meter una gota de boro lo único que podemos hacer es repartir estas dos mil ppm en el 5% del volumen como cien ppm en toda la celda.
+En la celda, si queremos ver qué pasa al meter una gota de boro lo único que podemos hacer es repartir estas dos mil ppm en, digamos un 5% del volumen, como cien ppm distribuidas uniformemente en toda la celda.
 
 
 ## CFD
 
 Dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
-Este paso lo hacen los que saben de fluidos con mallas no estructuradas.
+Este cálculo lo hacen los que saben de fluidos con mallas no estructuradas.
 Está claro que el boro no se mete en los canales. 
 
 
@@ -225,10 +214,6 @@ Terminamos con Legos como estos.
 
 [pausa]
 
-
-## Refinado
-
-Podemos refinar un poco la malla de cálculo, pero tampoco es que el panorama mejora mucho.
 
 ## Gota
 
@@ -247,14 +232,18 @@ Resumiendo.
 
 Tenemos limitaciones de
 
- 1. dilución de secciones eficaces
- 2. efectos staircase muy marcados
- 3. validez de la aproximación de difusión
+ 1. dilución de secciones eficaces,
+ 2. efectos staircase muy marcados, y
+ 3. cuestionable validez de la aproximación de difusión.
  
 ---
 
-Entonces, ¿qué proponemos? De atrás para adelante: primero usar SN en lugar de difusión.
-El problema es que SN escala muy rápido, especialmente en memoria. Así que necesitamos algo paralelizable, flexible y extensible.
+Entonces, ¿qué proponemos? De atrás para adelante: primero usar S$_N$ en lugar de difusión.
+El problema es que S$_N$ escala muy rápido, especialmente en memoria. Así que necesitamos algo
+
+ * paralelizable,
+ * flexible y
+ * extensible.
 
 ---
 
@@ -262,16 +251,17 @@ Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le
 
 Con un poco de suerte, podemos re-pensar el esquema de condensación de secciones eficaces del punto uno.
 
-Voy a dejar de hablar generalidades y voy a pasar a un ejemplo que ilustra lo que quiero decir.
+Pasemos a un ejemplo que ilustra lo que quiero decir.
 
 
 ## IAEA 3D Benchmark
 
-Seguramente conocen ustedes este benchmark 3D de 1976.
+Seguramente conocen ustedes este benchmark 3D.
 
 ## Simetrías
 
-Como es para PWRs, te indican que la geometría tiene simetría un cuarto y se puede mallar perfectamente con cuadraditos.
+Como es para PWRs, te indican que la geometría tiene simetría un cuarto.
+Se puede mallar perfectamente con cuadraditos.
 Pero si uno mira con detenimimento, resulta que tiene geometría un octavo.
 
 ---
@@ -290,13 +280,10 @@ Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más
 
 Así que adelantándome al capítulo de resultados, les presento el benchmark 3D de IAEA resuelto con
  
- * simetría 1/8 en lugar de 1/4,
+ * simetría $1/8$ en lugar de $1/4$,
  * reflector circular en lugar de "recortado", y
  * S$_4$ en lugar de difusión.
 
----
-10 min
----
  
  
 ## How
@@ -308,9 +295,9 @@ Terminado el why, pasemos al "how".
 ## Séneca
 
 Dice Séneca en una de las cartas a su discípulo Lucilio.
-Acá la tengo. 
+Acá la tengo.
 
-[mostrar el papel]
+[mostrar el papel como Dolina]
 
 "No debemos tan sólo escribir ni tan sólo leer.
 Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin de que, cuantos pensamientos ha recogido la lectura, los reduzca a la unidad."
@@ -333,9 +320,9 @@ Como ustedes sabrán, yo
  * trackeo todo con Git y
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
  
-De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdwon. En la tesis lo mismo, así que si aparece un PDF, o un HTML "in the wild" o un ejemplar impreso en la biblitoeca, el footer indica el commit.
+De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdown. En la tesis lo mismo, así que si aparece un PDF, o un HTML "in the wild" o un ejemplar impreso en la biblioteca, el footer indica el commit.
  
-Si alguien necesita notas para dar clases tiene la libertad de acceder al markdown y modificarlo según necesite.
+Si alguien necesita notas para dar clases tiene la libertad de acceder al Markdown y modificarlo según necesite, respetando la licencia.
 
 ## Ecuación de transporte
 
@@ -354,9 +341,6 @@ Ecuación de transporte linealmente anisotrópico.
 Aproximación de difusión.
 Fin del capítulo.
 
----
-12 min
----
  
 ## Paul Graham
 
@@ -366,18 +350,18 @@ Este tampoco tiene (casi) nada nuevo.
 Pero hay un par de diferencias.
 La primera la explica Paul Graham.
 
-En uno de sus ensayos dice lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
+En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
 Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
 
 La segunda es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
 
 ## Esquemas
 
-La discretización en energía es bastante straightforward: formulación multi-grupo, que es como si tuviésemos volúmenes finitos sin operadores diferenciales sobre la energía.
+La discretización en energía es bastante straightforward: formulación multi-grupo, que es como si tuviésemos volúmenes finitos con acople algebraico en lugar de diferencial.
 
 ---
 
-Discretización en ángulo para transporte. Revisitamos las ordenadas discretas, también es equivalente a volúmenes finitos sin operadores diferenciales.
+Discretización en ángulo para transporte. Revisitamos las ordenadas discretas, que podemos ver también como unos volúmenes finitos particulares.
 
 
 ## Discretización en espacio
@@ -407,7 +391,7 @@ Después buscamos tantas funciones de forma como nodos pusimos de manera tal de 
 
 ## Elementos finitos
 
-Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio U.
+Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio $U$.
 Llamamos a cada uno de éstos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
 
 
@@ -440,7 +424,7 @@ De hecho consulté a colegas del palo de los elementos finitos y nadie me pudo c
 Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el experimento de los monos.
 
 En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación matemática, que es la parte "nueva".
-De hecho mi respuesta es la segunda más votada (despúes de la primera que es de Jed Brown).
+De hecho mi respuesta es la segunda más votada (después de la primera que es de Jed Brown).
 
 [pausa]
 
@@ -454,7 +438,7 @@ Los detalles en el capítulo tres, pero dos cosas
  2. Fíjense que la forma es parecida al caso de Poisson.
 
 Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos.
-De todas maneras en difusión multrigupo, el operador no es simétrico y puede llegar a no ser coercivo.
+De todas maneras en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercivo.
 
 
 ## Ordenadas discretas
@@ -477,14 +461,14 @@ Bueno, depende de qué tipo de problema estemos queriendo resolver.
 
  * Si tenemos un medio no multiplicativo con fuentes independientes, las pérdidas y las absorciones son proporcionales al flujo pero las fuentes son, justamente, independientes. Esto da un problema lineal.
 
- * Si tenemos medio multiplicativo con fuentes independientes, tenemos que agregar un término de fisiones proporcional al flujo. En lugar de ponerlo el el miembro derecho lo pasamos al izquierdo con signo negativo. Otra vez, problema lineal.
+ * Si tenemos fuentes independientes y de fisión, tenemos que agregar un término de fisiones proporcional al flujo. En lugar de ponerlo en el miembro derecho lo pasamos al izquierdo con signo negativo. Otra vez, problema lineal.
  
  * Ahora, si no hay fuentes independientes entonces todo es proporcional al flujo. Volvemos a mandar las fisiones al miembro derecho y resolvemos un problema de autovalores para encontrar el $k_\text{eff}$ del reactor crítico asociado en $k$. El primer autovector nos da el flujo de estado estacionario.
  
 ---
 
 Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
-Bueno, hay que hacer Newton Raphson y la cosa se complica un poco.
+Bueno, hay que hacer Newton-Raphson y la cosa se complica un poco.
 Pero por ahora no nos vamos a meter en eso y damos por terminado el how.
 
 ## What
@@ -506,7 +490,7 @@ Resulta que Unix también es un diseño que resuelve problemas que no existían 
 
 Veamos.
 
-A medidados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
+A mediados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
 Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
 Entonces a fines de los 60 estos dos muchachos empezaron desde cero.
@@ -523,7 +507,7 @@ Acá aparece en un documental de Discovery explicando cómo hacía para contar c
 Es uno de los personajes reales de la película de Kevin Spacey.
 
 
-Cuestión que en las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks
+Cuestión que en Las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks.
 Hasta ese momento---principios de los 90---todos los programas CAD funcionaban en el Unix de los muchachos.
 Pero este Jon (sin hache) sabía que otro había otro nerd que se venía con todo: Bill Gates.
 
@@ -531,7 +515,7 @@ Pero este Jon (sin hache) sabía que otro había otro nerd que se venía con tod
 ## Solidworks
 
 Vio venir que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
-Y pasó de tener el 0 al 90% del mercado en un par de años.
+Y pasó a tener el 90% del mercado en un par de años.
 En el 97, Jon vendió su compañía por 300 millones de dólares y se quedó como CEO.
 
 ## Onshape
@@ -558,6 +542,8 @@ En resumen,
 Cierro concurso.
 ¿Nombre de los últimos dos?
 
+Entre paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
+Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres, el columnista de La Nación.
 
 ## Cheque
 
@@ -614,11 +600,11 @@ Les presento entonces a FeenoX, un software publicado este año en Journal of Op
 
 ## Unfair advantage: Markdown
 
-Síganme en esta.
+Déjenme ver si puedo ilustrar este punto.
 
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico. Un informe o un paper.
 En el lado más "fácil" del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
-Del otro lado del espectro tenemos algo como LaTeX o incluso TeX.
+Del otro lado, algo como LaTeX o incluso TeX.
 En el medio, Markdown.
 
 
@@ -681,11 +667,11 @@ Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pe
 
 Too long; didn't read it: la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
 
-Y fijensé que dice "programa" y no "biblioteca".
+Fijensé que dice "programa" y no "biblioteca".
 
 ---
 
-Como usualmente hay que hacer varias cosas, hay conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
+Como usualmente hay que hacer varias cosas, están presentes los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
 
 ---
 
@@ -697,22 +683,23 @@ De hecho podemos usar a FeenoX como un filtro de Unix pasando el input por la en
 
 En su libro, Raymond explicita 17 reglas.
 Todas tienen algún grado de impacto en el diseño o en la implementación de FeenoX.
-Las marcadas en boldface son las más importantes.
 
 ---
 
 Un par de comentarios.
 
 FeenoX se enfoca solamente en resolver "bien" ecuaciones en derivadas parciales.
-Se tiene que llevar bien con otras herramientas del palo, en particular malladores y post-procesadores.
+Tiene que poder "charlar" con otras herramientas del palo, en particular malladores y post-procesadores.
 Y se tiene que llevar bien con el concepto de "simulación programática", cuyo nombre no me gusta pero es como se lo llama en la industria.
-A mí me gusta más decir "script friendly".
+A mí me gusta más decir las cosas con el sufijo "friendly", así que sería "script friendly".
+
+---
 
 En particular, tiene que permitir corridas paramétricas de forma más o menos sencilla.
 FeenoX lo hace expandiendo argumentos en la línea de comandos en el input.
 
 Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
-Bueno, si lo corremos desde Bash como `do` FeenoX `hello.fee` pesos $i$ dentro de un seq uno tres, nos dice hello 1, hello 2 y hello 3.
+Bueno, si lo corremos desde Bash como `do` FeenoX `hello.fee` pesos $i$ dentro de un seq uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
 
 ---
 
@@ -728,8 +715,8 @@ Excelentemente ilustrada en esta figura conceptual.
 
 Pasemos a "la nube".
 
-¿Qué demonios es "la nube"? Básicamente son computadoras de otra gente corriendo Linux.
-El plural es importante, porque queremos resolver problemas grandes y necesitamos varias computadoras.
+¿Qué demonios es "la nube"? Básicamente quiere decir "computadoras de otra gente corriendo Linux."
+El plural es importante, porque queremos resolver problemas grandes y vamos a necesitar varias computadoras.
 
 Y que sea de otra gente permite bajar los costos de oportunidad.
 Los que saben de finanzas dicen que alquiles en lugar de comprarte una casa.
@@ -739,9 +726,10 @@ Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a hor
 
 Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly".
 No es solamente SSH o docker.
+
 --- 
 
-Y ni que hablar de solvers tipo Desktop que quieren dockerizarlos para hacerlos "cloud friendly".
+Y ni que hablar de solvers tipo desktop que quieren dockerizarlos para hacerlos "cloud enhanced".
 Esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año.
 
 ## Cloud first $\neq$ cloud friendly
@@ -757,7 +745,7 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 
 ## CAEplex
 
-Como prueba de concepto de una interfaz web pueden entrar a caeplex punto com.
+Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com.
 
 
 ## LE10
@@ -773,10 +761,10 @@ Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 ## Arquitectura
 
-Preguntémonos, ¿qué es que lo que tenemos que hacer?
+Para decidir cómo implementamos todo esto, preguntémonos... ¿qué es que lo que tenemos que hacer?
 
  1. construir los objetos globales $K$ y $b$
- 2. resolver ${K} \cdot \vec{u} = \vec{b}$
+ 2. resolver $K \cdot u = b$
  3. re-construir los flujos $\phi$ y $\psi$ a partir de $u$
 
 El punto 2 es el foco de una biblioteca numérica.
@@ -814,7 +802,7 @@ Entonces, en principio, podríamos implementar a FeenoX como un framework genera
 ## Implementación
 
 ¿Cómo podríamos hacer esto?
-Supongams que tenemos una variable `pde` que indica qué ecuación queremos resolver.
+Supongamos que tenemos una variable `pde` que indica qué ecuación queremos resolver.
 Entonces podríamos implementar la evaluación de las llaves así.
 
 ---
@@ -822,7 +810,7 @@ Entonces podríamos implementar la evaluación de las llaves así.
 Bueno, esto es, primero que nada, feo.
 Por favor, nunca hagan algo así.
 
-Segundo, es tremendamente ineficiente. Hay que hacer todas estas comparaciones para cada punto de gauss de cada elemento.
+Segundo, es tremendamente ineficiente. Hay que hacer todas estas comparaciones para cada punto de Gauss de cada elemento.
 
 Tercero, es difícil de mantener.
 
@@ -884,12 +872,12 @@ De hecho FeenoX tiene un instruction pointer que ejecuta todas las instrucciones
 
 Problema simple, input simple.
 
-Línea 1, definimos que queremos condución 1D.
-Línea 2, instrucción: leeme la malla.
-Línea 3, definimos una variable k igual a 1. En problema thermal, si existe la variable k indica conductividad uniforme.
-Líneas 4 y 5,  boundary condition (sustantivo) en left T igual a cero y en right T igual a 1.
-Línea 6: instrucción, por favor resolvé el problema
-Línea 7: instrucción imprimí la solución T evaluada en x=1/2
+ * Línea 1, definimos que queremos conducción 1D.
+ * Línea 2, instrucción: leeme la malla.
+ * Línea 3, definimos una variable `k` igual a 1. En problema thermal, si existe la variable `k` indica conductividad uniforme.
+ * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
+ * Línea 6: instrucción, por favor resolvé el problema
+ * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
 
 ---
 
@@ -899,15 +887,15 @@ Si corremos esto con FeenoX, deberíamos obtener 0.5
 ## Conductividad no uniforme
 
 ¿Qué pasa si la conductividad no es uniforme?
-Bueno, si tenemos una función de $x$ lo que hacemos es definir una $k$ de $x$ y el resto todo igual.
+Bueno, si tenemos una función de $x$ lo que hacemos es definir una $k$ de $x$ y el resto todo igual.
 Ahora el resultado ya no es 0.5 sino eso que está ahí.
 
 ---
 
 ¿Y si $k$ depende de la temperatura?
-Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
-Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad (o alguna condición de contorno) depende de $T$, que es la solución, tiene que resolver un problema no lineal.
-Este caso tiene solución analítica, que es esa raíz cuadradada que está ahí.
+Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
+Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad (o alguna condición de contorno) depende de $T$, que es la solución, tiene que resolver un problema no lineal.
+Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
 
 ## Reed
@@ -915,9 +903,9 @@ Este caso tiene solución analítica, que es esa raíz cuadradada que está ahí
 Pasemos a un problema neutrónico.
 Caso 1D con diferentes materiales y secciones eficaces uniformes en cada trozo.
 
-Problem ahora es `neutron_sn` con `DIM` uno, `GROUPS uno pero SN es pesos uno.
+Problem ahora es `neutron_sn` con `DIM` uno, `GROUPS` uno pero `SN` es pesos uno.
 Recuerden que eso quiere decir que ese argumento viene de la línea de comandos.
-Así que le tenemos que decir si queremos S2, S4, S6, etc.
+Así que le tenemos que decir si queremos S$_2$, S$_4$, S$_6$, etc.
 
 La salida de este input es la raíz cuadrada de la integral del cuadrado de la diferencia entre el flujo calculado por FeenoX y un perfil de referencia tomado de un blog académico.
 
@@ -926,22 +914,23 @@ La salida de este input es la raíz cuadrada de la integral del cuadrado de la d
 
 Habiendo entendido tema input, volvamos ahora al bloque de ifs feo.
 Habíamos dicho que lo generaba un script al que no le importaba la belleza.
-Bueno, ese script es parte del bootstrapping del repositorio, en este caso `autogen.sh`.
+Bueno, ese script es parte del bootstrapping del repositorio, en este caso `autogen`.
 Ese script parsea los subdirectorios dentro de `src/pdes`. 
-La idea es que cada ecuación tenga un subdirectorio con el nombre del PROBLEM a resolver.
+La idea es que cada ecuación tenga un subdirectorio con el nombre del `PROBLEM` a resolver.
 
 Cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Es un script de Bash que genera un poco de código en C que finalmente se compila en FeenoX.
 
-Después si tienen tiempo y ganas les muestro como funciona. En principio podríamos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
+Después si tienen tiempo y ganas les muestro cómo funciona. En principio podríamos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
 
 Está claro que no ganamos mucho removiendo. Es mucho más interesante agregar, que remover.
+Es éste el mecanismo de extensibilidad que mencioné antes.
 
 
 ## Entry points
 
 Cada subdirectorio debería entonces proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
 
-Alguna relacionada al parser, para leer opciones al keyword PROBLEM y para interpretar las condiciones de contorno.
+Alguna relacionada al parser, para leer opciones al keyword `PROBLEM` y para interpretar las condiciones de contorno.
 
 Otras para inicializar.
 
@@ -949,7 +938,7 @@ Las centrales para evaluar las llaves en cada punto de Gauss.
 
 Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver un problema lineal, uno no lineal, un problema de autovalores o uno transitorio. En el caso thermal, eso lo deciden las funciones de inicialización dependiendo de si la conductividad depende de la temperatura o no. En neutrónica, si es un problema con fuentes o de criticidad.
 
-Y después otros entry points para implementar la segunda capa y construir los fujos o las tensiones y deformaciones a partir de lo que resolvió PETSc.
+Y después otros entry points para implementar la segunda capa y construir los flujos o las tensiones y deformaciones a partir de lo que resolvió PETSc.
 
 ---
 
@@ -961,8 +950,8 @@ Lo mismo para `SN`.
 
 ---
 
-Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad.
-Esa variabe `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$.
+Siguiente. Ese snippet de un input muestra el $k$ efectivo y la reactividad.
+Esa variable `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$.
 Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
 
 ---
@@ -979,11 +968,11 @@ Desde ya, las propiedades de los materiales y las condiciones de contorno.
 
 ---
 
-Esto de poder evaluar expresiones algebraicas, inlcuyendo funcionales como integrales, derivadas y sumatorias nos permite por ejemplo comparar la solución numérica con la solución analítica en los casos que la tienen. Este es un ejemplo de condución de calor 1D transitoria. La solución, como ustedes saben, es una sumatoria de exponenciales que podemos evaluar perfectamente. Después restamos una de otra antes de imprimir y ya.
+Esto de poder evaluar expresiones algebraicas, incluyendo funcionales como integrales, derivadas y sumatorias nos permite por ejemplo comparar la solución numérica con la solución analítica en los casos que la tienen. Este es un ejemplo de conducción de calor 1D transitoria. La solución, como ustedes saben, es una sumatoria de exponenciales que podemos evaluar perfectamente. Después restamos una de otra antes de imprimir y ya.
 
 ---
 
-Este "feature" es especialmente importante para hacer verificación de código. En noviembre hice una presentación en la reunión Garcar del año pasado sobre verificación con MMS. De hecho es un de los resultados del capítulo 5, pero necesitaríamos 20 minutos, que es lo que dura esa charla. Dejo el link al video.
+Este "feature" es especialmente importante para hacer verificación de código. En noviembre hice una presentación en la reunión Garcar del año pasado sobre verificación con MMS. De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos, que es lo que dura esa charla. Dejo el link al video.
 
 
 ## No print no shirt
@@ -994,7 +983,7 @@ Le podemos pedir al software que haga un montón de cosas complicadas.
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
 La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
 
-Es más, algunas cosas ni las calcularía. Por ejemplo, si en un problema mecánico no hay ninguna expresión que involucre las tensiones, entonces FeenoX ni se molesta en calcularlas.
+Es más, algunas cosas ni las calcularía. Por ejemplo, si no hay ninguna expresión que involucre las corrientes $J$, entonces FeenoX ni se molesta en calcularlas porque sabe que no son necesarias.
 
 
 
@@ -1041,15 +1030,15 @@ Recuerden que ese era nuestro objetivo.
 
 ## Slab a dos zonas
 
-Otro problema. Slab 1D con dos materiales, uno con k infinito menor que uno y el otro mayor que uno.
-Ancho total b, ancho del absorbente a. Queremos estudiar el $k$ efectivo en función de $a$.
+Otro problema. Slab 1D con dos materiales, uno con $k$ infinito menor que uno y el otro mayor que uno.
+Ancho total $b$, ancho del absorbente $a$. Queremos estudiar el $k$ efectivo en función de $a$.
 Si el solver soporta mallas no estructuradas y por ende no uniformes, podemos poner un nodo exactamente en $x=a$.
 Si el solver solamente soporta espaciado uniforme (es decir, ladrillitos) entonces hay que detectar en qué celda cae la punta de la barra de control y asignarle a esa celda amarilla una sección eficaz ficticia que sea un promedio pesado de la de los dos materiales.
 Esto da lugar el "efecto cúspide".
 
 Como este problema tiene solución analítica (y FeenoX la puede evaluar) entonces podemos comparar el error cometido por los dos casos,
 
- 1. poniendo un nodo exacamente en $x=a$
+ 1. poniendo un nodo exactamente en $x=a$
  2. simulando el comportamiento de la sección eficaz ficticia
  
 Como dice Richard Stallman, la mejor manera de resolver un problema es evitándolo.
@@ -1057,20 +1046,21 @@ Como dice Richard Stallman, la mejor manera de resolver un problema es evitándo
 
 ## Cube-sphere
 
+El problema del cubo-esfera.
 Todos sabemos que para un volumen fijo, una esfera tiene más reactividad que un cubo.
 
-. . .
+---
 
 ¿Y en el medio?
 Bueno, podemos ir haciéndole fillets al cubo.
 
-. . .
+---
 
 Buena suerte resolviendo esto con mallas estructuradas.
 
 ## Input + python
 
-La filosofía Unix en acción.
+Este caso ilustra la filosofía Unix en acción.
 El input de FeenoX es realmente sencillo.
 La complejidad está puesta en un script de Python que usa el API de Gmsh para fabricar la malla y llamar paramétricamente a FeenoX.
 
@@ -1099,8 +1089,8 @@ Un PHWR ficticio de siete canales y tres barras de control inclinadas.
 ## XS
 
 Como el problema es inventado, también inventamos las secciones eficaces.
-En particular, para el moderador ponemos un perfil de temperaturas en función de $z$.
-Y hacemos que algunas secciones eficaces dependan algebraicamente y otras a través de puntos "experimentales" de esta temperatura.
+En particular, para el moderador ponemos un perfil de temperaturas en función de $z$.
+Y hacemos que algunas secciones eficaces dependan algebráicamente y otras a través de puntos "experimentales" de esta temperatura.
 
 ## Flujos
 
@@ -1119,23 +1109,27 @@ Antes que nada, todo esto que presenté va en el sentido del método de Descarte
 Como dice René, esto es lo que me sirvió a mí y lo comparto con ustedes.
 Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y quieren seguir otro método, en todo su derecho.
 
+---
 
-Seguimos el poco académico pero---a veces--útil orden why-how-what.
+Seguimos el poco académico pero---a veces---útil orden why-how-what.
+
+---
+
 Y la metodología de diseño de software SRS/SDS.
 
 ## Unfair advantages
 
 La herramienta que desarrollamos tiene, otra vez en el sentido de Descartes, algunas ventajas competitivas.
 
-. . .
+---
 
 En particular, para neutrónica a nivel de núcleo soporta
 
- 1. SN,
- 2. mallas no estructuradas, y
- 3. MPI.
+ * SN,
+ * mallas no estructuradas, y
+ * MPI.
 
-. . .
+---
 
 Como dijo una vez un director del IB en una reunión de consejo académico: no es lo mismo leer manuales que escribir manuales.
  
@@ -1144,11 +1138,11 @@ Como dijo una vez un director del IB en una reunión de consejo académico: no e
 
 Si tuviesen que escribir un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que nombren alguno de estos seis conceptos.
 
-En particular idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
+En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
 ## Trabajos futuros
 
-La tesis y esta presentación terminan con un sendero de trabajos futuros que se bifrucan.
+La tesis y esta presentación terminan con un sendero de trabajos futuros que se bifurcan.
 Cada unos de estos bullets implica varios años-persona y un presupuesto no despreciable.
 En particular, el último es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
 
@@ -1240,4 +1234,6 @@ Pasemos al código.
  * Garcar 2023
  * Lista de temas que tienen una sección de la tesis donde las discutimos por escrito.
  * Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
+ * SNES y TS
+ * Amazon de libros a CPU
  * ...

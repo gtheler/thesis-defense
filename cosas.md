@@ -13,7 +13,7 @@
 
  * Libro Unix
  * Libro TAOCP
- * botella de auga
+ * botella de agua
  * pasador de slides
  * kde connect pasador y apuntador
  * cronómetro - otro celular? galaxy watch?
@@ -97,37 +97,10 @@
 
 In case of fire, git commit, git push.
 
-
-Hacer lo que hizo el que contaba lo de xuxa con esto:
- 
-En estos tiempos, lo mejor que les puede traer para Papá Noel a los chicos son celulares, tablets y sets de realidad virtual.
-Cuando _yo_ era chico, allá en los 90, todo pasaba alrededor de la televisión.
-Así que lo mejor que te podía traer Papá Noel era un televisor para tu pieza. Y eso me pasó a mi.
-
-Carrizo y Calabró tenían un programa que ahora de grande y con el diario del lunes, juzgo excepcional:
-"El Contra", en el que Carrizo entrevistaba a un invitado y Calabró se metía y llevaba la contra.
-No era de mis preferidos a mis 10 años, pero cada tanto lo veía.
-
-Un día el invitado era un director técnico de fútbol---no recuerdo quién---y Calabró pregunta: "Suponga que van 45 del segundo tiempo. ¿Usted prefiere tener a favor un córner o un lateral?"
-"¡¿Pero qué pregunta es esa?!" se indiga Carrizo. "Con un córner puede llegar al área, con un lateral no".
-"Lo que pasa es que allá en Villa Dálmine, nosotros entrenamos laterales con sandías. Cuando llega el fin de semana, ¿sabés hasta dónde tiramos la pelota?"
-
-Bueno, la plantas entrenan laterales con sandías.
-Aunque Christián le haya dejado de prestar atención, la capacidad extra que esa plantita desarrolló practicando "un poco más" de lo necesario fue lo que le permitió volver a florecer.
-
-
-
-Desde ese momento a mis 10 u 11 años, me propuse entrenar laterales con sandías.
-
-Nunca pude encontrar la escena en Youtube.
-
  
  
 ### SRS/SDS
 
-
-¿contar historia de max para llegar al SRS/SDS?
-NO! más tarde
 
 Dentro de mi experiencia profesional, en algún momento tuve que hacer un desarollo para una empresa de Suiza muy interesante.
 Era sobre temas de cálculo mecánico por elementos finitos, pero el requerimiento vino por el departamento de IT y no por el departamento de ingeniería mecánica.
@@ -180,29 +153,6 @@ el enano tarazaga
 
 Dice Séneca en una de sus cartas a Lucilio:
 
-> No debemos tan sólo escribir ni tan sólo leer.
-> Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin de que, cuantos pensamientos ha recogido la lectura, los reduzca a la unidad.
-> [...] Debemos actuar como las abejas. Las abejas revolotean de aquí para allá y van comiendo en las flores idóneas para elaborar la miel.
-> El botín conseguido lo ordenan y distribuyen por los panales.
-> Te recuerdo que también nosotros tenemos que imitar a las abejas y distinguir cuántas ideas acumulamos de diversas lecturas, pues se conservan mejor diferenciadas.
-> Luego, aplicando la atención y los recursos de nuestro ingenio, debemos fundir en sabor único aquellos diversos jugos de suerte que aún cuando se muestre el modelo del que han sido tomados, no obstante, aparezca distinto de la fuente de inspiración.
-> [...]
-> Lo que comprobamos que realiza en nuestro cuerpo la naturaleza sin ninguna colaboración nuestra, es eso lo que tenemos que hacer con la lectura. Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
-> Mas cuando se ha producido su trasformación, entonces y sólo entonces, se convierten en fuerza y sangre.
-> Procuremos otro tanto con los alimentos que nutren nuestro espíritu.
-> No permitamos que queden intactos cuántos hayamos ingerido para que no resulten ajenos a nosotros.
-> Asimilémoslos. De otra suerte, irán al acervo de la memoria y no al de la inteligencia.
-> [...]
-> Prestémosle fiel asentimiento y apropiémonos de [lo que leemos] para que resulte una cierta unidad de muchos elementos.
-> [...]
-> Aunque se aprecie en tí la semejanza con algún maestro que ha calado profundamente en tu alma por la admiración, quiero que te asemejes a él como un hijo, no como un retrato.
-> [...]
-> ¿Cómo lograr esto te preguntas? Con una constante aplicación.
->
-> _Lucio Séneca, Carta a Lucilio sobre la importancia de escribir, siglo I d.C._
-
-
-
 
 en la parte de los maestros
 beckurts
@@ -210,8 +160,8 @@ lewis
 duderstadt
 rudy stammler & maximo abbate
 
-esto queda en markdown, latex, epub con licencia CC-BY
 
+licencia CC
 
 This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. CC BY includes the following elements:
 
@@ -262,9 +212,7 @@ los que me conocen o leyeron la tesis, qué viene acá?, unix
 
 Jon https://www.youtube.com/watch?v=QflVqavHHM0
 
-stallman: the best way to solve a problem is to avoid it in the first place
 libraries paths
-
 
 C
 shell scripts
@@ -276,15 +224,6 @@ telnet/ssh
 nfs
 dir structure
 docker
-
-
-Volviendo al ambiente de startups, finalmente me dieron el cheque gigante.
-Era época de IB50k, de consultoría en temas de fatiga en piping de CNE, de vacaciones en Cancún, incluso Alejandro se acordará pero retomé el tema del doctorado y fui "re-inscripto" pero en 2018 mi nene se enfermó y tuve que cancelar todo.
-
-A la vuelta estaba en Pampa y la vía, así que tuve que aprender cosas nuevas.
-SRS/SDS
-
-
 
 
 
@@ -309,21 +248,6 @@ relap, wims, etc.
 (relap 5, cené al lado de derek gaston)
 
 
-
-
-
-cap 6
-lolich dijo en una reuniñon de consejo académico que este instituto tenía que formar los profesionales que escriben los manuales y los otros institutos tenían que formar los que los lean
-leer y escribir manuales = entender la teoria de la relatividad y descubrirla
-
-Yo siempre pienso que estoy pensado afuera de la caja. Y veo que hay otros adentro de la caja.
-Pero a veces veo que yo estoy adentro de la caja, y hay otros que están afuera.
-Y peor aún, a veces veo que el que yo pensaba que estaba adentro, está afuera.
-
-
-
-Elegir algunos, preguntar cuáles
-5 min por problema
 
 ## IAEA
 
