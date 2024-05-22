@@ -1056,7 +1056,7 @@ Bueno, podemos ir haciéndole fillets al cubo.
 
 ---
 
-Buena suerte resolviendo esto con mallas estructuradas.
+Imposible de resolver con Legos.
 
 ## Input + python
 
