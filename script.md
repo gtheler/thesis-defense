@@ -748,7 +748,12 @@ Esta es una cita de un gerente de una compañía de software de elementos finito
 
 ¿Por qué no es lo mismo?
 
-XXX
+Primero hay un tema de entrada y salida.
+Central para separar front de back. El objetivo es que FeenoX pueda funcionar con diferentes front ends: desktop, web, realidad virtual, un holograma láser en 3D, no sé.
+
+Después hay temas de deployment y escalabilidad.
+
+Si el software no tiene todos estos ítems en cuenta en su base de diseño, después es muy complicado cambiar para acomodar lo que falta.
 
 ## CAEplex
 
@@ -757,7 +762,7 @@ Como prueba de concepto de una interfaz web pueden entrar a caeplex punto com.
 
 ## LE10
 
-Déjenme ilustrar uno de los puntos de FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
+Déjenme ilustrar uno de los puntos de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
 Fíjense que todo lo que aparece en la formulación "human friendly" aparece en el archivo de entrada.
 ¡Y nada más!
 
@@ -778,41 +783,41 @@ El punto 2 es el foco de una biblioteca numérica.
 Por regla de Unix no la vamos a escribir nosotros.
 Nosotros nos tenemos que enfocar en 1 y en 3.
 
-. . .
+---
   
 La biblioteca del punto 2 es PETSc (o SLEPc para criticidad).
 Entonces FeenoX juega el papel dos "glue layers" en terminología Unix:
  
- * una que construye $K$ y $b$ a partir de la malla y del input 
+ * una que construye $K$ y $b$ a partir de la malla y del input, y 
  * otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview.
  
-. . .
+---
 
 Breve mención a la elección del lenguaje de programación.
 Esencialmente tenemos que elegir entre Fortran, C y C++.
 
 La filosofía Unix nos dice que debemos agregar complejidad solamente cuando la necesitemos
 Por razones diferentes, Fortran y C++ agregan complejidad innecesaria.
-Así que FeenoX está escrito en C que, entre paréntesis, es el lenguaje ideal para las glue layers según Eric Raymond.
+Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmación de por medio, es el lenguaje ideal para las glue layers según Eric Raymond.
 
 
 ## Algoritmo para construir
 
 Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de rigidez y el vector de fuentes.
-Barremos los elementos, acumulamos sobre los puntos de Gauss las contribuciones elementales.
+Barremos los elementos y acumulamos las contribuciones elementales sobre los puntos de Gauss.
 En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
-La ecuación diferencial esencialmente está dada por las llaves.
+Fíjense que la ecuación diferencial esencialmente está dada por las llaves.
 
-Entonces en principio, podemos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
+Entonces, en principio, podríamos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
  
 ## Implementación
 
-Supongamos entonces que quisiéramos elegir la ecuación a resolver en tiempo de ejecución.
-Digamos que tenemos una variable `pde` que indica qué ecuación queremos resolver.
+¿Cómo podríamos hacer esto?
+Supongams que tenemos una variable `pde` que indica qué ecuación queremos resolver.
 Entonces podríamos implementar la evaluación de las llaves así.
 
-. . . 
+---
 
 Bueno, esto es, primero que nada, feo.
 Por favor, nunca hagan algo así.
@@ -828,9 +833,9 @@ Si hubiésemos elegido C++ podríamos haber implementado las llaves como método
 Como estamos en C, lo hacemos con apuntadores a funciones.
 
 Entonces reemplazamos ese feo bloque de ifs por este otro bloque feo de ifs.
-Pero,
+Pero con dos diferencias:
 
- 1. lo genera un script al que no le importa la belleza
+ 1. lo genera un script al que no le importa la belleza, y
  2. es uno sólo en toda la ejecución en tiempo de parseo.
  
 Esencialmente en este único bloque if se hace apuntar un apuntador a función a una función que depende de cada ecuación a resolver, y a su vez en esa función se hacen apuntar los puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación particular.
@@ -840,11 +845,8 @@ Esencialmente en este único bloque if se hace apuntar un apuntador a función a
 
 Pero antes de explicar en detalle esa implementación, déjenme hablar sobre el archivo de entrada.
 
-Recuerden que FeenoX es un ejecutable, no una biblioteca.
-El problema que tiene que resolver tiene que estar completamente definido por este archivo de entrada, es decir, definido en tiempo de ejecución.
-
 Siguiendo la filosofía Unix, este input es un archivo de texto plano.
-Tiene palabras claves en inglés, de forma tal de
+Tiene palabras clave en inglés, de forma tal de
 
  1. definir completamente el problema
  2. ser lo más auto-descriptivo y compacto posible, es decir están prohibidos los argumentos posicionales
@@ -860,23 +862,22 @@ Estas palabras clave pueden ser definiciones o instrucciones.
 ## Ejemplos + IP
 
 Por ejemplo. Efe de equis igual a equis cuadrado. Acá no hay sustantivo pero el igual funciona como una definición.
-Acá definimos una función agebraica de un argumento.
 
-. . .
+---
 
-Siguiente. Input file sorpresa con PATH una expresión tipo PRINTF con un argumento random. Definición porque FILE es un sustantivo.
+Siguiente. `INPUT_FILE` sorpresa `PATH` una expresión tipo `PRINTF` con un argumento random. Definición porque `FILE` es un sustantivo.
 Read mesh es una instrucción que lee la malla en el archivo sorpresa.
-PRINT cells es una instrucción. 
+`PRINT` cells es una instrucción. 
 
-. . .
+---
 
 
-Acá tenemos un condicional. Si $b$ es muy chiquito, instrucción PRINT instrucción ABORT.
-Terimina condicional, instrucción PRINT.
+Acá tenemos un condicional. Si $b$ es muy chiquito: instrucción `PRINT`, instrucción `ABORT`.
+Terimina condicional, instrucción `PRINT`.
 
-. . .
+---
 
-De hecho FeenoX tiene un instruction pointer. 
+De hecho FeenoX tiene un instruction pointer que ejecuta todas las instrucciones siguiendo una linked list. 
 
 
 ## Conducción de calor 1D
@@ -890,7 +891,7 @@ Líneas 4 y 5,  boundary condition (sustantivo) en left T igual a cero y en righ
 Línea 6: instrucción, por favor resolvé el problema
 Línea 7: instrucción imprimí la solución T evaluada en x=1/2
 
-. . .
+---
 
 Si corremos esto con FeenoX, deberíamos obtener 0.5
 
@@ -898,14 +899,14 @@ Si corremos esto con FeenoX, deberíamos obtener 0.5
 ## Conductividad no uniforme
 
 ¿Qué pasa si la conductividad no es uniforme?
-Bueno, si tenemos una función de x lo que hacemos es definir una ka de equis y el resto todo igual.
+Bueno, si tenemos una función de $x$ lo que hacemos es definir una $k$ de $x$ y el resto todo igual.
 Ahora el resultado ya no es 0.5 sino eso que está ahí.
 
-. . .
+---
 
-¿Y si k depende de la temperatura?
-Ningún problema, escribimos ka de equis en función de T de equis.
-Ahora el problema es no lineal. FeenoX se da cuenta de que si en thermal la conductividad (o alguna condición de contorno) depende de T, que es la solución, tiene que resolver un problema no lineal.
+¿Y si $k$ depende de la temperatura?
+Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
+Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad (o alguna condición de contorno) depende de $T$, que es la solución, tiene que resolver un problema no lineal.
 Este caso tiene solución analítica, que es esa raíz cuadradada que está ahí.
 
 
@@ -914,9 +915,9 @@ Este caso tiene solución analítica, que es esa raíz cuadradada que está ahí
 Pasemos a un problema neutrónico.
 Caso 1D con diferentes materiales y secciones eficaces uniformes en cada trozo.
 
-Problem ahora es neutron_sn con dim uno gropus 1 pero SN es pesos 1.
+Problem ahora es `neutron_sn` con `DIM` uno, `GROUPS uno pero SN es pesos uno.
 Recuerden que eso quiere decir que ese argumento viene de la línea de comandos.
-Así que le tenemos que decir si queremos S2, S4, etc.
+Así que le tenemos que decir si queremos S2, S4, S6, etc.
 
 La salida de este input es la raíz cuadrada de la integral del cuadrado de la diferencia entre el flujo calculado por FeenoX y un perfil de referencia tomado de un blog académico.
 
@@ -926,8 +927,10 @@ La salida de este input es la raíz cuadrada de la integral del cuadrado de la d
 Habiendo entendido tema input, volvamos ahora al bloque de ifs feo.
 Habíamos dicho que lo generaba un script al que no le importaba la belleza.
 Bueno, ese script es parte del bootstrapping del repositorio, en este caso `autogen.sh`.
-Ese script parsea los subdirectorios dentro de `src/pdes`. La idea es que cada ecuación tenga un subdirectorio con el nombre del PROBLEM a resolver.
-Y además, cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Es un script de Bash que genera un poco de código en C que finalmente se compila en FeenoX.
+Ese script parsea los subdirectorios dentro de `src/pdes`. 
+La idea es que cada ecuación tenga un subdirectorio con el nombre del PROBLEM a resolver.
+
+Cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Es un script de Bash que genera un poco de código en C que finalmente se compila en FeenoX.
 
 Después si tienen tiempo y ganas les muestro como funciona. En principio podríamos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
 
@@ -948,16 +951,21 @@ Una que resuelve el problema usando PETSc. Este entry point define esencialmente
 
 Y después otros entry points para implementar la segunda capa y construir los fujos o las tensiones y deformaciones a partir de lo que resolvió PETSc.
 
-. . .
+---
 
-Ejemplo. El keyword PROBLEM lo lee el parser general. Mira si hay alguna pde llamada neutron SN.
-El siguiente keyword DIM es genérico, lo parsea el framework. El siguiente keyword GROUPS no lo entiende el general, entonces se lo pasa al particular que sí lo entiende. Lo mismo para "SN".
+Ejemplo. El keyword `PROBLEM` lo lee el parser general. Mira si hay alguna PDE llamada `neutron_sn`. Perfecto, entonces resuelve todos los apuntadores.
 
-. . .
+El siguiente keyword `DIM` es genérico, lo parsea el framework.
+El siguiente keyword `GROUPS` no lo entiende el general, entonces se lo pasa al particular que sí lo entiende.
+Lo mismo para `SN`.
 
-Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad. Esa variabe `keff` la define implícitamente el parser específico, y al hacer SOLVE_PROBLEM se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$. Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
+---
 
-. . .
+Siguiente. Ese snippet de un input muestra el $k$ effectivo y la reactividad.
+Esa variabe `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$.
+Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
+
+---
 
 Finalmente, esta es la pinta de la parte del framework que llama al entry point que evalúa las contribuciones elementales en los puntos de Gauss.
 Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
@@ -969,22 +977,22 @@ Otro principio fundamental de la base de diseño de FeenoX: "everything is an ex
 Incluso la dimensión o la cantidad de grupos.
 Desde ya, las propiedades de los materiales y las condiciones de contorno.
 
-. . .
+---
 
 Esto de poder evaluar expresiones algebraicas, inlcuyendo funcionales como integrales, derivadas y sumatorias nos permite por ejemplo comparar la solución numérica con la solución analítica en los casos que la tienen. Este es un ejemplo de condución de calor 1D transitoria. La solución, como ustedes saben, es una sumatoria de exponenciales que podemos evaluar perfectamente. Después restamos una de otra antes de imprimir y ya.
 
-. . .
+---
 
-Este "feature" es especialmente importante para hacer verificación de código. En noviembre hice una presentación en la reunión Garcar del año pasado sobre verificación con MMS. De hecho es un de los resultados del capítulo 5, pero necesitaríamos 20 minutos. Dejo el link al video y al source de las slides.
+Este "feature" es especialmente importante para hacer verificación de código. En noviembre hice una presentación en la reunión Garcar del año pasado sobre verificación con MMS. De hecho es un de los resultados del capítulo 5, pero necesitaríamos 20 minutos, que es lo que dura esa charla. Dejo el link al video.
 
 
 ## No print no shirt
 
 Volvamos a otra de las reglas centrales. La regla del silencio. ¿Recuerdan la tablita de 1965?
-En FeenoX, sin PRINT no hay salida.
+En FeenoX, sin `PRINT` no hay salida.
 Le podemos pedir al software que haga un montón de cosas complicadas. 
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
-La salida es 100% definida por el usuario usando las instrucciones PRINT, PRINTF, WRITE_RESULTS, etc.
+La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
 
 Es más, algunas cosas ni las calcularía. Por ejemplo, si en un problema mecánico no hay ninguna expresión que involucre las tensiones, entonces FeenoX ni se molesta en calcularlas.
 
@@ -995,7 +1003,7 @@ Es más, algunas cosas ni las calcularía. Por ejemplo, si en un problema mecán
 
 Lista de temas que tienen una sección de la tesis donde las discutimos por escrito.
 
-. . .
+---
 
 Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
 
@@ -1224,3 +1232,12 @@ Pasemos al código.
 
 [pausa]
 
+## Cosas que quedaron
+
+ * Video CAEplex
+ * Elementos de segundo orden
+ * Mostrar bootstrap
+ * Garcar 2023
+ * Lista de temas que tienen una sección de la tesis donde las discutimos por escrito.
+ * Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
+ * ...

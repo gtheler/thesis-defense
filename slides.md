@@ -1257,6 +1257,8 @@ $
 
 ::: {.column width="70%"}
 
+\bigskip
+
  * Script & macro friendly (simulación programática)
  
    - play along con otras herramientas
@@ -1354,7 +1356,8 @@ $
 ::: {.column width="50%"}
 
  * Deployment
-   - Evitar tener que compilar
+   - Evitar tener que compilar,
+   - Permitir re-compilar (con otros flags, otros compiladores, etc.)
    - Dockerizable (nativo Linux)
    - Thin remote clients
    - Rest APIs
