@@ -4,6 +4,7 @@
  * Un video de homero con el "another placemat sir?" y el post de linkedin
  * Mostrar el video de CAEplex @ Onshape
  * Sesión de git clone autogen configure make make check (rápido) nafems le10
+ * lista de cosas para el Q&A
  
  
  
@@ -31,7 +32,7 @@
  * micrófano
  * proyector
  * red, internet
- * HDMI
+ * cable HDMI
  * a qué hora ir
  * zoom, cámara
  * biblioteca, impresión de las tesis
@@ -46,6 +47,10 @@
    b. subjetivo: te hace tener más confianza a vos
  * regalar dos tazas
  * en front cover domain staircase
+ * ojo las manos, tener el celular para pasar y cambiar y eso, no dejarlas caer
+ * ojo el movimiento al costado y adelante/atrás
+ * disfrutrar de dar la charla, el público se da cuenta
+ 
    
    
     

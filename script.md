@@ -618,7 +618,7 @@ Síganme en esta.
 
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico. Un informe o un paper.
 En el lado más "fácil" del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
-Del otro lado algo como LaTeX o incluso TeX.
+Del otro lado del espectro tenemos algo como LaTeX o incluso TeX.
 En el medio, Markdown.
 
 
