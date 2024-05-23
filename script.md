@@ -6,11 +6,11 @@ fontsize: 12pt
  
 # Prolegómeno
 
-Yo crecí en los noventa, donde todo daba vueltas alrededor de la televisión.
+Yo crecí en los noventa, cuando todo daba vueltas alrededor de la televisión.
 
 ## Calabró
 
-Estos dos monstruos tenían un programa llamado "El contra".
+Ustedes recordarán que estos dos monstruos tenían un programa llamado "El contra".
 Un día, el invitado era un director técnico de fútbol, no recuerdo quién.
 En un momento, Calabró le pregunta:
 
@@ -27,7 +27,7 @@ En un momento, Calabró le pregunta:
 
 [pausa]
 
-Bueno, esa idea de entrenar laterales con sandías que escuché en la televisión cuando era chico me empezó a perseguir.
+Bueno, esa idea de entrenar laterales con sandías me empezó a perseguir.
 
 ## IB 2004
 
@@ -39,7 +39,7 @@ Bueno.
 
 ## Lazo
 
-Acá estoy entrenando laterales en mi tesis de grado sobre lazos de convección natural caóticos en una etapa académica.
+Acá estoy entrenando laterales en el laboratorio de Fabián con mi loop de convección natural caótico en una etapa académica.
 
 ## TECNA
 
@@ -62,7 +62,7 @@ Justamente este largo tiempo me permitió poder separar, como dice Mafalda, lo u
 
 ## TOC
 
-Primero que nada, si hubiese podido escribir la tesis en inglés el título habría sido "a cloud-first approach for solving core-level neutron transport over unstructured grids."
+Primero que nada, si hubiese podido escribir la tesis en inglés el título habría sido ese: "a cloud-first etcétera".
 
 Pero no encontré una buena traducción, así que elegí...
 
@@ -124,9 +124,6 @@ Supongamos que tenemos una central nuclear con un diseño medio único, ya licen
 
 Después aparece otro reactor medio parecido, un poco más grande pero que hay que licenciar.
 Y una vez licenciado el nuevo, hay que re-licenciar el primero.
-
-Discusión para otro momento sobre capacidades de ingeniería propias que teníamos, que perdimos, que recuperamos y cómo se comparan con la de los "expertos de afuera".
-
 
 ## Esquema de dos pasos
 
@@ -274,7 +271,6 @@ Más aún, ese reflector no debería ser así.
 
 Debería ser así.
 
-Fíjense cómo sacándonos del modo de pensar en "cuadraditos" podemos "ver más allá de lo evidente" (como los... [preguntar] Thundercats).
 
 ## IAEA SN
 
@@ -320,7 +316,7 @@ Como ustedes sabrán, yo
  * trackeo todo con Git y
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
  
-De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdown. En la tesis lo mismo, así que si aparece un PDF, o un HTML "in the wild" o un ejemplar impreso en la biblioteca, el footer indica el commit.
+De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdown. En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
  
 Si alguien necesita notas para dar clases tiene la libertad de acceder al Markdown y modificarlo según necesite, respetando la licencia.
 
@@ -350,7 +346,7 @@ Este tampoco tiene (casi) nada nuevo.
 Pero hay un par de diferencias.
 La primera la explica Paul Graham.
 
-En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
+En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca (cuando no usa regular expressions para explicar conceptos de filosofía).
 Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
 
 La segunda es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
@@ -374,11 +370,11 @@ Hagamos un breve repaso usando la ecuación de Poisson.
 
 Lo primero que hacemos es escribirla en una formulación débil.
 
-Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ tiene que ser igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
+Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ tiene que ser igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
   
 ## Dominio
 
-Todo esto sobre un dominio $U$ con una frontera con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
+Todo esto sobre un dominio $U$ con una frontera con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
 Empecemos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet arbitraria.
 
 ## Nodos
@@ -391,24 +387,24 @@ Después buscamos tantas funciones de forma como nodos pusimos de manera tal de 
 
 ## Elementos finitos
 
-Para hacer esto "algorithm-friendly" ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio $U$.
+Para facilitar la programación, ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio $U$.
 Llamamos a cada uno de éstos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
 
 
 
 ## $K \cdot u = b$
 
-Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
+Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
 Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
-Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
+Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
 
 ---
 
 Favor de notar que
 
  1. Nunca tuvimos que pasar por la escalerita. Todo esto funciona con mallas no estructuradas.
- 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua en el espacio que podemos evaluar en cualquier punto arbitrario.
+ 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua en el espacio que podemos evaluar en cualquier punto arbitrario.
 
 ## Extras
 
@@ -419,11 +415,11 @@ Primero, que podemos usar elementos segundo orden. Si quieren después profundiz
 
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
 Este es el "casi" nada nuevo.
-Nunca pude encontrar una buena justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$.
+Nunca pude encontrar una buena justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$.
 De hecho consulté a colegas del palo de los elementos finitos y nadie me pudo cantar la posta.
 Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el experimento de los monos.
 
-En las páginas 124 a 126 o, mejor aún, en stack exchange está mi justificación matemática, que es la parte "nueva".
+En stack exchange está mi justificación matemática, que es la parte "nueva".
 De hecho mi respuesta es la segunda más votada (después de la primera que es de Jed Brown).
 
 [pausa]
@@ -432,12 +428,12 @@ De hecho mi respuesta es la segunda más votada (después de la primera que es d
 ## Difusión
 
 Haciendo lo mismo que hicimos para Poisson pero para difusión multigrupo, llegamos a estas expresiones para las contribuciones elementales.
-Los detalles en el capítulo tres, pero dos cosas
+Los detalles en el capítulo tres.
 
- 1. $L$ es leakage, $A$ es absorción y $F$ es fisión, abajo $s$ son las fuentes independientes
- 2. Fíjense que la forma es parecida al caso de Poisson.
+$L$ es leakage, $A$ es absorción y $F$ es fisión, abajo $s$ son las fuentes independientes
 
-Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos.
+Fíjense que la forma es parecida al caso de Poisson.
+Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos.
 De todas maneras en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercivo.
 
 
@@ -445,12 +441,8 @@ De todas maneras en difusión multi-grupo, el operador no es simétrico y puede 
 
 Podemos hacer lo mismo con ordenadas discretas.
 
-Otra vez, la forma es parecida pero
-
- 1. El operador $a$ no es elíptico.
- 2. La ecuación es hiperbólica de primer orden.
-
-Así que esa matriz $P$ que aparece en los términos de pérdidas, absorciones y fisiones es una matriz estabilizada tipo Petrov-Galerkin.
+Otra vez, la forma es parecida pero hay un diferencia: la ecuación es hiperbólica de primer orden y el operador $a$ no es elíptico.
+Así que esa matriz $P$ que aparece en los términos de pérdidas, absorciones y fisiones es una matriz estabilizada tipo Petrov-Galerkin.
 Una vez más, los detalles en el texto.
 
 
@@ -463,7 +455,7 @@ Bueno, depende de qué tipo de problema estemos queriendo resolver.
 
  * Si tenemos fuentes independientes y de fisión, tenemos que agregar un término de fisiones proporcional al flujo. En lugar de ponerlo en el miembro derecho lo pasamos al izquierdo con signo negativo. Otra vez, problema lineal.
  
- * Ahora, si no hay fuentes independientes entonces todo es proporcional al flujo. Volvemos a mandar las fisiones al miembro derecho y resolvemos un problema de autovalores para encontrar el $k_\text{eff}$ del reactor crítico asociado en $k$. El primer autovector nos da el flujo de estado estacionario.
+ * Ahora, si no hay fuentes independientes entonces todo es proporcional al flujo. Volvemos a mandar las fisiones al miembro derecho y resolvemos un problema de autovalores para encontrar el $k_\text{eff}$ del reactor crítico asociado en $k$. El primer autovector nos da el flujo de estado estacionario.
  
 ---
 
@@ -481,12 +473,11 @@ Veamos ahora el what.
 
 [pausa]
 
-Hace un tiempo escuché que la bicicleta es un dispositivo que tiene la siguiente particularidad: resuelve problemas que no existían cuando se inventó.
-El tema de movilidad en grandes ciudades y toda la sarasa de la new age. Completen con media hora de mala literatura.
+Con esto de la new age y la movilidad, escuché que alguien decía que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó.
 
 ## Dennis & Ken
 
-Resulta que Unix también es un diseño que resuelve problemas que no existían cuando fue inventado.
+Resulta que estos muchachos también inventaron algo que resuelve problemas que no existían en ese momento.
 
 Veamos.
 
@@ -568,7 +559,7 @@ Pero bueno, a veces las cosas no salen como uno las planea.
 
 ## 
 
-Y la enfermedad de un hijo te puede hacer apagar tu carrera profesional por un año.
+Y si tu hijo se enferma, tal vez tengas que apagar tu carrera profesional por un año.
 
 [pausa]
 
@@ -604,7 +595,7 @@ Déjenme ver si puedo ilustrar este punto.
 
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico. Un informe o un paper.
 En el lado más "fácil" del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
-Del otro lado, algo como LaTeX o incluso TeX.
+Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro gris).
 En el medio, Markdown.
 
 
@@ -618,8 +609,8 @@ FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos l
 Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
 
 El SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPLv3+.
-Y acá quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
 Seguramente ya lo saben, pero nunca está de más repetirlo, especialmente en la industria nuclear.
+Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
 
 ---
 
@@ -699,7 +690,7 @@ En particular, tiene que permitir corridas paramétricas de forma más o menos s
 FeenoX lo hace expandiendo argumentos en la línea de comandos en el input.
 
 Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
-Bueno, si lo corremos desde Bash como `do` FeenoX `hello.fee` pesos $i$ dentro de un seq uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
+Bueno, si lo corremos desde Bash como `do` FeenoX `hello.fee` pesos $i$ dentro de un seq uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
 
 ---
 
@@ -718,7 +709,7 @@ Pasemos a "la nube".
 ¿Qué demonios es "la nube"? Básicamente quiere decir "computadoras de otra gente corriendo Linux."
 El plural es importante, porque queremos resolver problemas grandes y vamos a necesitar varias computadoras.
 
-Y que sea de otra gente permite bajar los costos de oportunidad.
+Y que sea de otra gente y no nuestro, nos permite bajar los costos de oportunidad.
 Los que saben de finanzas dicen que alquiles en lugar de comprarte una casa.
 Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a horas de CPU?
 
@@ -755,7 +746,7 @@ Fíjense que todo lo que aparece en la formulación "human friendly" aparece en 
 ¡Y nada más!
 
 Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
-Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
+Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 
 
@@ -763,9 +754,9 @@ Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 Para decidir cómo implementamos todo esto, preguntémonos... ¿qué es que lo que tenemos que hacer?
 
- 1. construir los objetos globales $K$ y $b$
+ 1. construir los objetos globales $K$ y $b$
  2. resolver $K \cdot u = b$
- 3. re-construir los flujos $\phi$ y $\psi$ a partir de $u$
+ 3. re-construir los flujos $\phi$ y $\psi$ (y tal vez las corrientes $J$) a partir de $u$
 
 El punto 2 es el foco de una biblioteca numérica.
 Por regla de Unix no la vamos a escribir nosotros.
@@ -776,8 +767,8 @@ Nosotros nos tenemos que enfocar en 1 y en 3.
 La biblioteca del punto 2 es PETSc (o SLEPc para criticidad).
 Entonces FeenoX juega el papel dos "glue layers" en terminología Unix:
  
- * una que construye $K$ y $b$ a partir de la malla y del input, y 
- * otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview.
+ * una que construye $K$ y $b$ a partir de la malla y del input, y 
+ * otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview.
  
 ---
 
@@ -793,7 +784,7 @@ Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmaci�
 
 Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de rigidez y el vector de fuentes.
 Barremos los elementos y acumulamos las contribuciones elementales sobre los puntos de Gauss.
-En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
+En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
 Fíjense que la ecuación diferencial esencialmente está dada por las llaves.
 
@@ -860,7 +851,7 @@ Read mesh es una instrucción que lee la malla en el archivo sorpresa.
 ---
 
 
-Acá tenemos un condicional. Si $b$ es muy chiquito: instrucción `PRINT`, instrucción `ABORT`.
+Acá tenemos un condicional. Si $b$ es muy chiquito: instrucción `PRINT`, instrucción `ABORT`.
 Terimina condicional, instrucción `PRINT`.
 
 ---
@@ -875,7 +866,7 @@ Problema simple, input simple.
  * Línea 1, definimos que queremos conducción 1D.
  * Línea 2, instrucción: leeme la malla.
  * Línea 3, definimos una variable `k` igual a 1. En problema thermal, si existe la variable `k` indica conductividad uniforme.
- * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
+ * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
  * Línea 6: instrucción, por favor resolvé el problema
  * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
 
@@ -887,13 +878,13 @@ Si corremos esto con FeenoX, deberíamos obtener 0.5
 ## Conductividad no uniforme
 
 ¿Qué pasa si la conductividad no es uniforme?
-Bueno, si tenemos una función de $x$ lo que hacemos es definir una $k$ de $x$ y el resto todo igual.
+Bueno, si tenemos una función de $x$ lo que hacemos es definir una $k$ de $x$ y el resto todo igual.
 Ahora el resultado ya no es 0.5 sino eso que está ahí.
 
 ---
 
-¿Y si $k$ depende de la temperatura?
-Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
+¿Y si $k$ depende de la temperatura?
+Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
 Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad (o alguna condición de contorno) depende de $T$, que es la solución, tiene que resolver un problema no lineal.
 Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
@@ -950,14 +941,14 @@ Lo mismo para `SN`.
 
 ---
 
-Siguiente. Ese snippet de un input muestra el $k$ efectivo y la reactividad.
-Esa variable `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$.
+Siguiente. Ese snippet de un input muestra el $k$ efectivo y la reactividad.
+Esa variable `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$.
 Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
 
 ---
 
 Finalmente, esta es la pinta de la parte del framework que llama al entry point que evalúa las contribuciones elementales en los puntos de Gauss.
-Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
+Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
 
 
 ## Expressions
@@ -983,7 +974,7 @@ Le podemos pedir al software que haga un montón de cosas complicadas.
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
 La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
 
-Es más, algunas cosas ni las calcularía. Por ejemplo, si no hay ninguna expresión que involucre las corrientes $J$, entonces FeenoX ni se molesta en calcularlas porque sabe que no son necesarias.
+Es más, algunas cosas ni las calcularía. Por ejemplo, si no hay ninguna expresión que involucre las corrientes $J$, entonces FeenoX ni se molesta en calcularlas porque sabe que no son necesarias.
 
 
 
@@ -1030,8 +1021,8 @@ Recuerden que ese era nuestro objetivo.
 
 ## Slab a dos zonas
 
-Otro problema. Slab 1D con dos materiales, uno con $k$ infinito menor que uno y el otro mayor que uno.
-Ancho total $b$, ancho del absorbente $a$. Queremos estudiar el $k$ efectivo en función de $a$.
+Otro problema. Slab 1D con dos materiales, uno con $k$ infinito menor que uno y el otro mayor que uno.
+Ancho total $b$, ancho del absorbente $a$. Queremos estudiar el $k$ efectivo en función de $a$.
 Si el solver soporta mallas no estructuradas y por ende no uniformes, podemos poner un nodo exactamente en $x=a$.
 Si el solver solamente soporta espaciado uniforme (es decir, ladrillitos) entonces hay que detectar en qué celda cae la punta de la barra de control y asignarle a esa celda amarilla una sección eficaz ficticia que sea un promedio pesado de la de los dos materiales.
 Esto da lugar el "efecto cúspide".
@@ -1075,8 +1066,8 @@ Dos están fijos. El problema es ubicar el tercero de forma tal que la reactivid
 
 Otra vez dividimos y conquistamos.
 El driver es un Python que usa una biblioteca de optimización con el método de Nelder & Mead.
-El Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para mallar y después a FeenoX para resolver.
-Algunas iteraciones y el $k$ efectivo es mínimo.
+Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para mallar y después a FeenoX para resolver.
+Algunas iteraciones y el $k$ efectivo es mínimo.
 
 
 ## PHWR
@@ -1094,7 +1085,7 @@ Y hacemos que algunas secciones eficaces dependan algebráicamente y otras a tra
 
 ## Flujos
 
-Dibujitos tipo "CFD" (que quiere decir "colors for directors").
+Dibujitos tipo "CFD" (que como ustedes saben, quiere decir "colors for directors").
 
 
 ## Tabla y MPI

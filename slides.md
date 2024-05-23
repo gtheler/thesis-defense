@@ -1389,7 +1389,7 @@ $
 
  1. construir la matriz global de rigidez $\mat{K}$ y el vector $\vec{b}$ (o la matriz de masa $\mat{M}$), y
  2. resolver el sistema de ecuaciones $\mat{K} \cdot \vec{u} = \vec{b}$ (o $\mat{K} \cdot \vec{u} = \lambda \cdot \mat{M} \cdot \vec{u}$)
- 3. convertir $\vec{u}$ en flujos $\psi(\vec{x})$ y/o $\phi(\vec{x})$ 
+ 3. convertir $\vec{u}$ en flujos $\psi(\vec{x})$ y/o $\phi(\vec{x})$ (y/o corrientes $\vec{J}(\vec{x})$) 
 
 . . .
  
