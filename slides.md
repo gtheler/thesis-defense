@@ -2036,7 +2036,7 @@ PRINTF "  wall = %.1f sec" clock()-t0
 
 ## 
 
-![](iaea-3dpwr-onshape.png)
+![](iaea-3dpwr-onshape.png){width=100%}
 
 ## 
 
@@ -2056,7 +2056,7 @@ PRINTF "  wall = %.1f sec" clock()-t0
 ## 
 
 
-![](uno-dos-marca.png){height=8.57cm}
+\centering ![](uno-dos-marca.png){height=8.57cm}
 
 ## MPI $\neq$ speed but _memory_
 
@@ -2474,10 +2474,11 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 ![](mastodon.svg)
 :::
 
-::: {.column width="55%"}
+::: {.column width="75%"}
 
  #. $\exists$ paper $\in$ JOSS
  #. lo que Markdown $\propto$ Word $\wedge$ TeX
+ #. 2 glue layers, Gmsh $\rightarrow$ PETSc $\wedge$ PETSc $\rightarrow$ Paraview
  #. extensibilidad $\therefore$ `src/pdes`
  #. cloud first $\neq$ cloud friendly
  #. free $\neq$gratis
@@ -2485,17 +2486,15 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 
 :::
 
-::: {.column width="15%"}
-![](X11.svg)
-:::
+::: {.column width="20%"}
+![](X11.svg){height=1.5cm}
 
-::: {.column width="15%"}
-![](x.svg)
+![](x.svg){height=1.5cm}
 :::
 
 ::::::::::::::
 
-\vspace{1cm}
+\centering ![](transfer-zoom.svg){height=1.25cm}
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}

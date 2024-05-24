@@ -1126,7 +1126,7 @@ Como dijo una vez un director del IB en una reunión de consejo académico: no e
  
 ## Tweets 
 
-Si tuviesen que escribir un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que nombren alguno de estos seis conceptos.
+Si tuviesen que escribir un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que nombren alguno de estos siete conceptos.
 
 En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
