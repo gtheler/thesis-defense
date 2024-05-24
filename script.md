@@ -179,8 +179,7 @@ Esto es Atucha I "vista" desde el código de cinética espacial que nombramos a
 
 [pausa]
 
-Antes de mirar "El contra" yo jugaba con "mis ladrillitos".
-Es exactamente esto, ¿no?
+Esto es "jugar a los Rastis", ¿no?
 
 
 ## Celdas
@@ -963,7 +962,7 @@ Esto de poder evaluar expresiones algebraicas, incluyendo funcionales como integ
 
 ---
 
-Este "feature" es especialmente importante para hacer verificación de código. En noviembre hice una presentación en la reunión Garcar del año pasado sobre verificación con MMS. De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos, que es lo que dura esa charla. Dejo el link al video.
+Este "feature" es especialmente importante para hacer verificación de código. En la reunión Garcar del año pasado hice una presentación sobre verificación con MMS. De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos, que es lo que dura esa charla. Dejo el link al video.
 
 
 ## No print no shirt

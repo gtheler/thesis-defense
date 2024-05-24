@@ -1140,7 +1140,7 @@ $$
 
  * v1 (2009): milonga 
  
-   \centering ![](milonga.svg){height=1cm}
+   \centering ![](milonga.svg){height=1.5cm}
    
 . . .
  
@@ -1278,7 +1278,9 @@ $
 
 . . .
 
- * Separate front & back ends
+ * Separate
+   - policy & mechanism
+   - front & back ends
 :::
 
 ::::::::::::::
@@ -1351,7 +1353,7 @@ $
 ::: {.column width="50%"}
 
  * Deployment
-   - Evitar tener que compilar,
+   - Evitar tener que compilar
    - Permitir re-compilar (con otros flags, otros compiladores, etc.)
    - Dockerizable (nativo Linux)
    - Thin remote clients
@@ -1372,11 +1374,25 @@ $
 
 ## 
 
-\centering ![](caeplex-ipad.jpg){height=8cm}
+:::::::::::::: {.columns}
+::: {.column width="20%"}
 
-\vspace{-0.3cm}
+\vspace{2cm}
 
-\centering <https://www.caeplex.com>
+\centering ![](logo-caeplex-only-cloud.svg)
+
+\centering ![](logo-caeplex-only-text.svg)
+
+
+[CAEplex.com](https://www.caeplex.com)
+
+:::
+
+::: {.column width="80%"}
+
+\centering ![](caeplex-ipad.jpg)
+:::
+::::::::::::::
 
  
 ## 
@@ -2884,3 +2900,6 @@ WRITE_RESULTS FORMAT vtk
 
   * (a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool)
 
+## Creative Commons
+
+mostrar qué es
