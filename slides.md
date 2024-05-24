@@ -910,22 +910,30 @@ $$
 :::::::::::::: {.columns}
 ::: {.column width="25%"}
 ![](jon2.jpg)
+
+\centering Jon
 :::
 
 . . .
 
 ::: {.column width="25%"}
 ![](gates.jpg)
+
+\centering Bill
 :::
 
 . . .
 
 ::: {.column width="25%"}
 ![](thompson.jpg)
+
+\centering Ken
 :::
 
 ::: {.column width="25%"}
 ![](ritchie.jpg)
+
+\centering Dennis
 :::
 ::::::::::::::
 
@@ -1415,7 +1423,9 @@ $
 . . .
 
 :::::::::::::: {.columns}
-::: {.column width="50%"}
+::: {.column width="10%"}
+:::
+::: {.column width="35%"}
 
  * Fortran
  * C
@@ -1423,7 +1433,7 @@ $
  * Go?
  * Rust?
 :::
-::: {.column width="50%"}
+::: {.column width="55%"}
 
 ### Unix rule of simplicity
 
@@ -1433,6 +1443,12 @@ Add complexity only where you must.
 ::::::::::::::
 
 ## Algoritmo para construir $\mat{K}$ y $\vec{b}$
+
+:::::::::::::: {.columns}
+::: {.column width="10%"}
+:::
+
+::: {.column width="90%"}
 
 
 \DontPrintSemicolon
@@ -1451,7 +1467,8 @@ Add complexity only where you must.
  ensamblar $\vec{b}_i \rightarrow \vec{b}$\; \\
 }
 
-
+:::
+::::::::::::::
 
 
 ## Posible implementación naïve
