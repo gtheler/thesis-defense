@@ -32,6 +32,13 @@ header-includes:
 ## 
 
 \centering
+![](sandias.jpg){height=7.5cm}
+![](lateral-sandia.jpg){height=7.5cm}
+
+
+## 
+
+\centering
 ![](ib_mecanica2004.jpg){height=5.75cm}
 ![](ib_nocazouna.jpg){height=5.75cm}
 
@@ -2925,3 +2932,8 @@ mostrar qué es
 ## El experimento de los monos
 
 
+## PETSc meetings
+
+![](petsc-20-attendees-jeremy.jpg){height=4.5cm}
+
+![](GroupPhoto.jpg){height=4.5cm}

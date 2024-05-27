@@ -19,7 +19,11 @@ En un momento, Calabró le pregunta:
 "¿Pero qué pregunta es esa?"---responde rápido Carrizo sin dejar hablar al técnico.
 "Con un córner uno tiene la posibilidad de llegar al área rival."
 
-"Lo que pasa es que allá en Villa Dálmine"---explica Calabró---"durante la semana nosotros entrenamos laterales con sandías."
+"Lo que pasa es que allá en Villa Dálmine"---explica Calabró---
+
+## Sandías
+
+"durante la semana nosotros entrenamos laterales con sandías."
 
 [pausa]
 
@@ -187,7 +191,8 @@ Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel
 
 ## Gota
 
-En la celda, si queremos ver qué pasa al meter una gota que tiene diagmos dos mil ppm boro en un 5% del volúmen, lo único que podemos hacer es meter cien ppm distribuidas uniformemente en toda la celda.
+Si queremos ver qué pasa al meter una gota de 2.000 ppm que ocupa digamos el 5% del volumen de la celda.
+Lo mejor que podemos hacer es mantener la masa y distribuir 100 ppm en toda la celda.
 
 
 ## CFD
@@ -316,7 +321,7 @@ Como ustedes sabrán, yo
  
 De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdown. En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
  
-Si alguien necesita notas para dar clases tiene la libertad de acceder al Markdown y modificarlo según necesite, respetando la licencia.
+Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara]Martín---tiene la libertad de acceder al Markdown y modificarlo según necesite, respetando la licencia.
 
 ## Ecuación de transporte
 
@@ -381,7 +386,7 @@ Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de N
 
 ## Funciones
 
-Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto.
+Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto y en $\Gamma_D$.
 
 ## Elementos finitos
 
@@ -392,7 +397,7 @@ Llamamos a cada uno de éstos un "elemento", y escribimos las integrales de la f
 
 ## $K \cdot u = b$
 
-Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
+Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "sparse" o "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
 Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
 Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
@@ -1233,3 +1238,4 @@ Pasemos al código.
  
 ## El experimento de los monos
 
+## PETSc
