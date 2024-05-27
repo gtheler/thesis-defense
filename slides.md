@@ -1528,17 +1528,11 @@ Entrada plain-text file con [_keywords_]{lang=en-US} en inglés que deben
  a. definiciones  (sustantivos)
  b. instrucciones (verbos y condicionales)
 
-## 
+## Definiciones e instrucciones
 
 :::::::::::::: {.columns}
 ::: {.column width="45%"}
 
-```feenox
-f(x) = x^2
-PRINT f(1/2) f(1) f(2)
-```
-
-. . .
 
 ```feenox
 INPUT_FILE surprise PATH nafems-le1%g.msh round(random(0,1))
@@ -1555,6 +1549,17 @@ IF abs(b)<1e-20 THEN
 ENDIF
 PRINT a/b
 ```
+
+. . .
+
+```feenox
+a = 1
+f(x) = a*x^2
+a = 2
+PRINT f(1/2) f(1) f(2)
+```
+
+
 :::
 
 . . .
@@ -1563,7 +1568,7 @@ PRINT a/b
 
 \vspace{0.25cm}
 
-### FeenoX has an actual instruction pointer!
+### FeenoX tiene un _instruction pointer_!
 
 ```c
 // sweep the first & last range but minding the conditional blocks
@@ -2426,14 +2431,14 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 ::: {.column width="60%"}
 
  * herramienta libre y abierta (de suma importancia!)
- * [_cloud-first_]{lang=en-US} ($\neq$ [_cloud-friendly_]{lang=en-US})
- * paralelización MPI
+ * diiseñada [_cloud-first_]{lang=en-US} ($\neq$ [_cloud-friendly_]{lang=en-US})
+ * es un **programa** (no una _biblioteca_)
  * [back end]{lang=en-US} para diferentes [front ends]{lang=en-US}
  * filosofía de diseño Unix (compatibile con [_cloud-first_]{lang=en-US})
  * interfaz amena para la simulación programática
  * flexible para propiedades materiales no triviales
  * tablitas vs. software tradicional y bibliotecas
- * extensible con apuntadores a funciones `src/pdes`
+ * extensible con apuntadores a funciones @ `src/pdes`
 
 :::
 
@@ -2442,14 +2447,11 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 ::: {.column width="40%"}
 
 \vspace{1cm}
-
- 0. **programa**, no biblioteca
  
-\medskip
- 
- 1. transporte con S$_N$
- 2. mallas no estructuradas
- 3. de tamaño arbitrario con MPI
+ a. simulación programática
+ b. mallas no estructuradas
+ c. S$_N$ (además de difusión)
+ d. paralelización MPI
 
 \vspace{1cm}
 
@@ -2919,3 +2921,7 @@ WRITE_RESULTS FORMAT vtk
 ## Creative Commons
 
 mostrar qué es
+
+## El experimento de los monos
+
+

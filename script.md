@@ -68,7 +68,7 @@ Pero no encontré una buena traducción, así que elegí...
 
 ---
 
-"transporte de neutrones en la nube" que indica explícitamente que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" que intenta explicar (sin mucho éxito) que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
@@ -86,7 +86,7 @@ Empecemos entonces con el "why".
 
 ## Cien años de programación
 
-Consideremos esta tabla de un paper de 1965.
+Veamos juntos esta tabla de un paper de 1965.
 El título del paper es, justamente "Desarrollos _recientes_ en computadoras y sus _consecuencias_ para el cálculo de reactores"
 
 [pausa para que miren la tabla]
@@ -104,9 +104,9 @@ No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que ne
 
 [pausa para buscar libros]
 
-Así y todo, la mayoría del software de cálculo en general y de reactores en particular, sigue sacando megas de salidas.
+Así y todo, la mayoría del software de cálculo sigue sacando megas de salidas, incluyendo el nombre del programa como ASCII art.
 
-Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que sintetizan un montón de lecciones aprendidas en tema de diseño de software.
+Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que sintetizan un montón de lecciones aprendidas sobre programación.
 
 ## Unix rule of silence
 
@@ -128,10 +128,7 @@ Y una vez licenciado el nuevo, hay que re-licenciar el primero.
 ## Esquema de dos pasos
 
 Long story short: tenemos que modelar la inyección rápida de boro del segundo sistema de shutdown.
-Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es...
-
- 1. calcular la pluma de boro en el tanque del moderador con CFD, meterla en un código de núcleo y obtener una curva de reactividad vs. tiempo
- 2. meter esa curva en un código de planta acoplado con control y protección y resolver el transitorio.
+Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es primero calcular la pluma de boro en el tanque del moderador con CFD, meterla en un código de núcleo y obtener una curva de reactividad vs. tiempo para usarla en un código de planta con cinética puntual acoplado con control y protección y resolver el transitorio.
  
 ## Esquema acoplado
 
@@ -246,6 +243,8 @@ El problema es que S$_N$ escala muy rápido, especialmente en memoria. Así que 
 Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
 
 Con un poco de suerte, podemos re-pensar el esquema de condensación de secciones eficaces del punto uno.
+Para eso necesitamos flexibilidad, que ilustramos en el capítulo de resultados.
+La extensiblidad la explico en la implementación.
 
 Pasemos a un ejemplo que ilustra lo que quiero decir.
 
@@ -482,7 +481,8 @@ Veamos.
 A mediados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
 Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
-Entonces a fines de los 60 estos dos muchachos empezaron desde cero.
+No iba ni para adelante ni para atrás.
+Entonces en el 70 estos dos muchachos empezaron desde cero.
 Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
 
 ---
@@ -1116,9 +1116,10 @@ La herramienta que desarrollamos tiene, otra vez en el sentido de Descartes, alg
 
 En particular, para neutrónica a nivel de núcleo soporta
 
- * SN,
- * mallas no estructuradas, y
- * MPI.
+ a. simulación programática (siguiendo la filosofía Unix)
+ b. mallas no estructuradas
+ c. ordenadas discertas (además de difusión)
+ d. paralelización con MPI
 
 ---
 
@@ -1133,7 +1134,7 @@ En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibl
 
 ## Trabajos futuros
 
-La tesis y esta presentación terminan con un sendero de trabajos futuros que se bifurcan.
+La tesis y esta presentación terminan con un jardín de trabajos futuros que se bifurcan.
 Cada unos de estos bullets implica varios años-persona y un presupuesto no despreciable.
 En particular, el último es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
 
@@ -1228,3 +1229,7 @@ Pasemos al código.
  * SNES y TS
  * Amazon de libros a CPU
  * ...
+
+ 
+## El experimento de los monos
+
