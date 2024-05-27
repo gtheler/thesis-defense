@@ -479,7 +479,7 @@ Resulta que estos muchachos también inventaron algo que resuelve problemas que 
 Veamos.
 
 A mediados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
-Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, "bien pulenta".
+Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, un sistema operativo "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
 No iba ni para adelante ni para atrás.
 Entonces en el 70 estos dos muchachos empezaron desde cero.
