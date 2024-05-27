@@ -6,20 +6,26 @@ fontsize: 12pt
  
 # Prolegómeno
 
-Yo crecí en los noventa, cuando todo daba vueltas alrededor de la televisión.
+Acá donde me ven, tengo 41 años.
+Eso quiere decir dos cosas.
+ 
+ * una, que estoy un poco viejo para estar haciendo esto, y
+ * dos que crecí en los noventa.
+ 
+Y en los noventa, todo daba vueltas alrededor de la televisión.
 
 ## Calabró
 
-Ustedes recordarán que estos dos monstruos tenían un programa llamado "El contra".
+Estos dos monstruos tenían un programa llamado "El contra".
 Un día, el invitado era un director técnico de fútbol, no recuerdo quién.
 En un momento, Calabró le pregunta:
 
-"Supongamos que van 45 minutos del segundo tiempo. ¿Qué preferiría? ¿Un córner o un lateral a favor?"
+"Supongamos que van 45 minutos del segundo tiempo. ¿Qué preferiría? ¿Un córner a favor... o un lateral a favor?"
 
-"¿Pero qué pregunta es esa?"---responde rápido Carrizo sin dejar hablar al técnico.
-"Con un córner uno tiene la posibilidad de llegar al área rival."
+"¡¡¡Ehhh!! ¿Pero qué pregunta es esa?"---responde rápido Carrizo, sin dejar hablar al técnico.
+"Con un córner uno tiene la posibilidad de llegar al área rival. Con un lateral, no."
 
-"Lo que pasa es que allá en Villa Dálmine"---explica Calabró---
+"Lo que pasa es que allá en Villa Dálmine"---explica tranquilo Calabró---
 
 ## Sandías
 
@@ -308,7 +314,7 @@ Mas cuando se ha producido su trasformación, entonces y sólo entonces, se conv
 
 ## Transporte y difusión de neutrones
 
-Este capítulo no tiene _nada_ nuevo.
+Capítulo 2. Este capítulo no tiene _nada_ nuevo.
 Lo escribí para que la literatura de análisis de reactores no sea una carga para mí, sino que se convierta en fuerza y sangre.
 
 ---
@@ -844,11 +850,7 @@ Estas palabras clave pueden ser definiciones o instrucciones.
 
 ## Ejemplos + IP
 
-Por ejemplo. Efe de equis igual a equis cuadrado. Acá no hay sustantivo pero el igual funciona como una definición.
-
----
-
-Siguiente. `INPUT_FILE` sorpresa `PATH` una expresión tipo `PRINTF` con un argumento random. Definición porque `FILE` es un sustantivo.
+Por ejemplo. `INPUT_FILE` sorpresa `PATH` una expresión tipo `PRINTF` con un argumento random. Definición porque `FILE` es un sustantivo.
 Read mesh es una instrucción que lee la malla en el archivo sorpresa.
 `PRINT` cells es una instrucción. 
 
@@ -856,7 +858,15 @@ Read mesh es una instrucción que lee la malla en el archivo sorpresa.
 
 
 Acá tenemos un condicional. Si $b$ es muy chiquito: instrucción `PRINT`, instrucción `ABORT`.
-Terimina condicional, instrucción `PRINT`.
+Termina condicional, instrucción `PRINT`.
+
+---
+
+Este es uno más difícil.
+Acá no hay ni verbos ni sustantivos.
+$a$ igual a 1 es una instrucción, pero $f$ de $x$ igual a $a$ $x$ cuadrado es una definición.
+Los `PRINT`s, aunque sean iguales, van a imprimir cosas diferentes.
+
 
 ---
 

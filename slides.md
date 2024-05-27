@@ -1562,6 +1562,7 @@ PRINT a/b
 ```feenox
 a = 1
 f(x) = a*x^2
+PRINT f(1/2) f(1) f(2)
 a = 2
 PRINT f(1/2) f(1) f(2)
 ```
@@ -2435,36 +2436,37 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 ## Unfair advantanges
 
 :::::::::::::: {.columns}
-::: {.column width="60%"}
+::: {.column width="63%"}
 
- * herramienta libre y abierta (de suma importancia!)
- * diiseñada [_cloud-first_]{lang=en-US} ($\neq$ [_cloud-friendly_]{lang=en-US})
+ * herramienta **libre* y **abierta** (de suma importancia!)
+ * diseñada [**cloud-first**]{lang=en-US} ($\neq$ [_cloud-friendly_]{lang=en-US})
  * es un **programa** (no una _biblioteca_)
- * [back end]{lang=en-US} para diferentes [front ends]{lang=en-US}
- * filosofía de diseño Unix (compatibile con [_cloud-first_]{lang=en-US})
- * interfaz amena para la simulación programática
- * flexible para propiedades materiales no triviales
+ * [**back end**]{lang=en-US} para diferentes [front ends]{lang=en-US}
+ * filosofía de diseño **Unix** (compatibile con [_cloud-first_]{lang=en-US})
+ * interfaz amena para la **simulación programática**
+ * **flexible** para propiedades materiales no triviales
+ * **extensible** con apuntadores a funciones @ `src/pdes`
  * tablitas vs. software tradicional y bibliotecas
- * extensible con apuntadores a funciones @ `src/pdes`
 
 :::
 
 . . .
 
-::: {.column width="40%"}
+::: {.column width="37%"}
 
-\vspace{1cm}
  
  a. simulación programática
  b. mallas no estructuradas
  c. S$_N$ (además de difusión)
  d. paralelización MPI
 
-\vspace{1cm}
+\bigskip
 
 . . . 
  
-\centering “No es lo mismo leer manuales que _escribir_ manuales”
+\centering
+“No es lo mismo _leer_ manuales  
+que **escribir** manuales”
 
 :::
 ::::::::::::::
