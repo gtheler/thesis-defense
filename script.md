@@ -31,7 +31,7 @@ Bueno, esa idea de entrenar laterales con sandías me empezó a perseguir.
 
 ## IB 2004
 
-Exactamente diez años después, estaba entrenando laterales con sandías en la clase de mecánica de Barrachina.
+Exactamente diez años después, estaba yo entrenando laterales con sandías en la clase de mecánica de Barrachina.
 
 ## Electrón
 
@@ -190,7 +190,7 @@ Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel
 
 ## Gota
 
-En la celda, si queremos ver qué pasa al meter una gota de boro lo único que podemos hacer es repartir estas dos mil ppm en, digamos un 5% del volumen, como cien ppm distribuidas uniformemente en toda la celda.
+En la celda, si queremos ver qué pasa al meter una gota que tiene diagmos dos mil ppm boro en un 5% del volúmen, lo único que podemos hacer es meter cien ppm distribuidas uniformemente en toda la celda.
 
 
 ## CFD
@@ -348,7 +348,7 @@ La primera la explica Paul Graham.
 En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca (cuando no usa regular expressions para explicar conceptos de filosofía).
 Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
 
-La segunda es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
+La segunda diferencia, es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
 
 ## Esquemas
 
@@ -386,7 +386,7 @@ Después buscamos tantas funciones de forma como nodos pusimos de manera tal de 
 
 ## Elementos finitos
 
-Para facilitar la programación, ponemos puntos también sobre la frontera de Dirichlet e identificamos los triángulos (o cuadrángulos) que cubren el dominio $U$.
+Para facilitar la programación, ponemos nodos también sobre la frontera de Dirichlet e identificamos los triángulos  que cubren el dominio $U$.
 Llamamos a cada uno de éstos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
 
 
@@ -432,8 +432,7 @@ Los detalles en el capítulo tres.
 $L$ es leakage, $A$ es absorción y $F$ es fisión, abajo $s$ son las fuentes independientes
 
 Fíjense que la forma es parecida al caso de Poisson.
-Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos.
-De todas maneras en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercivo.
+Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercivo.
 
 
 ## Ordenadas discretas
@@ -510,7 +509,7 @@ En el 97, Jon vendió su compañía por 300 millones de dólares y se quedó com
 
 ## Onshape
 
-Pasa el tiempo. Año 2011. Jon se da cuenta de que la tecnología está cambiando nuevamente.
+Pasa el tiempo. Año 2011. Jon se da cuenta de que la tecnología está cambiando de nuevo.
 Renuncia a Solidworks y pone otra startup de CAD pero ahora, "en la nube y directamente desde el browser".
 Bueno, en 2019 vendió Onshape por 480 millones.
 
@@ -518,7 +517,7 @@ Bueno, en 2019 vendió Onshape por 480 millones.
 
 En resumen, 
 
- * Este nerd del MIT ganó 1 millón gracias a otros nerds del MIT
+ * Este nerd del MIT ganó su primer 1 millón gracias a otros nerds del MIT
 
 --- 
  
@@ -529,7 +528,7 @@ En resumen,
  * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos problemas que presenta "la nube" que definitivamente no existían hace más 50 años. Como la bicicleta.
 
 
-Cierro concurso.
+Cierro concurso con ayudita.
 ¿Nombre de los últimos dos?
 
 Entre paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
@@ -545,7 +544,7 @@ Era mi época de emprendedor, IB50k...
 
 ---
 
-Si bien nunca funcionó muy bien el emprendimiento, me permitió hacer consultoría en temas de mecánica de piping para la central de embalse con mi propio solver.
+Si bien mi emprendimiento nunca funcionó muy bien comercialmente, me permitió hacer consultoría en temas de mecánica de piping para Embalse con mi propio solver.
 
 ---
 
@@ -619,7 +618,7 @@ Y si uno no sabe programar, tiene la _libertad_ de contratar a alguien que lo ha
 ---
 
 
-Por otro lado, Eric Raymond (el del libro de Unix) hace énfasis en la superioridad técnica del software open source. Y tiene un punto.
+Por otro lado, Eric Raymond (el del libro amarillo) hace énfasis en la superioridad técnica del software open source. Y tiene un punto.
 Y esto es importante en software científico y de ingeniería. Especialmente, de nuevo, en la industria nuclear.
 
 ---
@@ -686,7 +685,7 @@ A mí me gusta más decir las cosas con el sufijo "friendly", así que sería "s
 ---
 
 En particular, tiene que permitir corridas paramétricas de forma más o menos sencilla.
-FeenoX lo hace expandiendo argumentos en la línea de comandos en el input.
+FeenoX lo hace permitiendo expandir argumentos de la línea de comandos en el input.
 
 Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
 Bueno, si lo corremos desde Bash como `do` FeenoX `hello.fee` pesos $i$ dentro de un seq uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
@@ -703,28 +702,28 @@ Excelentemente ilustrada en esta figura conceptual.
 
 ## La "nube"
 
-Pasemos a "la nube".
+Pasemos ahora a "la nube".
 
 ¿Qué demonios es "la nube"? Básicamente quiere decir "computadoras de otra gente corriendo Linux."
 El plural es importante, porque queremos resolver problemas grandes y vamos a necesitar varias computadoras.
 
-Y que sea de otra gente y no nuestro, nos permite bajar los costos de oportunidad.
-Los que saben de finanzas dicen que alquiles en lugar de comprarte una casa.
-Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a horas de CPU?
+Y que sean de otra gente y no nuestras, nos permite bajar los costos de oportunidad.
+Los que saben de finanzas dicen que alquiles en lugar de comprarte una casa. Imagínense computadoras para hacer cálculos.
+Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a vender horas de CPU?
 
 ---
 
-Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly".
+Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly" o "cloud enhanced".
 No es solamente SSH o docker.
 
 --- 
 
-Y ni que hablar de solvers tipo desktop que quieren dockerizarlos para hacerlos "cloud enhanced".
+Y ni que hablar de solvers tipo desktop que quieren dockerizarlos para hacerlos "cloud".
 Esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año.
 
 ## Cloud first $\neq$ cloud friendly
 
-¿Por qué no es lo mismo?
+¿Y por qué no es lo mismo?
 
 Primero hay un tema de entrada y salida.
 Central para separar front de back. El objetivo es que FeenoX pueda funcionar con diferentes front ends: desktop, web, realidad virtual, un holograma láser en 3D, no sé.
@@ -735,13 +734,13 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 
 ## CAEplex
 
-Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com.
+Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que el emprendimiento que nunca funcionó comercialmente.
 
 
 ## LE10
 
-Déjenme ilustrar uno de los puntos de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
-Fíjense que todo lo que aparece en la formulación "human friendly" aparece en el archivo de entrada.
+Déjenme ilustrar uno de los puntos más importantes de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
+Fíjense que todo lo que aparece en la formulación "humana" aparece en el archivo de entrada.
 ¡Y nada más!
 
 Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
@@ -763,8 +762,8 @@ Nosotros nos tenemos que enfocar en 1 y en 3.
 
 ---
   
-La biblioteca del punto 2 es PETSc (o SLEPc para criticidad).
-Entonces FeenoX juega el papel dos "glue layers" en terminología Unix:
+La biblioteca del punto 2 es PETSc.
+Entonces FeenoX juega el papel dos capas (o "glue layers" en terminología Unix):
  
  * una que construye $K$ y $b$ a partir de la malla y del input, y 
  * otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview.
@@ -774,7 +773,7 @@ Entonces FeenoX juega el papel dos "glue layers" en terminología Unix:
 Breve mención a la elección del lenguaje de programación.
 Esencialmente tenemos que elegir entre Fortran, C y C++.
 
-La filosofía Unix nos dice que debemos agregar complejidad solamente cuando la necesitemos
+La filosofía Unix nos dice que debemos agregar complejidad solamente cuando la necesitemos.
 Por razones diferentes, Fortran y C++ agregan complejidad innecesaria.
 Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmación de por medio, es el lenguaje ideal para las glue layers según Eric Raymond.
 
@@ -785,7 +784,7 @@ Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de ri
 Barremos los elementos y acumulamos las contribuciones elementales sobre los puntos de Gauss.
 En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
-Fíjense que la ecuación diferencial esencialmente está dada por las llaves.
+Fíjense que la ecuación diferencial esencialmente está dada por las expresiones entre llaves.
 
 Entonces, en principio, podríamos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
  
@@ -808,7 +807,7 @@ Tercero, es difícil de mantener.
 ## Polimorfismo
 
 Si hubiésemos elegido C++ podríamos haber implementado las llaves como métodos virtuales.
-Como estamos en C, lo hacemos con apuntadores a funciones.
+Como estamos en C, lo hacemos con apuntadores a función.
 
 Entonces reemplazamos ese feo bloque de ifs por este otro bloque feo de ifs.
 Pero con dos diferencias:
@@ -816,7 +815,8 @@ Pero con dos diferencias:
  1. lo genera un script al que no le importa la belleza, y
  2. es uno sólo en toda la ejecución en tiempo de parseo.
  
-Esencialmente en este único bloque if se hace apuntar un apuntador a función a una función que depende de cada ecuación a resolver, y a su vez en esa función se hacen apuntar los puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación particular.
+Esencialmente en este único bloque if se resuelve un apuntador a una función en tiempo de parseo que depende de cada ecuación a resolver.
+Y a su vez en esa función particular se resuelven puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación diferencial.
 
 
 ## Input
@@ -928,11 +928,11 @@ Las centrales para evaluar las llaves en cada punto de Gauss.
 
 Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver un problema lineal, uno no lineal, un problema de autovalores o uno transitorio. En el caso thermal, eso lo deciden las funciones de inicialización dependiendo de si la conductividad depende de la temperatura o no. En neutrónica, si es un problema con fuentes o de criticidad.
 
-Y después otros entry points para implementar la segunda capa y construir los flujos o las tensiones y deformaciones a partir de lo que resolvió PETSc.
+Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
 
 ---
 
-Ejemplo. El keyword `PROBLEM` lo lee el parser general. Mira si hay alguna PDE llamada `neutron_sn`. Perfecto, entonces resuelve todos los apuntadores.
+Ejemplo. El keyword `PROBLEM` lo lee el parser general. Mira si hay alguna PDE llamada `neutron_sn`. Perfecto, entonces resuelve todos los apuntadores que expliqué antes.
 
 El siguiente keyword `DIM` es genérico, lo parsea el framework.
 El siguiente keyword `GROUPS` no lo entiende el general, entonces se lo pasa al particular que sí lo entiende.
@@ -962,12 +962,12 @@ Esto de poder evaluar expresiones algebraicas, incluyendo funcionales como integ
 
 ---
 
-Este "feature" es especialmente importante para hacer verificación de código. En la reunión Garcar del año pasado hice una presentación sobre verificación con MMS. De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos, que es lo que dura esa charla. Dejo el link al video.
+Este "feature" es especialmente importante para hacer verificación de código. En la reunión Garcar del año pasado hice una presentación sobre verificación con MMS. De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos para discutirla, que es lo que dura esa charla. Dejo el link al video.
 
 
 ## No print no shirt
 
-Volvamos a otra de las reglas centrales. La regla del silencio. ¿Recuerdan la tablita de 1965?
+Volvamos a otra de las reglas centrales. La regla del silencio. ¿Recuerdan la tablita del 65, no?
 En FeenoX, sin `PRINT` no hay salida.
 Le podemos pedir al software que haga un montón de cosas complicadas. 
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
@@ -996,7 +996,7 @@ Capítulo de resultados.
 ## Tabla de problemas
 
 Esta tabla muestra los problemas resueltos en la tesis.
-Todos, excepto el último, requieren al menos una de las características distintivas de FeenoX.
+Todos, excepto el último, requieren al menos una de las características distintivas de FeenoX a, b, c y d.
 
 ## IAEA 3D PWR Onshape
 
@@ -1006,7 +1006,7 @@ El que contamos en la historia de Jon sin hache.
 
 ## Malla
 
-A partir de ese CAD hacemos una malla 3D.
+A partir de ese CAD hacemos una malla 3D y corremos FeenoX.
 
 ## Meld
 
@@ -1052,7 +1052,7 @@ Imposible de resolver con Legos.
 
 Este caso ilustra la filosofía Unix en acción.
 El input de FeenoX es realmente sencillo.
-La complejidad está puesta en un script de Python que usa el API de Gmsh para fabricar la malla y llamar paramétricamente a FeenoX.
+La complejidad está puesta en un script de Python que usa el API de Gmsh para hacer los fillets, fabricar la malla y llamar paramétricamente a FeenoX.
 
 
 ## Tres pescaditos
@@ -1095,6 +1095,7 @@ Y finalmente otra ilustración de que al correr esto en paralelo lo que logramos
 
 ## Conclusiones
 
+Conclusiones.
 Antes que nada, todo esto que presenté va en el sentido del método de Descartes.
 Como dice René, esto es lo que me sirvió a mí y lo comparto con ustedes.
 Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y quieren seguir otro método, en todo su derecho.
