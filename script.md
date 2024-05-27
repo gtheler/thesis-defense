@@ -16,7 +16,7 @@ Y en los noventa, todo daba vueltas alrededor de la televisión.
 
 ## Calabró
 
-Estos dos monstruos tenían un programa llamado "El contra".
+Ustedes recordarán que estos dos monstruos tenían un programa llamado "El contra".
 Un día, el invitado era un director técnico de fútbol, no recuerdo quién.
 En un momento, Calabró le pregunta:
 
@@ -197,13 +197,13 @@ Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel
 
 ## Gota
 
-Si queremos ver qué pasa al meter una gota de 2.000 ppm que ocupa digamos el 5% del volumen de la celda.
-Lo mejor que podemos hacer es mantener la masa y distribuir 100 ppm en toda la celda.
+Supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
+Lo mejor que podemos hacer es mantener la masa y distribuir _uniformemente_ 100 ppm en toda la celda.
 
 
 ## CFD
 
-Dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
+Por otro lado, dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
 Este cálculo lo hacen los que saben de fluidos con mallas no estructuradas.
 Está claro que el boro no se mete en los canales. 
 
@@ -299,8 +299,8 @@ Terminado el why, pasemos al "how".
 
 ## Séneca
 
-Dice Séneca en una de las cartas a su discípulo Lucilio.
-Acá la tengo.
+Tengo acá una de las cartas de Séneca a su discípulo Lucilio.
+Escribe Séneca.
 
 [mostrar el papel como Dolina]
 
@@ -366,7 +366,7 @@ La discretización en energía es bastante straightforward: formulación multi-g
 
 ---
 
-Discretización en ángulo para transporte. Revisitamos las ordenadas discretas, que podemos ver también como unos volúmenes finitos particulares.
+Discretización en ángulo: revisitamos las ordenadas discretas, que podemos ver también como unos volúmenes finitos particulares.
 
 
 ## Discretización en espacio
@@ -424,7 +424,7 @@ Primero, que podemos usar elementos segundo orden. Si quieren después profundiz
 
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
 Este es el "casi" nada nuevo.
-Nunca pude encontrar una buena justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila del vector $b$.
+Nunca pude encontrar una buena justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila correspondiente del vector $b$.
 De hecho consulté a colegas del palo de los elementos finitos y nadie me pudo cantar la posta.
 Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el experimento de los monos.
 
@@ -485,7 +485,7 @@ Con esto de la new age y la movilidad, escuché que alguien decía que la bicicl
 
 ## Dennis & Ken
 
-Resulta que estos muchachos también inventaron algo que resuelve problemas que no existían en ese momento.
+Resulta que estos dos muchachos también inventaron algo que resuelve problemas que no existían en ese momento.
 
 Veamos.
 
@@ -528,7 +528,7 @@ Bueno, en 2019 vendió Onshape por 480 millones.
 
 En resumen, 
 
- * Este nerd del MIT ganó su primer 1 millón gracias a otros nerds del MIT
+ * Este nerd del MIT ganó su primer millón gracias a otros nerds del MIT
 
 --- 
  
@@ -543,7 +543,7 @@ Cierro concurso con ayudita.
 ¿Nombre de los últimos dos?
 
 Entre paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
-Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres, el columnista de La Nación.
+Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres en su columna de La  Nación.
 
 ## Cheque
 
@@ -600,9 +600,9 @@ Les presento entonces a FeenoX, un software publicado este año en Journal of Op
 
 ## Unfair advantage: Markdown
 
-Déjenme ver si puedo ilustrar este punto.
+Déjenme ver si me sale ilustrar un punto.
 
-¿Qué opciones tendríamos si necesitáramos escribir un documento técnico. Un informe o un paper.
+¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
 En el lado más "fácil" del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
 Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro gris).
 En el medio, Markdown.
@@ -623,8 +623,8 @@ Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código a
 
 ---
 
-Según Richard Stallman (no es Roqueta, es Stallman), lo importante es la _libertad_ de poder modificar el código para que el software se comporte como uno necesita.
-Y si uno no sabe programar, tiene la _libertad_ de contratar a alguien que lo haga. Esto es re profundo.
+Según Richard Stallman (no es Roqueta, es Stallman), lo importante es tener la _libertad_ para poder modificar el código para que el software se comporte como uno necesita.
+Y si uno no sabe programar, tener la _libertad_ de contratar a alguien que lo haga. Esto es re profundo.
 
 ---
 
@@ -642,7 +642,7 @@ Esta discusión podría necesitar más de 45 minutos en sí misma, así que la t
 
 ## Scope
 
-Resulta que FeenoX es, tal como Unix, un tercer intento. Third-system effect.
+Resulta que FeenoX, tal como Unix, es un tercer intento. Un third-system effect.
 
 Todo empezó con el milonga, que algunos de ustedes conocerán e incluso tal vez habrán usado.
 
@@ -745,7 +745,7 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 
 ## CAEplex
 
-Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que el emprendimiento que nunca funcionó comercialmente.
+Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento que nunca funcionó comercialmente.
 
 
 ## LE10
@@ -925,10 +925,11 @@ La idea es que cada ecuación tenga un subdirectorio con el nombre del `PROBLEM`
 
 Cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Es un script de Bash que genera un poco de código en C que finalmente se compila en FeenoX.
 
-Después si tienen tiempo y ganas les muestro cómo funciona. En principio podríamos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
+Después si tienen tiempo y ganas les muestro cómo funciona.
+Podemos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
 
 Está claro que no ganamos mucho removiendo. Es mucho más interesante agregar, que remover.
-Es éste el mecanismo de extensibilidad que mencioné antes.
+Este es el mecanismo de extensibilidad que mencioné antes.
 
 
 ## Entry points
@@ -967,7 +968,7 @@ Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry p
 
 ## Expressions
 
-Otro principio fundamental de la base de diseño de FeenoX: "everything is an expression".
+Otro principio fundamental de la base de diseño de FeenoX relacionado a la flexibilidad: "todo es una expresión".
 Incluso la dimensión o la cantidad de grupos.
 Desde ya, las propiedades de los materiales y las condiciones de contorno.
 
@@ -1011,7 +1012,13 @@ Capítulo de resultados.
 ## Tabla de problemas
 
 Esta tabla muestra los problemas resueltos en la tesis.
-Todos, excepto el último, requieren al menos una de las características distintivas de FeenoX a, b, c y d.
+Todos, excepto el último, requieren al menos una de las características distintivas de FeenoX
+
+ * simulación programática
+ * mallas no estructuradas
+ * ordenadas discretas
+ * paralelización con MPI
+ 
 
 ## IAEA 3D PWR Onshape
 
@@ -1131,10 +1138,10 @@ La herramienta que desarrollamos tiene, otra vez en el sentido de Descartes, alg
 
 En particular, para neutrónica a nivel de núcleo soporta
 
- a. simulación programática (siguiendo la filosofía Unix)
- b. mallas no estructuradas
- c. ordenadas discertas (además de difusión)
- d. paralelización con MPI
+ * simulación programática (siguiendo la filosofía Unix)
+ * mallas no estructuradas
+ * ordenadas discretas (además de difusión)
+ * paralelización con MPI
 
 ---
 

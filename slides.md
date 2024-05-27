@@ -2438,7 +2438,7 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 :::::::::::::: {.columns}
 ::: {.column width="63%"}
 
- * herramienta **libre* y **abierta** (de suma importancia!)
+ * herramienta **libre** y **abierta** (de suma importancia!)
  * diseñada [**cloud-first**]{lang=en-US} ($\neq$ [_cloud-friendly_]{lang=en-US})
  * es un **programa** (no una _biblioteca_)
  * [**back end**]{lang=en-US} para diferentes [front ends]{lang=en-US}
