@@ -13,7 +13,7 @@ monofont: DejaVuSansMono
 Acá donde me ven, tengo 40 años.
 Eso quiere decir dos cosas.
  
- * una, que estoy un poco viejo para estar haciendo esto, y
+ * una, que estoy viejo para estar haciendo esto, y
  * dos que crecí en los noventa.
  
 Y en los noventa, todo daba vueltas alrededor de la televisión.
@@ -122,7 +122,7 @@ Así y todo, la mayoría del software de cálculo sigue sacando megas de salidas
 
 Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que sintetizan un montón de lecciones aprendidas sobre programación.
 
-## Unix rule of silence
+## Rule of silence
 
 Entre ellas, la "regla del silencio".
 
@@ -512,7 +512,7 @@ Es uno de los personajes reales de la película de Kevin Spacey.
 
 Cuestión que en Las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks.
 Hasta ese momento---principios de los 90---todos los programas CAD funcionaban en el Unix de los muchachos.
-Pero este Jon (sin hache) vio venir a otro nerd que se venía con todo: Bill Gates.
+Pero este Jon (sin hache) vio que otro nerd también venía con todo: Bill Gates.
 
 
 ## Solidworks
@@ -539,7 +539,7 @@ En resumen,
  
 ---
 
- * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos problemas que presenta "la nube" que definitivamente no existían hace más 50 años. Como la bicicleta.
+ * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos desafíos que presenta "la nube" que definitivamente no existían hace más 50 años. Como la bicicleta.
 
 
 Cierro concurso con ayudita.
@@ -1192,6 +1192,19 @@ Muchas gracias.
 
 # Apéndices
 
+## Índice
+
+ * Video CAEplex
+ * Elementos de segundo orden
+ * Mostrar bootstrap
+ * Garcar 2023
+ * Lista de temas que tienen una sección de la tesis donde las discutimos por escrito.
+ * Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
+ * SNES y TS
+ * Amazon de libros a CPU
+ * ...
+
+
 ## JOSS
 
 
@@ -1248,19 +1261,10 @@ Pasemos al código.
 
 [pausa]
 
-## Cosas que quedaron
-
- * Video CAEplex
- * Elementos de segundo orden
- * Mostrar bootstrap
- * Garcar 2023
- * Lista de temas que tienen una sección de la tesis donde las discutimos por escrito.
- * Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
- * SNES y TS
- * Amazon de libros a CPU
- * ...
-
  
 ## El experimento de los monos
 
 ## PETSc
+
+## Unix y los desafíos de la nube
+
