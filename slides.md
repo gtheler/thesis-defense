@@ -181,7 +181,7 @@ $$
 
 : "Recent developments in computers and their implication for reactor calculations" (1965)^[1 USD @ 1965 $\approx$ 10 USD @ 2023]
 
-## Unix rule of silence
+## La regla del silencio
 
 ## Historia de dos reactores
 

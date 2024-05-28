@@ -1,12 +1,16 @@
 ---
 title: Transporte de neutrones en la nube
+lang: es-AR
 numbersections: true
 fontsize: 12pt
+mainfont: LinLibertineO
+sansfont: Carlito
+monofont: DejaVuSansMono
 ...
  
 # Prolegómeno
 
-Acá donde me ven, tengo 41 años.
+Acá donde me ven, tengo 40 años.
 Eso quiere decir dos cosas.
  
  * una, que estoy un poco viejo para estar haciendo esto, y
@@ -22,7 +26,7 @@ En un momento, Calabró le pregunta:
 
 "Supongamos que van 45 minutos del segundo tiempo. ¿Qué preferiría? ¿Un córner a favor... o un lateral a favor?"
 
-"¡¡¡Ehhh!! ¿Pero qué pregunta es esa?"---responde rápido Carrizo, sin dejar hablar al técnico.
+"¡¡Ehhh!! ¿Pero qué pregunta es esa?"---responde rápido Carrizo, sin dejar hablar al técnico.
 "Con un córner uno tiene la posibilidad de llegar al área rival. Con un lateral, no."
 
 "Lo que pasa es que allá en Villa Dálmine"---explica tranquilo Calabró---
@@ -78,14 +82,14 @@ Pero no encontré una buena traducción, así que elegí...
 
 ---
 
-"transporte de neutrones en la nube" que intenta explicar (sin mucho éxito) que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" que intenta explicar---sin mucho éxito, ahora que lo pienso---que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
  
 ---
 
-La tesis está dividida en cinco capítulos más algunos apéndices (que sí están en inglés).
+La tesis está dividida en cinco capítulos más algunos apéndices---que sí están en inglés.
 En en el primero explico el "why", en los dos siguientes el "how" y en los últimos dos el "what".
 
 
@@ -138,7 +142,7 @@ Y una vez licenciado el nuevo, hay que re-licenciar el primero.
 ## Esquema de dos pasos
 
 Long story short: tenemos que modelar la inyección rápida de boro del segundo sistema de shutdown.
-Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es primero calcular la pluma de boro en el tanque del moderador con CFD, meterla en un código de núcleo y obtener una curva de reactividad vs. tiempo para usarla en un código de planta con cinética puntual acoplado con control y protección y resolver el transitorio.
+Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es primero calcular la pluma de boro en el tanque del moderador con CFD, meterla en un código de núcleo y obtener una curva de reactividad vs. tiempo para usarla en un código de planta con cinética puntual acoplado con control y protección para resolver el transitorio.
  
 ## Esquema acoplado
 
@@ -161,7 +165,6 @@ Sea Atucha o sea Embalse, en Argentina tenemos
 
 El boro se inyecta en el tanque del moderador.
 Así que la pluma va a rodear los canales.
-El boro no se va a meter en el refrigerante, mucho menos en el combustible.
 
 ## Dominio
 
@@ -186,7 +189,7 @@ Esto es Atucha I "vista" desde el código de cinética espacial que nombramos a
 
 [pausa]
 
-Esto es "jugar a los Rastis", ¿no?
+Es como "jugar a los Rastis", ¿no?
 
 
 ## Celdas
@@ -198,19 +201,19 @@ Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel
 ## Gota
 
 Supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
-Lo mejor que podemos hacer es mantener la masa y distribuir _uniformemente_ 100 ppm en toda la celda.
+Pero como tenemos solamente un único parámetro de concentración de boro, tenemos que mantener la masa y distribuimos _uniformemente_ 100 ppm en toda la celda.
 
 
 ## CFD
 
 Por otro lado, dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
-Este cálculo lo hacen los que saben de fluidos con mallas no estructuradas.
+Este paso lo hacen los que saben de fluidos con mallas no estructuradas.
 Está claro que el boro no se mete en los canales. 
 
 
 ## Mapeo
 
-Desde el lado de la neutrónica de núcleo, ahora tenemos que mapear para cada instante la pluma del CFD en nuestra malla estructurada.
+Desde el lado de la neutrónica de núcleo, ahora tenemos que mapear, para cada instante, la pluma del CFD en nuestra malla estructurada.
 
 ---
 
@@ -253,7 +256,7 @@ El problema es que S$_N$ escala muy rápido, especialmente en memoria. Así que 
 
 Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
 
-Con un poco de suerte, podemos re-pensar el esquema de condensación de secciones eficaces del punto uno.
+Para el punto uo, tenemos que re-pensar el esquema de condensación de secciones eficaces.
 Para eso necesitamos flexibilidad, que ilustramos en el capítulo de resultados.
 La extensiblidad la explico en la implementación.
 
@@ -267,12 +270,12 @@ Seguramente conocen ustedes este benchmark 3D.
 ## Simetrías
 
 Como es para PWRs, te indican que la geometría tiene simetría un cuarto.
-Se puede mallar perfectamente con cuadraditos.
+Se puede mallar perfectamente con cuadraditos---es decir, mallas estructuradas.
 Pero si uno mira con detenimimento, resulta que tiene geometría un octavo.
 
 ---
 
-El chiste es que necesitamos mallas no estructuradas para aprovecharla.
+El chiste es que necesitamos mallas _no estructuradas_ para aprovecharla.
 
 Más aún, ese reflector no debería ser así.
 
@@ -325,9 +328,9 @@ Como ustedes sabrán, yo
  * trackeo todo con Git y
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
  
-De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir de Markdown. En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
+De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir del Markdown. En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
  
-Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara]Martín---tiene la libertad de acceder al Markdown y modificarlo según necesite, respetando la licencia.
+Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara] Martín---tiene la libertad de acceder al Markdown y modificarlo según necesite, respetando la licencia.
 
 ## Ecuación de transporte
 
@@ -439,7 +442,7 @@ De hecho mi respuesta es la segunda más votada (después de la primera que es d
 Haciendo lo mismo que hicimos para Poisson pero para difusión multigrupo, llegamos a estas expresiones para las contribuciones elementales.
 Los detalles en el capítulo tres.
 
-$L$ es leakage, $A$ es absorción y $F$ es fisión, abajo $s$ son las fuentes independientes
+$L$ es leakage, $A$ es absorción y $F$ es fisión. Abajo, $s$ son las fuentes.
 
 Fíjense que la forma es parecida al caso de Poisson.
 Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercivo.
@@ -469,11 +472,11 @@ Bueno, depende de qué tipo de problema estemos queriendo resolver.
 
 Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
 Bueno, hay que hacer Newton-Raphson y la cosa se complica un poco.
-Pero por ahora no nos vamos a meter en eso y damos por terminado el how.
+Pero por ahora no nos vamos a meter en eso y damos por terminado el "how."
 
 ## What
 
-Veamos ahora el what.
+Veamos ahora el "what."
 
 [pausa]
 
@@ -481,7 +484,7 @@ Veamos ahora el what.
 
 [pausa]
 
-Con esto de la new age y la movilidad, escuché que alguien decía que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó.
+Con esto de la new age y la movilidad en grandes ciudades, escuché que alguien decía que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó.
 
 ## Dennis & Ken
 
@@ -509,12 +512,12 @@ Es uno de los personajes reales de la película de Kevin Spacey.
 
 Cuestión que en Las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks.
 Hasta ese momento---principios de los 90---todos los programas CAD funcionaban en el Unix de los muchachos.
-Pero este Jon (sin hache) sabía que otro había otro nerd que se venía con todo: Bill Gates.
+Pero este Jon (sin hache) vio venir a otro nerd que se venía con todo: Bill Gates.
 
 
 ## Solidworks
 
-Vio venir que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
+Se dió cuenta de que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
 Y pasó a tener el 90% del mercado en un par de años.
 En el 97, Jon vendió su compañía por 300 millones de dólares y se quedó como CEO.
 
@@ -528,7 +531,7 @@ Bueno, en 2019 vendió Onshape por 480 millones.
 
 En resumen, 
 
- * Este nerd del MIT ganó su primer millón gracias a otros nerds del MIT
+ * Este nerd del MIT ganó su primer millón gracias a otros nerds del MIT.
 
 --- 
  
@@ -603,8 +606,8 @@ Les presento entonces a FeenoX, un software publicado este año en Journal of Op
 Déjenme ver si me sale ilustrar un punto.
 
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
-En el lado más "fácil" del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
-Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro gris).
+En el lado más "fácil" (y "horrendo") del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
+Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro beige).
 En el medio, Markdown.
 
 
@@ -613,11 +616,14 @@ En el medio, Markdown.
 Bueno, piensen a FeenoX como si fuese el Markdown de las herramientas tipo elementos finitos.
 FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
+Por favor, no escriban matemática con Word. Me hace doler los ojos.
+Igual tampoco usen Beamer en modo 4:3. Pónganlo en modo 16:9, ya pasaron los 90.
+
 ## Licensing
 
 Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
 
-El SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPLv3+.
+El SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPL3+.
 Seguramente ya lo saben, pero nunca está de más repetirlo, especialmente en la industria nuclear.
 Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
 
@@ -654,12 +660,11 @@ Empecé a agregar complejidad, features, etc.
 
 ---
 
-Hasta que decidí empezar de cero.
-
+Hasta que decidí empezar de cero, como Ken.
 ---
 
 El scope actual es que FeenoX puede resolver estos problemas.
-Pero hay un mecanismo de extensión que voy a explicar en detalle en un momento.
+Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento.
 
 ## Unix
 
@@ -667,7 +672,7 @@ Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pe
 
 Too long; didn't read it: la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
 
-Fijensé que dice "programa" y no "biblioteca".
+Un detalle: fijensé que dice "programa" y no "biblioteca".
 
 ---
 
@@ -691,7 +696,7 @@ Un par de comentarios.
 FeenoX se enfoca solamente en resolver "bien" ecuaciones en derivadas parciales.
 Tiene que poder "charlar" con otras herramientas del palo, en particular malladores y post-procesadores.
 Y se tiene que llevar bien con el concepto de "simulación programática", cuyo nombre no me gusta pero es como se lo llama en la industria.
-A mí me gusta más decir las cosas con el sufijo "friendly", así que sería "script friendly".
+A mí me gusta más decir las cosas con el sufijo "friendly", así que para mí sería "script friendly".
 
 ---
 
@@ -699,11 +704,12 @@ En particular, tiene que permitir corridas paramétricas de forma más o menos s
 FeenoX lo hace permitiendo expandir argumentos de la línea de comandos en el input.
 
 Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
-Bueno, si lo corremos desde Bash como `do` FeenoX `hello.fee` pesos $i$ dentro de un seq uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
+Bueno, si lo corremos desde Bash como `do` `feenox` `hello` punto `fee` pesos $i$ dentro de un seq uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
 
 ---
 
-Otra regla importantísima, la regla de separación.
+Otra regla importantísima: la regla de separación.
+Política de mecanismo. Front de back.
 
 ## Front-back
 
@@ -719,7 +725,8 @@ Pasemos ahora a "la nube".
 El plural es importante, porque queremos resolver problemas grandes y vamos a necesitar varias computadoras.
 
 Y que sean de otra gente y no nuestras, nos permite bajar los costos de oportunidad.
-Los que saben de finanzas dicen que alquiles en lugar de comprarte una casa. Imagínense computadoras para hacer cálculos.
+Si los que saben de finanzas dicen que alquiles en lugar de comprarte una casa, imagínense computadoras para hacer cálculos.
+
 Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a vender horas de CPU?
 
 ---
@@ -729,8 +736,9 @@ No es solamente SSH o docker.
 
 --- 
 
-Y ni que hablar de solvers tipo desktop que quieren dockerizarlos para hacerlos "cloud".
-Esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año.
+Y ni que hablar de solvers nativos para desktop que quieren dockerizarlos para hacerlos "cloud".
+
+Para que tengan una idea, esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año durante una presentación interna.
 
 ## Cloud first $\neq$ cloud friendly
 
@@ -741,7 +749,7 @@ Central para separar front de back. El objetivo es que FeenoX pueda funcionar co
 
 Después hay temas de deployment y escalabilidad.
 
-Si el software no tiene todos estos ítems en cuenta en su base de diseño, después es muy complicado cambiar para acomodar lo que falta.
+Si el software no tiene todos estos ítems en cuenta en su base de diseño, después es muy complicado cambiarlo para acomodar lo que falta.
 
 ## CAEplex
 
@@ -1168,7 +1176,7 @@ Porque si llegara a venir un cisne negro que te cambia la número cinco por una 
 
 ## PhD / Cancún
 
-y puedas defender una tesis de doctorado a los 41...
+y puedas terminar una tesis de doctorado a los 40...
 
 y puedas volver a Cancún con tu familia.
 
