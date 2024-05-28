@@ -14,7 +14,7 @@ Acá donde me ven, tengo 40 años.
 Eso quiere decir dos cosas.
  
  * una, que estoy viejo para estar haciendo esto, y
- * dos que crecí en los noventa.
+ * otra que crecí en los noventa.
  
 Y en los noventa, todo daba vueltas alrededor de la televisión.
 
@@ -110,8 +110,8 @@ Tenemos que hacer el ejercicio mental de viajar 60 años al pasado para entender
 Dejemos de lado consideraciones sobre arquitecturas, lenguajes, compiladores, etc.
 Pensemos en cómo había que diseñar software de ingeniería nuclear.
 
-Desde un punto de vista de costos, cada resultado calculado tiene que formar parte de la salida.
-Porque si te gastás varios miles de dólares para hacer una corrida y después necesitás un número que no está en los papeles que imprimió el aparato, tenés que volver a pagar.
+Desde un punto de vista de costos, cada resultado calculado tenía que formar parte de la salida.
+Porque si te gastabas varios miles de dólares para hacer una corrida y después necesitabas un número que no está en los papeles que había impreso el aparato, tenías que volver a pagar.
 
 Viajemos "back to the future". Resulta que hoy, lo caro es la hora de ingeniería y no la hora de CPU.
 No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
@@ -200,8 +200,8 @@ Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel
 
 ## Gota
 
-Supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
-Pero como tenemos solamente un único parámetro de concentración de boro, tenemos que mantener la masa y distribuimos _uniformemente_ 100 ppm en toda la celda.
+Supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
+Como para cada celda hay solamente un único parámetro de concentración de boro, tenemos que mantener la masa y no nos queda otra que distribuir _uniformemente_ 100 ppm en toda la celda. Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
 
 
 ## CFD
@@ -256,9 +256,8 @@ El problema es que S$_N$ escala muy rápido, especialmente en memoria. Así que 
 
 Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
 
-Para el punto uo, tenemos que re-pensar el esquema de condensación de secciones eficaces.
-Para eso necesitamos flexibilidad, que ilustramos en el capítulo de resultados.
-La extensiblidad la explico en la implementación.
+Para el punto uno, tenemos que re-pensar el esquema de condensación de secciones eficaces.
+Para eso necesitamos flexibilidad.
 
 Pasemos a un ejemplo que ilustra lo que quiero decir.
 
@@ -271,7 +270,7 @@ Seguramente conocen ustedes este benchmark 3D.
 
 Como es para PWRs, te indican que la geometría tiene simetría un cuarto.
 Se puede mallar perfectamente con cuadraditos---es decir, mallas estructuradas.
-Pero si uno mira con detenimimento, resulta que tiene geometría un octavo.
+Pero si miramos detenidamente, resulta que tiene geometría un octavo y no solamente un cuarto.
 
 ---
 
@@ -296,8 +295,8 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
  
 ## How
 
-
-Terminado el why, pasemos al "how". 
+Aca termina mi explicación del "why."
+Pasemos al "how." 
  
 
 ## Séneca
@@ -416,7 +415,7 @@ Una parte viene de la integración numérica y otra parte viene de la discretiza
 Favor de notar que
 
  1. Nunca tuvimos que pasar por la escalerita. Todo esto funciona con mallas no estructuradas.
- 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua en el espacio que podemos evaluar en cualquier punto arbitrario.
+ 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua en el espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir de $u$.
 
 ## Extras
 
@@ -484,11 +483,11 @@ Veamos ahora el "what."
 
 [pausa]
 
-Con esto de la new age y la movilidad en grandes ciudades, escuché que alguien decía que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó.
+Con esto de la new age y la movilidad en grandes ciudades, escuché que alguien dijo que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó.
 
 ## Dennis & Ken
 
-Resulta que estos dos muchachos también inventaron algo que resuelve problemas que no existían en ese momento.
+Bueno, resulta que estos dos muchachos también inventaron algo que resuelve problemas que no existían en ese momento.
 
 Veamos.
 
@@ -573,7 +572,7 @@ Pero bueno, a veces las cosas no salen como uno las planea.
 
 Y si tu hijo se enferma, tal vez tengas que apagar tu carrera profesional por un año.
 
-[pausa]
+[pausa, tomar agua]
 
 
 ## SRS & SDS
@@ -616,8 +615,8 @@ En el medio, Markdown.
 Bueno, piensen a FeenoX como si fuese el Markdown de las herramientas tipo elementos finitos.
 FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
-Por favor, no escriban matemática con Word. Me hace doler los ojos.
-Igual tampoco usen Beamer en modo 4:3. Pónganlo en modo 16:9, ya pasaron los 90.
+Nota al pie: por favor, no usen Word para escribir matemática. Me hace doler los ojos como cuando voy a la cancha.
+
 
 ## Licensing
 
@@ -630,7 +629,7 @@ Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código a
 ---
 
 Según Richard Stallman (no es Roqueta, es Stallman), lo importante es tener la _libertad_ para poder modificar el código para que el software se comporte como uno necesita.
-Y si uno no sabe programar, tener la _libertad_ de contratar a alguien que lo haga. Esto es re profundo.
+Y si uno no sabe programar, tener la _libertad_ de poder contratar a alguien que lo haga. Esto es re profundo.
 
 ---
 
@@ -656,11 +655,12 @@ Como eso andaba más o menos bien, me pasó lo que a los gerentes de la Bell.
 
 ---
 
-Empecé a agregar complejidad, features, etc. 
+Empecé a agregar complejidad, features innecesarias, etc. 
 
 ---
 
 Hasta que decidí empezar de cero, como Ken.
+
 ---
 
 El scope actual es que FeenoX puede resolver estos problemas.
@@ -696,7 +696,7 @@ Un par de comentarios.
 FeenoX se enfoca solamente en resolver "bien" ecuaciones en derivadas parciales.
 Tiene que poder "charlar" con otras herramientas del palo, en particular malladores y post-procesadores.
 Y se tiene que llevar bien con el concepto de "simulación programática", cuyo nombre no me gusta pero es como se lo llama en la industria.
-A mí me gusta más decir las cosas con el sufijo "friendly", así que para mí sería "script friendly".
+A mí me gusta más decir las cosas con el sufijo "friendly", así que para mí sería "script friendly."
 
 ---
 
@@ -704,7 +704,7 @@ En particular, tiene que permitir corridas paramétricas de forma más o menos s
 FeenoX lo hace permitiendo expandir argumentos de la línea de comandos en el input.
 
 Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
-Bueno, si lo corremos desde Bash como `do` `feenox` `hello` punto `fee` pesos $i$ dentro de un seq uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
+Bueno, si lo corremos desde Bash como `do` `feenox` `hello` punto `fee` pesos $i$ dentro de un `seq` uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
 
 ---
 
@@ -736,7 +736,7 @@ No es solamente SSH o docker.
 
 --- 
 
-Y ni que hablar de solvers nativos para desktop que quieren dockerizarlos para hacerlos "cloud".
+Y ni que hablar de solvers nativos para desktop que los meten en docker y dicen que son "cloud".
 
 Para que tengan una idea, esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año durante una presentación interna.
 
@@ -782,10 +782,10 @@ Nosotros nos tenemos que enfocar en 1 y en 3.
 ---
   
 La biblioteca del punto 2 es PETSc.
-Entonces FeenoX juega el papel dos capas (o "glue layers" en terminología Unix):
+Entonces FeenoX juega el papel dos capas---o "glue layers" en terminología Unix:
  
  * una que construye $K$ y $b$ a partir de la malla y del input, y 
- * otra que convierte la solución $u$ en flujos que puedan ser entendidos por un post-procesador como Paraview.
+ * otra que convierte el vector $u$ en la solución real, distribuciones espaciales que puedan ser evaluadas en cualquier punto del espacio y entendidas por un post-procesador como Paraview.
  
 ---
 
@@ -805,7 +805,7 @@ En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de ri
 
 Fíjense que la ecuación diferencial esencialmente está dada por las expresiones entre llaves.
 
-Entonces, en principio, podríamos implementar a FeenoX como un framework general que es agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
+Entonces, en principio, podríamos implementar a FeenoX como un framework general que sea agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
  
 ## Implementación
 
@@ -859,7 +859,7 @@ Estas palabras clave pueden ser definiciones o instrucciones.
 ## Ejemplos + IP
 
 Por ejemplo. `INPUT_FILE` sorpresa `PATH` una expresión tipo `PRINTF` con un argumento random. Definición porque `FILE` es un sustantivo.
-Read mesh es una instrucción que lee la malla en el archivo sorpresa.
+`READ_MESH` es una instrucción que lee la malla en el archivo sorpresa.
 `PRINT` cells es una instrucción. 
 
 ---
@@ -1089,7 +1089,7 @@ La complejidad está puesta en un script de Python que usa el API de Gmsh para h
 
 Otro problema.
 Supogamos que tenemos tres pescaditos absorbentes.
-Dos están fijos. El problema es ubicar el tercero de forma tal que la reactividad total sea mínima.
+Dos están fijos. El problema consiste ubicar el tercero de forma tal que la reactividad total sea mínima.
 
 ## Input
 
@@ -1128,7 +1128,7 @@ Y finalmente otra ilustración de que al correr esto en paralelo lo que logramos
 Conclusiones.
 Antes que nada, todo esto que presenté va en el sentido del método de Descartes.
 Como dice René, esto es lo que me sirvió a mí y lo comparto con ustedes.
-Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y quieren seguir otro método, en todo su derecho.
+Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y quieren seguir otro método, adelante.
 
 ---
 
@@ -1158,21 +1158,21 @@ Como dijo una vez un director del IB en una reunión de consejo académico: no e
  
 ## Tweets 
 
-Si tuviesen que escribir un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que nombren alguno de estos siete conceptos.
+Si tuviesen que escribir un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que les haya quedado alguno de estos siete conceptos.
 
 En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
 ## Trabajos futuros
 
 La tesis y esta presentación terminan con un jardín de trabajos futuros que se bifurcan.
-Cada unos de estos bullets implica varios años-persona y un presupuesto no despreciable.
+Cada unos de estos bullets implica varios años-persona y un presupuesto importante.
 En particular, el último es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
 
 Seguramente ustedes se preguntan lo mismo que yo.
 ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si llegara a venir un cisne negro que te cambia la número cinco por una bola de bowling, pero le habías hecho caso a Calabró y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+Porque si llegara a venir un cisne negro y te cambiara la número cinco por una bola de bowling, pero le habías hecho caso a Calabró y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 
