@@ -529,9 +529,24 @@ $$
 \end{gathered}
 $$
 
-## Expansión en armónicos esféricos
+## Expansión en Legendre y armónicos esféricos
 
-\centering ![](harmonics.png){height=8cm}
+:::::::::::::: {.columns}
+::: {.column width="42.5%"}
+
+\vspace{1cm}
+
+\centering ![](legendre.svg)
+    
+:::
+::: {.column width="57.5%"}
+\centering ![](harmonics.png)
+:::
+::::::::::::::
+
+
+
+
 
 
 
@@ -715,8 +730,6 @@ $$
 \mat{K} \cdot \vec{u} = \vec{b}
 $$
 
-\vspace{-0.75cm}
-
 $$
 \mat{K}_i \approx
 \sum_{q=1}^Q 
@@ -732,12 +745,21 @@ $$
 \underbrace{\left\{\mat{H}_c^T(\symbf{\xi}_q) \cdot f(\vec{x}_q)\right\}}_{\text{discretización del miembro derecho $f$}}
 $$
 
-\medskip
 . . .
 
-\vspace{-0.8cm}
+:::::::::::::: {.columns}
+::: {.column width="65%"}
 ![](dominio-continuo-4.svg)
+:::
 
+. . .
+
+::: {.column width="35%"}
+$$
+u(\vec{x}) = \sum_{j=1}^{35} h_j(\vec{x}) \cdot u_j 
+$$
+:::
+::::::::::::::
 
 
 
@@ -1496,6 +1518,8 @@ Add complexity only where you must.
  3. dificil de mantener: hay que actualizar el bloque cuando cambien las PDEs
 
 ## Polimorfismo con apuntadores a función
+
+. . . 
 
 ```c
 if (strcasecmp(token, "laplace") == 0) {

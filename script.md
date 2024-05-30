@@ -26,7 +26,7 @@ En un momento, Calabró le pregunta:
 
 "Supongamos que van 45 minutos del segundo tiempo. ¿Qué preferiría? ¿Un córner a favor... o un lateral a favor?"
 
-"¡¡Ehhh!! ¿Pero qué pregunta es esa?"---responde rápido Carrizo, sin dejar hablar al técnico.
+"¡¡Ehhh!! ¿Pero qué pregunta es esa?"---responde rápido Carrizo.
 "Con un córner uno tiene la posibilidad de llegar al área rival. Con un lateral, no."
 
 "Lo que pasa es que allá en Villa Dálmine"---explica tranquilo Calabró---
@@ -72,7 +72,7 @@ Y a veces era yo el que pedía cheques.
 
 Esta tesis es excepcional en el sentido de que fue atípica, una excepción a la receta tradicional.
 En lo que voy a contar hay quince años de lecciones aprendidas provenientes de estos tres ámbitos: academia, industria y emprendedurismo.
-Justamente este largo tiempo me permitió poder separar, como dice Mafalda, lo urgente de lo importante.
+Justamente, este largo tiempo me permitió poder separar---como dice Mafalda---lo urgente de lo importante.
 
 ## TOC
 
@@ -82,7 +82,7 @@ Pero no encontré una buena traducción, así que elegí...
 
 ---
 
-"transporte de neutrones en la nube" que intenta explicar---sin mucho éxito, ahora que lo pienso---que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" que intenta explicar---sin mucho éxito, ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
@@ -90,12 +90,13 @@ Pero no encontré una buena traducción, así que elegí...
 ---
 
 La tesis está dividida en cinco capítulos más algunos apéndices---que sí están en inglés.
-En en el primero explico el "why", en los dos siguientes el "how" y en los últimos dos el "what".
+En en el primero explico la motivación, que sería el "por que".
+Los siguientes dos tienen el "cómo" y los últimos dos el "qué".
 
 
 ## Why
 
-Empecemos entonces con el "why".
+Empecemos entonces---como sugiere Simon Sinek---con el "why".
 
 
 ## Cien años de programación
@@ -120,13 +121,7 @@ No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que ne
 
 Así y todo, la mayoría del software de cálculo sigue sacando megas de salidas, incluyendo el nombre del programa como ASCII art.
 
-Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que sintetizan un montón de lecciones aprendidas sobre programación.
-
-## Rule of silence
-
-Entre ellas, la "regla del silencio".
-
-[silencio, tomar agua]
+Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación---tanto teórica como práctica.
 
 
 ## Historia de dos reactores
@@ -142,17 +137,17 @@ Y una vez licenciado el nuevo, hay que re-licenciar el primero.
 ## Esquema de dos pasos
 
 Long story short: tenemos que modelar la inyección rápida de boro del segundo sistema de shutdown.
-Como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección, un primer esquema es primero calcular la pluma de boro en el tanque del moderador con CFD, meterla en un código de núcleo y obtener una curva de reactividad vs. tiempo para usarla en un código de planta con cinética puntual acoplado con control y protección para resolver el transitorio.
+
+Sea con cinética puntual...
+
  
 ## Esquema acoplado
 
-Segundo esquema.
-
-Calcular la pluma de boro en el tanque del moderador con CFD y meterla directamente en un código de núcleo cinético-espacial acoplado con el código de planta y la lógica de control y protección.
+o con cinética espacial, como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección...
 
 ---
 
-En cualquiera de los dos casos, tenemos que hacer CFD primero y meter la pluma de boro en la neutrónica.
+tenemos que calcular la pluma de boro en el tanque del moderador con CFD y meterla en un código de núcleo.
 Así que prestemos atención a esa parte.
 
 
@@ -160,19 +155,17 @@ Así que prestemos atención a esa parte.
 
 Sea Atucha o sea Embalse, en Argentina tenemos 
 
- 1. canales cilíndricos, y
- 2. moderador separado del refrigerante.
-
-El boro se inyecta en el tanque del moderador.
-Así que la pluma va a rodear los canales.
+ 1. moderador separado del refrigerante, por lo que como el boro se inyecta en el tanque del moderador entonces nunca va a estar en contact con el refrigerante, y
+ 2. canales cilíndricos, que quiere decir geometría "curva", ¿no?
+ 
 
 ## Dominio
 
-Cuando tenemos que discretizar una geometría curva como esta...
+Y cuando queremos discretizar una geometría curva como esta...
 
 ---
 
-si queremos usar una malla estructurada como esta...
+con una malla estructurada como esta...
 
 ---
 
@@ -190,13 +183,12 @@ Esto es Atucha I "vista" desde el código de cinética espacial que nombramos a
 [pausa]
 
 Es como "jugar a los Rastis", ¿no?
-
+O a los Legos para los millenials.
 
 ## Celdas
 
-¿Cómo es el esquema de cálculo?
-Bueno, agarramos un canal con un poco de moderador.
-Con eso condensamos las secciones eficaces a nivel de celda y las usamos a nivel de núcleo.
+¿Cómo es el esquema de cálculo multi-escala?
+Bueno, agarramos un canal con un cacho de moderador alrededor y con eso condensamos secciones eficaces de celda a núcleo.
 
 ## Gota
 
@@ -224,7 +216,7 @@ Terminamos con Legos como estos.
 
 ## Gota
 
-Y además, si bien en el CFD el boro _no_ se mete en el refrigerante, con el esquema de celdas el boro termina metiéndose "numéricamente" adentro de los canales.
+Después, si bien en el CFD el boro _no_ se mete en el refrigerante, con el esquema de celdas el boro termina metiéndose "numéricamente" adentro de los canales.
 
 Además de todas las preguntas sobre la validez del esquema, surge también esta pregunta:
 
@@ -237,7 +229,7 @@ Además de todas las preguntas sobre la validez del esquema, surge también esta
 
 Resumiendo.
 
-Tenemos limitaciones de
+Tenemos limitaciones por
 
  1. dilución de secciones eficaces,
  2. efectos staircase muy marcados, y
@@ -259,7 +251,7 @@ Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le
 Para el punto uno, tenemos que re-pensar el esquema de condensación de secciones eficaces.
 Para eso necesitamos flexibilidad.
 
-Pasemos a un ejemplo que ilustra lo que quiero decir.
+Pasemos a un ejemplo que ilustra estos puntos que quiero transmitir.
 
 
 ## IAEA 3D Benchmark
@@ -296,8 +288,9 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
 ## How
 
 Aca termina mi explicación del "why."
-Pasemos al "how." 
+Pasemos ahora al "how." 
  
+[pausa para tomar agua y buscar carta]
 
 ## Séneca
 
@@ -318,6 +311,7 @@ Mas cuando se ha producido su trasformación, entonces y sólo entonces, se conv
 
 Capítulo 2. Este capítulo no tiene _nada_ nuevo.
 Lo escribí para que la literatura de análisis de reactores no sea una carga para mí, sino que se convierta en fuerza y sangre.
+Es decir, refrescar y entender las ecuaciones que estudié hace casi veinte años.
 
 ---
 
@@ -355,10 +349,12 @@ El siguiente capítulo es cómo discretizamos estas ecuaciones.
 Este tampoco tiene (casi) nada nuevo.
 
 Pero hay un par de diferencias.
-La primera la explica Paul Graham.
+La primera la explica Paul Graham. Entre paréntesis, si no conocen a Paul Graham googléenlo ahora mismo.
+Es un ñato que llegar a explicar conceptos de filosofía con regular expressions. Cierro paréntesis.
 
-En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca (cuando no usa regular expressions para explicar conceptos de filosofía).
+En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
 Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
+Una genialidad.
 
 La segunda diferencia, es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
 
