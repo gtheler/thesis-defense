@@ -17,10 +17,11 @@ Eso quiere decir dos cosas.
  * otra que crecí en los noventa.
  
 Y en los noventa, todo daba vueltas alrededor de la televisión.
+Y yo me la pasaba mirando televisión.
 
 ## Calabró
 
-Ustedes recordarán que estos dos monstruos tenían un programa llamado "El contra".
+Uno de los programas que me gustaba era "El contra" de estos dos monstruos.
 Un día, el invitado era un director técnico de fútbol, no recuerdo quién.
 En un momento, Calabró le pregunta:
 
@@ -82,7 +83,7 @@ Pero no encontré una buena traducción, así que elegí...
 
 ---
 
-"transporte de neutrones en la nube" que intenta explicar---sin mucho éxito, ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" que intenta explicar---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
@@ -112,14 +113,14 @@ Dejemos de lado consideraciones sobre arquitecturas, lenguajes, compiladores, et
 Pensemos en cómo había que diseñar software de ingeniería nuclear.
 
 Desde un punto de vista de costos, cada resultado calculado tenía que formar parte de la salida.
-Porque si te gastabas varios miles de dólares para hacer una corrida y después necesitabas un número que no está en los papeles que había impreso el aparato, tenías que volver a pagar.
+Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y resulta que después necesitabas un número que no estaba en los papeles que había impreso el aparato, tenías que volver a pagar.
 
 Viajemos "back to the future". Resulta que hoy, lo caro es la hora de ingeniería y no la hora de CPU.
 No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
 
 [pausa para buscar libros]
 
-Así y todo, la mayoría del software de cálculo sigue sacando megas de salidas, incluyendo el nombre del programa como ASCII art.
+Así y todo, la mayoría del software de cálculo sigue sacando miles de líneas de salida, incluyendo el nombre del programa como ASCII art.
 
 Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación---tanto teórica como práctica.
 
@@ -181,25 +182,24 @@ Esto es Atucha I "vista" desde el código de cinética espacial que nombramos a
 [pausa]
 
 Es como "jugar a los Rastis", ¿no?
-
-O a los Legos para los millenials.
+O a los Legos para los millenials, no sé.
 
 ## Celdas
 
 ¿Cómo es el esquema de cálculo multi-escala?
 Bueno, agarramos un canal con un cacho de moderador alrededor y con eso condensamos secciones eficaces de celda a núcleo.
+Fantástico.
 
 ## Gota
 
-Supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
+Pero supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
 Como para cada celda hay solamente un único parámetro de concentración de boro, tenemos que mantener la masa y no nos queda otra que distribuir _uniformemente_ 100 ppm en toda la celda. Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
 
 
 ## CFD
 
 Por otro lado, dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
-Este paso lo hacen los que saben de fluidos con mallas no estructuradas.
-Está claro que el boro no se mete en los canales. 
+Este paso lo hacen los que saben de fluidos con mallas no estructuradas. Está claro que el boro no se mete en los canales. 
 
 
 ## Mapeo
@@ -320,9 +320,10 @@ Como ustedes sabrán, yo
  * trackeo todo con Git y
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
  
-De hecho, si prestan atención abajo a la derecha a la izquierda de la fecha hay un hash que indica qué commit generó estos slides a partir del Markdown. En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
+De hecho, acá hay un hash que indica qué commit generó estos slides a partir del Markdown.
+En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
  
-Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara] Martín---tiene la libertad de acceder al Markdown y modificarlo según necesite, respetando la licencia.
+Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara] Martín---tiene la libertad de acceder al Markdown y modificarlo según necesite, [con voz de profesor y señaladno] respetando la licencia.
 
 ## Ecuación de transporte
 
@@ -344,12 +345,12 @@ Fin del capítulo.
  
 ## Paul Graham
 
-El siguiente capítulo es cómo discretizamos estas ecuaciones.
+El siguiente capítulo es cómo discretizamos estas ecuaciones diferenciales.
 Este tampoco tiene (casi) nada nuevo.
 
 Pero hay un par de diferencias.
 La primera la explica Paul Graham. Entre paréntesis, si no conocen a Paul Graham googléenlo ahora mismo.
-Es un ñato que llegar a explicar conceptos de filosofía con regular expressions. Cierro paréntesis.
+Es un ñato que llega a explicar conceptos de filosofía con regular expressions. Cierro paréntesis.
 
 En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
 Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
@@ -380,7 +381,7 @@ Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ tiene que ser igual a
   
 ## Dominio
 
-Todo esto sobre un dominio $U$ con una frontera con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
+Todo esto sobre un dominio $U$ maýuscula con una frontera con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
 Empecemos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet arbitraria.
 
 ## Nodos
@@ -410,6 +411,9 @@ Una parte viene de la integración numérica y otra parte viene de la discretiza
 Favor de notar que
 
  1. Nunca tuvimos que pasar por la escalerita. Todo esto funciona con mallas no estructuradas.
+
+---
+ 
  2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua en el espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir de $u$.
 
 ## Extras
@@ -466,13 +470,13 @@ Bueno, depende de qué tipo de problema estemos queriendo resolver.
 
 Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
 Bueno, hay que hacer Newton-Raphson y la cosa se complica un poco.
-Pero por ahora no nos vamos a meter en eso y damos por terminado el "how."
+Pero hoy no nos vamos a meter en eso, y damos por terminado el "how."
 
 ## What
 
 Veamos ahora el "what."
 
-[pausa]
+[pausa, tomar agua]
 
 ## Bicicleta
 
@@ -556,7 +560,7 @@ Si bien mi emprendimiento nunca funcionó muy bien comercialmente, me permitió 
 
 ---
 
-Incluso poder ir a Cancún con mi familia.
+Incluso poder manejar mis tiempos para ir a la playa con mi familia.
 
 
 ## Do it for him
@@ -797,6 +801,8 @@ Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmaci�
 Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de rigidez y el vector de fuentes.
 Barremos los elementos y acumulamos las contribuciones elementales sobre los puntos de Gauss.
 En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
+
+. . .
 
 Fíjense que la ecuación diferencial esencialmente está dada por las expresiones entre llaves.
 
@@ -1173,7 +1179,7 @@ Porque si llegara a venir un cisne negro y te cambiara la número cinco por una 
 
 y puedas terminar una tesis de doctorado a los 40...
 
-y puedas volver a Cancún con tu familia.
+y puedas volver a la playa con tu familia.
 
 
 ## 

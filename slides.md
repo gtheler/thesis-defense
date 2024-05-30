@@ -31,10 +31,21 @@ header-includes:
 
 ## 
 
-\centering
-![](sandias.jpg){height=7.5cm}
-![](lateral-sandia.jpg){height=7.5cm}
+:::::::::::::: {.columns}
+::: {.column width="37.5%"}
+![](sandias2.jpg)
+:::
+::: {.column width="25%"}
+![](sandias3.jpg)
 
+\medskip
+
+![](sandias4.jpg)
+:::
+::: {.column width="37.5%"}
+![](sandias1.jpg)
+:::
+::::::::::::::
 
 ## 
 
@@ -510,6 +521,10 @@ Lucio Séneca
 
 
 <https://github.com/gtheler/thesis>
+
+. . .
+
+![](hash.svg)
 
 :::
 ::::::::::::::
@@ -1471,6 +1486,8 @@ Add complexity only where you must.
 
 ## Algoritmo para construir $\mat{K}$ y $\vec{b}$
 
+\vspace{-1cm}
+
 :::::::::::::: {.columns}
 ::: {.column width="10%"}
 :::
@@ -1493,6 +1510,10 @@ Add complexity only where you must.
  ensamblar $\mat{K}_i \rightarrow \mat{K}$\; \\
  ensamblar $\vec{b}_i \rightarrow \vec{b}$\; \\
 }
+
+. . .
+
+\vspace{-4.25cm} ![](circulo.svg){height=3cm}
 
 :::
 ::::::::::::::
@@ -1621,16 +1642,21 @@ while (ip != last) {
 ## Conducción de calor 1D
 
 ```feenox
-PROBLEM thermal 1D               # 1. definir que la PDE es calor 1D
-READ_MESH slab.msh               # 2. leer la malla
-k = 1                            # 3. definir conductividad uniforme igual a uno
-BC left  T=0                     # 4. condiciones de contorno de Dirichlet
-BC right T=1                     #    "left" y "right" son nombres en la malla
-SOLVE_PROBLEM                    # 5. y 6. construir y resolver
-PRINT T(1/2)                     # 7. y 8. escribir en stdout la temperatura en x=0.5
+PROBLEM thermal 1D               # definir que la PDE es calor 1D
+READ_MESH slab.msh               # leer la malla
+k = 1                            # conductividad uniforme igual a uno
+BC left  T=0                     # condiciones de contorno de Dirichlet
+BC right T=1                     #  ("left" y "right" son nombres en la malla)
+SOLVE_PROBLEM                    # construir y resolver
+PRINT T(1/2)                     # escribir en stdout la temperatura en x=0.5
 ```
 
 . . .
+
+\centering ![](slab.svg){width=80%}
+
+. . .
+
 
 ```terminal
 $ feenox thermal-slab-uniform-nosource.fee 
@@ -2961,3 +2987,7 @@ mostrar qué es
 ![](petsc-20-attendees-jeremy.jpg){height=4.5cm}
 
 ![](GroupPhoto.jpg){height=4.5cm}
+
+
+## Resultados @ Las Vegas
+
