@@ -474,7 +474,7 @@ Pero hoy no nos vamos a meter en eso, y damos por terminado el "how."
 
 ## What
 
-Veamos ahora el "what."
+Veamos ahora el "what," que tiene las contribuciones originales de la tesis.
 
 [pausa, tomar agua]
 
@@ -597,11 +597,11 @@ Y después escribí el SDS explicando cómo es que mi propuesta de diseño e imp
 
 Les presento entonces a FeenoX, un software publicado este año en Journal of Open Source Software.
 
+Déjenme ver si me sale ilustrar un punto sobre su diseño.
 
 
 ## Unfair advantage: Markdown
 
-Déjenme ver si me sale ilustrar un punto.
 
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
 En el lado más "fácil" (y "horrendo") del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
@@ -679,7 +679,7 @@ Como usualmente hay que hacer varias cosas, están presentes los conceptos de "s
 
 ---
 
-De hecho podemos usar a FeenoX como un filtro de Unix pasando el input por la entrada estándar.
+De hecho podemos usar a FeenoX como un filtro de Unix pasando el input por la entrada estándar a través de un pipe.
 
 
 
@@ -753,7 +753,7 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 ## CAEplex
 
 Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento que nunca funcionó comercialmente.
-
+Es mobile-friendly así que pueden entrar ahora.
 
 ## LE10
 
@@ -764,6 +764,23 @@ Fíjense que todo lo que aparece en la formulación "humana" aparece en el archi
 Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
+
+## Mazes
+
+Una nota de color antes de meternos en el código.
+Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida, pero no el camino que las une.
+Podemos explotar la elipticidad del operador de Laplace con FeenoX.
+
+. . .
+
+Este es un post de LinkedIn y uno de los tutoriales.
+Ahí en el link se muestran los detalles de cómo hacer el dibujito ese para un laberitno arbitrario.
+Incluso cómo resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
+
+Bueno, basta de marketing.
+Pasemos al código.
+
+[pausa]
 
 
 ## Arquitectura
@@ -788,11 +805,13 @@ Entonces FeenoX juega el papel dos capas---o "glue layers" en terminología Unix
  
 ---
 
+[despacio porque es importante]
+
 Breve mención a la elección del lenguaje de programación.
 Esencialmente tenemos que elegir entre Fortran, C y C++.
 
 La filosofía Unix nos dice que debemos agregar complejidad solamente cuando la necesitemos.
-Por razones diferentes, Fortran y C++ agregan complejidad innecesaria.
+Por razones diferentes---e incluso opuestas---Fortran y C++ agregan complejidad innecesaria.
 Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmación de por medio, es el lenguaje ideal para las glue layers según Eric Raymond.
 
 
@@ -814,6 +833,8 @@ Entonces, en principio, podríamos implementar a FeenoX como un framework genera
 Supongamos que tenemos una variable `pde` que indica qué ecuación queremos resolver.
 Entonces podríamos implementar la evaluación de las llaves así.
 
+If `pde` es Poisson then return $B$ transpuesta $k$ $B$, else if etc.
+
 ---
 
 Bueno, esto es, primero que nada, feo.
@@ -826,10 +847,15 @@ Tercero, es difícil de mantener.
 
 ## Polimorfismo
 
+---
+
 Si hubiésemos elegido C++ podríamos haber implementado las llaves como métodos virtuales.
 Como estamos en C, lo hacemos con apuntadores a función.
 
-Entonces reemplazamos ese feo bloque de ifs por este otro bloque feo de ifs.
+
+---
+
+Entonces reemplazamos ese bloque feo de ifs por este otro bloque feo de ifs.
 Pero con dos diferencias:
 
  1. lo genera un script al que no le importa la belleza, y
@@ -846,11 +872,11 @@ Pero antes de explicar en detalle esa implementación, déjenme hablar sobre el 
 Siguiendo la filosofía Unix, este input es un archivo de texto plano.
 Tiene palabras clave en inglés, de forma tal de
 
- 1. definir completamente el problema
- 2. ser lo más auto-descriptivo y compacto posible, es decir están prohibidos los argumentos posicionales
- 3. permitir expresiones algebraicas en cada lugar donde se espere un parámetro numérico
- 4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input
- 5. seguir la regla de que "problemas simples necesitan inputs simples"
+ 1. definir completamente el problema: de forma tal de que no sea necesaria ninguna intervención humana una vez lanzado el programa
+ 2. ser lo más auto-descriptivo y compacto posible: es decir están prohibidos los argumentos posicionales
+ 3. permitir expresiones algebraicas en cada lugar donde se espere un parámetro numérico: ahora ilustramos este punto
+ 4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input (como lo que hablamos hace un rato del "nada más")
+ 5. seguir la regla de que "problemas simples necesitan inputs simples": ya lo ilustramos también en un segundo
  
 y algunas más que discutimos en el SDS.
 
@@ -879,7 +905,7 @@ Los `PRINT`s, aunque sean iguales, van a imprimir cosas diferentes.
 
 ---
 
-De hecho FeenoX tiene un instruction pointer que ejecuta todas las instrucciones siguiendo una linked list. 
+De hecho FeenoX tiene un instruction pointer que ejecuta todas las instrucciones siguiendo una linked list respetando los loops y los condicionales.
 
 
 ## Conducción de calor 1D
@@ -887,7 +913,10 @@ De hecho FeenoX tiene un instruction pointer que ejecuta todas las instrucciones
 Problema simple, input simple.
 
  * Línea 1, definimos que queremos conducción 1D.
- * Línea 2, instrucción: leeme la malla.
+ * Línea 2, instrucción: leeme la malla. ¿Qué malla? Bueno, esta, que tiene dos puntos físicos llamados "left" y "right".
+ 
+--- 
+ 
  * Línea 3, definimos una variable `k` y le asignamos el valor uno. En problema thermal, si existe la variable `k` indica conductividad uniforme.
  * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
  * Línea 6: instrucción, por favor resolvé el problema
@@ -939,6 +968,7 @@ Podemos remover un directorio completamente, volver a hacer bootstrap y compilar
 
 Está claro que no ganamos mucho removiendo. Es mucho más interesante agregar, que remover.
 Este es el mecanismo de extensibilidad que mencioné antes.
+En los trabajos futuros hay un bullet que es agregar nuevas ecuaciones: electromagnetismo, acústica, fluidos... se aceptan sugerencias.
 
 
 ## Entry points
@@ -966,7 +996,9 @@ Lo mismo para `SN`.
 ---
 
 Siguiente. Ese snippet de un input muestra el $k$ efectivo y la reactividad.
-Esa variable `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$.
+Esa variable `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$ y las corrientes $J$.
+Por ejemplo, en elasticidad sería calcular tensiones a partir de desplazamientos. En conducción de calor, flujos de calor a partir de temperaturas.
+
 Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
 
 ---
@@ -977,7 +1009,7 @@ Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry p
 
 ## Expressions
 
-Otro principio fundamental de la base de diseño de FeenoX relacionado a la flexibilidad: "todo es una expresión".
+Otro principio fundamental de la base de diseño de FeenoX relacionado a la flexibilidad, que ya nombramos antes: "todo es una expresión".
 Incluso la dimensión o la cantidad de grupos.
 Desde ya, las propiedades de los materiales y las condiciones de contorno.
 
@@ -1245,27 +1277,16 @@ Es como publicitar un hotel diciendo "las habitaciones tienen baño privado".
 Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
 
 
-## Mazes
 
-Una nota de color antes de meternos en el código.
-Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida, pero no el camino que las une.
-Podemos explotar la elipticidad del operador de Laplace con FeenoX.
-
-. . .
-
-Este es un post de LinkedIn y uno de los tutoriales.
-Ahí en el link se muestran los detalles de cómo hacer el dibujito ese para un laberitno arbitrario.
-Incluso cómo resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
-
-Bueno, basta de marketing.
-Pasemos al código.
-
-[pausa]
-
- 
 ## El experimento de los monos
 
 ## PETSc
 
 ## Unix y los desafíos de la nube
+
+## Markdown
+
+## Amazon
+
+## CAEplex & Onshape
 

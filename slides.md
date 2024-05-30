@@ -1449,7 +1449,26 @@ $
 
 \centering ![](nafems-le10-problem-input.svg)
 
- 
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="30%"}
+
+\vspace{0.5cm}
+
+\centering ![](maze-homer.png)
+:::
+
+::: {.column width="70%"}
+\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
+
+4,498 likes, 355 comments & 143 reposts
+:::
+::::::::::::::
+
+\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
+
+
  
 ## Arquitectura
 
@@ -2950,25 +2969,6 @@ WRITE_RESULTS FORMAT vtk
 ::::::::::::::
 
 
-## 
-
-:::::::::::::: {.columns}
-::: {.column width="30%"}
-
-\vspace{0.5cm}
-
-\centering ![](maze-homer.png)
-:::
-
-::: {.column width="70%"}
-\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
-
-4,498 likes, 355 comments & 143 reposts
-:::
-::::::::::::::
-
-\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
-
 
 
 ## 
@@ -2991,3 +2991,52 @@ mostrar qué es
 
 ## Resultados @ Las Vegas
 
+## Qué es Markdown
+
+
+## Temas fuera de programa
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+ * 4.2.2. Funciones ($\neq$ "tablas")
+    a. Definidas algebraicamente
+    b. Definidas por puntos
+       - sin topología
+       - con topología implítica
+       - con topología explícita
+ * 4.3.1. Licencia libre y abierta
+ * 4.3.2. Filosofía Unix
+ * 4.3.3. Simulación programática
+ * 4.3.4. Performance
+ * 4.3.5. Escalabilidad
+ * 4.3.6. Ejecución en la nube
+ * 4.3.7. Extensibilidad
+ * 4.3.8. Integración continua
+ * 4.3.9. Documentación
+
+:::
+
+. . .
+
+::: {.column width="55%"}
+
+### Otros temas para el Q&A
+
+ * Non-conformal mesh interpolation
+ * Secondary field recovery
+   - Gauss-to-node extrapolation
+   - Nodal averaging
+ * CPU $\leftrightarrow$ RAM
+ * Link-time optimization
+ * [github.com/seamplex/feenox-benchmark](https://github.com/seamplex/feenox-benchmark)
+ * Function pointers $\rightarrow$ preprocessor macros
+ * Iterative/Direct solvers
+ * 3D pre & post
+ * APIs for thin clients
+ * Web interfaces
+ 
+:::
+:::::::::::::: 
+
+## IAEA 3D @ Onshape
