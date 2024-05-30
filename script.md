@@ -122,10 +122,6 @@ Así y todo, la mayoría del software de cálculo sigue sacando megas de salidas
 
 Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que sintetizan un montón de lecciones aprendidas sobre programación.
 
-## Rule of silence
-
-Entre ellas, la "regla del silencio".
-
 [silencio, tomar agua]
 
 
@@ -887,7 +883,7 @@ Problema simple, input simple.
 
  * Línea 1, definimos que queremos conducción 1D.
  * Línea 2, instrucción: leeme la malla.
- * Línea 3, definimos una variable `k` igual a 1. En problema thermal, si existe la variable `k` indica conductividad uniforme.
+ * Línea 3, definimos una variable `k` y le asignamos el valor uno. En problema thermal, si existe la variable `k` indica conductividad uniforme.
  * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
  * Línea 6: instrucción, por favor resolvé el problema
  * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
