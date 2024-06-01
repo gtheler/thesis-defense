@@ -17,7 +17,7 @@ Eso quiere decir dos cosas.
  * otra que crecí en los noventa.
  
 Y en los noventa, todo daba vueltas alrededor de la televisión.
-Y yo me la pasaba mirando televisión.
+Y yo desperdiciaba mi tiempo mirando televisión.
 
 ## Calabró
 
@@ -30,11 +30,11 @@ En un momento, Calabró le pregunta:
 "¡¡Ehhh!! ¿Pero qué pregunta es esa?"---responde rápido Carrizo.
 "Con un córner uno tiene la posibilidad de llegar al área rival. Con un lateral, no."
 
-"Lo que pasa es que allá en Villa Dálmine"---explica tranquilo Calabró---
+"Lo que pasa es que allá en Villa Dálmine"---explica tranquilo Calabró---"nosotros durante la semana...
 
 ## Sandías
 
-"durante la semana nosotros entrenamos laterales con sandías."
+entrenamos laterales con sandías."
 
 [pausa]
 
@@ -83,7 +83,7 @@ Pero no encontré una buena traducción, así que elegí...
 
 ---
 
-"transporte de neutrones en la nube" que intenta explicar---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" con el que intentaba---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
@@ -91,7 +91,7 @@ Pero no encontré una buena traducción, así que elegí...
 ---
 
 La tesis está dividida en cinco capítulos más algunos apéndices---que sí están en inglés.
-En en el primero explico la motivación, que sería el "por que".
+En en el primero explico la motivación, que sería el "por qué".
 Los siguientes dos tienen el "cómo" y los últimos dos el "qué".
 
 
@@ -103,26 +103,26 @@ Empecemos entonces---como sugiere Simon Sinek---con el "why".
 ## Cien años de programación
 
 Veamos juntos esta tabla de un paper de 1965.
-El título del paper es, justamente "Desarrollos _recientes_ en computadoras y sus _consecuencias_ para el cálculo de reactores"
+El título del paper es "Desarrollos _recientes_ en computadoras y sus _consecuencias_ para el cálculo de reactores"
 
 [pausa para que miren la tabla]
 
 Tenemos que hacer el ejercicio mental de viajar 60 años al pasado para entender estos números.
 
 Dejemos de lado consideraciones sobre arquitecturas, lenguajes, compiladores, etc.
-Pensemos en cómo había que diseñar software de ingeniería nuclear.
+Pensemos en cómo había que diseñar software de ingeniería en esa época.
 
 Desde un punto de vista de costos, cada resultado calculado tenía que formar parte de la salida.
-Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y resulta que después necesitabas un número que no estaba en los papeles que había impreso el aparato, tenías que volver a pagar.
+Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y resulta que después necesitabas un número que no estaba en los papeles que el aparato había impreso, tenías que volver a pagar.
 
-Viajemos "back to the future". Resulta que hoy, lo caro es la hora de ingeniería y no la hora de CPU.
+Viajemos "back to the future". Resulta que hoy, la hora de ingeniería es mucho más cara que la hora de CPU.
 No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
 
 [pausa para buscar libros]
 
-Así y todo, la mayoría del software de cálculo sigue sacando miles de líneas de salida, incluyendo el nombre del programa como ASCII art.
+Así y todo, hoy en día la mayoría del software de cálculo sigue sacando miles de líneas de salida, incluyendo el nombre del programa como ASCII art.
 
-Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación---tanto teórica como práctica.
+Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación sobre todos estos años.
 
 
 ## Historia de dos reactores
@@ -182,7 +182,7 @@ Esto es Atucha I "vista" desde el código de cinética espacial que nombramos a
 [pausa]
 
 Es como "jugar a los Rastis", ¿no?
-O a los Legos para los millenials, no sé.
+O a los Legos para los millenials.
 
 ## Celdas
 
@@ -193,7 +193,7 @@ Fantástico.
 ## Gota
 
 Pero supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
-Como para cada celda hay solamente un único parámetro de concentración de boro, tenemos que mantener la masa y no nos queda otra que distribuir _uniformemente_ 100 ppm en toda la celda. Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
+Como para cada celda hay solamente un único parámetro de concentración de boro, tenemos que mantener la masa y no nos queda otra más que distribuir _uniformemente_ 100 ppm en toda la celda. Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
 
 
 ## CFD
@@ -221,7 +221,7 @@ Además de todas las preguntas sobre la validez del esquema, surge también esta
 
 ---
 
-¿Vale usar difusión en estas condiciones?
+¿Qué tan buena es la aproximación de difusión?
 
 
 ## Limitaciones
@@ -309,8 +309,7 @@ Mas cuando se ha producido su trasformación, entonces y sólo entonces, se conv
 ## Transporte y difusión de neutrones
 
 Capítulo 2. Este capítulo no tiene _nada_ nuevo.
-Lo escribí para que la literatura de análisis de reactores no sea una carga para mí, sino que se convierta en fuerza y sangre.
-Es decir, refrescar y entender las ecuaciones que estudié hace casi veinte años.
+Lo escribí para que las ecuaciones que estudié hace casi veinte años en la clase de Ghó no sean una carga para mí, sino que se conviertan en fuerza y sangre.
 
 ---
 
@@ -319,11 +318,13 @@ Como ustedes sabrán, yo
  * escribo en Markdown,
  * trackeo todo con Git y
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
- 
-De hecho, acá hay un hash que indica qué commit generó estos slides a partir del Markdown.
+
+--- 
+
+Acá hay un hash que indica qué commit generó estos slides a partir del Markdown.
 En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
  
-Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara] Martín---tiene la libertad de acceder al Markdown y modificarlo según necesite, [con voz de profesor y señaladno] respetando la licencia.
+Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara] Martín---tiene la libertad de clonar el repositorio y modificarlo según considere, [con voz de profesor y señalando] respetando la licencia.
 
 ## Ecuación de transporte
 
@@ -354,7 +355,7 @@ Es un ñato que llega a explicar conceptos de filosofía con regular expressions
 
 En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
 Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
-Una genialidad.
+Es decir, este capítulo está apuntador a programar las ecuaciones, no solamente a mirarlas.
 
 La segunda diferencia, es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
 
@@ -375,7 +376,7 @@ Hagamos un breve repaso usando la ecuación de Poisson.
 
 ---
 
-Lo primero que hacemos es escribirla en una formulación débil.
+Primero la escribimos como una formulación débil.
 
 Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ tiene que ser igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
   
@@ -390,7 +391,7 @@ Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de N
 
 ## Funciones
 
-Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto y en $\Gamma_D$.
+Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto, y en $\Gamma_D$.
 
 ## Elementos finitos
 
@@ -414,7 +415,7 @@ Favor de notar que
 
 ---
  
- 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua en el espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir de $u$.
+ 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua del espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir de $u$.
 
 ## Extras
 
@@ -493,19 +494,18 @@ Veamos.
 A mediados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
 Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, un sistema operativo "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
-No iba ni para adelante ni para atrás.
+No iba ni pa’delante ni pa’trás.
 Entonces en el 70 estos dos muchachos empezaron desde cero.
 Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
 
 ---
 
-Abro un concurso: una taza de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
+Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
 
 ## Jon
 
 Pero esperen, porque no les voy a contar la historia de esos dos muchachos, sino de este otro.
-Acá aparece en un documental de Discovery explicando cómo hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT.
-Es uno de los personajes reales de la película de Kevin Spacey.
+Acá aparece en un documental de Discovery explicando cómo hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT. Uno de los personajes reales de la película "21".
 
 
 Cuestión que en Las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks.
@@ -543,8 +543,11 @@ En resumen,
 Cierro concurso con ayudita.
 ¿Nombre de los últimos dos?
 
-Entre paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
+Primer paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
 Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres en su columna de La  Nación.
+
+Segundo paréntesis. Muchos nerds hicieron mucha plata. Hay una luz de esperanza para la audiencia.
+
 
 ## Cheque
 
@@ -621,7 +624,7 @@ Nota al pie: por favor, no usen Word para escribir matemática. Me hace doler lo
 
 Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
 
-El SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPL3+.
+El [remarcar] SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPL3+.
 Seguramente ya lo saben, pero nunca está de más repetirlo, especialmente en la industria nuclear.
 Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
 
@@ -633,8 +636,8 @@ Y si uno no sabe programar, tener la _libertad_ de poder contratar a alguien que
 ---
 
 
-Por otro lado, Eric Raymond (el del libro amarillo) hace énfasis en la superioridad técnica del software open source. Y tiene un punto.
-Y esto es importante en software científico y de ingeniería. Especialmente, de nuevo, en la industria nuclear.
+Por otro lado, Eric Raymond (el del libro amarillo) hace énfasis en la superioridad _técnica_ del software open source.
+Y tiene un punto. Y esto es importante en software científico y de ingeniería. Especialmente, de nuevo, en la industria nuclear.
 
 ---
 
@@ -667,7 +670,7 @@ Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuacione
 
 ## Unix
 
-Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pena apalancarse explícitamente en la filosofía Unix y hacerle caso al libro de Raymond.
+Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pena hacerle caso al libro amarillo u apalancarse explícitamente en la filosofía Unix.
 
 Too long; didn't read it: la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
 
@@ -679,7 +682,7 @@ Como usualmente hay que hacer varias cosas, están presentes los conceptos de "s
 
 ---
 
-De hecho podemos usar a FeenoX como un filtro de Unix pasando el input por la entrada estándar a través de un pipe.
+De hecho FeenoX se puede usar como un filtro pasando el input a través de un pipe.
 
 
 
@@ -700,7 +703,7 @@ A mí me gusta más decir las cosas con el sufijo "friendly", así que para mí 
 ---
 
 En particular, tiene que permitir corridas paramétricas de forma más o menos sencilla.
-FeenoX lo hace permitiendo expandir argumentos de la línea de comandos en el input.
+FeenoX lo hace expandiendo argumentos de la línea de comandos en el input.
 
 Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
 Bueno, si lo corremos desde Bash como `do` `feenox` `hello` punto `fee` pesos $i$ dentro de un `seq` uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
@@ -735,7 +738,7 @@ No es solamente SSH o docker.
 
 --- 
 
-Y ni que hablar de solvers nativos para desktop que los meten en docker y dicen que son "cloud".
+Y ni que hablar de solvers point-and-click para Windows a los que les hacen un remote desktop y dicen que son "cloud".
 
 Para que tengan una idea, esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año durante una presentación interna.
 
@@ -748,7 +751,7 @@ Central para separar front de back. El objetivo es que FeenoX pueda funcionar co
 
 Después hay temas de deployment y escalabilidad.
 
-Si el software no tiene todos estos ítems en cuenta en su base de diseño, después es muy complicado cambiarlo para acomodar lo que falta.
+Si el software no tiene todos estos ítems en cuenta en su base de diseño, después---como en cualqueir proyecto de ingeniería---es muy complicado cambiarlo para acomodar lo que falta.
 
 ## CAEplex
 
@@ -774,11 +777,7 @@ Podemos explotar la elipticidad del operador de Laplace con FeenoX.
 . . .
 
 Este es un post de LinkedIn y uno de los tutoriales.
-Ahí en el link se muestran los detalles de cómo hacer el dibujito ese para un laberitno arbitrario.
-Incluso cómo resolver el transitorio que ilustra cómo se prueban todos los caminos y los que no llevan a ningún lado van decayendo y sobrevive solamente la solución.
-
-Bueno, basta de marketing.
-Pasemos al código.
+Bueno, pasemos al código.
 
 [pausa]
 
@@ -812,7 +811,7 @@ Esencialmente tenemos que elegir entre Fortran, C y C++.
 
 La filosofía Unix nos dice que debemos agregar complejidad solamente cuando la necesitemos.
 Por razones diferentes---e incluso opuestas---Fortran y C++ agregan complejidad innecesaria.
-Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmación de por medio, es el lenguaje ideal para las glue layers según Eric Raymond.
+Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmación mediante, es el lenguaje ideal para las glue layers según Eric Raymond.
 
 
 ## Algoritmo para construir
@@ -821,7 +820,7 @@ Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de ri
 Barremos los elementos y acumulamos las contribuciones elementales sobre los puntos de Gauss.
 En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
-. . .
+---
 
 Fíjense que la ecuación diferencial esencialmente está dada por las expresiones entre llaves.
 
@@ -847,7 +846,6 @@ Tercero, es difícil de mantener.
 
 ## Polimorfismo
 
----
 
 Si hubiésemos elegido C++ podríamos haber implementado las llaves como métodos virtuales.
 Como estamos en C, lo hacemos con apuntadores a función.
@@ -862,7 +860,7 @@ Pero con dos diferencias:
  2. es uno sólo en toda la ejecución en tiempo de parseo.
  
 Esencialmente en este único bloque if se resuelve un apuntador a una función en tiempo de parseo que depende de cada ecuación a resolver.
-Y a su vez en esa función particular se resuelven puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación diferencial.
+Y a su vez en esa función se resuelven puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación diferencial particular.
 
 
 ## Input
@@ -917,7 +915,7 @@ Problema simple, input simple.
  
 --- 
  
- * Línea 3, definimos una variable `k` y le asignamos el valor uno. En problema thermal, si existe la variable `k` indica conductividad uniforme.
+ * Línea 3, definimos una variable `k` y le asignamos el valor uno. En problema `thermal`, si existe la variable `k` indica conductividad uniforme.
  * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
  * Línea 6: instrucción, por favor resolvé el problema
  * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
@@ -951,6 +949,7 @@ Recuerden que eso quiere decir que ese argumento viene de la línea de comandos.
 Así que le tenemos que decir si queremos S$_2$, S$_4$, S$_6$, etc.
 
 La salida de este input es la raíz cuadrada de la integral del cuadrado de la diferencia entre el flujo calculado por FeenoX y un perfil de referencia tomado de un blog académico.
+Debería ser un número chico, pero no conozco la exactitud de la fuente.
 
 
 ## Bootstrap
@@ -981,7 +980,14 @@ Otras para inicializar.
 
 Las centrales para evaluar las llaves en cada punto de Gauss.
 
-Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver un problema lineal, uno no lineal, un problema de autovalores o uno transitorio. En el caso thermal, eso lo deciden las funciones de inicialización dependiendo de si la conductividad depende de la temperatura o no. En neutrónica, si es un problema con fuentes o de criticidad.
+Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver
+
+ * un problema lineal,
+ * uno no lineal,
+ * un problema de autovalores o
+ * uno transitorio.
+
+En el caso `thermal`, eso lo deciden las funciones de inicialización dependiendo de si la conductividad depende de la temperatura o no. En neutrónica, si es un problema con fuentes o de criticidad.
 
 Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
 
@@ -1043,6 +1049,8 @@ Lista de temas que tienen una sección de la tesis donde las discutimos por escr
 
 Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
 
+Anoten para después levantar la mano y preguntar.
+
 [pausa]
 
 
@@ -1064,8 +1072,7 @@ Todos, excepto el último, requieren al menos una de las características distin
 ## IAEA 3D PWR Onshape
 
 Este es el problema que ya mostramos del benchmark de IAEA.
-En este caso la geometría viene de un CAD modelado en Onshape, que es 100% web y cloud.
-El que contamos en la historia de Jon sin hache.
+En este caso la geometría viene de un CAD modelado en Onshape, 100% web y cloud. El de los 480 millones de Jon sin hache.
 
 ## Malla
 
@@ -1079,7 +1086,7 @@ Tanto la memoria como el tiempo de ejecución bajan a la mitad.
 ## MPI
 
 Y si corremos en paralelo, vemos que si bien el tiempo baja lo más importante es que también baja la memoria por proceso.
-Recuerden que ese era nuestro objetivo.
+Recuerden que ese era nuestro objetivo: resolver problemas grandes partiéndolos en pedazos chicos de forma tal de que cada uno consuma una cantidad razonable de memoria.
 
 ## Slab a dos zonas
 
@@ -1109,7 +1116,7 @@ Bueno, podemos ir haciéndole fillets al cubo.
 
 ---
 
-Imposible de resolver con Legos.
+Curva omposible de obtener con Legos.
 
 ## Input + python
 
@@ -1127,9 +1134,8 @@ Dos están fijos. El problema consiste ubicar el tercero de forma tal que la rea
 ## Input
 
 Otra vez dividimos y conquistamos.
-El driver es un Python que usa una biblioteca de optimización con el método de Nelder & Mead.
-Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para mallar y después a FeenoX para resolver.
-Algunas iteraciones y el $k$ efectivo es mínimo.
+El driver es un Python que usa el paquete de optimización de SciPy con el método de Nelder & Mead.
+Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para crear la malla y después a FeenoX para calcular el $k$ efecitvo. Algunas iteraciones encontramos el mínimo.
 
 
 ## PHWR
@@ -1165,7 +1171,7 @@ Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y 
 
 ---
 
-Seguimos el poco académico pero---a veces---útil orden why-how-what.
+Seguimos el poco académico pero---a veces---útil orden why-how-what de Simon Sinek.
 
 ---
 
@@ -1186,12 +1192,12 @@ En particular, para neutrónica a nivel de núcleo soporta
 
 ---
 
-Como dijo una vez un director del IB en una reunión de consejo académico: no es lo mismo leer manuales que escribir manuales.
+Como dijo una vez un director del IB en una reunión de consejo académico cuando yo era representante de los estudiantes: no es lo mismo leer manuales que escribir manuales.
  
  
 ## Tweets 
 
-Si tuviesen que escribir un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que les haya quedado alguno de estos siete conceptos.
+Si tuviesen hacer un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que escriban alguno de estos siete conceptos en 140 caracteres.
 
 En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
@@ -1205,7 +1211,7 @@ Seguramente ustedes se preguntan lo mismo que yo.
 ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si llegara a venir un cisne negro y te cambiara la número cinco por una bola de bowling, pero le habías hecho caso a Calabró y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+Porque si llegara a venir un cisne negro y te cambiara la número cinco a la que estás acostumbrado por una bola de bowling, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 
@@ -1289,4 +1295,6 @@ Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
 ## Amazon
 
 ## CAEplex & Onshape
+
+## Presentación Garcar 2023
 
