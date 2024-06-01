@@ -378,7 +378,7 @@ Hagamos un breve repaso usando la ecuación de Poisson.
 
 Primero la escribimos como una formulación débil.
 
-Un operador bi-lineal coercivo $a$ aplicado a $u$ y $v$ tiene que ser igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
+Un operador bi-lineal coercitivo $a$ aplicado a $u$ y $v$ tiene que ser igual a un funcional $B$ larga de $v$ corta para toda $v$ corta viviendo en algún espacio funcional $V$ corta mayúscula. 
   
 ## Dominio
 
@@ -444,7 +444,7 @@ Los detalles en el capítulo tres.
 $L$ es leakage, $A$ es absorción y $F$ es fisión. Abajo, $s$ son las fuentes.
 
 Fíjense que la forma es parecida al caso de Poisson.
-Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercivo.
+Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercitivo.
 
 
 ## Ordenadas discretas
