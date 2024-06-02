@@ -1,0 +1,11 @@
+fontsize: 11pt
+geometry:
+- paper=a4paper
+- left=1.5cm
+- right=1.5cm
+- bottom=2.5cm
+- foot=1cm
+- top=1.5cm
+- head=1cm
+colorlinks: true
+mathspec: true

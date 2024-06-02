@@ -21,7 +21,7 @@ Y yo desperdiciaba mi tiempo mirando televisión.
 
 ## Calabró
 
-Uno de los programas que me gustaba era "El contra" de estos dos monstruos.
+A veces miraba el programa de estos dos monstruos: "El Contra".
 Un día, el invitado era un director técnico de fútbol, no recuerdo quién.
 En un momento, Calabró le pregunta:
 
