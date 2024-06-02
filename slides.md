@@ -3040,3 +3040,8 @@ mostrar qué es
 :::::::::::::: 
 
 ## IAEA 3D @ Onshape
+
+
+## Git
+
+In case of fire, git commit, git push.

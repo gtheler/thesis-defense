@@ -72,8 +72,8 @@ Y a veces era yo el que pedía cheques.
 ## Mafalda
 
 Esta tesis es excepcional en el sentido de que fue atípica, una excepción a la receta tradicional.
-En lo que voy a contar hay quince años de lecciones aprendidas provenientes de estos tres ámbitos: academia, industria y emprendedurismo.
-Justamente, este largo tiempo me permitió poder separar---como dice Mafalda---lo urgente de lo importante.
+En lo que voy a contar hay quince años de lecciones aprendidas provenientes, justamente, de estos tres ámbitos: academia, industria y emprendedurismo.
+De hecho, este largo tiempo me permitió poder separar---como dice Mafalda---lo urgente de lo importante.
 
 ## TOC
 
@@ -83,7 +83,7 @@ Pero no encontré una buena traducción, así que elegí...
 
 ---
 
-"transporte de neutrones en la nube" con el que intentaba---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" con el que intentaba indicar---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
@@ -152,7 +152,7 @@ Así que prestemos atención a esa parte.
 
 ## Canales
 
-Sea Atucha o sea Embalse, en Argentina tenemos 
+En Argentina tenemos 
 
  1. moderador separado del refrigerante, por lo que como el boro se inyecta en el tanque del moderador entonces nunca va a estar en contact con el refrigerante, y
  2. canales cilíndricos, que quiere decir geometría "curva", ¿no?
@@ -321,7 +321,7 @@ Como ustedes sabrán, yo
 
 --- 
 
-Acá hay un hash que indica qué commit generó estos slides a partir del Markdown.
+Acá abajo medio chiquito hay un hash que indica qué commit generó estos slides a partir del Markdown.
 En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
  
 Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara] Martín---tiene la libertad de clonar el repositorio y modificarlo según considere, [con voz de profesor y señalando] respetando la licencia.
