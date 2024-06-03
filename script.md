@@ -17,18 +17,24 @@ Eso quiere decir dos cosas.
  * otra que crecí en los noventa.
  
 Y en los noventa, todo daba vueltas alrededor de la televisión.
-Y yo desperdiciaba mi tiempo mirando televisión.
+Y yo me la pasaba desperdiciando mi tiempo mirando televisión.
 
 ## Calabró
 
-A veces miraba el programa de estos dos monstruos: "El Contra".
-Un día, el invitado era un director técnico de fútbol, no recuerdo quién.
-En un momento, Calabró le pregunta:
+[despacio]
+
+Un día, estaba yo desperdiciando mi tiempo con el programa de estos dos monstruos.
+El invitado era un director técnico de fútbol, no recuerdo quién.
+En un momento, "El contra" le pregunta:
+
+[un toque más rápido]
 
 "Supongamos que van 45 minutos del segundo tiempo. ¿Qué preferiría? ¿Un córner a favor... o un lateral a favor?"
 
 "¡¡Ehhh!! ¿Pero qué pregunta es esa?"---responde rápido Carrizo.
 "Con un córner uno tiene la posibilidad de llegar al área rival. Con un lateral, no."
+
+[despacio]
 
 "Lo que pasa es que allá en Villa Dálmine"---explica tranquilo Calabró---"nosotros durante la semana...
 
@@ -122,22 +128,21 @@ No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que ne
 
 Así y todo, hoy en día la mayoría del software de cálculo sigue sacando miles de líneas de salida, incluyendo el nombre del programa como ASCII art.
 
-Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación sobre todos estos años.
+Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación a lo largo de todos estos años.
 
 
 ## Historia de dos reactores
 
 Pasemos ahora a la otra mitad.
-Supongamos que tenemos una central nuclear con un diseño medio único, ya licenciada y que está operando.
+Supongamos que hay un país que tiene no una, sino
 
 ---
 
-Después aparece otro reactor medio parecido, un poco más grande pero que hay que licenciar.
-Y una vez licenciado el nuevo, hay que re-licenciar el primero.
+dos nucleares con un diseño único en el mundo.
+Y los ingenieros nucleares de ese país tienen que modelar la inyección rápida de boro del segundo sistema de shutdown.
 
 ## Esquema de dos pasos
 
-Long story short: tenemos que modelar la inyección rápida de boro del segundo sistema de shutdown.
 Sea con cinética puntual...
  
 ## Esquema acoplado
@@ -146,7 +151,7 @@ o con cinética espacial, como la fluidodinámica está desacoplada del resto de
 
 ---
 
-tenemos que calcular la pluma de boro en el tanque del moderador con CFD y meterla en un código de núcleo.
+podemos calcular la pluma de boro en el tanque del moderador con CFD y meterla en un código de núcleo.
 Así que prestemos atención a esa parte.
 
 
@@ -154,8 +159,8 @@ Así que prestemos atención a esa parte.
 
 En Argentina tenemos 
 
- 1. moderador separado del refrigerante, por lo que como el boro se inyecta en el tanque del moderador entonces nunca va a estar en contact con el refrigerante, y
- 2. canales cilíndricos, que quiere decir geometría "curva", ¿no?
+ 1. moderador separado del refrigerante, y
+ 2. canales cilíndricos, que son una geometría "curva", ¿no?
  
 
 ## Dominio
@@ -176,7 +181,7 @@ Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún err
 
 ## Celdas estructuradas...
 
-Ahora, en los códigos de núcleo, aparecen cosas como estas.
+En los códigos neutrónicos de núcleo, aparecen cosas como estas.
 Esto es Atucha I "vista" desde el código de cinética espacial que nombramos antes.
 
 [pausa]
@@ -199,7 +204,9 @@ Como para cada celda hay solamente un único parámetro de concentración de bor
 ## CFD
 
 Por otro lado, dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
-Este paso lo hacen los que saben de fluidos con mallas no estructuradas. Está claro que el boro no se mete en los canales. 
+Este paso lo hacen los que saben de fluidos---con mallas no estructuradas.
+El boro no se mete en los canales porque el moderador está separado del refrigerante. 
+Muy bien.
 
 
 ## Mapeo
@@ -215,7 +222,7 @@ Terminamos con Legos como estos.
 
 ## Gota
 
-Después, si bien en el CFD el boro _no_ se mete en el refrigerante, con el esquema de celdas el boro termina metiéndose "numéricamente" adentro de los canales.
+Después, con el esquema de celdas de cálculo, el boro termina metiéndose "numéricamente" adentro de los canales.
 
 Además de todas las preguntas sobre la validez del esquema, surge también esta pregunta:
 
@@ -230,7 +237,7 @@ Resumiendo.
 
 Tenemos limitaciones por
 
- 1. dilución de secciones eficaces,
+ 1. dilución de la sección eficaz del boro 10 en toda la celda,
  2. efectos staircase muy marcados, y
  3. cuestionable validez de la aproximación de difusión.
  
@@ -250,6 +257,8 @@ Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le
 Para el punto uno, tenemos que re-pensar el esquema de condensación de secciones eficaces.
 Para eso necesitamos flexibilidad.
 
+[pausa]
+
 Pasemos a un ejemplo que ilustra estos puntos que quiero transmitir.
 
 
@@ -259,9 +268,9 @@ Seguramente conocen ustedes este benchmark 3D.
 
 ## Simetrías
 
-Como es para PWRs, te indican que la geometría tiene simetría un cuarto.
-Se puede mallar perfectamente con cuadraditos---es decir, mallas estructuradas.
-Pero si miramos detenidamente, resulta que tiene geometría un octavo y no solamente un cuarto.
+El enunciado indica correctamente que la geometría tiene simetría un cuarto.
+Como es para PWRs, se puede mallar perfectamente con cuadraditos---es decir, mallas estructuradas.
+Pero si miramos detenidamente, resulta que tiene simetría un _octavo_, y no solamente un cuarto.
 
 ---
 
@@ -324,7 +333,7 @@ Como ustedes sabrán, yo
 Acá abajo medio chiquito hay un hash que indica qué commit generó estos slides a partir del Markdown.
 En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
  
-Si alguien necesita notas para dar clases---Fede, Chaco, [mirando a la cámara] Martín---tiene la libertad de clonar el repositorio y modificarlo según considere, [con voz de profesor y señalando] respetando la licencia.
+Si alguien necesita notas para dar clases---Chaco, Fede, [mirando a la cámara] Martín---tiene la libertad de clonar el repositorio y modificarlo según considere, [con voz de profesor y señalando] respetando la licencia.
 
 ## Ecuación de transporte
 
@@ -350,11 +359,15 @@ El siguiente capítulo es cómo discretizamos estas ecuaciones diferenciales.
 Este tampoco tiene (casi) nada nuevo.
 
 Pero hay un par de diferencias.
-La primera la explica Paul Graham. Entre paréntesis, si no conocen a Paul Graham googléenlo ahora mismo.
+La primera la explica Paul Graham.
+
+[no sé si decir esto]
+Entre paréntesis, si no conocen a Paul Graham googléenlo ahora mismo.
 Es un ñato que llega a explicar conceptos de filosofía con regular expressions. Cierro paréntesis.
 
+
 En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
-Pero agrega un pie de página donde nos recuerda que "programar" es equivalente a "escribir".
+Pero agrega un pie de página genial, donde nos recuerda que "programar" es equivalente a "escribir".
 Es decir, este capítulo está apuntador a programar las ecuaciones, no solamente a mirarlas.
 
 La segunda diferencia, es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
@@ -415,7 +428,7 @@ Favor de notar que
 
 ---
  
- 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua del espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir de $u$.
+ 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua del espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir del vector $u$.
 
 ## Extras
 
@@ -500,22 +513,19 @@ Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaro
 
 ---
 
-Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
+Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto. Cuando quieran, levanten la mano y arriesguen una respuesta.
 
 ## Jon
 
 Pero esperen, porque no les voy a contar la historia de esos dos muchachos, sino de este otro.
-Acá aparece en un documental de Discovery explicando cómo hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT. Uno de los personajes reales de la película "21".
-
+Acá aparece en un documental de Discovery explicando cómo hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT.
 
 Cuestión que en Las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks.
 Hasta ese momento---principios de los 90---todos los programas CAD funcionaban en el Unix de los muchachos.
-Pero este Jon (sin hache) vio que otro nerd también venía con todo: Bill Gates.
-
 
 ## Solidworks
 
-Se dió cuenta de que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
+Pero este Jon (sin hache) se dió cuenta de que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
 Y pasó a tener el 90% del mercado en un par de años.
 En el 97, Jon vendió su compañía por 300 millones de dólares y se quedó como CEO.
 
@@ -546,7 +556,8 @@ Cierro concurso con ayudita.
 Primer paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
 Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres en su columna de La  Nación.
 
-Segundo paréntesis. Muchos nerds hicieron mucha plata. Hay una luz de esperanza para la audiencia.
+Segundo paréntesis.
+Hubo nerds que hicieron mucha plata. Hay una luz de esperanza para la audiencia.
 
 
 ## Cheque
@@ -555,7 +566,7 @@ Por si se lo preguntaban, resulta que sí me dieron el cheque gigante.
 
 ## IB50k, CNE, cancún
 
-Era mi época de emprendedor, IB50k...
+Era mi época de emprendedor, concurso IB50k...
 
 ---
 
@@ -579,10 +590,10 @@ Y si tu hijo se enferma, tal vez tengas que apagar tu carrera profesional por un
 
 ## SRS & SDS
 
-A la vuelta, tuve que empezar desde cero y, literalmente, agarrar lo que venía.
+A la vuelta, tuve que empezar desde cero y---literalmente---agarrar lo que venía.
 Esto implicó tener que aprender cosas nuevas.
 
-Una de estas cosas fue un esquema de la industria del software muy interesante.
+Una de estas cosas fue un esquema muy interesante de la industria del software que me hizo usar un cliente de Europa.
 Consiste en un documento tipo "pliego" que lista los requerimientos que el comprador pide para un cierto desarrollo.
 Y otro tipo "oferta" que indica cómo el software propuesto aborda e implementa cada requerimiento.
 
@@ -591,7 +602,7 @@ Y otro tipo "oferta" que indica cómo el software propuesto aborda e implementa 
 Para la herramienta desarrollada en esta tesis lo que hice fue jugar de los dos lados del mostrador.
 Empecé escribiendo un SRS con estas secciones como si fuese un pliego de un llamado a licitación para una herramienta computacional.
 
-Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada un de los requisitos que yo mismo me puse.
+Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada una estas las secciones que yo mismo escribí.
 
 
 
@@ -617,7 +628,8 @@ En el medio, Markdown.
 Bueno, piensen a FeenoX como si fuese el Markdown de las herramientas tipo elementos finitos.
 FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
-Nota al pie: por favor, no usen Word para escribir matemática. Me hace doler los ojos como cuando voy a la cancha.
+Nota al pie: por favor, traten de usar Word para escribir matemática.
+Me hace doler los ojos como cuando voy a la cancha.
 
 
 ## Licensing
@@ -625,7 +637,7 @@ Nota al pie: por favor, no usen Word para escribir matemática. Me hace doler lo
 Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
 
 El [remarcar] SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPL3+.
-Seguramente ya lo saben, pero nunca está de más repetirlo, especialmente en la industria nuclear.
+Seguramente estoy predicando para el coro y ya lo saben, pero nunca está de más repetirlo---especialmente en la industria nuclear.
 Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
 
 ---
@@ -727,7 +739,7 @@ Pasemos ahora a "la nube".
 El plural es importante, porque queremos resolver problemas grandes y vamos a necesitar varias computadoras.
 
 Y que sean de otra gente y no nuestras, nos permite bajar los costos de oportunidad.
-Si los que saben de finanzas dicen que alquiles en lugar de comprarte una casa, imagínense computadoras para hacer cálculos.
+Si los que saben de finanzas te dicen que alquiles en lugar de comprarte una casa, imagínense computadoras para hacer cálculos.
 
 Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a vender horas de CPU?
 
@@ -766,20 +778,6 @@ Fíjense que todo lo que aparece en la formulación "humana" aparece en el archi
 
 Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
-
-
-## Mazes
-
-Una nota de color antes de meternos en el código.
-Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida, pero no el camino que las une.
-Podemos explotar la elipticidad del operador de Laplace con FeenoX.
-
-. . .
-
-Este es un post de LinkedIn y uno de los tutoriales.
-Bueno, pasemos al código.
-
-[pausa]
 
 
 ## Arquitectura
@@ -1297,4 +1295,17 @@ Pero bueno, sepan que soy consciente de _algunos_ de mis sesgos mentales.
 ## CAEplex & Onshape
 
 ## Presentación Garcar 2023
+
+## Mazes
+
+Una nota de color antes de meternos en el código.
+Supongamos que somos Homero Simpson y que tenemos que resolver un laberinto donde sabemos cuál es la entrada y cuál es la salida, pero no el camino que las une.
+Podemos explotar la elipticidad del operador de Laplace con FeenoX.
+
+. . .
+
+Este es un post de LinkedIn y uno de los tutoriales.
+Bueno, pasemos al código.
+
+[pausa]
 

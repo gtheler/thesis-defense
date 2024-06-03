@@ -1449,26 +1449,6 @@ $
 
 \centering ![](nafems-le10-problem-input.svg)
 
-## 
-
-:::::::::::::: {.columns}
-::: {.column width="30%"}
-
-\vspace{0.5cm}
-
-\centering ![](maze-homer.png)
-:::
-
-::: {.column width="70%"}
-\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
-
-4,498 likes, 355 comments & 143 reposts
-:::
-::::::::::::::
-
-\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
-
-
  
 ## Arquitectura
 
@@ -3045,3 +3025,25 @@ mostrar qué es
 ## Git
 
 In case of fire, git commit, git push.
+
+
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="30%"}
+
+\vspace{0.5cm}
+
+\centering ![](maze-homer.png)
+:::
+
+::: {.column width="70%"}
+\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
+
+4,498 likes, 355 comments & 143 reposts
+:::
+::::::::::::::
+
+\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
+
+
