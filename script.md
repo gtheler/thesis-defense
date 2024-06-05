@@ -269,7 +269,7 @@ Seguramente conocen ustedes este benchmark 3D.
 ## Simetrías
 
 El enunciado indica correctamente que la geometría tiene simetría un cuarto.
-Como es para PWRs, se puede mallar perfectamente con cuadraditos---es decir, mallas estructuradas.
+Como es para PWRs, con esta simétria se puede mallar perfectamente con cuadraditos.
 Pero si miramos detenidamente, resulta que tiene simetría un _octavo_, y no solamente un cuarto.
 
 ---
@@ -404,7 +404,7 @@ Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de N
 
 ## Funciones
 
-Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto, y en $\Gamma_D$.
+Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto. Y además tienen que satisfacer las condiciones de Dirichlet---o sea se tienen que anular en $\Gamma_D$.
 
 ## Elementos finitos
 
@@ -653,7 +653,7 @@ Y tiene un punto. Y esto es importante en software científico y de ingeniería.
 
 ---
 
-Esta discusión podría necesitar más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares, que se pueden aplicar al software abierto.
+Esta discusión necesitaría más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares, que se pueden aplicar al software abierto.
 
 [pausa]
 
@@ -678,11 +678,11 @@ Hasta que decidí empezar de cero, como Ken.
 ---
 
 El scope actual es que FeenoX puede resolver estos problemas.
-Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento.
+Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento, y que es una de las contribuciones originales.
 
 ## Unix
 
-Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pena hacerle caso al libro amarillo u apalancarse explícitamente en la filosofía Unix.
+Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pena hacerle caso al libro amarillo y apalancarse explícitamente en la filosofía Unix.
 
 Too long; didn't read it: la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
 
@@ -739,18 +739,18 @@ Pasemos ahora a "la nube".
 El plural es importante, porque queremos resolver problemas grandes y vamos a necesitar varias computadoras.
 
 Y que sean de otra gente y no nuestras, nos permite bajar los costos de oportunidad.
-Si los que saben de finanzas te dicen que alquiles en lugar de comprarte una casa, imagínense computadoras para hacer cálculos.
+Si los que saben de finanzas te dicen que alquiles en lugar que te compres una casa, imagínense computadoras para hacer cálculos.
 
-Pregunta para que vayan pensando: ¿Por qué Amazon pasó de vender libros a vender horas de CPU?
+Pregunta para que vayan pensando (sin premio): ¿Por qué Amazon pasó de vender libros a vender horas de CPU?
 
 ---
 
 Ahora bien, que un solver sea "cloud first" o "cloud native" no es lo mismo que sea "cloud friendly" o "cloud enhanced".
 No es solamente SSH o docker.
+Y ni que hablar de solvers point-and-click para Windows a los que les hacen un remote desktop y dicen que son "cloud".
 
 --- 
 
-Y ni que hablar de solvers point-and-click para Windows a los que les hacen un remote desktop y dicen que son "cloud".
 
 Para que tengan una idea, esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año durante una presentación interna.
 
@@ -958,7 +958,7 @@ Bueno, ese script es parte del bootstrapping del repositorio, en este caso `auto
 Ese script parsea los subdirectorios dentro de `src/pdes`. 
 La idea es que cada ecuación tenga un subdirectorio con el nombre del `PROBLEM` a resolver.
 
-Cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Es un script de Bash que genera un poco de código en C que finalmente se compila en FeenoX.
+Cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Este es el script de Bash que genera el bloque feo de ifs.
 
 Después si tienen tiempo y ganas les muestro cómo funciona.
 Podemos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
@@ -967,6 +967,7 @@ Está claro que no ganamos mucho removiendo. Es mucho más interesante agregar, 
 Este es el mecanismo de extensibilidad que mencioné antes.
 En los trabajos futuros hay un bullet que es agregar nuevas ecuaciones: electromagnetismo, acústica, fluidos... se aceptan sugerencias.
 
+[mostrar perfil alar?]
 
 ## Entry points
 
@@ -1217,10 +1218,12 @@ y puedas terminar una tesis de doctorado a los 40...
 
 y puedas volver a la playa con tu familia.
 
+Muchas gracias.
+
+[esperar y pasar de slide]
 
 ## 
 
-Muchas gracias.
 
 
 
@@ -1309,3 +1312,4 @@ Bueno, pasemos al código.
 
 [pausa]
 
+## Mostrar autogen, borrar thermal
