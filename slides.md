@@ -200,15 +200,15 @@ $$
 
 ![](slider-cna2.png)
 
-## Inyección rápida de boro: esquema de dos pasos
+## 
 
 ![](borocinetica.svg)
 
-## Inyección rápida de boro: esquema acoplado con cinética espacial
+## 
 
 ![](borofull3d.svg)
 
-## Inyección rápida de boro: esquema acoplado con cinética espacial
+## 
 
 ![](borofull3d-elipse.svg)
 
@@ -1577,67 +1577,6 @@ Entrada plain-text file con [_keywords_]{lang=en-US} en inglés que deben
  a. definiciones  (sustantivos)
  b. instrucciones (verbos y condicionales)
 
-## Definiciones e instrucciones
-
-:::::::::::::: {.columns}
-::: {.column width="45%"}
-
-
-```feenox
-INPUT_FILE surprise PATH nafems-le1%g.msh round(random(0,1))
-READ_MESH surprise
-PRINT cells
-```
-
-. . .
-
-```feenox
-IF abs(b)<1e-20 THEN
-  PRINT "division by zero"
-  ABORT
-ENDIF
-PRINT a/b
-```
-
-. . .
-
-```feenox
-a = 1
-f(x) = a*x^2
-PRINT f(1/2) f(1) f(2)
-a = 2
-PRINT f(1/2) f(1) f(2)
-```
-
-
-:::
-
-. . .
-
-::: {.column width="55%"}
-
-\vspace{0.25cm}
-
-### FeenoX tiene un _instruction pointer_!
-
-```c
-// sweep the first & last range but minding the conditional blocks
-instruction_t *ip = first;
-while (ip != last) {
-  feenox_call(ip->routine(ip->argument));
-  
-  if (feenox.next_instruction != NULL) {
-    ip = feenox.next_instruction;
-    feenox.next_instruction = NULL;
-  } else {
-    ip = ip->next;
-  }
-}
-```
-:::
-::::::::::::::
-
-
 ## Conducción de calor 1D
 
 ```feenox
@@ -1824,33 +1763,24 @@ done
 ::::::::::::::
 
 
-## Entry points
+##
 
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-
-```c-tiny
-// parse
+```c
 int (*parse_problem)(const char *token);
 int (*parse_write_results)(mesh_write_t *mesh_write, const char *token);
 int (*parse_bc)(bc_data_t *bc_data, const char *lhs, char *rhs);
 
-// init
 int (*init_before_run)(void);
 int (*setup_pc)(PC pc);
 int (*setup_ksp)(KSP ksp);
 int (*setup_eps)(EPS eps);
 int (*setup_ts)(TS ksp);
 
-// build
 int (*element_build_volumetric)(element_t *e);
 int (*element_build_volumetric_at_gauss)(element_t *e, unsigned int q);
 
-// solve
 int (*solve)(void);
 
-// post
 int (*solve_post)(void);
 int (*gradient_fill)(void);
 int (*gradient_nodal_properties)(element_t *e, mesh_t *mesh);
@@ -1858,45 +1788,6 @@ int (*gradient_alloc_nodal_fluxes)(node_t *node);
 int (*gradient_add_elemental_contribution_to_node)(node_t *node, element_t *e, unsigned int j, double rel_weight);
 int (*gradient_fill_fluxes)(mesh_t *mesh, size_t j_global);
 ```
-
-:::
-
-. . .
-
-::: {.column width="50%"}
-
-\bigskip
-
-```feenox 
-PROBLEM neutron_sn DIM 3 GROUPS 2 SN 8
-```
-
-. . .
-
-\bigskip
-
-```feenox-tiny
-PRINT "keff = " keff
-PRINT " rho = " (1-keff)/keff
-PRINT psi1.1(0,0,0) psi8.2(0,0,0)
-profile(x) = phi1(x,x,0)
-PRINT_FUNCTION profile phi1(x,0,0) MIN 0 MAX 20 NSTEPS 100
-```
-
-. . .
-
-\bigskip
-
-```c-tiny
-int Q = this->type->gauss[feenox.pde.mesh->integration].Q;
-for (unsigned int q = 0; q < Q; q++) {
-  feenox.pde.element_build_volumetric_at_gauss(this, q);
-}
-```
-
-:::
-::::::::::::::
-
 
 
 
@@ -3046,4 +2937,140 @@ In case of fire, git commit, git push.
 
 \centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
 
+
+
+
+
+## Definiciones e instrucciones
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+
+```feenox
+INPUT_FILE surprise PATH nafems-le1%g.msh round(random(0,1))
+READ_MESH surprise
+PRINT cells
+```
+
+. . .
+
+```feenox
+IF abs(b)<1e-20 THEN
+  PRINT "division by zero"
+  ABORT
+ENDIF
+PRINT a/b
+```
+
+. . .
+
+```feenox
+a = 1
+f(x) = a*x^2
+PRINT f(1/2) f(1) f(2)
+a = 2
+PRINT f(1/2) f(1) f(2)
+```
+
+
+:::
+
+. . .
+
+::: {.column width="55%"}
+
+\vspace{0.25cm}
+
+### FeenoX tiene un _instruction pointer_!
+
+```c
+// sweep the first & last range but minding the conditional blocks
+instruction_t *ip = first;
+while (ip != last) {
+  feenox_call(ip->routine(ip->argument));
+  
+  if (feenox.next_instruction != NULL) {
+    ip = feenox.next_instruction;
+    feenox.next_instruction = NULL;
+  } else {
+    ip = ip->next;
+  }
+}
+```
+:::
+::::::::::::::
+
+## Entry points
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+
+```c-tiny
+// parse
+int (*parse_problem)(const char *token);
+int (*parse_write_results)(mesh_write_t *mesh_write, const char *token);
+int (*parse_bc)(bc_data_t *bc_data, const char *lhs, char *rhs);
+
+// init
+int (*init_before_run)(void);
+int (*setup_pc)(PC pc);
+int (*setup_ksp)(KSP ksp);
+int (*setup_eps)(EPS eps);
+int (*setup_ts)(TS ksp);
+
+// build
+int (*element_build_volumetric)(element_t *e);
+int (*element_build_volumetric_at_gauss)(element_t *e, unsigned int q);
+
+// solve
+int (*solve)(void);
+
+// post
+int (*solve_post)(void);
+int (*gradient_fill)(void);
+int (*gradient_nodal_properties)(element_t *e, mesh_t *mesh);
+int (*gradient_alloc_nodal_fluxes)(node_t *node);
+int (*gradient_add_elemental_contribution_to_node)(node_t *node, element_t *e, unsigned int j, double rel_weight);
+int (*gradient_fill_fluxes)(mesh_t *mesh, size_t j_global);
+```
+
+:::
+
+. . .
+
+::: {.column width="50%"}
+
+\bigskip
+
+```feenox 
+PROBLEM neutron_sn DIM 3 GROUPS 2 SN 8
+```
+
+. . .
+
+\bigskip
+
+```feenox-tiny
+PRINT "keff = " keff
+PRINT " rho = " (1-keff)/keff
+PRINT psi1.1(0,0,0) psi8.2(0,0,0)
+profile(x) = phi1(x,x,0)
+PRINT_FUNCTION profile phi1(x,0,0) MIN 0 MAX 20 NSTEPS 100
+```
+
+. . .
+
+\bigskip
+
+```c-tiny
+int Q = this->type->gauss[feenox.pde.mesh->integration].Q;
+for (unsigned int q = 0; q < Q; q++) {
+  feenox.pde.element_build_volumetric_at_gauss(this, q);
+}
+```
+
+:::
+::::::::::::::
 

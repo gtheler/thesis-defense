@@ -69,16 +69,21 @@ Terminada mi maestría en el IB, me dediqué a meter las narices en temas de lic
 ## Cites
 
 Después de la criticidad, me pasé a temas de startups.
-A veces yo le daba cheques gigantes a emprendedores desde CITES.
+A veces yo le daba cheques gigantes a emprendedores desde CITES...
 
 ## BNA
 
-Y a veces era yo el que pedía cheques. 
+Y a veces era yo el que pedía cheques...
 
 ## Mafalda
 
 Esta tesis es excepcional en el sentido de que fue atípica, una excepción a la receta tradicional.
-En lo que voy a contar hay quince años de lecciones aprendidas provenientes, justamente, de estos tres ámbitos: academia, industria y emprendedurismo.
+En lo que voy a contar hay quince años de lecciones aprendidas provenientes, justamente, de estos tres ámbitos: 
+
+ * academia,
+ * industria y
+ * emprendedurismo.
+
 De hecho, este largo tiempo me permitió poder separar---como dice Mafalda---lo urgente de lo importante.
 
 ## TOC
@@ -89,7 +94,7 @@ Pero no encontré una buena traducción, así que elegí...
 
 ---
 
-"transporte de neutrones en la nube" con el que intentaba indicar---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" con el que intenté indicar---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
@@ -124,11 +129,11 @@ Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y
 Viajemos "back to the future". Resulta que hoy, la hora de ingeniería es mucho más cara que la hora de CPU.
 No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
 
-[pausa para buscar libros]
+[decir el siguiente párrafo mientras busco los libros]
 
 Así y todo, hoy en día la mayoría del software de cálculo sigue sacando miles de líneas de salida, incluyendo el nombre del programa como ASCII art.
 
-Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación a lo largo de todos estos años.
+Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación a lo largo de todos este tiempo---del 65 a hoy.
 
 
 ## Historia de dos reactores
@@ -138,14 +143,14 @@ Supongamos que hay un país que tiene no una, sino
 
 ---
 
-dos nucleares con un diseño único en el mundo.
+dos centrales nucleares con un diseño único en el mundo.
 Y los ingenieros nucleares de ese país tienen que modelar la inyección rápida de boro del segundo sistema de shutdown.
 
 ## Esquema de dos pasos
 
 Sea con cinética puntual...
  
-## Esquema acoplado
+---
 
 o con cinética espacial, como la fluidodinámica está desacoplada del resto de la planta durante el par de segundos que dura la inyección...
 
@@ -191,27 +196,34 @@ O a los Legos para los millenials.
 
 ## Celdas
 
+[rápido]
+
 ¿Cómo es el esquema de cálculo multi-escala?
 Bueno, agarramos un canal con un cacho de moderador alrededor y con eso condensamos secciones eficaces de celda a núcleo.
 Fantástico.
 
 ## Gota
 
-Pero supongamos que queremos meter una gota con 2.000 ppm de boro que ocupa digamos el 5% del volumen de la celda.
-Como para cada celda hay solamente un único parámetro de concentración de boro, tenemos que mantener la masa y no nos queda otra más que distribuir _uniformemente_ 100 ppm en toda la celda. Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
+[un poco menos rápido]
+
+Pero supongamos que queremos meter una gota de ácido deuterobórico en la celda.
+Como hay solamente un único parámetro de concentración de boro, tenemos que mantener la masa y no nos queda otra más que distribuir _uniformemente_ el boro en toda la celda.
+Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
 
 
 ## CFD
 
 Por otro lado, dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
-Este paso lo hacen los que saben de fluidos---con mallas no estructuradas.
+Esto lo hacen los que saben de fluidos.
 El boro no se mete en los canales porque el moderador está separado del refrigerante. 
 Muy bien.
 
 
 ## Mapeo
 
-Desde el lado de la neutrónica de núcleo, ahora tenemos que mapear, para cada instante, la pluma del CFD en nuestra malla estructurada.
+[lento]
+
+Para la neutrónica de núcleo tenemos que mapear---para cada instante---la pluma del CFD en nuestra malla estructurada.
 
 ---
 
@@ -222,13 +234,13 @@ Terminamos con Legos como estos.
 
 ## Gota
 
-Después, con el esquema de celdas de cálculo, el boro termina metiéndose "numéricamente" adentro de los canales.
+Entre los legos y el esquema de celdas, el boro termina metiéndose finalmente adentro de los canales.
 
-Además de todas las preguntas sobre la validez del esquema, surge también esta pregunta:
+Además de todas las preguntas sobre la validez de este esquema, surge también esta pregunta:
 
 ---
 
-¿Qué tan buena es la aproximación de difusión?
+¿Qué tan buena es la aproximación de difusión en estas condiciones?
 
 
 ## Limitaciones
@@ -255,7 +267,7 @@ El problema es que S$_N$ escala muy rápido, especialmente en memoria. Así que 
 Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
 
 Para el punto uno, tenemos que re-pensar el esquema de condensación de secciones eficaces.
-Para eso necesitamos flexibilidad.
+Para eso necesitamos flexibilidad en la entrada y extensibilidad en los modelos.
 
 [pausa]
 
@@ -303,7 +315,7 @@ Pasemos ahora al "how."
 ## Séneca
 
 Tengo acá una de las cartas de Séneca a su discípulo Lucilio.
-Escribe Séneca.
+Escribe Séneca:
 
 [mostrar el papel como Dolina]
 
@@ -318,7 +330,7 @@ Mas cuando se ha producido su trasformación, entonces y sólo entonces, se conv
 ## Transporte y difusión de neutrones
 
 Capítulo 2. Este capítulo no tiene _nada_ nuevo.
-Lo escribí para que las ecuaciones que estudié hace casi veinte años en la clase de Ghó no sean una carga para mí, sino que se conviertan en fuerza y sangre.
+Lo escribí para que las ecuaciones que estudié hace casi veinte años en las clases de Ghó no sean una carga para mí, sino que se conviertan en fuerza y sangre.
 
 ---
 
@@ -329,6 +341,8 @@ Como ustedes sabrán, yo
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
 
 --- 
+
+[rápido]
 
 Acá abajo medio chiquito hay un hash que indica qué commit generó estos slides a partir del Markdown.
 En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
@@ -395,7 +409,7 @@ Un operador bi-lineal coercitivo $a$ aplicado a $u$ y $v$ tiene que ser igual
   
 ## Dominio
 
-Todo esto sobre un dominio $U$ maýuscula con una frontera con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
+Todo esto sobre un dominio $U$ maýuscula con condición de Neumann sobre $\Gamma_N$ y condición de Dirichlet _homogénea_ sobre $\Gamma_D$.
 Empecemos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet arbitraria.
 
 ## Nodos
@@ -437,11 +451,17 @@ Primero, que podemos usar elementos segundo orden. Si quieren después profundiz
 
 ---
 
+[rápido]
+
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
 Este es el "casi" nada nuevo.
 Nunca pude encontrar una buena justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila correspondiente del vector $b$.
 De hecho consulté a colegas del palo de los elementos finitos y nadie me pudo cantar la posta.
-Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué", como en el experimento de los monos.
+Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué"...
+
+[chiste]
+
+como en el experimento de los monos.
 
 En stack exchange está mi justificación matemática, que es la parte "nueva".
 De hecho mi respuesta es la segunda más votada (después de la primera que es de Jed Brown).
@@ -465,7 +485,7 @@ Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos ca
 Podemos hacer lo mismo con ordenadas discretas.
 
 Otra vez, la forma es parecida pero hay un diferencia: la ecuación es hiperbólica de primer orden y el operador $a$ no es elíptico.
-Así que esa matriz $P$ que aparece en los términos de pérdidas, absorciones y fisiones es una matriz estabilizada tipo Petrov-Galerkin.
+Así que esa matriz $P$ que aparece en las contribuciones elementales es una matriz estabilizada tipo Petrov-Galerkin.
 Una vez más, los detalles en el texto.
 
 
@@ -494,9 +514,7 @@ Veamos ahora el "what," que tiene las contribuciones originales de la tesis.
 
 ## Bicicleta
 
-[pausa]
-
-Con esto de la new age y la movilidad en grandes ciudades, escuché que alguien dijo que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó.
+Con esto de la new age y la movilidad en grandes ciudades, le escuché a alguien decir que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó. Ajá.
 
 ## Dennis & Ken
 
@@ -505,7 +523,7 @@ Bueno, resulta que estos dos muchachos también inventaron algo que resuelve pro
 Veamos.
 
 A mediados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
-Entonces se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, un sistema operativo "bien pulenta".
+Entonces, ¿qué pasó? Se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, un sistema operativo "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
 No iba ni pa’delante ni pa’trás.
 Entonces en el 70 estos dos muchachos empezaron desde cero.
@@ -513,7 +531,11 @@ Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaro
 
 ---
 
-Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto. Cuando quieran, levanten la mano y arriesguen una respuesta.
+Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
+
+¿Alguien?
+
+Bueno, cuando quieran, levanten la mano y arriesguen una respuesta.
 
 ## Jon
 
@@ -527,7 +549,7 @@ Hasta ese momento---principios de los 90---todos los programas CAD funcionaban e
 
 Pero este Jon (sin hache) se dió cuenta de que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
 Y pasó a tener el 90% del mercado en un par de años.
-En el 97, Jon vendió su compañía por 300 millones de dólares y se quedó como CEO.
+En el 97, Dassault la compró por 300 millones de dólares y Jon se quedó como CEO.
 
 ## Onshape
 
@@ -547,14 +569,18 @@ En resumen,
  
 ---
 
- * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos desafíos que presenta "la nube" que definitivamente no existían hace más 50 años. Como la bicicleta.
+ * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos desafíos que presenta "la nube" y que definitivamente no existían hace más 50 años. Como la bicicleta.
 
 
 Cierro concurso con ayudita.
 ¿Nombre de los últimos dos?
 
+[ver si hace falta]
+
 Primer paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
 Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres en su columna de La  Nación.
+
+[chiste]
 
 Segundo paréntesis.
 Hubo nerds que hicieron mucha plata. Hay una luz de esperanza para la audiencia.
@@ -562,11 +588,13 @@ Hubo nerds que hicieron mucha plata. Hay una luz de esperanza para la audiencia.
 
 ## Cheque
 
-Por si se lo preguntaban, resulta que sí me dieron el cheque gigante.
+Ah! Por si se lo preguntaban, resulta que sí me dieron el cheque gigante.
 
 ## IB50k, CNE, cancún
 
-Era mi época de emprendedor, concurso IB50k...
+[tranquilo]
+
+Era mi época de emprendedor, de IB50k...
 
 ---
 
@@ -595,7 +623,7 @@ Esto implicó tener que aprender cosas nuevas.
 
 Una de estas cosas fue un esquema muy interesante de la industria del software que me hizo usar un cliente de Europa.
 Consiste en un documento tipo "pliego" que lista los requerimientos que el comprador pide para un cierto desarrollo.
-Y otro tipo "oferta" que indica cómo el software propuesto aborda e implementa cada requerimiento.
+Y otro tipo "oferta" que indica cómo el vendedor aborda e implementa cada requerimiento.
 
 ---
 
@@ -628,31 +656,28 @@ En el medio, Markdown.
 Bueno, piensen a FeenoX como si fuese el Markdown de las herramientas tipo elementos finitos.
 FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
-Nota al pie: por favor, traten de usar Word para escribir matemática.
-Me hace doler los ojos como cuando voy a la cancha.
+[chiste]
+
+Nota al pie: por favor, traten de _no_ usar Word para escribir matemática.
+Me hace doler los ojos... como cuando voy a la cancha.
 
 
 ## Licensing
 
 Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
 
-El [remarcar] SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPL3+.
-Seguramente estoy predicando para el coro y ya lo saben, pero nunca está de más repetirlo---especialmente en la industria nuclear.
-Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
+Esto es como predicar para el coro así que resumo la discusión sobre licenciamiento de software:
+
+ 1. Free no quiere decir gratis
+ 
+--- 
+ 
+ 2. Según Stallman lo importante es la libertad
 
 ---
-
-Según Richard Stallman (no es Roqueta, es Stallman), lo importante es tener la _libertad_ para poder modificar el código para que el software se comporte como uno necesita.
-Y si uno no sabe programar, tener la _libertad_ de poder contratar a alguien que lo haga. Esto es re profundo.
-
----
-
-
-Por otro lado, Eric Raymond (el del libro amarillo) hace énfasis en la superioridad _técnica_ del software open source.
-Y tiene un punto. Y esto es importante en software científico y de ingeniería. Especialmente, de nuevo, en la industria nuclear.
-
----
-
+ 
+ 3. Según Raymond (el del libro amarillo) lo importante es que se vea el código
+ 
 Esta discusión necesitaría más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares, que se pueden aplicar al software abierto.
 
 [pausa]
@@ -686,15 +711,13 @@ Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pe
 
 Too long; didn't read it: la filosofía Unix es "hacé un programa que haga solamente una cosa, pero que la haga bien".
 
-Un detalle: fijensé que dice "programa" y no "biblioteca".
-
 ---
 
 Como usualmente hay que hacer varias cosas, están presentes los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
 
 ---
 
-De hecho FeenoX se puede usar como un filtro pasando el input a través de un pipe.
+De hecho FeenoX se puede usar como un filtro pasando el input o incluso datos a través de un pipe.
 
 
 
@@ -772,7 +795,8 @@ Es mobile-friendly así que pueden entrar ahora.
 
 ## LE10
 
-Déjenme ilustrar uno de los puntos más importantes de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
+Déjenme ilustrar uno de los puntos más importantes de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada, que aprovecho para presentar: tienen esta pinta.
+
 Fíjense que todo lo que aparece en la formulación "humana" aparece en el archivo de entrada.
 ¡Y nada más!
 
@@ -879,36 +903,12 @@ y algunas más que discutimos en el SDS.
 Estas palabras clave pueden ser definiciones o instrucciones.
 
 
-## Ejemplos + IP
-
-Por ejemplo. `INPUT_FILE` sorpresa `PATH` una expresión tipo `PRINTF` con un argumento random. Definición porque `FILE` es un sustantivo.
-`READ_MESH` es una instrucción que lee la malla en el archivo sorpresa.
-`PRINT` cells es una instrucción. 
-
----
-
-
-Acá tenemos un condicional. Si $b$ es muy chiquito: instrucción `PRINT`, instrucción `ABORT`.
-Termina condicional, instrucción `PRINT`.
-
----
-
-Este es uno más difícil.
-Acá no hay ni verbos ni sustantivos.
-$a$ igual a 1 es una instrucción, pero $f$ de $x$ igual a $a$ $x$ cuadrado es una definición.
-Los `PRINT`s, aunque sean iguales, van a imprimir cosas diferentes.
-
-
----
-
-De hecho FeenoX tiene un instruction pointer que ejecuta todas las instrucciones siguiendo una linked list respetando los loops y los condicionales.
-
 
 ## Conducción de calor 1D
 
 Problema simple, input simple.
 
- * Línea 1, definimos que queremos conducción 1D.
+ * Línea 1, definición (`PROBLEM` es sustantivo): queremos conducción 1D.
  * Línea 2, instrucción: leeme la malla. ¿Qué malla? Bueno, esta, que tiene dos puntos físicos llamados "left" y "right".
  
 --- 
@@ -946,9 +946,7 @@ Problem ahora es `neutron_sn` con `DIM` uno, `GROUPS` uno pero `SN` es pesos uno
 Recuerden que eso quiere decir que ese argumento viene de la línea de comandos.
 Así que le tenemos que decir si queremos S$_2$, S$_4$, S$_6$, etc.
 
-La salida de este input es la raíz cuadrada de la integral del cuadrado de la diferencia entre el flujo calculado por FeenoX y un perfil de referencia tomado de un blog académico.
-Debería ser un número chico, pero no conozco la exactitud de la fuente.
-
+La salida de este caso es un error cuadrático con respecto a una solución de referencia que encontré en un blog, así que desconozco la exactitud.
 
 ## Bootstrap
 
@@ -989,27 +987,6 @@ Una que resuelve el problema usando PETSc. Este entry point define esencialmente
 En el caso `thermal`, eso lo deciden las funciones de inicialización dependiendo de si la conductividad depende de la temperatura o no. En neutrónica, si es un problema con fuentes o de criticidad.
 
 Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
-
----
-
-Ejemplo. El keyword `PROBLEM` lo lee el parser general. Mira si hay alguna PDE llamada `neutron_sn`. Perfecto, entonces resuelve todos los apuntadores que expliqué antes.
-
-El siguiente keyword `DIM` es genérico, lo parsea el framework.
-El siguiente keyword `GROUPS` no lo entiende el general, entonces se lo pasa al particular que sí lo entiende.
-Lo mismo para `SN`.
-
----
-
-Siguiente. Ese snippet de un input muestra el $k$ efectivo y la reactividad.
-Esa variable `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$ y las corrientes $J$.
-Por ejemplo, en elasticidad sería calcular tensiones a partir de desplazamientos. En conducción de calor, flujos de calor a partir de temperaturas.
-
-Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
-
----
-
-Finalmente, esta es la pinta de la parte del framework que llama al entry point que evalúa las contribuciones elementales en los puntos de Gauss.
-Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
 
 
 ## Expressions
@@ -1313,3 +1290,71 @@ Bueno, pasemos al código.
 [pausa]
 
 ## Mostrar autogen, borrar thermal
+
+
+## Licensing
+
+
+
+El [remarcar] SDS dice que FeenoX no sólo es abierto sino que también es libre con licencia GPL3+.
+Seguramente estoy predicando para el coro y ya lo saben, pero nunca está de más repetirlo---especialmente en la industria nuclear.
+Quiero hacer especial énfasis en que ninguno de los dos conceptos, ni código abierto ni software libre, se refiere a la idea de _precio_.
+
+---
+
+Según Richard Stallman (no es Roqueta, es Stallman), lo importante es tener la _libertad_ para poder modificar el código para que el software se comporte como uno necesita.
+Y si uno no sabe programar, tener la _libertad_ de poder contratar a alguien que lo haga. Esto es re profundo.
+
+---
+
+
+Por otro lado, Eric Raymond (el del libro amarillo) hace énfasis en la superioridad _técnica_ del software open source.
+Y tiene un punto. Y esto es importante en software científico y de ingeniería. Especialmente, de nuevo, en la industria nuclear.
+
+## Ejemplos + IP
+
+Por ejemplo. `INPUT_FILE` sorpresa `PATH` una expresión tipo `PRINTF` con un argumento random. Definición porque `FILE` es un sustantivo.
+`READ_MESH` es una instrucción que lee la malla en el archivo sorpresa.
+`PRINT` cells es una instrucción. 
+
+---
+
+
+Acá tenemos un condicional. Si $b$ es muy chiquito: instrucción `PRINT`, instrucción `ABORT`.
+Termina condicional, instrucción `PRINT`.
+
+---
+
+Este es uno más difícil.
+Acá no hay ni verbos ni sustantivos.
+$a$ igual a 1 es una instrucción, pero $f$ de $x$ igual a $a$ $x$ cuadrado es una definición.
+Los `PRINT`s, aunque sean iguales, van a imprimir cosas diferentes.
+
+
+---
+
+De hecho FeenoX tiene un instruction pointer que ejecuta todas las instrucciones siguiendo una linked list respetando los loops y los condicionales.
+
+## Ejemplos
+
+---
+
+Ejemplo. El keyword `PROBLEM` lo lee el parser general. Mira si hay alguna PDE llamada `neutron_sn`. Perfecto, entonces resuelve todos los apuntadores que expliqué antes.
+
+El siguiente keyword `DIM` es genérico, lo parsea el framework.
+El siguiente keyword `GROUPS` no lo entiende el general, entonces se lo pasa al particular que sí lo entiende.
+Lo mismo para `SN`.
+
+---
+
+Siguiente. Ese snippet de un input muestra el $k$ efectivo y la reactividad.
+Esa variable `keff` la define implícitamente el parser específico, y al hacer `SOLVE_PROBLEM` se rellena con el primer autovalor. Lo mismo los flujos $\psi$ y $\phi$ y las corrientes $J$.
+Por ejemplo, en elasticidad sería calcular tensiones a partir de desplazamientos. En conducción de calor, flujos de calor a partir de temperaturas.
+
+Después ya están para ser usados como variables o como funciones del espacio. Las podemos evaluar, escribir en un archivo, integrar, derivar, etc.
+
+---
+
+Finalmente, esta es la pinta de la parte del framework que llama al entry point que evalúa las contribuciones elementales en los puntos de Gauss.
+Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
+
