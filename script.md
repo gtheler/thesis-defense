@@ -131,7 +131,7 @@ No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que ne
 
 [decir el siguiente párrafo mientras busco los libros]
 
-Así y todo, hoy en día la mayoría del software de cálculo sigue sacando miles de líneas de salida, incluyendo el nombre del programa como ASCII art.
+Así y todo, hoy en día hay software de cálculo sigue sacando 669 de líneas de salida sin que se las pidas, incluyendo el nombre del programa como ASCII art.
 
 Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación a lo largo de todos este tiempo---del 65 a hoy.
 
@@ -1357,4 +1357,30 @@ Después ya están para ser usados como variables o como funciones del espacio. 
 
 Finalmente, esta es la pinta de la parte del framework que llama al entry point que evalúa las contribuciones elementales en los puntos de Gauss.
 Un for sobre $q$, una llamada a un apuntador a función que apunta a un entry point que depende de la ecuación particular.
+
+
+
+## Unix
+
+portability
+multi-task
+multi-user
+plain text for storing data
+hierarchical filesystem
+devices as files
+ipc
+small programs that commumicate through pipes
+client-server program model
+kernel space/user space (memory)
+regexp
+C
+tcp/ip
+documentation manpages
+
+
+
+the idea that the power of a system comes more from the relationships among programs than from the programs themselves
+
+
+git vs. github
 
