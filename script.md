@@ -530,7 +530,6 @@ No iba ni pa’delante ni pa’trás.
 Entonces en el 70 estos dos muchachos empezaron desde cero.
 Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaron Unix---un juego de palabras sobre MULTICS.
 
----
 
 Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
 
@@ -631,14 +630,14 @@ Y otro tipo "oferta" que indica cómo el vendedor aborda e implementa cada reque
 Para la herramienta desarrollada en esta tesis lo que hice fue jugar de los dos lados del mostrador.
 Empecé escribiendo un SRS con estas secciones, como si fuese un pliego de un llamado a licitación para una herramienta computacional.
 
-Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada una estas las secciones que yo mismo escribí.
+Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada una de las secciones que yo mismo escribí.
 
 
 
 
 ## FeenoX @ JOSS
 
-Les presento entonces a FeenoX, una herramienta de ingeniería computacional publicada este año en Journal of Open Source Software.
+Les presento entonces a FeenoX, una herramienta de ingeniería computacional publicada este año en el Journal of Open Source Software.
 
 Déjenme ver si me sale ilustrar un punto sobre su diseño.
 
@@ -704,14 +703,17 @@ Hasta que decidí empezar de cero, como Ken.
 ---
 
 El scope actual es que FeenoX puede resolver estos problemas.
-Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento, y que es una de las contribuciones originales.
+Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento.
 
 
 ## Mazes & wings
 
-De todas manras, podemos hacer cosas divertidas.
+De todas maneras, podemos hacer cosas divertidas.
 La ecuación de Laplace sirve tanto para un barrido como para un fregado.
-Podemos resolver laberitos...
+
+---
+
+Podemos resolver laberintos...
 
 ---
 
@@ -798,7 +800,7 @@ Central para separar front de back. El objetivo es que FeenoX pueda funcionar co
 
 Después hay temas de deployment y escalabilidad.
 
-Si el software no tiene todos estos ítems en cuenta en su base de diseño, después---como en cualqueir proyecto de ingeniería---es muy complicado cambiarlo para acomodar lo que falta.
+Si el software no tiene todos estos ítems en cuenta en su base de diseño, después---como en cualquier proyecto de ingeniería---es muy complicado cambiarlo para acomodar lo que falta.
 
 ## CAEplex
 
@@ -921,9 +923,11 @@ Estas palabras clave pueden ser definiciones o instrucciones.
 Problema simple, input simple.
 
  * Línea 1, definición (`PROBLEM` es sustantivo): queremos conducción 1D.
- * Línea 2, instrucción: leeme la malla. ¿Qué malla? Bueno, ésta, que tiene dos puntos físicos llamados "left" y "right".
+ * Línea 2, instrucción: leeme la malla. ¿Qué malla?
  
---- 
+---
+
+Bueno, ésta, que tiene dos puntos físicos llamados "left" y "right".
  
  * Línea 3, definimos una variable `k` y le asignamos el valor uno. En problema `thermal`, si existe la variable `k` indica conductividad uniforme.
  * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
@@ -1019,7 +1023,7 @@ Dejo el link al video.
 
 ## No print no shirt
 
-Volvamos a otra de las reglas centrale de Unixs: la regla del silencio. ¿Recuerdan la tablita del 65, no?
+Volvamos a otra de las reglas centrales de Unix: la regla del silencio. ¿Recuerdan la tablita del 65, no?
 En FeenoX, sin `PRINT` no hay salida.
 Le podemos pedir al software que haga un montón de cosas complicadas. 
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
@@ -1118,13 +1122,13 @@ La complejidad está puesta en un script de Python que usa el API de Gmsh para h
 
 Otro problema.
 Supogamos que tenemos tres pescaditos absorbentes.
-Dos están fijos. El problema consiste ubicar el tercero de forma tal que la reactividad total sea mínima.
+Dos están fijos. El problema consiste en ubicar el tercero de forma tal que la reactividad total sea mínima.
 
 ## Input
 
 Otra vez dividimos y conquistamos.
 El driver es un Python que usa el paquete de optimización de SciPy con el método de Nelder & Mead.
-Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para crear la malla y después a FeenoX para calcular el $k$ efecitvo. Algunas iteraciones encontramos el mínimo.
+Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para crear la malla y después a FeenoX para calcular el $k$ efecitvo. Algunas iteraciones y encontramos el mínimo.
 
 Nota al pie: no soy fan de Python ni mucho menos, hasta me disgusta un poco. Pero para esto sirve fenómeno.
 
