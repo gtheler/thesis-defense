@@ -383,7 +383,7 @@ Es un ñato que llega a explicar conceptos de filosofía con regular expressions
 
 En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
 Pero agrega un pie de página genial, donde nos recuerda que "programar" es equivalente a "escribir".
-Es decir, este capítulo está apuntador a programar las ecuaciones, no solamente a mirarlas.
+Es decir, este capítulo está apuntado a programar las ecuaciones, no solamente a mirarlas.
 
 La segunda diferencia, es que el menú de este capítulo es mucho más amplio que el del anterior, así que hay que elegir.
 
