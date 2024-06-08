@@ -707,7 +707,7 @@ El scope actual es que FeenoX puede resolver estos problemas.
 Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento, y que es una de las contribuciones originales.
 
 
-## 
+## Mazes & wings
 
 De todas manras, podemos hacer cosas divertidas.
 La ecuación de Laplace sirve tanto para un barrido como para un fregado.
@@ -717,7 +717,6 @@ Podemos resolver laberitos...
 
 o flujo potencial alrededor de un perfil alar.
 
-[hacer slide]
 
 ## Unix
 
@@ -732,8 +731,6 @@ Como usualmente hay que hacer varias cosas, están presentes los conceptos de "s
 ---
 
 De hecho FeenoX se puede usar como un filtro pasando el input o incluso datos a través de un pipe.
-
-[hacer slide con deriv]
 
 
 ## 17 rules
@@ -773,13 +770,13 @@ Excelentemente ilustrada en esta figura conceptual.
 
 Pasemos ahora a "la nube".
 
-¿Qué demonios es "la nube"? Básicamente quiere decir "computadoras de otra gente corriendo Linux."
+¿Qué demonios es "la nube"? Bueno, básicamente quiere decir "computadoras de otra gente corriendo Linux."
 El plural es importante, porque queremos resolver problemas grandes y vamos a necesitar varias computadoras.
 
 Y que sean de otra gente y no nuestras, nos permite bajar los costos de oportunidad.
-Si los que saben de finanzas te dicen que alquiles en lugar que te compres una casa, imagínense computadoras para hacer cálculos.
+Si los que saben de finanzas te dicen que alquiles en lugar que te compres una casa, imagínense servidores de cálculo.
 
-Pregunta para que vayan pensando (sin premio): ¿Por qué Amazon pasó de vender libros a vender horas de CPU?
+Pregunta para que vayan pensando (sin premio): ¿Alguien sabe por qué Amazon pasó de vender libros a vender horas de CPU?
 
 ---
 
@@ -790,7 +787,7 @@ Y ni que hablar de solvers point-and-click para Windows a los que les hacen un r
 --- 
 
 
-Para que tengan una idea, esta es una cita de un gerente de una compañía de software de elementos finitos que factura más de 2 mil millones de dólares al año durante una presentación interna.
+Para que tengan una idea, esta es una cita de un gerente durante una presentación interna en una compañía de software de elementos finitos de más de two billion de revenue.
 
 ## Cloud first $\neq$ cloud friendly
 
@@ -805,17 +802,17 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 
 ## CAEplex
 
-Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento que nunca funcionó comercialmente.
+Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento ese que nunca funcionó comercialmente.
 Es mobile-friendly así que pueden entrar ahora.
 
 ## LE10
 
-Déjenme ilustrar uno de los puntos más importantes de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada, que aprovecho para presentar: tienen esta pinta.
+Déjenme ilustrar uno de los puntos más importantes de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada, que aprovecho para presentar: para elasticidad lineal tienen esta pinta.
 
 Fíjense que todo lo que aparece en la formulación "humana" aparece en el archivo de entrada.
 ¡Y nada más!
 
-Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
+Este slide también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 
@@ -837,7 +834,7 @@ La biblioteca del punto 2 es PETSc.
 Entonces FeenoX juega el papel dos capas---o "glue layers" en terminología Unix:
  
  * una que construye $K$ y $b$ a partir de la malla y del input, y 
- * otra que convierte el vector $u$ en la solución real, distribuciones espaciales que puedan ser evaluadas en cualquier punto del espacio y entendidas por un post-procesador como Paraview.
+ * otra que convierte el vector $u$ en la solución real.
  
 ---
 
