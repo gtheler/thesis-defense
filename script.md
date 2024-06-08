@@ -478,7 +478,7 @@ Los detalles en el capítulo tres.
 $L$ es leakage, $A$ es absorción y $F$ es fisión. Abajo, $s$ son las fuentes.
 
 Fíjense que la forma es parecida al caso de Poisson.
-Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque ahora el operador no es simétrico y puede llegar a no ser coercitivo.
+Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque ahora no es simétrico y puede llegar a no ser coercitivo.
 
 
 ## Ordenadas discretas
