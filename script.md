@@ -885,7 +885,7 @@ Tercero, es difícil de mantener.
 
 
 Si hubiésemos elegido C++ podríamos haber implementado las llaves como métodos virtuales.
-Como estamos en C, lo hacemos con apuntadores a función.
+Pero como estamos en C, lo hacemos con apuntadores a función.
 
 
 ---
@@ -893,11 +893,11 @@ Como estamos en C, lo hacemos con apuntadores a función.
 Entonces reemplazamos ese bloque feo de ifs por este otro bloque feo de ifs.
 Pero con dos diferencias:
 
- 1. lo genera un script al que no le importa la belleza, y
+ 1. lo genera un script al que no le importa la estética, y
  2. es uno sólo en toda la ejecución en tiempo de parseo.
  
 Esencialmente en este único bloque if se resuelve un apuntador a una función en tiempo de parseo que depende de cada ecuación a resolver.
-Y a su vez en esa función se resuelven puntos de entrada que evalúan las contribuciones elementales, las condiciones de contorno y otras cosas más que dependen de la ecuación diferencial particular.
+Y a su vez en esa función se resuelven puntos de entrada que dependen de la ecuación diferencial particular.
 
 
 ## Input
@@ -907,11 +907,11 @@ Pero antes de explicar en detalle esa implementación, déjenme hablar sobre el 
 Siguiendo la filosofía Unix, este input es un archivo de texto plano.
 Tiene palabras clave en inglés, de forma tal de
 
- 1. definir completamente el problema: de forma tal de que no sea necesaria ninguna intervención humana una vez lanzado el programa
- 2. ser lo más auto-descriptivo y compacto posible: es decir están prohibidos los argumentos posicionales
+ 1. definir completamente el problema para que no sea necesaria ninguna intervención humana una vez lanzado el programa
+ 2. ser lo más auto-descriptivo y compacto posible: están prohibidos los argumentos posicionales
  3. permitir expresiones algebraicas en cada lugar donde se espere un parámetro numérico: ahora ilustramos este punto
  4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input (como lo que hablamos hace un rato del "nada más")
- 5. seguir la regla de que "problemas simples necesitan inputs simples": ya lo ilustramos también en un segundo
+ 5. seguir la regla de que "problemas simples necesitan inputs simples": me vuelve loco que el "hello world" de la mayoría de los solvers sea increiblemente complicado de generar...
  
 y algunas más que discutimos en el SDS.
 
@@ -924,7 +924,7 @@ Estas palabras clave pueden ser definiciones o instrucciones.
 Problema simple, input simple.
 
  * Línea 1, definición (`PROBLEM` es sustantivo): queremos conducción 1D.
- * Línea 2, instrucción: leeme la malla. ¿Qué malla? Bueno, esta, que tiene dos puntos físicos llamados "left" y "right".
+ * Línea 2, instrucción: leeme la malla. ¿Qué malla? Bueno, ésta, que tiene dos puntos físicos llamados "left" y "right".
  
 --- 
  
@@ -966,7 +966,7 @@ La salida de este caso es un error cuadrático con respecto a una solución de r
 ## Bootstrap
 
 Habiendo entendido tema input, volvamos ahora al bloque de ifs feo.
-Habíamos dicho que lo generaba un script al que no le importaba la belleza.
+Habíamos dicho que lo generaba un script al que no le importaba la estética.
 Bueno, ese script es parte del bootstrapping del repositorio, en este caso `autogen`.
 Ese script parsea los subdirectorios dentro de `src/pdes`. 
 La idea es que cada ecuación tenga un subdirectorio con el nombre del `PROBLEM` a resolver.
@@ -979,8 +979,6 @@ Podemos remover un directorio completamente, volver a hacer bootstrap y compilar
 Está claro que no ganamos mucho removiendo. Es mucho más interesante agregar, que remover.
 Este es el mecanismo de extensibilidad que mencioné antes.
 En los trabajos futuros hay un bullet que es agregar nuevas ecuaciones: electromagnetismo, acústica, fluidos... se aceptan sugerencias.
-
-[mostrar perfil alar?]
 
 ## Entry points
 
@@ -1006,22 +1004,25 @@ Y después otros entry points para implementar la segunda capa y construir los f
 
 ## Expressions
 
-Otro principio fundamental de la base de diseño de FeenoX relacionado a la flexibilidad, que ya nombramos antes: "todo es una expresión".
+Tema flexibilidad: principio fundamental de la base de diseño de FeenoX, que ya nombramos antes: "todo es una expresión".
 Incluso la dimensión o la cantidad de grupos.
 Desde ya, las propiedades de los materiales y las condiciones de contorno.
 
 ---
 
-Esto de poder evaluar expresiones algebraicas, incluyendo funcionales como integrales, derivadas y sumatorias nos permite por ejemplo comparar la solución numérica con la solución analítica en los casos que la tienen. Este es un ejemplo de conducción de calor 1D transitoria. La solución, como ustedes saben, es una sumatoria de exponenciales que podemos evaluar perfectamente. Después restamos una de otra antes de imprimir y ya.
+Esto de poder evaluar expresiones algebraicas, incluyendo funcionales como integrales, derivadas y sumatorias nos permite por ejemplo comparar la solución numérica con la solución analítica en los casos que la tienen. Este es un ejemplo de conducción de calor 1D transitoria. La solución, como ustedes saben, es una sumatoria de exponenciales que podemos evaluar perfectamente con FeenoX.
+Después restamos una de otra, imprimimos y ya.
 
 ---
 
-Este "feature" es especialmente importante para hacer verificación de código. En la reunión Garcar del año pasado hice una presentación sobre verificación con MMS. De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos para discutirla, que es lo que dura esa charla. Dejo el link al video.
+Este "feature" es especialmente importante para hacer verificación de código. En la reunión Garcar del año pasado hice una presentación sobre verificación con el método de MMS.
+De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos para discutirla, que es lo que dura esa charla.
+Dejo el link al video.
 
 
 ## No print no shirt
 
-Volvamos a otra de las reglas centrales. La regla del silencio. ¿Recuerdan la tablita del 65, no?
+Volvamos a otra de las reglas centrale de Unixs: la regla del silencio. ¿Recuerdan la tablita del 65, no?
 En FeenoX, sin `PRINT` no hay salida.
 Le podemos pedir al software que haga un montón de cosas complicadas. 
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
@@ -1107,7 +1108,7 @@ Bueno, podemos ir haciéndole fillets al cubo.
 
 ---
 
-Curva omposible de obtener con Legos.
+Curva imposible de obtener con Legos.
 
 ## Input + python
 
@@ -1127,6 +1128,8 @@ Dos están fijos. El problema consiste ubicar el tercero de forma tal que la rea
 Otra vez dividimos y conquistamos.
 El driver es un Python que usa el paquete de optimización de SciPy con el método de Nelder & Mead.
 Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para crear la malla y después a FeenoX para calcular el $k$ efecitvo. Algunas iteraciones encontramos el mínimo.
+
+Nota al pie: no soy fan de Python ni mucho menos, hasta me disgusta un poco. Pero para esto sirve fenómeno.
 
 
 ## PHWR
@@ -1162,7 +1165,7 @@ Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y 
 
 ---
 
-Seguimos el poco académico pero---a veces---útil orden why-how-what de Simon Sinek.
+Seguimos el poco académico orden why-how-what de Simon Sinek.
 
 ---
 
@@ -1188,7 +1191,7 @@ Como dijo una vez un director del IB en una reunión de consejo académico cuand
  
 ## Tweets 
 
-Si tuviesen hacer un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que escriban alguno de estos siete conceptos en 140 caracteres.
+Si tuviesen hacer un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que les haya quedadon alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
 
 En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
@@ -1202,7 +1205,7 @@ Seguramente ustedes se preguntan lo mismo que yo.
 ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si llegara a venir un cisne negro y te cambiara la número cinco a la que estás acostumbrado por una bola de bowling, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+Porque si llegara a venir un cisne negro y te cambiara la número cinco a la que estás acostumbrado por una bola de boliche, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 
@@ -1216,10 +1219,7 @@ Muchas gracias.
 
 ## 
 
-
-
-
-----------------
+[aplausos]
 
 
 # Apéndices
@@ -1255,6 +1255,10 @@ Pensar en inglés te hace esforzarte más y se te activan áreas cognitivas del 
 ## How should FeenoX be pronounced.
 
 ## History
+
+## Bootstrapping
+
+
 
 ## GDB session
 
