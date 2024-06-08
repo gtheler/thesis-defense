@@ -165,8 +165,9 @@ Así que prestemos atención a esa parte.
 En Argentina tenemos 
 
  1. moderador separado del refrigerante, y
- 2. canales cilíndricos, que son una geometría "curva", ¿no?
+ 2. canales cilíndricos
  
+Y estamos de acuerdo en que un cilindro es una geometría curva, ¿no? 
 
 ## Dominio
 
@@ -442,7 +443,7 @@ Favor de notar que
 
 ---
  
- 2. Ese vector $u$ no es "la" solución del problema. "La" solución de elementos finitos es una función continua del espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir del vector $u$.
+ 2. Ese vector $u$ no es "la" solución del problema. "La" solución es una función continua del espacio que podemos evaluar en cualquier punto arbitrario y que tenemos que fabricar a partir del vector $u$.
 
 ## Extras
 
@@ -464,7 +465,7 @@ Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué"
 como en el experimento de los monos.
 
 En stack exchange está mi justificación matemática, que es la parte "nueva".
-De hecho mi respuesta es la segunda más votada (después de la primera que es de Jed Brown).
+De hecho mi respuesta es la segunda más votada (la primera es de Jed Brown).
 
 [pausa]
 
@@ -477,14 +478,14 @@ Los detalles en el capítulo tres.
 $L$ es leakage, $A$ es absorción y $F$ es fisión. Abajo, $s$ son las fuentes.
 
 Fíjense que la forma es parecida al caso de Poisson.
-Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque en difusión multi-grupo, el operador no es simétrico y puede llegar a no ser coercitivo.
+Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque ahora el operador no es simétrico y puede llegar a no ser coercitivo.
 
 
 ## Ordenadas discretas
 
 Podemos hacer lo mismo con ordenadas discretas.
 
-Otra vez, la forma es parecida pero hay un diferencia: la ecuación es hiperbólica de primer orden y el operador $a$ no es elíptico.
+Otra vez, la forma es parecida pero hay una diferencia crucial: la ecuación es hiperbólica de primer orden.
 Así que esa matriz $P$ que aparece en las contribuciones elementales es una matriz estabilizada tipo Petrov-Galerkin.
 Una vez más, los detalles en el texto.
 
@@ -514,7 +515,7 @@ Veamos ahora el "what," que tiene las contribuciones originales de la tesis.
 
 ## Bicicleta
 
-Con esto de la new age y la movilidad en grandes ciudades, le escuché a alguien decir que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó. Ajá.
+Con esto de la new age y la movilidad en grandes ciudades, le escuché decir a alguien que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó. Ajá.
 
 ## Dennis & Ken
 
@@ -549,7 +550,7 @@ Hasta ese momento---principios de los 90---todos los programas CAD funcionaban e
 
 Pero este Jon (sin hache) se dió cuenta de que en los 90 la moda iba a ser "X para Windows", así que Solidworks se enfocó en Windows.
 Y pasó a tener el 90% del mercado en un par de años.
-En el 97, Dassault la compró por 300 millones de dólares y Jon se quedó como CEO.
+En el 97, Dassault compró Solidworks por 300 millones de dólares y Jon se quedó como CEO.
 
 ## Onshape
 
@@ -573,7 +574,7 @@ En resumen,
 
 
 Cierro concurso con ayudita.
-¿Nombre de los últimos dos?
+¿Apellido de los últimos dos?
 
 [ver si hace falta]
 
@@ -588,7 +589,7 @@ Hubo nerds que hicieron mucha plata. Hay una luz de esperanza para la audiencia.
 
 ## Cheque
 
-Ah! Por si se lo preguntaban, resulta que sí me dieron el cheque gigante.
+¡Ah! Por si se lo preguntaban, resulta que sí me dieron el cheque gigante.
 
 ## IB50k, CNE, cancún
 
@@ -598,7 +599,7 @@ Era mi época de emprendedor, de IB50k...
 
 ---
 
-Si bien mi emprendimiento nunca funcionó muy bien comercialmente, me permitió hacer consultoría en temas de mecánica de piping para Embalse con mi propio solver.
+Si bien mi emprendimiento nunca funcionó comercialmente, me permitió hacer consultoría en temas de mecánica de piping para Embalse con mi propio solver.
 
 ---
 
@@ -622,13 +623,13 @@ A la vuelta, tuve que empezar desde cero y---literalmente---agarrar lo que vení
 Esto implicó tener que aprender cosas nuevas.
 
 Una de estas cosas fue un esquema muy interesante de la industria del software que me hizo usar un cliente de Europa.
-Consiste en un documento tipo "pliego" que lista los requerimientos que el comprador pide para un cierto desarrollo.
+Consiste en un documento tipo "pliego" que lista los requerimientos que el comprador pide.
 Y otro tipo "oferta" que indica cómo el vendedor aborda e implementa cada requerimiento.
 
 ---
 
 Para la herramienta desarrollada en esta tesis lo que hice fue jugar de los dos lados del mostrador.
-Empecé escribiendo un SRS con estas secciones como si fuese un pliego de un llamado a licitación para una herramienta computacional.
+Empecé escribiendo un SRS con estas secciones, como si fuese un pliego de un llamado a licitación para una herramienta computacional.
 
 Y después escribí el SDS explicando cómo es que mi propuesta de diseño e implementación satisface cada una estas las secciones que yo mismo escribí.
 
@@ -637,7 +638,7 @@ Y después escribí el SDS explicando cómo es que mi propuesta de diseño e imp
 
 ## FeenoX @ JOSS
 
-Les presento entonces a FeenoX, un software publicado este año en Journal of Open Source Software.
+Les presento entonces a FeenoX, una herramienta de ingeniería computacional publicada este año en Journal of Open Source Software.
 
 Déjenme ver si me sale ilustrar un punto sobre su diseño.
 
@@ -648,7 +649,7 @@ Déjenme ver si me sale ilustrar un punto sobre su diseño.
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
 En el lado más "fácil" (y "horrendo") del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
 Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro beige).
-En el medio, Markdown.
+En el medio, Markdown---uno de los inventos del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
 
 
 ## Unfair advantage: FeenoX
@@ -658,8 +659,8 @@ FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos l
 
 [chiste]
 
-Nota al pie: por favor, traten de _no_ usar Word para escribir matemática.
-Me hace doler los ojos... como cuando voy a la cancha.
+Hablando de Word: por favor, traten de _no_ usar Word para escribir matemática.
+Me hace doler los ojos... como cuando voy a la cancha a ver a Atlético.
 
 
 ## Licensing
@@ -668,17 +669,17 @@ Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" 
 
 Esto es como predicar para el coro así que resumo la discusión sobre licenciamiento de software:
 
- 1. Free no quiere decir gratis
+ 1. "Free" no quiere decir "gratis".
  
 --- 
  
- 2. Según Stallman lo importante es la libertad
+ 2. Según Stallman lo importante es la libertad.
 
 ---
  
- 3. Según Raymond (el del libro amarillo) lo importante es que se vea el código
+ 3. Según Raymond (el del libro amarillo) lo importante es que se vea el código.
  
-Esta discusión necesitaría más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares, que se pueden aplicar al software abierto.
+Esta discusión necesitaría más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares, que se pueden aplicar al software libre y abierto.
 
 [pausa]
 
@@ -705,6 +706,19 @@ Hasta que decidí empezar de cero, como Ken.
 El scope actual es que FeenoX puede resolver estos problemas.
 Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento, y que es una de las contribuciones originales.
 
+
+## 
+
+De todas manras, podemos hacer cosas divertidas.
+La ecuación de Laplace sirve tanto para un barrido como para un fregado.
+Podemos resolver laberitos...
+
+---
+
+o flujo potencial alrededor de un perfil alar.
+
+[hacer slide]
+
 ## Unix
 
 Una de las lecciones aprendidas en las dos primeras versiones fue que vale la pena hacerle caso al libro amarillo y apalancarse explícitamente en la filosofía Unix.
@@ -719,6 +733,7 @@ Como usualmente hay que hacer varias cosas, están presentes los conceptos de "s
 
 De hecho FeenoX se puede usar como un filtro pasando el input o incluso datos a través de un pipe.
 
+[hacer slide con deriv]
 
 
 ## 17 rules
@@ -1384,3 +1399,4 @@ the idea that the power of a system comes more from the relationships among prog
 
 git vs. github
 
+## Aaron Swartz
