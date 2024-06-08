@@ -282,7 +282,7 @@ Seguramente conocen ustedes este benchmark 3D.
 ## Simetrías
 
 El enunciado indica correctamente que la geometría tiene simetría un cuarto.
-Como es para PWRs, con esta simétria se puede mallar perfectamente con cuadraditos.
+Como es para PWRs, con esta simetría se puede mallar perfectamente con cuadraditos.
 Pero si miramos detenidamente, resulta que tiene simetría un _octavo_, y no solamente un cuarto.
 
 ---
