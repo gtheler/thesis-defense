@@ -124,7 +124,7 @@ Dejemos de lado consideraciones sobre arquitecturas, lenguajes, compiladores, et
 Pensemos en cómo había que diseñar software de ingeniería en esa época.
 
 Desde un punto de vista de costos, cada resultado calculado tenía que formar parte de la salida.
-Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y resulta que después necesitabas un número que no estaba en los papeles que el aparato había impreso, tenías que volver a pagar.
+Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y resulta que después necesitabas un número que no estaba entre los papeles que el aparato había impreso, tenías que volver a pagar.
 
 Viajemos "back to the future". Resulta que hoy, la hora de ingeniería es mucho más cara que la hora de CPU.
 No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
