@@ -1233,6 +1233,30 @@ $$
 :::
 ::::::::::::::
 
+## 
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2->{\includegraphics[height=7cm]{maze-linkedin.png}}
+
+4,498 likes, 355 comments & 143 reposts
+
+[seamplex.com/feenox/doc/tutorials/120-mazes](https://seamplex.com/feenox/doc/tutorials/120-mazes/)
+:::
+
+::: {.column width="50%"}
+
+wing
+
+:::
+::::::::::::::
+
+
+
+
+
+
  
 ## Unix philosophy (sec 4.3.2, ap. B.1.2 & ap. C)
 
@@ -1265,6 +1289,9 @@ $$
 
 . . .
 
+:::::::::::::: {.columns}
+::: {.column width="57%"}
+
 ```terminal-tiny
 $ a=1; b=3; echo PRINT $a/$b | feenox -
 0.333333
@@ -1272,6 +1299,20 @@ $ a=0.1; b=0.09999; echo PRINT "(abs($a)-abs($b))<1e-4" | feenox -
 1
 $ 
 ```
+
+:::
+::: {.column width="43%"}
+
+```terminal-tiny
+$ feenox f.fee "sin(t)" 1 | ./derivative.fee 
+0.05    0.998725
+[...]
+0.95    0.574296
+$ 
+```
+
+:::
+::::::::::::::
 
 
 ## Las 17 reglas de la filosofía Unix (apéndice C)
@@ -2916,27 +2957,6 @@ mostrar qué es
 ## Git
 
 In case of fire, git commit, git push.
-
-
-## 
-
-:::::::::::::: {.columns}
-::: {.column width="30%"}
-
-\vspace{0.5cm}
-
-\centering ![](maze-homer.png)
-:::
-
-::: {.column width="70%"}
-\centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2>{\includegraphics[height=7cm]{maze-linkedin.png}}
-
-4,498 likes, 355 comments & 143 reposts
-:::
-::::::::::::::
-
-\centering <https://seamplex.com/feenox/doc/tutorials/120-mazes/>
-
 
 
 
