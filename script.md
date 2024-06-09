@@ -318,7 +318,7 @@ Pasemos ahora al "how."
 Tengo acá una de las cartas de Séneca a su discípulo Lucilio.
 Escribe Séneca:
 
-[mostrar el papel como Dolina]
+[mostrar el papel y hablar como cuando Dolina lee]
 
 "No debemos tan sólo escribir ni tan sólo leer.
 Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin de que, cuantos pensamientos ha recogido la lectura, los reduzca a la unidad."
@@ -677,6 +677,8 @@ Esto es como predicar para el coro así que resumo la discusión sobre licenciam
 ---
  
  3. Según Raymond (el del libro amarillo) lo importante es que se vea el código.
+
+---  
  
 Esta discusión necesitaría más de 45 minutos en sí misma, así que la termino acá con estos dos refranes populares, que se pueden aplicar al software libre y abierto.
 
