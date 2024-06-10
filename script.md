@@ -1106,9 +1106,6 @@ Todos sabemos que para un volumen fijo, una esfera tiene más reactividad que un
 
 ¿Y en el medio?
 Bueno, podemos ir haciéndole fillets al cubo.
-
----
-
 Curva imposible de obtener con Legos.
 
 ## Input + python

@@ -2125,7 +2125,7 @@ $
 :::
 ::::::::::::::
 
-\centering \onslide<3->{\includegraphics[width=0.9\linewidth]{cubesphere.pdf}}
+\centering \onslide<2->{\includegraphics[width=0.9\linewidth]{cubesphere.pdf}}
 
 
 ## 
