@@ -131,7 +131,7 @@ No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que ne
 
 [decir el siguiente párrafo mientras busco los libros]
 
-Así y todo, hoy en día hay software de cálculo sigue sacando 669 de líneas de salida sin que se las pidas, incluyendo el nombre del programa como ASCII art.
+Así y todo, hoy en día hay software de cálculo sigue sacando 669 de líneas de salida sin que se las pidas, incluyendo ASCII art.
 
 Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación a lo largo de todos este tiempo---del 65 a hoy.
 
@@ -648,7 +648,7 @@ Déjenme ver si me sale ilustrar un punto sobre su diseño.
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
 En el lado más "fácil" (y "horrendo") del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
 Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro beige).
-En el medio, Markdown---uno de los inventos del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
+En el medio, Markdown---uno de las muchas contribuciones del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
 
 
 ## Unfair advantage: FeenoX
@@ -805,7 +805,7 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 ## CAEplex
 
 Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento ese que nunca funcionó comercialmente.
-Es mobile-friendly así que pueden entrar ahora.
+Es mobile-friendly así que pueden entrar ahora con el celular.
 
 ## LE10
 
@@ -955,14 +955,14 @@ Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
 ## Reed
 
-Pasemos a un problema neutrónico.
+Pasemos a un problema de neutrones.
 Caso 1D con diferentes materiales y secciones eficaces uniformes en cada trozo.
 
 Problem ahora es `neutron_sn` con `DIM` uno, `GROUPS` uno pero `SN` es pesos uno.
 Recuerden que eso quiere decir que ese argumento viene de la línea de comandos.
 Así que le tenemos que decir si queremos S$_2$, S$_4$, S$_6$, etc.
 
-La salida de este caso es un error cuadrático con respecto a una solución de referencia que encontré en un blog, así que desconozco la exactitud.
+La salida de este caso es un error con respecto a una solución de referencia que encontré en un blog, así que desconozco la exactitud.
 
 ## Bootstrap
 
@@ -1144,7 +1144,7 @@ Un PHWR ficticio de siete canales y tres barras de control inclinadas.
 
 Como el problema es inventado, también inventamos las secciones eficaces.
 En particular, para el moderador ponemos un perfil de temperaturas en función de $z$.
-Y hacemos que algunas secciones eficaces dependan algebráicamente y otras a través de puntos "experimentales" de esta temperatura.
+Y hacemos que algunas secciones eficaces dependan algebráicamente y otras a través de puntos "numéricos" de esta temperatura.
 
 ## Flujos
 
