@@ -120,13 +120,13 @@ El título del paper es "Desarrollos _recientes_ en computadoras y sus _consecue
 
 Tenemos que hacer el ejercicio mental de viajar 60 años al pasado para entender estos números.
 
-Dejemos de lado consideraciones sobre arquitecturas, lenguajes, compiladores, etc.
+Dejemos de lado consideraciones sobre arquitecturas, lenguajes y compiladores.
 Pensemos en cómo había que diseñar software de ingeniería en esa época.
 
 Desde un punto de vista de costos, cada resultado calculado tenía que formar parte de la salida.
 Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y resulta que después necesitabas un número que no estaba entre los papeles que el aparato había impreso, tenías que volver a pagar.
 
-Viajemos "back to the future". Resulta que hoy, la hora de ingeniería es mucho más cara que la hora de CPU.
+Volvamos "back to the future". Resulta que hoy, la hora de ingeniería es mucho más cara que la hora de CPU.
 No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
 
 [decir el siguiente párrafo mientras busco los libros]
@@ -325,7 +325,7 @@ Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin 
 
 Sigue, Séneca:
 
-"Lo que comprobamos que realiza en nuestro cuerpo la naturaleza sin ninguna colaboración nuestra, es eso lo que tenemos que hacer con la lectura. Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
+"Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
 Mas cuando se ha producido su trasformación, entonces y sólo entonces, se convierten en fuerza y sangre."
 
 ## Transporte y difusión de neutrones
@@ -1107,6 +1107,9 @@ Todos sabemos que para un volumen fijo, una esfera tiene más reactividad que un
 ¿Y en el medio?
 Bueno, podemos ir haciéndole fillets al cubo.
 Curva imposible de obtener con Legos.
+
+BTW, le debo al Chaco hacer lo mismo para estudiar la diferencia entre círculo y hexágono.
+
 
 ## Input + python
 
