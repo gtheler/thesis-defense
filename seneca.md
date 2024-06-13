@@ -12,6 +12,6 @@ Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin 
 
 Sigue, Séneca:
 
-"Lo que comprobamos que realiza en nuestro cuerpo la naturaleza sin ninguna colaboración nuestra, es eso lo que tenemos que hacer con la lectura. Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
+"Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
 Mas cuando se ha producido su trasformación, entonces y sólo entonces, se convierten en fuerza y sangre."
 
