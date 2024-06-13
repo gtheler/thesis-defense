@@ -1245,9 +1245,16 @@ $$
 [seamplex.com/feenox/doc/tutorials/120-mazes](https://seamplex.com/feenox/doc/tutorials/120-mazes/)
 :::
 
+. . .
+
+. . .
+
 ::: {.column width="50%"}
 
-wing
+![](wing-msh1.png)
+
+![](wing-converged2.png)
+
 
 :::
 ::::::::::::::
