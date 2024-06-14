@@ -376,9 +376,11 @@ Este tampoco tiene (casi) nada nuevo.
 Pero hay un par de diferencias.
 La primera la explica Paul Graham.
 
-[no sé si decir esto]
-Entre paréntesis, si no conocen a Paul Graham googléenlo ahora mismo.
-Es un ñato que llega a explicar conceptos de filosofía con regular expressions. Cierro paréntesis.
+Entre paréntesis...
+¿Conocen a Paul Graham? ¿Quién lo conoce?
+El que no lo conozca que lo googlee ahora mismo.
+Es un ñato que llega a explicar conceptos de filosofía con regular expressions.
+Cierro paréntesis.
 
 
 En uno de sus ensayos dice básicamente lo mismo que Séneca. No sorprende porque Graham suele citar a Séneca.
