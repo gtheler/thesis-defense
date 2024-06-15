@@ -3,8 +3,8 @@
 
 <svg
    width="180mm"
-   height="42mm"
-   viewBox="0 0 179.99999 41.999998"
+   height="28mm"
+   viewBox="0 0 179.99999 27.999998"
    version="1.1"
    id="svg317"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
@@ -25,7 +25,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.0519801"
-     inkscape:cx="506.66358"
+     inkscape:cx="396.39533"
      inkscape:cy="-26.616473"
      inkscape:window-width="1920"
      inkscape:window-height="1051"
@@ -44,7 +44,7 @@
        style="fill:#fff41d;fill-opacity:0.321569;stroke:#ffff21;stroke-width:2;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0.94902"
        id="path503"
        cx="224.51202"
-       cy="132.20992"
+       cy="120.03909"
        rx="17.92787"
        ry="4.3980303" />
   </g>

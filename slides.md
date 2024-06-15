@@ -104,8 +104,8 @@ header-includes:
 
 
 $$
-\underbrace{\text{Transporte de neutrones}}_\text{física de reactores}
-\underbrace{\text{en la nube}}_\text{programación}
+\underbrace{\text{Transporte de neutrones}}_\text{física de reactores (core)}
+\underbrace{\text{en la nube}}_\text{programación HPC}
 $$
 
 . . .
@@ -481,6 +481,8 @@ Lucio Séneca
 
 ## 2. Transporte y difusión de neutrones
 
+\vspace{0.5cm}
+
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
@@ -552,6 +554,9 @@ $$
 \centering ![](legendre.svg)
     
 :::
+
+. . .
+
 ::: {.column width="57.5%"}
 \centering ![](harmonics.png)
 :::
@@ -1146,28 +1151,28 @@ $$
 
 ::: {.column width="80%"}
 
- * FeenoX es GPLv3+ $=$ libre & abierto
-   - free $\neq$ gratis
+ 1. FeenoX es GPLv3+ $=$ libre & abierto
+     - free $\neq$ gratis
    
-     - "Free" as in "free speech" not as in "free beer"
-     - Hay software gratis que no es libre
-     - Hay software que se dice "abierto" pero que no lo es
-     - El software libre puede terminar siendo caro
-     - Lo opuesto de "software libre" *NO* es "software comercial"
+       - "Free" as in "free speech" not as in "free beer"
+       - Hay software gratis que no es libre
+       - Hay software que se dice "abierto" pero que no lo es
+       - El software libre puede terminar siendo caro
+       - Lo opuesto de "software libre" *NO* es "software comercial"
      
-   - free $\neq$ open (pero casi)
+     - free $\neq$ open (pero casi)
 
 . . .
     
- * Software libre: bases éticas
-   - GNU Manifesto (1985)
-   - Cuatro libertades básicas
+ 2. Software libre: bases éticas
+     - GNU Manifesto (1985)
+     - Cuatro libertades básicas
  
 . . . 
 
- * Open source: bases técnicas
-   - The Cathedral and the Bazaar (1998)
-   - Given enough eyeballs all bugs are shallow
+ 3. Open source: bases técnicas
+     - The Cathedral and the Bazaar (1998)
+     - Given enough eyeballs all bugs are shallow
 
 . . .
 
@@ -1611,7 +1616,7 @@ if (strcasecmp(token, "laplace") == 0) {
 
 ## Input
 
-Entrada plain-text file con [_keywords_]{lang=en-US} en inglés que deben 
+[Syntactically-sugared plain-text file]{lang=en-US} con [_keywords_]{lang=en-US} en inglés que deben 
 
  #. definir completamente el problema de resolver
  #. ser lo más auto-descriptivas posible
@@ -1811,7 +1816,7 @@ done
 ::::::::::::::
 
 
-##
+## Entry points
 
 ```c
 int (*parse_problem)(const char *token);
@@ -2112,7 +2117,7 @@ $
 :::
 ::::::::::::::
 
-## El reactor Cubo-esferoidal
+## El reactor cubo-esferoidal
 
 :::::::::::::: {.columns}
 ::: {.column width="20%"}
@@ -2958,3 +2963,13 @@ docker
 ## CAEplex
 
 videos de Toto y de Onshape
+
+
+## Elementos de segundo orden
+
+
+## Bootstrap
+
+mostrar autogen
+borrar thermal
+

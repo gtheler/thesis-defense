@@ -6,7 +6,7 @@
  * Sesión de git clone autogen configure make make check (rápido) nafems le10
  * lista de cosas para el Q&A
  
- 
+ * sacar una foto en el salón de actos y grabarla como `phd.jpg`
  
 
 # Llevar

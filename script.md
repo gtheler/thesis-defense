@@ -13,8 +13,8 @@ monofont: DejaVuSansMono
 Acá donde me ven, tengo 40 años.
 Eso quiere decir dos cosas.
  
- * una, que estoy viejo para estar haciendo esto, y
- * otra que crecí en los noventa.
+ * una, que estoy viejo para estar haciendo esto---debería estar ahí sentado haciendo de jurado en lugar de estar acá parado--- y
+ * otra, que crecí en los noventa.
  
 Y en los noventa, todo daba vueltas alrededor de la televisión.
 Y yo me la pasaba desperdiciando mi tiempo mirando televisión.
@@ -64,7 +64,7 @@ Acá estoy entrenando laterales en el laboratorio de Fabián con mi loop de conv
 
 ## TECNA
 
-Terminada mi maestría en el IB, me dediqué a meter las narices en temas de licenciamiento de Atucha II en un etapa industrial de mi carrera profesional.
+Terminada mi maestría en el IB, me dediqué a meter las narices en el licenciamiento de Atucha II en un etapa industrial de mi carrera profesional.
 
 ## Cites
 
@@ -88,9 +88,9 @@ De hecho, este largo tiempo me permitió poder separar---como dice Mafalda---lo 
 
 ## TOC
 
-Primero que nada, si hubiese podido escribir la tesis en inglés el título habría sido ese: "a cloud-first etcétera".
+Antes que nada, si hubiese podido escribir la tesis en inglés el título habría sido ese: "a cloud-first etcétera".
 
-Pero no encontré una buena traducción, así que elegí...
+Pero como no encontré una buena traducción, elegí un lacónico...
 
 ---
 
@@ -131,9 +131,9 @@ No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que ne
 
 [decir el siguiente párrafo mientras busco los libros]
 
-Así y todo, hoy en día hay software de cálculo sigue sacando 669 de líneas de salida sin que se las pidas, incluyendo ASCII art.
+Así y todo, hoy en día hay software de cálculo sigue sacando 669 de líneas de salida sin que se las pidas, incluyendo ASCII art y copyright notices.
 
-Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), que están llenos de lecciones aprendidas sobre programación a lo largo de todos este tiempo---del 65 a hoy.
+Aún cuando desde hace varios años que tenemos libros como este, "The Art of Unix Programming" (que es un juego de palabras sobre este otro libro de Donald Knuth "The Art of Computer Programming"), y que están llenos de lecciones aprendidas sobre programación a lo largo de todos este tiempo---del 65 a hoy.
 
 
 ## Historia de dos reactores
@@ -171,7 +171,7 @@ Y estamos de acuerdo en que un cilindro es una geometría curva, ¿no?
 
 ## Dominio
 
-Y cuando queremos discretizar una geometría curva como esta...
+Porque cuando queremos discretizar una geometría curva como esta...
 
 ---
 
@@ -187,8 +187,9 @@ Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún err
 
 ## Celdas estructuradas...
 
-En los códigos neutrónicos de núcleo, aparecen cosas como estas.
-Esto es Atucha I "vista" desde el código de cinética espacial que nombramos antes.
+Sin embargo, en los códigos neutrónicos de núcleo, aparecen cosas como estas.
+
+Esto es Atucha I "vista" desde el código de cinética espacial ese del diagrama del esquema acoplado de antes.
 
 [pausa]
 
@@ -214,9 +215,9 @@ Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
 
 ## CFD
 
-Por otro lado, dijimos que el primer paso era hacer un cálculo tipo CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
+Por otro lado, dijimos que el primer paso era hacer un CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
 Esto lo hacen los que saben de fluidos.
-El boro no se mete en los canales porque el moderador está separado del refrigerante. 
+Podemos ver que el boro---correctamente---no se mete en los canales porque el moderador está separado del refrigerante. 
 Muy bien.
 
 
@@ -237,7 +238,7 @@ Terminamos con Legos como estos.
 
 Entre los legos y el esquema de celdas, el boro termina metiéndose finalmente adentro de los canales.
 
-Además de todas las preguntas sobre la validez de este esquema, surge también esta pregunta:
+Además de todas las preguntas sobre la validez de este esquema, surge también esta otra pregunta:
 
 ---
 
@@ -250,7 +251,7 @@ Resumiendo.
 
 Tenemos limitaciones por
 
- 1. dilución de la sección eficaz del boro 10 en toda la celda,
+ 1. dilución de la sección eficaz del boro 10 en toda la celda,
  2. efectos staircase muy marcados, y
  3. cuestionable validez de la aproximación de difusión.
  
@@ -282,7 +283,7 @@ Seguramente conocen ustedes este benchmark 3D.
 ## Simetrías
 
 El enunciado indica correctamente que la geometría tiene simetría un cuarto.
-Como es para PWRs, con esta simetría se puede mallar perfectamente con cuadraditos.
+Como es para PWRs, con esta simetría se puede mallar perfectamente con "cuadraditos".
 Pero si miramos detenidamente, resulta que tiene simetría un _octavo_, y no solamente un cuarto.
 
 ---
@@ -331,7 +332,7 @@ Mas cuando se ha producido su trasformación, entonces y sólo entonces, se conv
 ## Transporte y difusión de neutrones
 
 Capítulo 2. Este capítulo no tiene _nada_ nuevo.
-Lo escribí para que las ecuaciones que estudié hace casi veinte años en las clases de Ghó no sean una carga para mí, sino que se conviertan en fuerza y sangre.
+Lo escribí para que las ecuaciones que estudié hace casi veinte años en las clases de Carlos Ghó no sean una carga para mí, sino que se conviertan en fuerza y sangre.
 
 ---
 
@@ -346,7 +347,7 @@ Como ustedes sabrán, yo
 [rápido]
 
 Acá abajo medio chiquito hay un hash que indica qué commit generó estos slides a partir del Markdown.
-En la tesis lo mismo, así que si aparece un PDF, o un HTML online o se ponen a hojear un ejemplar impreso en la biblioteca, el footer indica el commit.
+En la tesis lo mismo, así que si a ustedes les llega un PDF o un HTML online---me dijeron que ya no hay más ejemplares impresos en la biblioteca---en algún lugar van a ver el hash con el commit.
  
 Si alguien necesita notas para dar clases---Chaco, Fede, [mirando a la cámara] Martín---tiene la libertad de clonar el repositorio y modificarlo según considere, [con voz de profesor y señalando] respetando la licencia.
 
@@ -356,7 +357,13 @@ Resumen del capítulo: derivación de la ecuación de transporte a partir de una
 
 ## Armónicos
  
-Expansión de la dependencia angular de la sección eficaz de scattering en polinomios de Legendre y de la dependencia angular del flujo escalar en armónicos esféricos.
+Expansión
+
+ * de la dependencia angular de la sección eficaz de scattering en polinomios de Legendre y
+ 
+---
+ 
+ * de la dependencia angular del flujo escalar en armónicos esféricos.
  
 ## Transporte linealmente anisótropo
  
@@ -378,7 +385,7 @@ La primera la explica Paul Graham.
 
 Entre paréntesis...
 ¿Conocen a Paul Graham? ¿Quién lo conoce?
-El que no lo conozca que lo googlee ahora mismo.
+Al resto le sugieron que lo googlee ahora mismo.
 Es un ñato que llega a explicar conceptos de filosofía con regular expressions.
 Cierro paréntesis.
 
@@ -421,7 +428,7 @@ Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de N
 
 ## Funciones
 
-Después buscamos tantas funciones de forma como nodos pusimos de manera tal de que cada una valga uno en un nodo particular y cero el en resto. Y además tienen que satisfacer las condiciones de Dirichlet---o sea se tienen que anular en $\Gamma_D$.
+Después buscamos tantas funciones de forma como nodos hayamos puesto de manera tal de que cada una valga uno en un nodo particular y cero el en resto. Y además, que todas satisfagan las condiciones de Dirichlet---o sea se tienen que anular en $\Gamma_D$.
 
 ## Elementos finitos
 
@@ -432,7 +439,7 @@ Llamamos a cada uno de éstos un "elemento", y escribimos las integrales de la f
 
 ## $K \cdot u = b$
 
-Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "sparse" o "rala" de tamaño igual al número de nodos y que tiene contribuciones de cada uno de los elementos.
+Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "sparse" cuyo tamaño es igual al número de nodos.
 Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
 Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
@@ -450,7 +457,7 @@ Favor de notar que
 ## Extras
 
 Dos bonus tracks.
-Primero, que podemos usar elementos segundo orden. Si quieren después profundizamos.
+Primero, que podemos usar elementos de segundo orden. Si quieren después profundizamos.
 
 ---
 
@@ -465,8 +472,9 @@ Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué"
 [chiste]
 
 como en el experimento de los monos.
+De hecho con Enzo, el año pasado intercambiamos unos emails sobre este asunto.
 
-En stack exchange está mi justificación matemática, que es la parte "nueva".
+Ahora en stack exchange está mi justificación matemática, que es la parte "nueva".
 De hecho mi respuesta es la segunda más votada (la primera es de Jed Brown).
 
 [pausa]
@@ -487,7 +495,7 @@ Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos ca
 
 Podemos hacer lo mismo con ordenadas discretas.
 
-Otra vez, la forma es parecida pero hay una diferencia crucial: la ecuación es hiperbólica de primer orden.
+Otra vez, la forma es parecida pero hay una diferencia crucial: la ecuación es hiperbólica de primer orden, no elíptica de segundo como en los dos casos anterioes.
 Así que esa matriz $P$ que aparece en las contribuciones elementales es una matriz estabilizada tipo Petrov-Galerkin.
 Una vez más, los detalles en el texto.
 
@@ -624,8 +632,8 @@ A la vuelta, tuve que empezar desde cero y---literalmente---agarrar lo que vení
 Esto implicó tener que aprender cosas nuevas.
 
 Una de estas cosas fue un esquema muy interesante de la industria del software que me hizo usar un cliente de Europa.
-Consiste en un documento tipo "pliego" que lista los requerimientos que el comprador pide.
-Y otro tipo "oferta" que indica cómo el vendedor aborda e implementa cada requerimiento.
+Consiste en un documento tipo "pliego", escrito por el comprador, que lista los requerimientos.
+Y otro tipo "oferta" escrito por el vendedor, que indica cómo se propone abordar e implementar cada requerimiento.
 
 ---
 
@@ -650,7 +658,7 @@ Déjenme ver si me sale ilustrar un punto sobre su diseño.
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
 En el lado más "fácil" (y "horrendo") del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
 Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro beige).
-En el medio, Markdown---uno de las muchas contribuciones del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
+En el medio, Markdown---una de las muchas contribuciones del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
 
 
 ## Unfair advantage: FeenoX
@@ -666,7 +674,7 @@ Me hace doler los ojos... como cuando voy a la cancha a ver a Atlético.
 
 ## Licensing
 
-Lo primero que pide el SRS es que la herramienta desarrollada sea "open source" en el sentido OSI.
+Lo primero que pide el SRS es que la herramienta desarrollada sea abierta.
 
 Esto es como predicar para el coro así que resumo la discusión sobre licenciamiento de software:
 
@@ -678,7 +686,7 @@ Esto es como predicar para el coro así que resumo la discusión sobre licenciam
 
 ---
  
- 3. Según Raymond (el del libro amarillo) lo importante es que se vea el código.
+ 3. Según Raymond (el del libro blanco y amarillo) lo importante es que se vea el código.
 
 ---  
  
@@ -698,7 +706,7 @@ Como eso andaba más o menos bien, me pasó lo que a los gerentes de la Bell.
 
 ---
 
-Empecé a agregar complejidad, features innecesarias, etc. 
+Empecé a agregar complejidad, features innecesarias...
 
 ---
 
@@ -713,7 +721,7 @@ Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuacione
 ## Mazes & wings
 
 De todas maneras, podemos hacer cosas divertidas.
-La ecuación de Laplace sirve tanto para un barrido como para un fregado.
+Por ejemplo, la ecuación de Laplace sirve tanto para un barrido como para un fregado.
 
 ---
 
@@ -732,7 +740,8 @@ Too long; didn't read it: la filosofía Unix es "hacé un programa que haga sola
 
 ---
 
-Como usualmente hay que hacer varias cosas, están presentes los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
+Como usualmente hay que hacer varias cosas, existens los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
+Esto lo estuvo viendo Enzo hace un par de semanas.
 
 ---
 
@@ -864,7 +873,7 @@ En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de ri
 
 Fíjense que la ecuación diferencial esencialmente está dada por las expresiones entre llaves.
 
-Entonces, en principio, podríamos implementar a FeenoX como un framework general que sea agnóstico de la ecuación a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
+Entonces, en principio, podríamos implementar a FeenoX como un framework general que sea agnóstico de la ecuación diferencial a resolver más algún mecanismo que le provea lo que depende de la ecuación particular.
  
 ## Implementación
 
@@ -900,23 +909,22 @@ Pero con dos diferencias:
  2. es uno sólo en toda la ejecución en tiempo de parseo.
  
 Esencialmente en este único bloque if se resuelve un apuntador a una función en tiempo de parseo que depende de cada ecuación a resolver.
-Y a su vez en esa función se resuelven puntos de entrada que dependen de la ecuación diferencial particular.
+Y a su vez en esa función se resuelven puntos de entrada particulares.
 
 
 ## Input
 
-Pero antes de explicar en detalle esa implementación, déjenme hablar sobre el archivo de entrada.
+Pero antes de explicar en detalle esto de los punto de entrada en el código, déjenme hablar sobre el _archivo_ de entrada.
 
-Siguiendo la filosofía Unix, este input es un archivo de texto plano.
-Tiene palabras clave en inglés, de forma tal de
+Siguiendo la filosofía Unix, este input es un archivo de texto plano con palabras clave en inglés que funcionan como una azuquitar sintáctica de forma tal de
 
  1. definir completamente el problema para que no sea necesaria ninguna intervención humana una vez lanzado el programa
  2. ser lo más auto-descriptivo y compacto posible: están prohibidos los argumentos posicionales
  3. permitir expresiones algebraicas en cada lugar donde se espere un parámetro numérico: ahora ilustramos este punto
  4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input (como lo que hablamos hace un rato del "nada más")
- 5. seguir la regla de que "problemas simples necesitan inputs simples": me vuelve loco que el "hello world" de la mayoría de los solvers sea increiblemente complicado de generar...
+ 5. seguir la regla de que "problemas simples necesitan inputs simples": me vuelve loco que el "hello world" de la mayoría de los solvers sea increiblemente complicado...
  
-y algunas más que discutimos en el SDS.
+y algunos puntos más que discutimos en el SDS.
 
 Estas palabras clave pueden ser definiciones o instrucciones.
 
@@ -924,6 +932,7 @@ Estas palabras clave pueden ser definiciones o instrucciones.
 
 ## Conducción de calor 1D
 
+Ejemplo.
 Problema simple, input simple.
 
  * Línea 1, definición (`PROBLEM` es sustantivo): queremos conducción 1D.
@@ -934,7 +943,7 @@ Problema simple, input simple.
 Bueno, ésta, que tiene dos puntos físicos llamados "left" y "right".
  
  * Línea 3, definimos una variable `k` y le asignamos el valor uno. En problema `thermal`, si existe la variable `k` indica conductividad uniforme.
- * Líneas 4 y 5,  boundary condition (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
+ * Líneas 4 y 5, definimos boundary conditions (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
  * Línea 6: instrucción, por favor resolvé el problema
  * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
 
@@ -953,7 +962,7 @@ Ahora el resultado ya no es 0.5 sino eso que está ahí.
 
 ¿Y si $k$ depende de la temperatura?
 Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
-Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad (o alguna condición de contorno) depende de $T$, que es la solución, tiene que resolver un problema no lineal.
+Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad depende de $T$, que es la solución, tiene que resolver un problema no lineal.
 Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
 
@@ -1090,20 +1099,20 @@ Recuerden que ese era nuestro objetivo: resolver problemas grandes partiéndolos
 Otro problema. Slab 1D con dos materiales, uno con $k$ infinito menor que uno y el otro mayor que uno.
 Ancho total $b$, ancho del absorbente $a$. Queremos estudiar el $k$ efectivo en función de $a$.
 Si el solver soporta mallas no estructuradas y por ende no uniformes, podemos poner un nodo exactamente en $x=a$.
-Si el solver solamente soporta espaciado uniforme (es decir, ladrillitos) entonces hay que detectar en qué celda cae la punta de la barra de control y asignarle a esa celda amarilla una sección eficaz ficticia que sea un promedio pesado de la de los dos materiales.
+Si el solver solamente soporta espaciado uniforme (es decir, ladrillitos) entonces hay que detectar en cuál de todas las celdas cae la punta de la barra de control y asignarle a esa celda amarilla una sección eficaz ficticia que sea un promedio pesado de la de los dos materiales.
 Esto da lugar el "efecto cúspide".
 
 Como este problema tiene solución analítica (y FeenoX la puede evaluar) entonces podemos comparar el error cometido por los dos casos,
 
  1. poniendo un nodo exactamente en $x=a$
- 2. simulando el comportamiento de la sección eficaz ficticia
+ 2. necesitando una celda amarilla con sección eficaz ficticia
  
 Como dice Richard Stallman, la mejor manera de resolver un problema es evitándolo.
 
 
 ## Cube-sphere
 
-El problema del cubo-esfera.
+Pasemos al reactor cubo-esferoidal.
 Todos sabemos que para un volumen fijo, una esfera tiene más reactividad que un cubo.
 
 ---
@@ -1112,12 +1121,12 @@ Todos sabemos que para un volumen fijo, una esfera tiene más reactividad que un
 Bueno, podemos ir haciéndole fillets al cubo.
 Curva imposible de obtener con Legos.
 
-BTW, le debo al Chaco hacer lo mismo para estudiar la diferencia entre círculo y hexágono.
+BTW, le debo al Chaco hacer lo mismo para estudiar la diferencia entre círculo y hexágono en 2D.
 
 
 ## Input + python
 
-Este caso ilustra la filosofía Unix en acción.
+La solución de este caso cubo/esfera ilustra la filosofía Unix en acción.
 El input de FeenoX es realmente sencillo.
 La complejidad está puesta en un script de Python que usa el API de Gmsh para hacer los fillets, fabricar la malla y llamar paramétricamente a FeenoX.
 
@@ -1125,8 +1134,8 @@ La complejidad está puesta en un script de Python que usa el API de Gmsh para h
 ## Tres pescaditos
 
 Otro problema.
-Supogamos que tenemos tres pescaditos absorbentes.
-Dos están fijos. El problema consiste en ubicar el tercero de forma tal que la reactividad total sea mínima.
+Supogamos que tenemos tres pescaditos absorbentes nadando en un círculo 2D.
+Dos están fijos. El problema consiste en ubicar el tercero de forma de minimizar la reactividad total.
 
 ## Input
 
@@ -1134,7 +1143,8 @@ Otra vez dividimos y conquistamos.
 El driver es un Python que usa el paquete de optimización de SciPy con el método de Nelder & Mead.
 Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para crear la malla y después a FeenoX para calcular el $k$ efecitvo. Algunas iteraciones y encontramos el mínimo.
 
-Nota al pie: no soy fan de Python ni mucho menos, hasta me disgusta un poco. Pero para esto sirve fenómeno.
+No soy fan de Python ni mucho menos, hasta me disgusta un poco.
+Pero debo reconocer que para esto funciona fenómeno.
 
 
 ## PHWR
@@ -1164,7 +1174,7 @@ Y finalmente otra ilustración de que al correr esto en paralelo lo que logramos
 ## Conclusiones
 
 Conclusiones.
-Antes que nada, todo esto que presenté va en el sentido del método de Descartes.
+Antes que nada, todo esto que presenté va en el sentido de "El método" de Descartes.
 Como dice René, esto es lo que me sirvió a mí y lo comparto con ustedes.
 Si a alguien más le sirve y quiere sumarse al barco, genial. Si no les sirve y quieren seguir otro método, adelante.
 
@@ -1191,12 +1201,12 @@ En particular, para neutrónica a nivel de núcleo soporta
 
 ---
 
-Como dijo una vez un director del IB en una reunión de consejo académico cuando yo era representante de los estudiantes: no es lo mismo leer manuales que escribir manuales.
+Como dijo una vez un director del IB en una reunión de consejo académico cuando yo era representante de los estudiantes: no es lo mismo _leer_ manuales que _escribir_ manuales.
  
  
 ## Tweets 
 
-Si tuviesen hacer un tweet o un mastodon contando que vinieron a escuchar esta charla, me gustaría que les haya quedadon alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
+Si ustedes tuviesen tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que les haya quedado alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
 
 En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
@@ -1210,7 +1220,7 @@ Seguramente ustedes se preguntan lo mismo que yo.
 ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si llegara a venir un cisne negro y te cambiara la número cinco a la que estás acostumbrado por una bola de boliche, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+Porque si llegara a venir un cisne negro y te cambiara la pelota con la que estás acostumbrado a sacar laterales y te pusiera algo más pesado, digamos una bola de boliche o una bala de cañón, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 

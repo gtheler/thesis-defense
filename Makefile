@@ -13,4 +13,3 @@ clean:
 .PHONY: slides script clean
 
 all: slides script
-
