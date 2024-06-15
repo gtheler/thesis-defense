@@ -1,5 +1,5 @@
 
-slides:
+slides: script
 	./hash.sh
 	pandoc -s -f markdown+smart -t beamer+smart hash.yaml slides.md --template=template.tex --listings --citeproc --pdf-engine=xelatex --lua-filter=include-code-files.lua --lua-filter=code-style.lua -o slides.pdf
 	
@@ -12,4 +12,4 @@ clean:
 
 .PHONY: slides script clean
 
-all: slides script
+all: slides
