@@ -64,11 +64,11 @@ Acá estoy entrenando laterales en el laboratorio de Fabián con mi loop de conv
 
 ## TECNA
 
-Terminada mi maestría en el IB, me dediqué a meter las narices en el licenciamiento de Atucha II en un etapa industrial de mi carrera profesional.
+Terminada mi maestría en el IB, metí las narices en el licenciamiento de Atucha II en un etapa industrial de mi carrera profesional.
 
 ## Cites
 
-Después de la criticidad, me pasé a temas de startups.
+Después de la criticidad, me dediqué a temas de startups.
 A veces yo le daba cheques gigantes a emprendedores desde CITES...
 
 ## BNA
@@ -474,7 +474,7 @@ Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué"
 como en el experimento de los monos.
 De hecho con Enzo, el año pasado intercambiamos unos emails sobre este asunto.
 
-Ahora en stack exchange está mi justificación matemática, que es la parte "nueva".
+Ahora en stack exchange está mi justificación matemática, que es la parte "nueva" del capítulo.
 De hecho mi respuesta es la segunda más votada (la primera es de Jed Brown).
 
 [pausa]
@@ -525,7 +525,7 @@ Veamos ahora el "what," que tiene las contribuciones originales de la tesis.
 
 ## Bicicleta
 
-Con esto de la new age y la movilidad en grandes ciudades, le escuché decir a alguien que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó. Ajá.
+Con esta sarasa de la new age y la movilidad en grandes ciudades, le escuché decir a alguien que la bicicleta es un dispositivo que resuelve problemas que no existían cuando se inventó. Ajá.
 
 ## Dennis & Ken
 
@@ -1419,3 +1419,6 @@ the idea that the power of a system comes more from the relationships among prog
 git vs. github
 
 ## Aaron Swartz
+
+## Newton-Raphson
+
