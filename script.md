@@ -3,6 +3,14 @@ title: Transporte de neutrones en la nube
 lang: es-AR
 numbersections: true
 fontsize: 12pt
+geometry:
+- paper=a4paper
+- left=2.5cm
+- right=2cm
+- bottom=3.5cm
+- foot=2cm
+- top=3.5cm
+- head=2cm
 mainfont: LinLibertineO
 sansfont: Carlito
 monofont: DejaVuSansMono
