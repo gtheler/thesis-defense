@@ -2973,3 +2973,8 @@ videos de Toto y de Onshape
 mostrar autogen
 borrar thermal
 
+## Mallas i y ii
+
+![](two-zone-slab-55.svg){width=100%}
+
+![](two-zone-slab-72.svg){width=100%}
