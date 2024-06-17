@@ -1632,7 +1632,7 @@ if (strcasecmp(token, "laplace") == 0) {
 
 ## Conducción de calor 1D
 
-```feenox
+```{.feenox .numberLines}
 PROBLEM thermal 1D               # definir que la PDE es calor 1D
 READ_MESH slab.msh               # leer la malla
 k = 1                            # conductividad uniforme igual a uno
@@ -1660,7 +1660,8 @@ $
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-```feenox
+
+```{.feenox .numberLines}
 PROBLEM thermal 1D
 READ_MESH slab.msh
 k(x) = 1+x
@@ -1682,7 +1683,8 @@ $
 
 ::: {.column width="50%"}
 
-```feenox
+
+```{.feenox .numberLines}
 PROBLEM thermal 1D
 READ_MESH slab.msh
 k(x) = 1+T(x)

@@ -77,7 +77,7 @@ Terminada mi maestría en el IB, metí las narices en el licenciamiento de Atuch
 ## Cites
 
 Después de la criticidad, me dediqué a temas de startups.
-A veces yo le daba cheques gigantes a emprendedores desde CITES...
+A veces yo les daba cheques gigantes a emprendedores desde CITES...
 
 ## BNA
 
@@ -202,7 +202,7 @@ Esto es Atucha I "vista" desde el código de cinética espacial ese del diagram
 [pausa]
 
 Es como "jugar a los Rastis", ¿no?
-O a los Legos para los millenials.
+O a los Legos para los millenials o centennials, no sé...
 
 ## Celdas
 
@@ -503,7 +503,7 @@ Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos ca
 
 Podemos hacer lo mismo con ordenadas discretas.
 
-Otra vez, la forma es parecida pero hay una diferencia crucial: la ecuación es hiperbólica de primer orden, no elíptica de segundo como en los dos casos anterioes.
+Otra vez, la forma es parecida pero hay una diferencia crucial: ahora la ecuación es hiperbólica de primer orden, no elíptica de segundo como en los dos casos anteriores.
 Así que esa matriz $P$ que aparece en las contribuciones elementales es una matriz estabilizada tipo Petrov-Galerkin.
 Una vez más, los detalles en el texto.
 
@@ -601,7 +601,7 @@ Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel T
 [chiste]
 
 Segundo paréntesis.
-Hubo nerds que hicieron mucha plata. Hay una luz de esperanza para la audiencia.
+En estos slides hay nerds que hicieron mucha plata. Hay una luz de esperanza para la audiencia.
 
 
 ## Cheque
@@ -616,7 +616,7 @@ Era mi época de emprendedor, de IB50k...
 
 ---
 
-Si bien mi emprendimiento nunca funcionó comercialmente, me permitió hacer consultoría en temas de mecánica de piping para Embalse con mi propio solver.
+Si bien mi emprendimiento nunca funcionó comercialmente, me permitió hacer consultoría con mi propio solver en temas de mecánica de piping para Embalse...
 
 ---
 
@@ -748,7 +748,8 @@ Too long; didn't read it: la filosofía Unix es "hacé un programa que haga sola
 
 ---
 
-Como usualmente hay que hacer varias cosas, existens los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
+Como usualmente hay que hacer varias cosas, existen los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
+
 Esto lo estuvo viendo Enzo hace un par de semanas.
 
 ---
@@ -776,7 +777,7 @@ En particular, tiene que permitir corridas paramétricas de forma más o menos s
 FeenoX lo hace expandiendo argumentos de la línea de comandos en el input.
 
 Supongamos que tenemos este archivo de entrada: `PRINT` hello pesos uno.
-Bueno, si lo corremos desde Bash como `do` `feenox` `hello` punto `fee` pesos $i$ dentro de un `seq` uno tres, nos dice "Hello 1", "Hello 2" y "Hello 3."
+Bueno, si lo corremos desde Bash como `do` `feenox` `hello` punto `fee` pesos $i$ dentro de un `seq` uno tres, nos dice "Hello  1", "Hello 2" y "Hello 3."
 
 ---
 
@@ -1046,7 +1047,7 @@ Dejo el link al video.
 
 Volvamos a otra de las reglas centrales de Unix: la regla del silencio. ¿Recuerdan la tablita del 65, no?
 En FeenoX, sin `PRINT` no hay salida.
-Le podemos pedir al software que haga un montón de cosas complicadas. 
+Le podemos pedir al software que haga un montón de cosas re complicadas. 
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
 La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
 
@@ -1100,7 +1101,7 @@ Tanto la memoria como el tiempo de ejecución bajan a la mitad.
 ## MPI
 
 Y si corremos en paralelo, vemos que si bien el tiempo baja lo más importante es que también baja la memoria por proceso.
-Recuerden que ese era nuestro objetivo: resolver problemas grandes partiéndolos en pedazos chicos de forma tal de que cada uno consuma una cantidad razonable de memoria.
+Recuerden que ese era nuestro objetivo: resolver problemas grandes partiéndolos en pedazos de forma tal de que cada uno consuma una cantidad razonable de memoria.
 
 ## Slab a dos zonas
 
@@ -1214,7 +1215,7 @@ Como dijo una vez un director del IB en una reunión de consejo académico cuand
  
 ## Tweets 
 
-Si ustedes tuviesen tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que les haya quedado alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
+Si ustedes tuviesen tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que lo hagan sobre alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
 
 En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
@@ -1222,13 +1223,13 @@ En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibl
 
 La tesis y esta presentación terminan con un jardín de trabajos futuros que se bifurcan.
 Cada unos de estos bullets implica varios años-persona y un presupuesto importante.
-En particular, el último es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
+En particular, el último punto es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
 
 Seguramente ustedes se preguntan lo mismo que yo.
 ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si llegara a venir un cisne negro y te cambiara la pelota con la que estás acostumbrado a sacar laterales y te pusiera algo más pesado, digamos una bola de boliche o una bala de cañón, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+Porque si llegara a venir un cisne negro y te cambiara la pelota número cinco con la que estás acostumbrado a sacar laterales por la piedra de Sísifo, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 
