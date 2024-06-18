@@ -24,7 +24,7 @@ Eso quiere decir dos cosas.
  * una, que estoy viejo para estar haciendo esto---debería estar ahí sentado haciendo de jurado en lugar de estar acá parado--- y
  * otra, que crecí en los noventa.
  
-Y en los noventa, todo daba vueltas alrededor de la televisión.
+Y, como sabrán los que vieron Seinfeld, en los noventa todo daba vueltas alrededor de la televisión.
 Y yo me la pasaba desperdiciando mi tiempo mirando televisión.
 
 ## Calabró
@@ -923,7 +923,7 @@ Y a su vez en esa función se resuelven puntos de entrada particulares.
 
 ## Input
 
-Pero antes de explicar en detalle esto de los punto de entrada en el código, déjenme hablar sobre el _archivo_ de entrada.
+Pero antes de explicar en detalle esto de los puntos de entrada en el código, déjenme hablar sobre el _archivo_ de entrada.
 
 Siguiendo la filosofía Unix, este input es un archivo de texto plano con palabras clave en inglés que funcionan como una azuquitar sintáctica de forma tal de
 
@@ -970,7 +970,7 @@ Ahora el resultado ya no es 0.5 sino eso que está ahí.
 ---
 
 ¿Y si $k$ depende de la temperatura?
-Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
+Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
 Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad depende de $T$, que es la solución, tiene que resolver un problema no lineal.
 Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
@@ -1106,7 +1106,7 @@ Recuerden que ese era nuestro objetivo: resolver problemas grandes partiéndolos
 ## Slab a dos zonas
 
 Otro problema. Slab 1D con dos materiales, uno con $k$ infinito menor que uno y el otro mayor que uno.
-Ancho total $b$, ancho del absorbente $a$. Queremos estudiar el $k$ efectivo en función de $a$.
+Ancho total $b$, ancho del absorbente $a$. Queremos estudiar el $k$ efectivo en función de $a$.
 Si el solver soporta mallas no estructuradas y por ende no uniformes, podemos poner un nodo exactamente en $x=a$.
 Si el solver solamente soporta espaciado uniforme (es decir, ladrillitos) entonces hay que detectar en cuál de todas las celdas cae la punta de la barra de control y asignarle a esa celda amarilla una sección eficaz ficticia que sea un promedio pesado de la de los dos materiales.
 Esto da lugar el "efecto cúspide".
@@ -1210,7 +1210,7 @@ En particular, para neutrónica a nivel de núcleo soporta
 
 ---
 
-Como dijo una vez un director del IB en una reunión de consejo académico cuando yo era representante de los estudiantes: no es lo mismo _leer_ manuales que _escribir_ manuales.
+Como dijo una vez un director del IB en una reunión del Consejo Académico cuando yo era representante de los estudiantes: no es lo mismo _leer_ manuales que _escribir_ manuales.
  
  
 ## Tweets 
