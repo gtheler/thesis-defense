@@ -938,6 +938,22 @@ $$
 ![](history-of-solidworks-1995.png){height=5cm}
 ![](history-of-solidworks-1996.png){height=5cm} 
 
+## Dot-com Bubble & Y Combinator
+
+### The 18 Mistakes That Kill Startups
+
+Paul Graham, October 2006
+
+
+### 7. Choosing the Wrong Platform
+
+A related problem (since it tends to be done by bad programmers) is choosing the wrong platform. For example, I think **a lot of startups during the Bubble killed themselves by deciding to build server-based applications on Windows. Hotmail was still running on FreeBSD for years after Microsoft bought it, presumably because Windows couldn't handle the load.** If Hotmail's founders had chosen to use Windows, they would have been swamped.
+
+\medskip
+
+PayPal only just dodged this bullet. After they merged with X.com, the new CEO wanted to switch to Windows — even after PayPal cofounder Max Levchin showed that **their software scaled only 1% as well on Windows as Unix.** Fortunately for PayPal they switched CEOs instead.
+
+
 ## Onshape
 
 ```{=latex}

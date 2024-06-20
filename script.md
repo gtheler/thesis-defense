@@ -570,9 +570,24 @@ Pero este Jon (sin hache) se dió cuenta de que en los 90 la moda iba a ser "X p
 Y pasó a tener el 90% del mercado en un par de años.
 En el 97, Dassault compró Solidworks por 300 millones de dólares y Jon se quedó como CEO.
 
+## Dot-com bubble & Y Combinator
+
+Un par de años después de la burbuja de las punto com y durante uno de los primeros batches de Y Combinator, a Paul Graham le preguntaron por qué fallaban las start ups. Al tiempo escribió un "listicle".
+En el punto 7, dice Graham:
+
+"Muchas startups se suicidaron al decidir hacer aplicaciones basadas en servers sobre Windows".
+
+"Hotmail siguió usando FreeBSD por años, aún después de ser comprada por Microsoft".
+
+Agrega:
+
+"el co-fundador de PayPal mostró que su software escalaba el 1% en Windows comparado con Unix."
+
+Paul Graham.
+
 ## Onshape
 
-Pasa el tiempo. Año 2011. Jon se da cuenta de que la tecnología está cambiando de nuevo.
+Año 2011. Jon se da cuenta de que la tecnología está cambiando.
 Renuncia a Solidworks y pone otra startup de CAD pero ahora, "en la nube y directamente desde el browser".
 Bueno, en 2019 vendió Onshape por 480 millones.
 
