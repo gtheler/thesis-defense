@@ -1,7 +1,7 @@
 ---
 title: Transporte de neutrones en la nube
 subtitle: Tesis de Doctorado en Ingeniería Nuclear
-author: Mg. Ing. Germán Theler
+author: Mg. Ing. Germán (Jeremy) Theler
 institute: Instituto Balseiro
 aspectratio: 169
 lang: es-AR
