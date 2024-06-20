@@ -309,7 +309,7 @@ $$
 
 \centering ![](cfd.png)
 
-\centering +
+\medskip
 
 \centering ![](cna1calc.png){width=60%}
 

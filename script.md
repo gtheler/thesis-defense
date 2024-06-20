@@ -114,7 +114,7 @@ En en el primero explico la motivación, que sería el "por qué".
 Los siguientes dos tienen el "cómo" y los últimos dos el "qué".
 
 
-## Why
+# Why
 
 Empecemos entonces---como sugiere Simon Sinek---con el "why".
 
@@ -147,7 +147,7 @@ Aún cuando desde hace varios años que tenemos libros como este, "The Art of Un
 ## Historia de dos reactores
 
 Pasemos ahora a la otra mitad.
-Supongamos que hay un país que tiene no una, sino
+Supongamos que hay un país que tiene no una, sino...
 
 ---
 
@@ -225,7 +225,7 @@ Y una gotita de 2.000 ppm no es lo mismo que 100 ppm en toda la celda.
 
 Por otro lado, dijimos que el primer paso era hacer un CFD para ver cómo evoluciona la pluma de boro en el tanque del moderador.
 Esto lo hacen los que saben de fluidos.
-Podemos ver que el boro---correctamente---no se mete en los canales porque el moderador está separado del refrigerante. 
+Podemos ver que el boro no se mete en los canales porque el moderador está separado del refrigerante. 
 Muy bien.
 
 
@@ -291,7 +291,7 @@ Seguramente conocen ustedes este benchmark 3D.
 ## Simetrías
 
 El enunciado indica correctamente que la geometría tiene simetría un cuarto.
-Como es para PWRs, con esta simetría se puede mallar perfectamente con "cuadraditos".
+Como es para PWRs, se puede mallar perfectamente con "cuadraditos".
 Pero si miramos detenidamente, resulta que tiene simetría un _octavo_, y no solamente un cuarto.
 
 ---
@@ -315,7 +315,7 @@ Así que adelantándome al capítulo de resultados, les presento el benchmark 3D
 
  
  
-## How
+# How
 
 Aca termina mi explicación del "why."
 Pasemos ahora al "how." 
@@ -542,7 +542,7 @@ Bueno, resulta que estos dos muchachos también inventaron algo que resuelve pro
 Veamos.
 
 A mediados de los 60 (la época del paper de la tablita), los Bell Labs tenían un sistema operativo medio artesanal pero que andaba bastante bien.
-Entonces, ¿qué pasó? Se metieron los gerentes y organizaron un proyecto para hacer una nueva versión "mejorada". En lunfa, un sistema operativo "bien pulenta".
+Entonces, ¿qué pasó? Se metieron los gerentes y organizaron un proyecto para hacer una nueva versión con más "features". En lunfa, un sistema operativo "bien pulenta".
 Pero el proyecto, llamado MULTICS (siglas de _multiplexed_ information and computing service) fue tan ambicioso y complejo que se estancó.
 No iba ni pa’delante ni pa’trás.
 Entonces en el 70 estos dos muchachos empezaron desde cero.
@@ -550,6 +550,7 @@ Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaro
 
 
 Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
+Hint: hace un par de mese esta foto apareció en la columna de tecnología de La Nación con la historia de uno de estos dos.
 
 ¿Alguien?
 
@@ -616,11 +617,11 @@ Era mi época de emprendedor, de IB50k...
 
 ---
 
-Si bien mi emprendimiento nunca funcionó comercialmente, me permitió hacer consultoría con mi propio solver en temas de mecánica de piping para Embalse...
+Si bien mi emprendimiento nunca funcionó comercialmente, me permitió hacer consultoría por mi cuenta, con mi propio solver, en temas "divertidos" por ejemplo mecánica de piping para Embalse...
 
 ---
 
-Incluso poder manejar mis tiempos para ir a la playa con mi familia.
+Me permitió incluso poder manejar mis tiempos para ir a la playa con mi familia.
 
 
 ## Do it for him
@@ -631,7 +632,7 @@ Pero bueno, a veces las cosas no salen como uno las planea.
 
 Y si tu hijo se enferma, tal vez tengas que apagar tu carrera profesional por un año.
 
-[pausa, tomar agua]
+[pausa larga, tomar agua]
 
 
 ## SRS & SDS
@@ -723,7 +724,7 @@ Hasta que decidí empezar de cero, como Ken.
 ---
 
 El scope actual es que FeenoX puede resolver estos problemas.
-Pero hay un mecanismo de extensión con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento.
+Pero hay un mecanismo de extensibilidad con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento.
 
 
 ## Mazes & wings
@@ -750,7 +751,7 @@ Too long; didn't read it: la filosofía Unix es "hacé un programa que haga sola
 
 Como usualmente hay que hacer varias cosas, existen los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
 
-Esto lo estuvo viendo Enzo hace un par de semanas.
+Esto lo estuvo viendo Enzo de primera mano hace un par de semanas con el perfil alar ese que mostré antes.
 
 ---
 
@@ -956,9 +957,11 @@ Bueno, ésta, que tiene dos puntos físicos llamados "left" y "right".
  * Línea 6: instrucción, por favor resolvé el problema
  * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
 
+Si corremos esto con FeenoX, deberíamos obtener 0.5
+ 
 ---
 
-Si corremos esto con FeenoX, deberíamos obtener 0.5
+Que suerte.
 
 
 ## Conductividad no uniforme
@@ -984,7 +987,8 @@ Problem ahora es `neutron_sn` con `DIM` uno, `GROUPS` uno pero `SN` es pesos uno
 Recuerden que eso quiere decir que ese argumento viene de la línea de comandos.
 Así que le tenemos que decir si queremos S$_2$, S$_4$, S$_6$, etc.
 
-La salida de este caso es un error con respecto a una solución de referencia que encontré en un blog, así que desconozco la exactitud.
+La salida de este caso es un error con respecto a una solución de referencia que encontré en un blog.
+Debería ser chiquita pero desconozco la exactitud de la referencia.
 
 ## Bootstrap
 
@@ -999,7 +1003,7 @@ Cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones c
 Después si tienen tiempo y ganas les muestro cómo funciona.
 Podemos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
 
-Está claro que no ganamos mucho removiendo. Es mucho más interesante agregar, que remover.
+Está claro que no ganamos mucho borrando. ¡Es mucho más interesante agregar!
 Este es el mecanismo de extensibilidad que mencioné antes.
 En los trabajos futuros hay un bullet que es agregar nuevas ecuaciones: electromagnetismo, acústica, fluidos... se aceptan sugerencias.
 
@@ -1145,13 +1149,13 @@ La complejidad está puesta en un script de Python que usa el API de Gmsh para h
 
 Otro problema.
 Supogamos que tenemos tres pescaditos absorbentes nadando en un círculo 2D.
-Dos están fijos. El problema consiste en ubicar el tercero de forma de minimizar la reactividad total.
+Dos están fijos. El problema consiste en encontrar dónde poner el tercero para minimizar la reactividad total.
 
 ## Input
 
 Otra vez dividimos y conquistamos.
 El driver es un Python que usa el paquete de optimización de SciPy con el método de Nelder & Mead.
-Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para crear la malla y después a FeenoX para calcular el $k$ efecitvo. Algunas iteraciones y encontramos el mínimo.
+Este Python llama a un Bash que ubica el pescadito y a su vez llama primero a Gmsh para crear la malla y después a FeenoX para calcular el $k$ efectivo. Algunas iteraciones y encontramos el mínimo.
 
 No soy fan de Python ni mucho menos, hasta me disgusta un poco.
 Pero debo reconocer que para esto funciona fenómeno.
@@ -1216,9 +1220,9 @@ Como dijo una vez un director del IB en una reunión del Consejo Académico cuan
  
 ## Tweets 
 
-Si ustedes tuviesen tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que lo hagan sobre alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
+Si ustedes tuviesen que tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que lo hagan sobre alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
 
-En particular, la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
+En particular, debería sobresalir la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
 ## Trabajos futuros
 
@@ -1230,7 +1234,9 @@ Seguramente ustedes se preguntan lo mismo que yo.
 ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
-Porque si llegara a venir un cisne negro y te cambiara la pelota número cinco con la que estás acostumbrado a sacar laterales por la piedra de Sísifo, pero vos le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+
+Porque podría darse el caso de viniera un cisne negro que te sacara la pelota con la que estás acostumbrado a sacar laterales y te pusiera en su lugar la piedra de Sísifo.
+Pero si vos le le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 
@@ -1431,4 +1437,8 @@ git vs. github
 ## Aaron Swartz
 
 ## Newton-Raphson
+
+## Amazon: de libros a CPU
+
+## AI hype?
 
