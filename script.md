@@ -24,7 +24,7 @@ Eso quiere decir dos cosas.
  * una, que estoy viejo para estar haciendo esto---debería estar ahí sentado haciendo de jurado en lugar de estar acá parado--- y
  * otra, que crecí en los noventa.
  
-Y, como sabrán los que vieron Seinfeld, en los noventa todo daba vueltas alrededor de la televisión.
+Y---como sabrán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo daba vueltas alrededor de la televisión.
 Y yo me la pasaba desperdiciando mi tiempo mirando televisión.
 
 ## Calabró
@@ -1045,7 +1045,8 @@ Dejo el link al video.
 
 ## No print no shirt
 
-Volvamos a otra de las reglas centrales de Unix: la regla del silencio. ¿Recuerdan la tablita del 65, no?
+Volvamos a otra de las reglas centrales de Unix: la regla del silencio.
+¿Recuerdan al ingeniero que tenía que buscar una aguja en un pajar, no?
 En FeenoX, sin `PRINT` no hay salida.
 Le podemos pedir al software que haga un montón de cosas re complicadas. 
 Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
