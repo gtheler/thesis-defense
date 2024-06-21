@@ -1626,9 +1626,8 @@ if (strcasecmp(token, "laplace") == 0) {
   return FEENOX_ERROR;
 }
 ```
-
- 1. Un único bloque en tiempo de parseo
- 2. Lo genera `autogen.sh` a partir de `src/pdes`
+ 1. Lo genera `autogen.sh` a partir de `src/pdes`
+ 2. Un único bloque en tiempo de parseo
 
 ## Input
 

@@ -21,7 +21,7 @@ monofont: DejaVuSansMono
 Acá donde me ven, tengo 40 años.
 Eso quiere decir dos cosas.
  
- * una, que estoy viejo para estar haciendo esto---debería estar ahí sentado haciendo de jurado en lugar de estar acá parado--- y
+ * una, que estoy viejo para estar haciendo esto: a mi edad debería estar ahí sentado haciendo de jurado en lugar de estar acá parado, y
  * otra, que crecí en los noventa.
  
 Y---como sabrán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo daba vueltas alrededor de la televisión.
@@ -86,7 +86,7 @@ Y a veces era yo el que pedía cheques...
 ## Mafalda
 
 Esta tesis es excepcional en el sentido de que fue atípica, una excepción a la receta tradicional.
-En lo que voy a contar hay quince años de lecciones aprendidas provenientes, justamente, de estos tres ámbitos: 
+En lo que voy a contar hay quince años de lecciones aprendidas provenientes---justamente---de estos tres ámbitos: 
 
  * academia,
  * industria y
@@ -96,13 +96,15 @@ De hecho, este largo tiempo me permitió poder separar---como dice Mafalda---lo 
 
 ## TOC
 
+[rápido]
+
 Antes que nada, si hubiese podido escribir la tesis en inglés el título habría sido ese: "a cloud-first etcétera".
 
 Pero como no encontré una buena traducción, elegí un lacónico...
 
 ---
 
-"transporte de neutrones en la nube" con el que intenté indicar---sin mucho éxito ahora con el diario del lunes---que el contenido de la tesis es una mezcla de 
+"transporte de neutrones en la nube" con el que intenté indicar---sin mucho éxito ahora que veo---que el contenido de la tesis es una mezcla de 
 
  * física de reactores a nivel de núcleo, y
  * programación tipo high-performance.
@@ -134,7 +136,7 @@ Pensemos en cómo había que diseñar software de ingeniería en esa época.
 Desde un punto de vista de costos, cada resultado calculado tenía que formar parte de la salida.
 Porque si te llegabas a gastar varios miles de dólares para hacer una corrida y resulta que después necesitabas un número que no estaba entre los papeles que el aparato había impreso, tenías que volver a pagar.
 
-Volvamos "back to the future". Resulta que hoy, la hora de ingeniería es mucho más cara que la hora de CPU.
+Volvamos "back to the future". Resulta que hoy, la hora de CPU es mucho (muchísimo) más barata que la hora de ingeniería.
 No tiene ningún sentido hacer que el ingeniero tenga que buscar la aguja que necesita en un pajar de números innecesarios.
 
 [decir el siguiente párrafo mientras busco los libros]
@@ -292,7 +294,7 @@ Seguramente conocen ustedes este benchmark 3D.
 
 El enunciado indica correctamente que la geometría tiene simetría un cuarto.
 Como es para PWRs, se puede mallar perfectamente con "cuadraditos".
-Pero si miramos detenidamente, resulta que tiene simetría un _octavo_, y no solamente un cuarto.
+Pero si prestamos atención, resulta que tiene simetría un _octavo_, y no solamente un cuarto.
 
 ---
 
@@ -350,6 +352,8 @@ Como ustedes sabrán, yo
  * trackeo todo con Git y
  * ---cuando me dejan---publico en Github con licencia Creative Commons.
 
+Ahí en ese link están los fuentes de la tesis y de estos slides.
+ 
 --- 
 
 [rápido]
@@ -434,13 +438,13 @@ Empecemos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet
 
 Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera.
 
-## Elementos finitos
+## Elementos
 
-Y después unimos los nodos con elementos.
+Y después unimos los nodos para formar elementos.
 
 ## Funciones
 
-Entre los nodos y los elementos podemos tener funciones de forma que valen uno en cada nodo y cero en el resto, incluyendo la frontera de Dirichlet.
+Entre los nodos y los elementos podemos fabricar funciones de forma que valen uno en cada nodo y cero en el resto, incluyendo la frontera de Dirichlet.
 
 
 
@@ -448,6 +452,7 @@ Entre los nodos y los elementos podemos tener funciones de forma que valen uno e
 ## $K \cdot u = b$
 
 Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "sparse" cuyo tamaño es igual al número de nodos.
+
 Las contribuciones del elemento $i$-ésimo tienen esta pinta.
 
 Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
@@ -700,7 +705,7 @@ Me hace doler los ojos... como cuando voy a la cancha a ver a Atlético.
 
 Lo primero que pide el SRS es que la herramienta desarrollada sea abierta.
 
-Esto es como predicar para el coro así que resumo la discusión sobre licenciamiento de software:
+Esto es como predicar para el coro así que resumo la discusión sobre licenciamiento de software en tres puntos:
 
  1. "Free" no quiere decir "gratis".
  
@@ -738,7 +743,7 @@ Hasta que decidí empezar de cero, como Ken.
 
 ---
 
-El scope actual es que FeenoX puede resolver estos problemas, que están en sección de ejemplos de la página de FeenoX.
+El scope actual es que FeenoX puede resolver estos problemas, que están en la sección de ejemplos de la página de FeenoX.
 Pero hay un mecanismo de extensibilidad con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento.
 
 
@@ -754,7 +759,7 @@ Podemos resolver laberintos. Vean el tutorial 120 para saber cómo.
 ---
 
 O flujo potencial alrededor de un perfil alar.
-Tomen la clase de fluidos para saber cómo.
+Tomen la clase de fluidos del próximo semestre para saber cómo.
 
 
 ## Unix
@@ -767,7 +772,7 @@ Too long; didn't read it: la filosofía Unix es "hacé un programa que haga sola
 
 Como usualmente hay que hacer varias cosas, existen los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
 
-Esto lo estuvo viendo Enzo de primera mano hace un par de semanas con el perfil alar ese que mostré antes.
+Esto lo estuvo viendo Enzo de primera mano hace un par de semanas con el problemas del perfil alar.
 
 ---
 
@@ -850,7 +855,7 @@ Es mobile-friendly así que pueden entrar ahora con el celular.
 
 Déjenme ilustrar uno de los puntos más importantes de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada, que aprovecho para presentar: para elasticidad lineal tienen esta pinta.
 
-Fíjense que todo lo que aparece en la formulación "humana" aparece en el archivo de entrada.
+Fíjense que el archivo de entrada tiene lo que aparece en la formulación "humana".
 ¡Y nada más!
 
 Este slide también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
@@ -893,7 +898,6 @@ Así que FeenoX está escrito en C que, entre paréntesis y sesgo de confirmaci�
 
 Muy bien, veamos ahora cómo podemos hacer para construir la matriz global de rigidez y el vector de fuentes.
 Barremos los elementos y acumulamos las contribuciones elementales sobre los puntos de Gauss.
-En este caso para Poisson son las $B$ transpuesta $k$ $B$ para la matriz de rigidez y $H$ transpuesta por $f$ para las fuentes.
 
 ---
 
@@ -950,7 +954,7 @@ Siguiendo la filosofía Unix, este input es un archivo de texto plano con palabr
  4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input (como lo que hablamos hace un rato del "nada más")
  5. seguir la regla de que "problemas simples necesitan inputs simples": me vuelve loco que el "hello world" de la mayoría de los solvers sea increiblemente complicado...
  
-y algunos puntos más que discutimos en el SDS.
+Bueno y algunos puntos más que discutimos en el SDS.
 
 Estas palabras clave pueden ser definiciones o instrucciones.
 
@@ -959,7 +963,7 @@ Estas palabras clave pueden ser definiciones o instrucciones.
 ## Conducción de calor 1D
 
 Ejemplo.
-Problema simple, input simple.
+Problema simple, input simple. Instrucciones y definiciones.
 
  * Línea 1, definición (`PROBLEM` es sustantivo): queremos conducción 1D.
  * Línea 2, instrucción: leeme la malla. ¿Qué malla?
@@ -968,7 +972,7 @@ Problema simple, input simple.
 
 Bueno, ésta, que tiene dos puntos físicos llamados "left" y "right".
  
- * Línea 3, definimos una variable `k` y le asignamos el valor uno. En problema `thermal`, si existe la variable `k` indica conductividad uniforme.
+ * Línea 3, definimos una variable `k` y le asignamos el valor uno. Una variable `k` indica conductividad uniforme.
  * Líneas 4 y 5, definimos boundary conditions (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
  * Línea 6: instrucción, por favor resolvé el problema
  * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
@@ -990,7 +994,7 @@ Ahora el resultado ya no es 0.5 sino eso que está ahí.
 
 ¿Y si $k$ depende de la temperatura?
 Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
-Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad depende de $T$, que es la solución, tiene que resolver un problema no lineal.
+Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad depende de $T$, tiene que resolver un problema no lineal.
 Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
 
@@ -1011,13 +1015,13 @@ Debería ser chiquita pero desconozco la exactitud de la referencia.
 Habiendo entendido tema input, volvamos ahora al bloque de ifs feo.
 Habíamos dicho que lo generaba un script al que no le importaba la estética.
 Bueno, ese script es parte del bootstrapping del repositorio, en este caso `autogen`.
-Ese script parsea los subdirectorios dentro de `src/pdes`. 
-La idea es que cada ecuación tenga un subdirectorio con el nombre del `PROBLEM` a resolver.
 
-Cada subdirectorio tiene que tener ciertos archivos en C con ciertas funciones con un cierto nombre que este `autogen` pueda parsear. Este es el script de Bash que genera el bloque feo de ifs.
+Esencialmente la idea es que haya un directorio dentro de `src/pdes` con el nombre del `PROBLEM` a resolver.
+Ahí debe haber ciertos archivos fuente con ciertas reglas para que `autogen` los pueda parser.
+Estos fuentes son los que van a proveerle al framework general todo lo que depende de la ecuación particular.
 
-Después si tienen tiempo y ganas les muestro cómo funciona.
 Podemos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
+Después si tienen tiempo y ganas les muestro cómo funciona.
 
 Está claro que no ganamos mucho borrando. ¡Es mucho más interesante agregar!
 Este es el mecanismo de extensibilidad que mencioné antes.
@@ -1025,7 +1029,7 @@ En los trabajos futuros hay un bullet que es agregar nuevas ecuaciones: electrom
 
 ## Entry points
 
-Cada subdirectorio debería entonces proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
+Cada `pde` proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
 
 Alguna relacionada al parser, para leer opciones al keyword `PROBLEM` y para interpretar las condiciones de contorno.
 
@@ -1040,7 +1044,7 @@ Una que resuelve el problema usando PETSc. Este entry point define esencialmente
  * un problema de autovalores o
  * uno transitorio.
 
-En el caso `thermal`, eso lo deciden las funciones de inicialización dependiendo de si la conductividad depende de la temperatura o no. En neutrónica, si es un problema con fuentes o de criticidad.
+Por ejemplo, si es un problema con fuentes o de criticidad.
 
 Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
 
