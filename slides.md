@@ -708,15 +708,19 @@ $$
 \end{aligned}
 $$
 
-## Discretización en espacio: elementos finitos
+## 
 
 ![](dominio-pelado.svg)
 
-## Discretización en espacio: elementos finitos
+## 
 
 ![](dominio-solo-nodos.svg)
 
-## Discretización en espacio: elementos finitos
+## 
+
+![](dominio-nodos-elementos.svg)
+
+## 
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -737,12 +741,8 @@ $$
 ::::::::::::::
 
 
-## Discretización en espacio: elementos finitos
 
-![](dominio-nodos-elementos.svg)
-
-
-## Discretización en espacio: elementos finitos
+## 
 
 $$
 \mat{K} \cdot \vec{u} = \vec{b}
@@ -1247,7 +1247,7 @@ PayPal only just dodged this bullet. After they merged with X.com, the new CEO w
  
  * ... `src/pdes`
  
-\bigskip
+\vspace{1.5cm}
 
 (FeenoX needs a logo)
  
@@ -1261,7 +1261,7 @@ PayPal only just dodged this bullet. After they merged with X.com, the new CEO w
 
 \centering \only<1>{\includegraphics[height=7cm]{maze-linkedin-blank.png}}\only<2->{\includegraphics[height=7cm]{maze-linkedin.png}}
 
-4,498 likes, 355 comments & 143 reposts
+4,488 likes, 355 comments & 143 reposts
 
 [seamplex.com/feenox/doc/tutorials/120-mazes](https://seamplex.com/feenox/doc/tutorials/120-mazes/)
 :::
@@ -2060,6 +2060,8 @@ PRINTF "  wall = %.1f sec" clock()-t0
 
 ![](iaea-3dpwr-onshape.png){width=100%}
 
+\centering \tiny <https://cad.onshape.com/documents/2b75f9feaefe2c44a9a88391/w/2021e5b8f94e8bdd1f6f4302/e/d155699bda2fae330aeb2e3d>
+
 ## 
 
 :::::::::::::: {.columns}
@@ -2125,6 +2127,8 @@ $
 
 ![](two-zone-slab-error.svg)
 
+
+. . .
 
 \vspace{1cm}
 

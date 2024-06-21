@@ -432,16 +432,16 @@ Empecemos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet
 
 ## Nodos
 
-Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera de Neumann, pero _no_ sobre la frontera de Dirichlet.
-
-## Funciones
-
-Después buscamos tantas funciones de forma como nodos hayamos puesto de manera tal de que cada una valga uno en un nodo particular y cero el en resto. Y además, que todas satisfagan las condiciones de Dirichlet---o sea se tienen que anular en $\Gamma_D$.
+Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera.
 
 ## Elementos finitos
 
-Para facilitar la programación, ponemos nodos también sobre la frontera de Dirichlet e identificamos los triángulos  que cubren el dominio $U$.
-Llamamos a cada uno de éstos un "elemento", y escribimos las integrales de la formulación débil como sumas de contribuciones elementales.
+Y después unimos los nodos con elementos.
+
+## Funciones
+
+Entre los nodos y los elementos podemos tener funciones de forma que valen uno en cada nodo y cero en el resto, incluyendo la frontera de Dirichlet.
+
 
 
 
@@ -738,7 +738,7 @@ Hasta que decidí empezar de cero, como Ken.
 
 ---
 
-El scope actual es que FeenoX puede resolver estos problemas.
+El scope actual es que FeenoX puede resolver estos problemas, que están en sección de ejemplos de la página de FeenoX.
 Pero hay un mecanismo de extensibilidad con el que se pueden agregar otras ecuaciones, que voy a explicar en detalle en un momento.
 
 
@@ -749,11 +749,12 @@ Por ejemplo, la ecuación de Laplace sirve tanto para un barrido como para un fr
 
 ---
 
-Podemos resolver laberintos...
+Podemos resolver laberintos. Vean el tutorial 120 para saber cómo.
 
 ---
 
-o flujo potencial alrededor de un perfil alar.
+O flujo potencial alrededor de un perfil alar.
+Tomen la clase de fluidos para saber cómo.
 
 
 ## Unix
@@ -1108,6 +1109,7 @@ Todos, excepto el último, requieren al menos una de las características distin
 
 Este es el problema que ya mostramos del benchmark de IAEA.
 En este caso la geometría viene de un CAD modelado en Onshape, 100% web y cloud. El de los 480 millones de Jon sin hache.
+Ahí está el link, es un documento público.
 
 ## Malla
 
@@ -1135,6 +1137,8 @@ Como este problema tiene solución analítica (y FeenoX la puede evaluar) entonc
 
  1. poniendo un nodo exactamente en $x=a$
  2. necesitando una celda amarilla con sección eficaz ficticia
+ 
+--- 
  
 Como dice Richard Stallman, la mejor manera de resolver un problema es evitándolo.
 
