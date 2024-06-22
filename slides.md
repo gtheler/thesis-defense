@@ -1475,9 +1475,6 @@ $
    - Evitar tener que compilar
    - Permitir re-compilar (con otros flags, otros compiladores, etc.)
    - Dockerizable (nativo Linux)
-   - Thin remote clients
-   - Rest APIs
-   - Autenticación
    
  * Escalabilidad
    - Multi-node MPI
@@ -1485,6 +1482,11 @@ $
    - Queue-managers
    - Reportes de estado
    - Signal handlers
+   
+ * Accesibilidad
+   - Thin remote clients
+   - Rest APIs
+   - Autenticación 
 
 :::
 ::::::::::::::

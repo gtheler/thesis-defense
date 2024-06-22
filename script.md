@@ -453,9 +453,10 @@ Entre los nodos y los elementos podemos fabricar funciones de forma que valen un
 
 Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $K$ por $u$ igual a $b$, donde $K$ es una matriz "sparse" cuyo tamaño es igual al número de nodos.
 
-Las contribuciones del elemento $i$-ésimo tienen esta pinta.
+Las contribuciones del elemento $i$-ésimo a las integrales de la formulación débil tienen esta pinta.
 
-Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$ y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho.
+Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$: $B$ transpuesto $k$ B.
+Y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho: $h$ por $f$.
 
 ---
 
@@ -501,7 +502,7 @@ Los detalles en el capítulo tres.
 $L$ es leakage, $A$ es absorción y $F$ es fisión. Abajo, $s$ son las fuentes.
 
 Fíjense que la forma es parecida al caso de Poisson.
-Medio que es esperable, ¿no? Porque el operador $a$ es elíptico en los dos casos aunque ahora no es simétrico y puede llegar a no ser coercitivo.
+Medio que es esperable, ¿no? Porque las dos ecuaciones son elípticas, aunque en disfusión el operador deja de ser simétrico.
 
 
 ## Ordenadas discretas
@@ -566,7 +567,7 @@ Bueno, cuando quieran, levanten la mano y arriesguen una respuesta.
 Pero esperen, porque no les voy a contar la historia de esos dos muchachos, sino de este otro.
 Acá aparece en un documental de Discovery explicando cómo hacía para contar cartas en el Blackjack cuando era estudiante de ingeniería mecánica en el MIT.
 
-Cuestión que en Las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D: Solidworks.
+Cuestión que en Las Vegas ganó un palo y con esa guita puso una startup de software de CAD 3D.
 Hasta ese momento---principios de los 90---todos los programas CAD funcionaban en el Unix de los muchachos.
 
 ## Solidworks
@@ -577,23 +578,25 @@ En el 97, Dassault compró Solidworks por 300 millones de dólares y Jon se qued
 
 ## Dot-com bubble & Y Combinator
 
-Un par de años después de la burbuja de las punto com y durante uno de los primeros batches de Y Combinator, a Paul Graham le preguntaron por qué fallaban las start ups. Al tiempo escribió un "listicle".
+Nuevo mileno. Burbuja punto com.
+En una conferencia le preguntan a Paul Graham por qué fallan las startups.
+No sabe qué contestar así que se pone a investigar y escribe este ensayo en forma de "listicle".
 En el punto 7, dice Graham:
 
 "Muchas startups se suicidaron al decidir hacer aplicaciones basadas en servers sobre Windows".
 
-"Hotmail siguió usando FreeBSD por años, aún después de ser comprada por Microsoft".
+"Hotmail siguió usando FreeBSD, aún después de ser comprada por Microsoft".
 
 Agrega:
 
 "el co-fundador de PayPal mostró que su software escalaba el 1% en Windows comparado con Unix."
 
-Paul Graham.
+Paul Graham. 2006.
 
 ## Onshape
 
 Año 2011. Jon se da cuenta de que la tecnología está cambiando.
-Renuncia a Solidworks y pone otra startup de CAD pero ahora, "en la nube y directamente desde el browser".
+Renuncia a Solidworks y funda otra startup de CAD pero ahora, "en la nube y directamente desde el browser".
 Bueno, en 2019 vendió Onshape por 480 millones.
 
 ## Nerds
@@ -617,7 +620,7 @@ Cierro concurso con ayudita.
 [ver si hace falta]
 
 Primer paréntesis, Dennis Ritchie (el de la derecha) se murió en 2011 la misma semana que Steve Jobs.
-Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres en su columna de La  Nación.
+Así que su muerte pasó casi desapercibida. El único que dijo algo fue Ariel Torres, en la misma columna de La  Nación que publicó la historia de Ken hace un mes.
 
 [chiste]
 
@@ -646,7 +649,7 @@ Me permitió incluso poder manejar mis tiempos para ir a la playa con mi familia
 
 ## Do it for him
 
-Pero bueno, a veces las cosas no salen como uno las planea.
+Pero bueno, Taleb nos enseñó que los cisnes negros _existen_.
 
 ## 
 
@@ -686,8 +689,8 @@ Déjenme ver si me sale ilustrar un punto sobre su diseño.
 
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
 En el lado más "fácil" (y "horrendo") del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
-Del otro lado, algo como LaTeX o incluso TeX (lo que inventó Donald Knuth, el del libro beige).
-En el medio, Markdown---una de las muchas contribuciones del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
+Del otro lado, algo como LaTeX o directamente TeX (lo que inventó Donald Knuth, el del libro beige).
+En el medio, Markdown---una de las tantas contribuciones del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
 
 
 ## Unfair advantage: FeenoX
@@ -735,7 +738,7 @@ Como eso andaba más o menos bien, me pasó lo que a los gerentes de la Bell.
 
 ---
 
-Empecé a agregar complejidad, features innecesarias...
+Empecé a agregar complejidad, features innecesarias... plugins! (ese fue el chaboncito)
 
 ---
 
@@ -749,8 +752,7 @@ Pero hay un mecanismo de extensibilidad con el que se pueden agregar otras ecuac
 
 ## Mazes & wings
 
-De todas maneras, podemos hacer cosas divertidas.
-Por ejemplo, la ecuación de Laplace sirve tanto para un barrido como para un fregado.
+La ecuación de Laplace sirve tanto para un barrido como para un fregado.
 
 ---
 
@@ -759,7 +761,7 @@ Podemos resolver laberintos. Vean el tutorial 120 para saber cómo.
 ---
 
 O flujo potencial alrededor de un perfil alar.
-Tomen la clase de fluidos del próximo semestre para saber cómo.
+Tomen el curso de fluidos del próximo semestre para saber cómo.
 
 
 ## Unix
@@ -789,7 +791,8 @@ Todas tienen algún grado de impacto en el diseño o en la implementación de Fe
 Un par de comentarios.
 
 FeenoX se enfoca solamente en resolver "bien" ecuaciones en derivadas parciales.
-Tiene que poder "charlar" con otras herramientas del palo, en particular malladores y post-procesadores.
+Tiene que poder "componerse" con malladores y post-procesadores.
+
 Y se tiene que llevar bien con el concepto de "simulación programática", cuyo nombre no me gusta pero es como se lo llama en la industria.
 A mí me gusta más decir las cosas con el sufijo "friendly", así que para mí sería "script friendly."
 
@@ -842,7 +845,7 @@ Para que tengan una idea, esta es una cita de un gerente durante una presentaci�
 Primero hay un tema de entrada y salida.
 Central para separar front de back. El objetivo es que FeenoX pueda funcionar con diferentes front ends: desktop, web, realidad virtual, un holograma láser en 3D, no sé.
 
-Después hay temas de deployment y escalabilidad.
+Después hay temas de deployment, escalabilidad y accesibilidad.
 
 Si el software no tiene todos estos ítems en cuenta en su base de diseño, después---como en cualquier proyecto de ingeniería---es muy complicado cambiarlo para acomodar lo que falta.
 
@@ -850,16 +853,6 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 
 Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento ese que nunca funcionó comercialmente.
 Es mobile-friendly así que pueden entrar ahora con el celular.
-
-## LE10
-
-Déjenme ilustrar uno de los puntos más importantes de la base de diseño FeenoX, que es que debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada, que aprovecho para presentar: para elasticidad lineal tienen esta pinta.
-
-Fíjense que el archivo de entrada tiene lo que aparece en la formulación "humana".
-¡Y nada más!
-
-Este slide también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
-Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 
 ## Arquitectura
@@ -950,8 +943,8 @@ Siguiendo la filosofía Unix, este input es un archivo de texto plano con palabr
 
  1. definir completamente el problema para que no sea necesaria ninguna intervención humana una vez lanzado el programa
  2. ser lo más auto-descriptivo y compacto posible: están prohibidos los argumentos posicionales
- 3. permitir expresiones algebraicas en cada lugar donde se espere un parámetro numérico: ahora ilustramos este punto
- 4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input (como lo que hablamos hace un rato del "nada más")
+ 3. permitir expresiones algebraicas en cada lugar donde se espere un parámetro numérico
+ 4. tratar de mantener una correspondencia entre la formulación "humana" del problema y el input
  5. seguir la regla de que "problemas simples necesitan inputs simples": me vuelve loco que el "hello world" de la mayoría de los solvers sea increiblemente complicado...
  
 Bueno y algunos puntos más que discutimos en el SDS.
@@ -972,7 +965,7 @@ Problema simple, input simple. Instrucciones y definiciones.
 
 Bueno, ésta, que tiene dos puntos físicos llamados "left" y "right".
  
- * Línea 3, definimos una variable `k` y le asignamos el valor uno. Una variable `k` indica conductividad uniforme.
+ * Línea 3, definimos una variable `k` y le asignamos el valor uno. Esto indica conductividad uniforme.
  * Líneas 4 y 5, definimos boundary conditions (sustantivo) en left $T$ igual a cero y en right $T$ igual a 1.
  * Línea 6: instrucción, por favor resolvé el problema
  * Línea 7: instrucción imprimí la solución $T$ evaluada en $x=1/2$
@@ -997,6 +990,17 @@ Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
 Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad depende de $T$, tiene que resolver un problema no lineal.
 Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
+## LE10
+
+Debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
+Para elasticidad lineal en el editor Kate, tienen esta pinta.
+
+Fíjense que el archivo de entrada tiene lo que aparece en la formulación "humana".
+¡Y nada más!
+
+Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
+¿Recuerdan la tablita del 65 y el ingeniero que buscaba una aguja en un pajar, no?
+Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 ## Reed
 
