@@ -2628,10 +2628,10 @@ que **escribir** manuales”
  * Live demos
  * Cuadraturas de nivel simétrico
  * Creative Commons
+ * Experimento de los monos
 :::
 ::: {.column width="45%"}
 
- * Experimento de los monos
  * PETSc meetings
  * Markdown
  * Jon @ MIT
@@ -2639,6 +2639,9 @@ que **escribir** manuales”
  * Segundo orden
  * Mallas i y ii
  * Homer & mazes
+ * Amazon: de libros a CPU
+ * Newton-Raphson
+ 
 :::
 :::::::::::::: 
  
@@ -2981,3 +2984,8 @@ It was developed in 2004 by John Gruber in collaboration with Aaron Swartz. Grub
 
  * <https://www.youtube.com/watch?v=BT2fteBsL0s>
  * <https://www.seamplex.com/feenox/doc/tutorials/120-mazes/>
+
+## Amazon: de libros a CPU
+
+
+## Newton-Raphson
