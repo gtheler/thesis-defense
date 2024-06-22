@@ -454,8 +454,8 @@ Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $
 
 Las contribuciones del elemento $i$-ésimo a las integrales de la formulación débil tienen esta pinta.
 
-Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$: $B$ transpuesto $k$ B.
-Y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho: $h$ por $f$.
+Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$: $B$ transpuesta $k$ B.
+Y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho: $H$ transpuesta por $f$.
 
 ---
 
@@ -479,13 +479,7 @@ Primero, que podemos usar elementos de segundo orden. Si quieren después profun
 Segundo, nos quedaron pendientes las condiciones de Dirichlet no homogéneas.
 Este es el "casi" nada nuevo.
 Nunca pude encontrar una buena justificación del truco usual de poner un uno en la diagonal de la matriz de rigidez y el valor no homogéneo en la fila correspondiente del vector $b$.
-De hecho consulté a colegas del palo de los elementos finitos y nadie me pudo cantar la posta.
-Todos usaban el truco sabiendo que funciona pero habiendo olvidado el "por qué"...
-
-[chiste]
-
-como en el experimento de los monos.
-De hecho con Enzo, el año pasado intercambiamos unos emails sobre este asunto.
+Me tomé el tiempo para hacer las cuentas.
 
 Ahora en stack exchange está mi justificación matemática, que es la parte "nueva" del capítulo.
 De hecho mi respuesta es la segunda más votada (la primera es de Jed Brown).
@@ -555,7 +549,7 @@ Dejaron lo que servía, tiraron a la basura el resto y diseñaron e implementaro
 
 
 Abro un concurso: una taza con el escudo de Atlético de Rafaela para cada una de las dos primeras personas que digan cómo se llaman cada uno los dos de la foto.
-Hint: hace un par de mese esta foto apareció en la columna de tecnología de La Nación con la historia de uno de estos dos.
+Hint: hace un par de meses esta foto apareció en la columna de tecnología de La Nación con la historia de uno de estos dos.
 
 ¿Alguien?
 
@@ -639,7 +633,7 @@ Era mi época de emprendedor, de IB50k...
 
 ---
 
-Si bien mi emprendimiento nunca funcionó comercialmente, me permitió hacer consultoría por mi cuenta, con mi propio solver, en temas "divertidos" por ejemplo mecánica de piping para Embalse...
+Si bien mi emprendimiento nunca caminó comercialmente, me permitió hacer consultoría por mi cuenta, con mi propio solver, en temas "divertidos" por ejemplo mecánica de piping para Embalse...
 
 ---
 
@@ -850,7 +844,7 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 
 ## CAEplex
 
-Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento ese que nunca funcionó comercialmente.
+Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento ese que nunca caminó.
 Es mobile-friendly así que pueden entrar ahora con el celular.
 
 
@@ -1002,7 +996,7 @@ Este caso también ilustra otro punto importante. La salida es lo que uno le pid
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
-Más aún, si la salida hubiese sido un desplazamiento entonces FeenoX ni huiese calculado las tensiones.
+Más aún, si la salida hubiese sido un desplazamiento entonces FeenoX ni hubiese calculado las tensiones porque sabe que nadie las usa.
 
 ## Reed
 
@@ -1111,7 +1105,7 @@ A partir de ese CAD hacemos una malla 3D y corremos FeenoX.
 
 ## Meld
 
-Este es un dif de las salidas del caso original con simetría un cuarto y con simetría un octavo.
+Este es un dif de las salidas del caso original con simetría un cuarto a la izquierda y con simetría un octavo a la derecha.
 Tanto la memoria como el tiempo de ejecución bajan a la mitad.
 
 ## MPI
@@ -1233,7 +1227,7 @@ Como dijo una vez un director del IB en una reunión del Consejo Académico cuan
  
 ## Tweets 
 
-Si ustedes tuviesen que tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que lo hagan sobre alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
+Si ustedes tuviesen que tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que lo hicieran sobre alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
 
 En particular, debería sobresalir la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
