@@ -1002,6 +1002,9 @@ Este caso también ilustra otro punto importante. La salida es lo que uno le pid
 ¿Recuerdan la tablita del 65 y el ingeniero que buscaba una aguja en un pajar, no?
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
+La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
+Más aún, si la salida hubiese sido un desplazamiento entonces FeenoX ni huiese calculado las tensiones.
+
 ## Reed
 
 Pasemos a un problema de neutrones.
@@ -1022,9 +1025,9 @@ Bueno, ese script es parte del bootstrapping del repositorio, en este caso `auto
 
 Esencialmente la idea es que haya un directorio dentro de `src/pdes` con el nombre del `PROBLEM` a resolver.
 Ahí debe haber ciertos archivos fuente con ciertas reglas para que `autogen` los pueda parser.
-Estos fuentes son los que van a proveerle al framework general todo lo que depende de la ecuación particular.
+Estos fuentes tienen funciones tipo "punto de entrada" que le proveen al framework general todo lo que depende de la ecuación particular.
 
-Podemos remover un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
+Podemos borrar un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
 Después si tienen tiempo y ganas les muestro cómo funciona.
 
 Está claro que no ganamos mucho borrando. ¡Es mucho más interesante agregar!
@@ -1033,24 +1036,21 @@ En los trabajos futuros hay un bullet que es agregar nuevas ecuaciones: electrom
 
 ## Entry points
 
-Cada `pde` proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
+Cada `pde` debe proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
 
-Alguna relacionada al parser, para leer opciones al keyword `PROBLEM` y para interpretar las condiciones de contorno.
+ * Algunas para leer opciones al keyword `PROBLEM` y para interpretar las condiciones de contorno.
+ * Otras para inicializar.
+ * Las centrales para evaluar las llaves en cada punto de Gauss.
+ * Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver
 
-Otras para inicializar.
+    - un problema lineal,
+    - uno no lineal,
+    - uno transitorio, o
+    - un problema de autovalores.
 
-Las centrales para evaluar las llaves en cada punto de Gauss.
-
-Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver
-
- * un problema lineal,
- * uno no lineal,
- * un problema de autovalores o
- * uno transitorio.
-
-Por ejemplo, si es un problema con fuentes o de criticidad.
-
-Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
+   Por ejemplo, si es conducción lineal o no lineal.
+   O si es un problema con fuentes o de criticidad.
+ * Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
 
 
 ## Expressions
@@ -1069,19 +1069,6 @@ Después restamos una de otra, imprimimos y ya.
 Este "feature" es especialmente importante para hacer verificación de código. En la reunión Garcar del año pasado hice una presentación sobre verificación con el método de MMS.
 De hecho es uno de los resultados del capítulo 5, pero necesitaríamos 20 minutos para discutirla, que es lo que dura esa charla.
 Dejo el link al video.
-
-
-## No print no shirt
-
-Volvamos a otra de las reglas centrales de Unix: la regla del silencio.
-¿Recuerdan al ingeniero que tenía que buscar una aguja en un pajar, no?
-En FeenoX, sin `PRINT` no hay salida.
-Le podemos pedir al software que haga un montón de cosas re complicadas. 
-Pero sin el bloque de abajo, no hay salida ni por terminal ni por archivo.
-La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
-
-Es más, algunas cosas ni las calcularía. Por ejemplo, si no hay ninguna expresión que involucre las corrientes $J$, entonces FeenoX ni se molesta en calcularlas porque sabe que no son necesarias.
-
 
 
 

@@ -1515,10 +1515,6 @@ $
 :::
 ::::::::::::::
 
- 
-## 
-
-\centering ![](nafems-le10-problem-input.svg)
 
  
 ## Arquitectura
@@ -1719,6 +1715,9 @@ $
 :::
 ::::::::::::::
 
+## 
+
+\centering ![](nafems-le10-problem-input.svg)
 
 ## El problema de Reed
 
@@ -1943,36 +1942,6 @@ $
 
 :::
 ::::::::::::::
-
-## Unix rule of silence: no `PRINT` no shirt
-
-```feenox-tiny
-t0 = clock() # start measuring wall time
-PROBLEM neutron_diffusion 3D GROUPS 2
-
-DEFAULT_ARGUMENT_VALUE 1 quarter
-READ_MESH iaea-3dpwr-$1.msh
-
-MATERIAL fuel1     D1=1.5 D2=0.4 Sigma_s1.2=0.02 Sigma_a1=0.01 Sigma_a2=0.08  nuSigma_f2=0.135
-MATERIAL fuel2     D1=1.5 D2=0.4 Sigma_s1.2=0.02 Sigma_a1=0.01 Sigma_a2=0.085 nuSigma_f2=0.135
-MATERIAL fuel2rod  D1=1.5 D2=0.4 Sigma_s1.2=0.02 Sigma_a1=0.01 Sigma_a2=0.13  nuSigma_f2=0.135
-MATERIAL reflector D1=2.0 D2=0.3 Sigma_s1.2=0.04 Sigma_a1=0    Sigma_a2=0.01  nuSigma_f2=0
-MATERIAL reflrod   D1=2.0 D2=0.3 Sigma_s1.2=0.04 Sigma_a1=0    Sigma_a2=0.055 nuSigma_f2=0
-  
-BC vacuum   vacuum=0.4692
-BC mirror   mirror
-
-SOLVE_PROBLEM
-
-# --- print results   ----------------------------------------------------
-WRITE_RESULTS FORMAT vtk
-PRINTF "  keff = %.5f" keff
-PRINTF " nodes = %g"   nodes
-PRINTF "memory = %.1f Gb" memory()
-PRINTF "  wall = %.1f sec" clock()-t0
-# ------------------------------------------------------------------------
-```
-
 
 
 ## Temas fuera de programa
