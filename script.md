@@ -267,19 +267,18 @@ Tenemos limitaciones por
  
 ---
 
-Entonces, ¿qué proponemos? De atrás para adelante: primero usar S$_N$ en lugar de difusión.
-El problema es que S$_N$ escala muy rápido, especialmente en memoria. Así que necesitamos algo
+Entonces, ¿qué proponemos? De atrás para adelante:
 
- * paralelizable,
- * flexible y
- * extensible.
+ * Primero, usar S$_N$ en lugar de difusión. El problema es que S$_N$ escala muy rápido, especialmente en memoria. Así que necesitamos algo
+ 
+     * paralelizable,
+     * flexible y
+     * extensible.
 
 ---
 
-Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
-
-Para el punto uno, tenemos que re-pensar el esquema de condensación de secciones eficaces.
-Para eso necesitamos flexibilidad en la entrada y extensibilidad en los modelos.
+ * Para que sea paralelizable, necesitamos mallas no estructuradas, que a su vez le pega al punto dos.
+ * Para el punto uno, tenemos que re-pensar el esquema de condensación de secciones eficaces. Para eso necesitamos flexibilidad en la entrada y extensibilidad en los modelos.
 
 [pausa]
 
