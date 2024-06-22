@@ -2571,6 +2571,77 @@ que **escribir** manuales”
 
 # Apéndices
 
+## Temas fuera de programa
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+ * 4.2.2. Funciones ($\neq$ "tablas")
+    a. Definidas algebraicamente
+    b. Definidas por puntos
+       - sin topología
+       - con topología implítica
+       - con topología explícita
+ * 4.3.1. Licencia libre y abierta
+ * 4.3.2. Filosofía Unix
+ * 4.3.3. Simulación programática
+ * 4.3.4. Performance
+ * 4.3.5. Escalabilidad
+ * 4.3.6. Ejecución en la nube
+ * 4.3.7. Extensibilidad
+ * 4.3.8. Integración continua
+ * 4.3.9. Documentación
+
+:::
+
+::: {.column width="55%"}
+
+### Otros temas para el Q&A
+
+ * Non-conformal mesh interpolation
+ * Secondary field recovery
+   - Gauss-to-node extrapolation
+   - Nodal averaging
+ * CPU $\leftrightarrow$ RAM
+ * Link-time optimization
+ * [github.com/seamplex/feenox-benchmark](https://github.com/seamplex/feenox-benchmark)
+ * Function pointers $\rightarrow$ preprocessor macros
+ * Iterative/Direct solvers
+ * 3D pre & post
+ * APIs for thin clients
+ * Web interfaces
+ 
+:::
+:::::::::::::: 
+
+
+## Índice de apéndices
+
+:::::::::::::: {.columns}
+::: {.column width="45%"}
+
+ * JOSS
+ * Dirichlet BCs
+ * English
+ * What does FeenoX mean?
+ * History
+ * Live demos
+ * Cuadraturas de nivel simétrico
+ * Creative Commons
+:::
+::: {.column width="45%"}
+
+ * Experimento de los monos
+ * PETSc meetings
+ * Markdown
+ * Jon @ MIT
+ * CAEplex
+ * Segundo orden
+ * Mallas i y ii
+ * Homer & mazes
+:::
+:::::::::::::: 
+ 
 ## JOSS
 
 ```bib
@@ -2595,18 +2666,111 @@ year = {2024}
 
 ## Dirichlet BCs
 
-\centering ![](stack.png){height=7cm}
+\centering ![](stack.png){height=6.5cm}
 
 <https://scicomp.stackexchange.com/questions/5072/how-to-properly-apply-non-homogeneous-dirichlet-boundary-conditions-with-fem>
 
 ## English vs. Castellano
 
-lista de palabras
-to be - ser/estar
+:::::::::::::: {.columns}
+::: {.column width="20%"}
 
-El título sería "A cloud-first approach for solving core-level neutron transport over unstructured grids"
+ * \footnotesize abstract syntax tree
+ * \footnotesize back end
+ * \footnotesize benchmark
+ * \footnotesize bootstrap
+ * \footnotesize buckling
+ * \footnotesize bug
+ * \footnotesize cache
+ * \footnotesize canvas
+ * \footnotesize cladding
+ * \footnotesize cloud-first
+ * \footnotesize cluster
+ * \footnotesize coarsening
+ * \footnotesize commit
+ * \footnotesize copyleft
+ * \footnotesize copyright
+ * \footnotesize default
+ 
+:::
+::: {.column width="20%"}
 
-núcleo / nuclei / core / kernel
+ * \footnotesize deployment
+ * \footnotesize desktop
+ * \footnotesize entry point
+ * \footnotesize features
+ * \footnotesize fillet
+ * \footnotesize flat address space
+ * \footnotesize framework
+ * \footnotesize front end
+ * \footnotesize glue layer
+ * \footnotesize hardware
+ * \footnotesize hash
+ * \footnotesize host
+ * \footnotesize initial guess
+ * \footnotesize inline
+ * \footnotesize instruction pointer
+
+:::
+::: {.column width="20%"}
+ 
+ 
+ * \footnotesize keyword
+ * \footnotesize kick-off meeting
+ * \footnotesize layout
+ * \footnotesize linked list
+ * \footnotesize link-time optimization
+ * \footnotesize log
+ * \footnotesize loops
+ * \footnotesize lumped capacitance
+ * \footnotesize make files
+ * \footnotesize markdown
+ * \footnotesize markup
+ * \footnotesize memory leak
+ * \footnotesize mouse
+ * \footnotesize multi-grid
+ * \footnotesize nice to haves
+ 
+:::
+::: {.column width="20%"}
+ 
+ 
+ * \footnotesize offload
+ * \footnotesize on premise
+ * \footnotesize operator overloading
+ * \footnotesize out-of-core memory
+ * \footnotesize overhead
+ * \footnotesize parse
+ * \footnotesize plain text
+ * \footnotesize prompt neutrons
+ * \footnotesize scattering
+ * \footnotesize script
+ * \footnotesize setup
+ * \footnotesize shared objects
+ * \footnotesize shear locking
+ * \footnotesize shuffling
+ * \footnotesize software
+ 
+:::
+::: {.column width="20%"}
+ 
+ * \footnotesize solver
+ * \footnotesize spanned
+ * \footnotesize startup
+ * \footnotesize streams
+ * \footnotesize system call
+ * \footnotesize system programming
+ * \footnotesize TCP socket
+ * \footnotesize template
+ * \footnotesize templated containers
+ * \footnotesize thin client
+ * \footnotesize unfair advantage
+ * \footnotesize wall time
+ * \footnotesize web
+ * \footnotesize wrapper
+ 
+:::
+::::::::::::::
 
 ## What does FeenoX mean?
 
@@ -2627,7 +2791,36 @@ But whatever works for you is fine.
 
 ## History
 
-## GDB session
+
+--- (Prof.) Open MATLAB.™  
+--- (Me) It's not installed here. I type `mathlab` and it does not work.  
+--- (Prof.) It's spelled `matlab`.  
+--- (Me) Ok, working. (A screen with blocks and lines connecting them appears)  
+--- (Me) What's this?   
+--- (Prof.) The point reactor equations.  
+--- (Me) It's not. These are the point reactor equations:
+
+$$
+\begin{cases}
+\dot{\phi}(t) = \displaystyle \frac{\rho(t) - \beta}{\Lambda} \cdot \phi(t) + \sum_{i=1}^{N} \lambda_i \cdot c_i \\
+\dot{c}_i(t)  = \displaystyle \frac{\beta_i}{\Lambda} \cdot \phi(t) - \lambda_i \cdot c_i
+\end{cases}
+$$
+
+--- (Me) And in any case, I'd write them like this in a computer:
+
+```
+phi_dot = (rho-Beta)/Lambda * phi + sum(lambda[i], c[i], i, 1, N)
+c_dot[i] = beta[i]/Lambda * phi - lambda[i]*c[i]
+```
+
+## Live demo
+
+ * (a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool)
+ * Bootstrap
+ * GDB sessions
+
+
 
 ## Cuadraturas de nivel simétrico
 
@@ -2721,252 +2914,70 @@ But whatever works for you is fine.
 
 
 
-## 
-
-  * (a cloud-first free no-fee no-X uniX-like finite-element(ish) computational engineering tool)
 
 ## Creative Commons
 
-mostrar qué es
+### CC BY 4.0
 
+This license enables users to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. CC BY includes the following elements:
+
+ * BY: credit must be given to the creator.
+
+You are free to:
+
+ * Share — copy and redistribute the material in any medium or format for any purpose, even commercially.
+ * Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+ 
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+ 
+ 
+<https://creativecommons.org/licenses/by/4.0/> 
+ 
 ## El experimento de los monos
 
+\centering ![](monos.png){height=7cm}
 
 ## PETSc meetings
 
-![](petsc-20-attendees-jeremy.jpg){height=4.5cm}
+\centering ![](petsc-20-attendees-jeremy.jpg){height=3.5cm}
 
-![](GroupPhoto.jpg){height=4.5cm}
-
-
-## Resultados @ Las Vegas
-
-## Qué es Markdown
+\centering ![](GroupPhoto.jpg){height=3.5cm}
 
 
-## Temas fuera de programa
+## Markdown
 
-:::::::::::::: {.columns}
-::: {.column width="45%"}
-
- * 4.2.2. Funciones ($\neq$ "tablas")
-    a. Definidas algebraicamente
-    b. Definidas por puntos
-       - sin topología
-       - con topología implítica
-       - con topología explícita
- * 4.3.1. Licencia libre y abierta
- * 4.3.2. Filosofía Unix
- * 4.3.3. Simulación programática
- * 4.3.4. Performance
- * 4.3.5. Escalabilidad
- * 4.3.6. Ejecución en la nube
- * 4.3.7. Extensibilidad
- * 4.3.8. Integración continua
- * 4.3.9. Documentación
-
-:::
-
-. . .
-
-::: {.column width="55%"}
-
-### Otros temas para el Q&A
-
- * Non-conformal mesh interpolation
- * Secondary field recovery
-   - Gauss-to-node extrapolation
-   - Nodal averaging
- * CPU $\leftrightarrow$ RAM
- * Link-time optimization
- * [github.com/seamplex/feenox-benchmark](https://github.com/seamplex/feenox-benchmark)
- * Function pointers $\rightarrow$ preprocessor macros
- * Iterative/Direct solvers
- * 3D pre & post
- * APIs for thin clients
- * Web interfaces
- 
-:::
-:::::::::::::: 
-
-## IAEA 3D @ Onshape
+ * <https://commonmark.org/help/>
 
 
-## Git
+### Who created Markdown?
 
-In case of fire, git commit, git push.
+It was developed in 2004 by John Gruber in collaboration with Aaron Swartz. Gruber wrote the first markdown-to-html converter in Perl, and it soon became widely used in websites. By 2014 there were dozens of implementations in many languages. 
 
+ * <https://en.wikipedia.org/wiki/Aaron_Swartz>
 
-
-
-## Definiciones e instrucciones
-
-:::::::::::::: {.columns}
-::: {.column width="45%"}
-
-
-```feenox
-INPUT_FILE surprise PATH nafems-le1%g.msh round(random(0,1))
-READ_MESH surprise
-PRINT cells
-```
-
-. . .
-
-```feenox
-IF abs(b)<1e-20 THEN
-  PRINT "division by zero"
-  ABORT
-ENDIF
-PRINT a/b
-```
-
-. . .
-
-```feenox
-a = 1
-f(x) = a*x^2
-PRINT f(1/2) f(1) f(2)
-a = 2
-PRINT f(1/2) f(1) f(2)
-```
-
-
-:::
-
-. . .
-
-::: {.column width="55%"}
-
-\vspace{0.25cm}
-
-### FeenoX tiene un _instruction pointer_!
-
-```c
-// sweep the first & last range but minding the conditional blocks
-instruction_t *ip = first;
-while (ip != last) {
-  feenox_call(ip->routine(ip->argument));
-  
-  if (feenox.next_instruction != NULL) {
-    ip = feenox.next_instruction;
-    feenox.next_instruction = NULL;
-  } else {
-    ip = ip->next;
-  }
-}
-```
-:::
-::::::::::::::
-
-## Entry points
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-
-```c-tiny
-// parse
-int (*parse_problem)(const char *token);
-int (*parse_write_results)(mesh_write_t *mesh_write, const char *token);
-int (*parse_bc)(bc_data_t *bc_data, const char *lhs, char *rhs);
-
-// init
-int (*init_before_run)(void);
-int (*setup_pc)(PC pc);
-int (*setup_ksp)(KSP ksp);
-int (*setup_eps)(EPS eps);
-int (*setup_ts)(TS ksp);
-
-// build
-int (*element_build_volumetric)(element_t *e);
-int (*element_build_volumetric_at_gauss)(element_t *e, unsigned int q);
-
-// solve
-int (*solve)(void);
-
-// post
-int (*solve_post)(void);
-int (*gradient_fill)(void);
-int (*gradient_nodal_properties)(element_t *e, mesh_t *mesh);
-int (*gradient_alloc_nodal_fluxes)(node_t *node);
-int (*gradient_add_elemental_contribution_to_node)(node_t *node, element_t *e, unsigned int j, double rel_weight);
-int (*gradient_fill_fluxes)(mesh_t *mesh, size_t j_global);
-```
-
-:::
-
-. . .
-
-::: {.column width="50%"}
-
-\bigskip
-
-```feenox 
-PROBLEM neutron_sn DIM 3 GROUPS 2 SN 8
-```
-
-. . .
-
-\bigskip
-
-```feenox-tiny
-PRINT "keff = " keff
-PRINT " rho = " (1-keff)/keff
-PRINT psi1.1(0,0,0) psi8.2(0,0,0)
-profile(x) = phi1(x,x,0)
-PRINT_FUNCTION profile phi1(x,0,0) MIN 0 MAX 20 NSTEPS 100
-```
-
-. . .
-
-\bigskip
-
-```c-tiny
-int Q = this->type->gauss[feenox.pde.mesh->integration].Q;
-for (unsigned int q = 0; q < Q; q++) {
-  feenox.pde.element_build_volumetric_at_gauss(this, q);
-}
-```
-
-:::
-::::::::::::::
 
 ## Jon @  MIT
 
-<https://www.youtube.com/watch?v=QflVqavHHM0>
+ * <https://www.youtube.com/watch?v=QflVqavHHM0>
 
-
-## Unix
-
-libraries paths
-
-C
-shell scripts
-eveything is a file
-syscalls
-I/O
-sockets
-telnet/ssh
-nfs
-dir structure
-docker
 
 ## CAEplex
 
-videos de Toto y de Onshape
+ * <https://www.youtube.com/watch?v=ylXAUAsfb5E>
+ * <https://www.youtube.com/watch?v=7KqiMbrSLDc>
+ * <https://www.youtube.com/watch?v=mOxQeIk2WJA>
+ * <https://www.youtube.com/watch?v=kD3tQdq17ZE>
+ * <https://www.youtube.com/watch?v=DOnoXo_MCZg>
+ * <https://www.youtube.com/watch?v=Q-lKK4A2OzA>
 
-
-## Elementos de segundo orden
-
-
-## Bootstrap
-
-mostrar autogen
-borrar thermal
 
 ## Mallas i y ii
 
 ![](two-zone-slab-55.svg){width=100%}
 
 ![](two-zone-slab-72.svg){width=100%}
+
+## Homero
+
+ * <https://www.youtube.com/watch?v=BT2fteBsL0s>
+ * <https://www.seamplex.com/feenox/doc/tutorials/120-mazes/>

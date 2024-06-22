@@ -470,7 +470,7 @@ Favor de notar que
 ## Extras
 
 Dos bonus tracks.
-Primero, que podemos usar elementos de segundo orden. Si quieren después profundizamos.
+Primero, que podemos usar elementos de segundo orden.
 
 ---
 
@@ -1242,7 +1242,7 @@ Seguramente ustedes se preguntan lo mismo que yo.
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
 
-Porque podría darse el caso de viniera un cisne negro que te sacara la pelota con la que estás acostumbrado a sacar laterales y te pusiera en su lugar la piedra de Sísifo.
+Porque podría darse el caso de viniera un cisne negro que te sacara la pelota con la que estás acostumbrado a tirar laterales y te pusiera en su lugar la piedra de Sísifo.
 Pero si vos le le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
