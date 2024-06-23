@@ -2628,11 +2628,10 @@ que **escribir** manuales”
  * Live demos
  * Cuadraturas de nivel simétrico
  * Creative Commons
- * Experimento de los monos
+ * PETSc meetings
 :::
 ::: {.column width="45%"}
 
- * PETSc meetings
  * Markdown
  * Jon @ MIT
  * CAEplex
@@ -2759,6 +2758,7 @@ year = {2024}
  
  * \footnotesize solver
  * \footnotesize spanned
+ * \footnotesize sparse
  * \footnotesize startup
  * \footnotesize streams
  * \footnotesize system call
@@ -2936,9 +2936,6 @@ The licensor cannot revoke these freedoms as long as you follow the license term
  
 <https://creativecommons.org/licenses/by/4.0/> 
  
-## El experimento de los monos
-
-\centering ![](monos.png){height=7cm}
 
 ## PETSc meetings
 

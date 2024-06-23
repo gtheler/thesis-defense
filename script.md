@@ -24,7 +24,7 @@ Eso quiere decir dos cosas.
  * una, que estoy viejo para estar haciendo esto, y
  * otra, que crecí en los noventa.
  
-Y---como sabrán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo daba vueltas alrededor de la televisión.
+Y---como sabrán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo giraba alrededor de la televisión.
 Y yo me la pasaba desperdiciando mi tiempo mirando televisión.
 
 ## Calabró
@@ -1149,12 +1149,7 @@ BTW, le debo al Chaco hacer lo mismo para estudiar la diferencia entre círculo 
 
 La solución de este caso cubo/esfera ilustra la filosofía Unix en acción.
 El input de FeenoX es realmente sencillo.
-La complejidad está puesta en un script de Python que usa el API de Gmsh para
-
- * hacer los fillets
- * fabricar la malla y
- * llamar paramétricamente a FeenoX.
-
+La complejidad está puesta en un script de Python que usa el API de Gmsh para hacer los fillets y fabricar la malla. Después llama paramétricamente a FeenoX.
 
 ## Tres pescaditos
 
@@ -1246,7 +1241,7 @@ Seguramente ustedes se preguntan lo mismo que yo.
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
 
-Porque podría darse el caso de viniera un cisne negro que te sacara la pelota con la que estás acostumbrado a tirar laterales y te pusiera en su lugar la piedra de Sísifo.
+Porque podría llegar a venir un cisne negro que te sacara la pelota con la que estás acostumbrado a tirar laterales y te pusiera en su lugar la piedra de Sísifo.
 Pero si vos le le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
@@ -1256,4 +1251,9 @@ y puedas terminar una tesis de doctorado a los 40...
 y puedas volver a la playa con tu familia.
 
 Muchas gracias.
+
+[pequeña pausa]
+
+## Blank
+
 
