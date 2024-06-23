@@ -524,7 +524,7 @@ Ya sé lo que están pensando. ¿Qué pasa en el caso no lineal?
 Bueno, hay que hacer Newton-Raphson y la cosa se complica un poco.
 Pero hoy no nos vamos a meter en eso, y damos por terminado el "how."
 
-## What
+# What
 
 Veamos ahora el "what," que tiene las contribuciones originales de la tesis.
 
@@ -1191,7 +1191,7 @@ Y finalmente otra ilustración de que al correr esto en paralelo lo que logramos
 
 [pausa]
 
-## Conclusiones
+# Conclusiones
 
 Conclusiones.
 Antes que nada, todo esto que presenté va en el sentido de "El método" de Descartes.
