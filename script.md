@@ -7,9 +7,9 @@ geometry:
 - paper=a4paper
 - left=2.5cm
 - right=2cm
-- bottom=3.5cm
+- bottom=3cm
 - foot=2cm
-- top=3.5cm
+- top=3cm
 - head=2cm
 mainfont: LinLibertineO
 sansfont: Carlito
@@ -21,7 +21,7 @@ monofont: DejaVuSansMono
 Acá donde me ven, tengo 40 años.
 Eso quiere decir dos cosas.
  
- * una, que estoy viejo para estar haciendo esto: a mi edad debería estar ahí sentado haciendo de jurado en lugar de estar acá parado, y
+ * una, que estoy viejo para estar haciendo esto, y
  * otra, que crecí en los noventa.
  
 Y---como sabrán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo daba vueltas alrededor de la televisión.
@@ -193,7 +193,7 @@ nos vamos a topar con un "stair-case effect" como este.
 
 ---
 
-Por otro lado, si usamos mallas no estructuradas, bueno vamos a tener algún error pero para la misma cantidad de celdas la discretización va a ser muy superior.
+Por otro lado, si usamos mallas no estructuradas, vamos a tener algo como esto.
 
 ## Celdas estructuradas...
 
@@ -204,7 +204,7 @@ Esto es Atucha I "vista" desde el código de cinética espacial ese del diagram
 [pausa]
 
 Es como "jugar a los Rastis", ¿no?
-O a los Legos para los millenials o centennials, no sé...
+O a los Legos para los más jóvenes.
 
 ## Celdas
 
@@ -336,7 +336,7 @@ Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin 
 Sigue, Séneca:
 
 "Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
-Mas cuando se ha producido su trasformación, entonces y sólo entonces, se convierten en fuerza y sangre."
+Mas cuando se ha producido su transformación, entonces y sólo entonces, se convierten en fuerza y sangre."
 
 ## Transporte y difusión de neutrones
 
@@ -435,7 +435,7 @@ Empecemos con Dirichlet homogénea y después les cuento cómo pasar a Dirichlet
 
 ## Nodos
 
-Siguiente paso, ponemos nodos sobre el seno del dominio y sobre la frontera.
+Siguiente paso: ponemos nodos.
 
 ## Elementos
 
@@ -443,7 +443,7 @@ Y después unimos los nodos para formar elementos.
 
 ## Funciones
 
-Entre los nodos y los elementos podemos fabricar funciones de forma que valen uno en cada nodo y cero en el resto, incluyendo la frontera de Dirichlet.
+Entre los nodos y los elementos podemos fabricar funciones de forma que valen uno en cada nodo y cero en el resto.
 
 
 
@@ -455,7 +455,7 @@ Con un poco de álgebra lineal llegamos a que tenemos que resolver el sistema $
 Las contribuciones del elemento $i$-ésimo a las integrales de la formulación débil tienen esta pinta.
 
 Una parte viene de la integración numérica y otra parte viene de la discretización del operador $a$ que va a parar a la matriz de rigidez $K$: $B$ transpuesta $k$ B.
-Y del funcional $B$ larga grande que va al vector $b$ larga chica del miembro derecho: $H$ transpuesta por $f$.
+Y del funcional $B$ larga grande que va al vector $b$ larga chica: $H$ transpuesta por $f$.
 
 ---
 
@@ -502,7 +502,7 @@ Medio que es esperable, ¿no? Porque las dos ecuaciones son elípticas, aunque e
 
 Podemos hacer lo mismo con ordenadas discretas.
 
-Otra vez, la forma es parecida pero hay una diferencia crucial: ahora la ecuación es hiperbólica de primer orden, no elíptica de segundo como en los dos casos anteriores.
+Otra vez, la forma es parecida pero hay una diferencia crucial: ahora la ecuación es hiperbólica de primer orden, no elíptica de segundo como las otras dos.
 Así que esa matriz $P$ que aparece en las contribuciones elementales es una matriz estabilizada tipo Petrov-Galerkin.
 Una vez más, los detalles en el texto.
 
@@ -699,7 +699,7 @@ Me hace doler los ojos... como cuando voy a la cancha a ver a Atlético.
 
 ## Licensing
 
-Lo primero que pide el SRS es que la herramienta desarrollada sea abierta.
+Lo primero que pide el SRS es que la herramienta sea abierta.
 
 Esto es como predicar para el coro así que resumo la discusión sobre licenciamiento de software en tres puntos:
 
@@ -767,7 +767,7 @@ Too long; didn't read it: la filosofía Unix es "hacé un programa que haga sola
 
 Como usualmente hay que hacer varias cosas, existen los conceptos de "separación" y "composición" de forma tal de que la salida de un programa sea la entrada de otro.
 
-Esto lo estuvo viendo Enzo de primera mano hace un par de semanas con el problemas del perfil alar.
+Esto lo estuvo viendo Enzo de primera mano hace un par de semanas con el problemas del perfil alar para la clase de fluidos.
 
 ---
 
@@ -847,6 +847,7 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento ese que nunca caminó.
 Es mobile-friendly así que pueden entrar ahora con el celular.
 
+[pausa]
 
 ## Arquitectura
 
@@ -854,7 +855,7 @@ Para decidir cómo implementamos todo esto, preguntémonos... ¿qué es que lo q
 
  1. construir los objetos globales $K$ y $b$
  2. resolver $K \cdot u = b$
- 3. re-construir los flujos $\phi$ y $\psi$ (y tal vez las corrientes $J$) a partir de $u$
+ 3. re-construir los flujos (y tal vez las corrientes) a partir de $u$
 
 El punto 2 es el foco de una biblioteca numérica.
 Por regla de Unix no la vamos a escribir nosotros.
@@ -863,7 +864,7 @@ Nosotros nos tenemos que enfocar en 1 y en 3.
 ---
   
 La biblioteca del punto 2 es PETSc.
-Entonces FeenoX juega el papel dos capas---o "glue layers" en terminología Unix:
+Entonces FeenoX juega el papel de dos capas---o "glue layers" en terminología Unix:
  
  * una que construye $K$ y $b$ a partir de la malla y del input, y 
  * otra que convierte el vector $u$ en la solución real.
@@ -967,7 +968,7 @@ Si corremos esto con FeenoX, deberíamos obtener 0.5
  
 ---
 
-Que suerte.
+¡Qué suerte!
 
 
 ## Conductividad no uniforme
@@ -985,10 +986,10 @@ Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
 ## LE10
 
-Debe haber una relación uno a uno entre la definición del problema de ingeniería y el archivo de entrada.
-Para elasticidad lineal en el editor Kate, tienen esta pinta.
+Debe haber una relación uno a uno entre la definición del problema de ingeniería y la entrada al software.
+Para elasticidad lineal en el editor Kate, el archivo de entrada tienen esta pinta.
 
-Fíjense que el archivo de entrada tiene lo que aparece en la formulación "humana".
+Fíjense que tiene lo que aparece en la formulación "humana".
 ¡Y nada más!
 
 Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
@@ -996,7 +997,7 @@ Este caso también ilustra otro punto importante. La salida es lo que uno le pid
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
 La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
-Más aún, si la salida hubiese sido un desplazamiento entonces FeenoX ni hubiese calculado las tensiones porque sabe que nadie las usa.
+Más aún, si la salida hubiese sido un desplazamiento entonces FeenoX ni habría calculado las tensiones porque se habría dado cuenta de que nadie las usa.
 
 ## Reed
 
@@ -1021,7 +1022,6 @@ Ahí debe haber ciertos archivos fuente con ciertas reglas para que `autogen` lo
 Estos fuentes tienen funciones tipo "punto de entrada" que le proveen al framework general todo lo que depende de la ecuación particular.
 
 Podemos borrar un directorio completamente, volver a hacer bootstrap y compilar. Ese ejecutable no va a poder resolver esa PDE que borramos, pero sí el resto.
-Después si tienen tiempo y ganas les muestro cómo funciona.
 
 Está claro que no ganamos mucho borrando. ¡Es mucho más interesante agregar!
 Este es el mecanismo de extensibilidad que mencioné antes.
@@ -1031,10 +1031,10 @@ En los trabajos futuros hay un bullet que es agregar nuevas ecuaciones: electrom
 
 Cada `pde` debe proveer la implementación de cada una de estas funciones, que van a ser llamadas por el framework general a lo largo de la ejecución.
 
- * Algunas para leer opciones al keyword `PROBLEM` y para interpretar las condiciones de contorno.
- * Otras para inicializar.
- * Las centrales para evaluar las llaves en cada punto de Gauss.
- * Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver
+ 1. Algunas para leer opciones al keyword `PROBLEM` y para interpretar las condiciones de contorno.
+ 2. Otras para inicializar.
+ 3. Las centrales para evaluar las llaves en cada punto de Gauss.
+ 4. Una que resuelve el problema usando PETSc. Este entry point define esencialmente si hay que resolver
 
     - un problema lineal,
     - uno no lineal,
@@ -1043,12 +1043,12 @@ Cada `pde` debe proveer la implementación de cada una de estas funciones, que v
 
    Por ejemplo, si es conducción lineal o no lineal.
    O si es un problema con fuentes o de criticidad.
- * Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
+ 5. Y después otros entry points para implementar la segunda capa y construir los flujos y las corrientes a partir de lo que resolvió PETSc.
 
 
 ## Expressions
 
-Tema flexibilidad: principio fundamental de la base de diseño de FeenoX, que ya nombramos antes: "todo es una expresión".
+Tema flexibilidad. Principio fundamental de la base de diseño de FeenoX, que ya nombramos antes: "todo es una expresión".
 Incluso la dimensión o la cantidad de grupos.
 Desde ya, las propiedades de los materiales y las condiciones de contorno.
 
@@ -1071,7 +1071,7 @@ Lista de temas que tienen una sección de la tesis donde las discutimos por escr
 
 ---
 
-Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el Q&A.
+Lista de temas que no están explícitamente discutidos en el texto pero que podemos charlar durante el espacio de preguntas.
 
 Anoten para después levantar la mano y preguntar.
 
@@ -1133,7 +1133,7 @@ Como dice Richard Stallman, la mejor manera de resolver un problema es evitándo
 
 ## Cube-sphere
 
-Pasemos al reactor cubo-esferoidal.
+Pasemos a otro caso.
 Todos sabemos que para un volumen fijo, una esfera tiene más reactividad que un cubo.
 
 ---
@@ -1149,7 +1149,11 @@ BTW, le debo al Chaco hacer lo mismo para estudiar la diferencia entre círculo 
 
 La solución de este caso cubo/esfera ilustra la filosofía Unix en acción.
 El input de FeenoX es realmente sencillo.
-La complejidad está puesta en un script de Python que usa el API de Gmsh para hacer los fillets, fabricar la malla y llamar paramétricamente a FeenoX.
+La complejidad está puesta en un script de Python que usa el API de Gmsh para
+
+ * hacer los fillets
+ * fabricar la malla y
+ * llamar paramétricamente a FeenoX.
 
 
 ## Tres pescaditos
@@ -1227,7 +1231,7 @@ Como dijo una vez un director del IB en una reunión del Consejo Académico cuan
  
 ## Tweets 
 
-Si ustedes tuviesen que tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que lo hicieran sobre alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
+Si ustedes tuviesen que tweetear o mastodonear contando que vinieron a escuchar esta charla, me gustaría que les hubiese quedado grabado alguno de estos siete conceptos---y que los puedan explicar en 140 caracteres.
 
 En particular, debería sobresalir la idea de que FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos lo que Markdown es a Word y a LaTeX, respectivamente.
 
@@ -1252,10 +1256,4 @@ y puedas terminar una tesis de doctorado a los 40...
 y puedas volver a la playa con tu familia.
 
 Muchas gracias.
-
-[esperar y pasar de slide]
-
-## 
-
-[aplausos]
 

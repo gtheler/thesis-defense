@@ -13,5 +13,5 @@ Hay que acudir a la vez a lo uno y a lo otro, y combinar ambos ejercicios a fin 
 Sigue, Séneca:
 
 "Los alimentos que tomamos, mientras mantienen su propia cualidad y compactos flotan en el estómago, son una carga.
-Mas cuando se ha producido su trasformación, entonces y sólo entonces, se convierten en fuerza y sangre."
+Mas cuando se ha producido su transformación, entonces y sólo entonces, se convierten en fuerza y sangre."
 
