@@ -24,7 +24,7 @@ Eso quiere decir dos cosas.
  * una, que estoy viejo para estar haciendo esto, y
  * otra, que crecí en los noventa.
  
-Y---como sabrán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo giraba alrededor de la televisión.
+Y---como recordarán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo giraba alrededor de la televisión.
 Y yo me la pasaba desperdiciando mi tiempo mirando televisión.
 
 ## Calabró
@@ -130,7 +130,7 @@ El título del paper es "Desarrollos _recientes_ en computadoras y sus _consecue
 
 Tenemos que hacer el ejercicio mental de viajar 60 años al pasado para entender estos números.
 
-Dejemos de lado consideraciones sobre arquitecturas, lenguajes y compiladores.
+Dejemos de lado consideraciones _obvias_ sobre arquitecturas, lenguajes y compiladores.
 Pensemos en cómo había que diseñar software de ingeniería en esa época.
 
 Desde un punto de vista de costos, cada resultado calculado tenía que formar parte de la salida.
@@ -682,7 +682,7 @@ Déjenme ver si me sale ilustrar un punto sobre su diseño.
 
 ¿Qué opciones tendríamos si necesitáramos escribir un documento técnico? Un informe o un paper.
 En el lado más "fácil" (y "horrendo") del espectro tendríamos una monstruosidad como Word y ahí cerquita Google Docs.
-Del otro lado, algo como LaTeX o directamente TeX (lo que inventó Donald Knuth, el del libro beige).
+Del otro lado, algo como LaTeX o directamente TeX (lo que inventó Donald Knuth para escribir el del libro beige).
 En el medio, Markdown---una de las tantas contribuciones del gran Aaron Swartz. Mis respetos. [hacer una reverencia]
 
 
@@ -694,7 +694,7 @@ FeenoX es a los solvers tradicionales y a las bibliotecas de elementos finitos l
 [chiste]
 
 Hablando de Word: por favor, traten de _no_ usar Word para escribir matemática.
-Me hace doler los ojos... como cuando voy a la cancha a ver a Atlético.
+Me hace doler los ojos... como cuando voy a la cancha a ver a Atlético, aunque lo del domingo fue peor que las fórmulas de Word.
 
 
 ## Licensing
@@ -771,7 +771,7 @@ Esto lo estuvo viendo Enzo de primera mano hace un par de semanas con el problem
 
 ---
 
-De hecho FeenoX se puede usar como un filtro pasando el input o incluso datos a través de un pipe.
+De hecho FeenoX se puede usar como un filtro, incluso pasando el input a través de un pipe.
 
 
 ## 17 rules
@@ -836,7 +836,7 @@ Para que tengan una idea, esta es una cita de un gerente durante una presentaci�
 ¿Y por qué no es lo mismo?
 
 Primero hay un tema de entrada y salida.
-Central para separar front de back. El objetivo es que FeenoX pueda funcionar con diferentes front ends: desktop, web, realidad virtual, un holograma láser en 3D, no sé.
+Central para separar front de back. La idea es que FeenoX pueda funcionar con diferentes front ends: desktop, web, realidad virtual, un holograma láser en 3D, no sé.
 
 Después hay temas de deployment, escalabilidad y accesibilidad.
 
@@ -845,7 +845,7 @@ Si el software no tiene todos estos ítems en cuenta en su base de diseño, desp
 ## CAEplex
 
 Como prueba de concepto de una interfaz web pueden entrar a CAEplex punto com, que es el emprendimiento ese que nunca caminó.
-Es mobile-friendly así que pueden entrar ahora con el celular.
+Es mobile-friendly así que pueden entrar a chusmear ahora con el celular.
 
 [pausa]
 
@@ -943,7 +943,7 @@ Siguiendo la filosofía Unix, este input es un archivo de texto plano con palabr
  
 Bueno y algunos puntos más que discutimos en el SDS.
 
-Estas palabras clave pueden ser definiciones o instrucciones.
+Estas palabras clave pueden ser definiciones (sustantivos) o instrucciones (verbos).
 
 
 
@@ -981,7 +981,7 @@ Ahora el resultado ya no es 0.5 sino eso que está ahí.
 
 ¿Y si $k$ depende de la temperatura?
 Ningún problema, escribimos $k$ de $x$ en función de $T$ de $x$.
-Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad depende de $T$, tiene que resolver un problema no lineal.
+Ahora el problema es no lineal. FeenoX se da cuenta de que si en `thermal` la conductividad depende de $T$, tiene que resolver un problema no lineal y que tiene que meter un jacobiano.
 Este caso tiene solución analítica, que es esa raíz cuadrada que está ahí.
 
 ## LE10
@@ -993,11 +993,11 @@ Fíjense que tiene lo que aparece en la formulación "humana".
 ¡Y nada más!
 
 Este caso también ilustra otro punto importante. La salida es lo que uno le pide, ¡y nada más!
-¿Recuerdan la tablita del 65 y el ingeniero que buscaba una aguja en un pajar, no?
+Recuerdan al ingeniero que buscaba una aguja en un pajar, ¿no?
 Dame la tensión normal en la dirección $y$ evaluada en el punto D. Nada más.
 
-La salida es 100% definida por el usuario usando las instrucciones `PRINT`, `PRINTF`, `WRITE_RESULTS`, etc.
-Más aún, si la salida hubiese sido un desplazamiento entonces FeenoX ni habría calculado las tensiones porque se habría dado cuenta de que nadie las usa.
+La salida es 100% definida por el usuario usando instrucciones de salida.
+Más aún, el `PRINT` hubiese pedido un desplazamiento entonces FeenoX ni habría se habría gastado en calcular las tensiones porque se habría dado cuenta de que nadie las usa.
 
 ## Reed
 
@@ -1170,7 +1170,7 @@ Pero debo reconocer que para esto funciona fenómeno.
 ## PHWR
 
 Último caso.
-Un PHWR ficticio de siete canales y tres barras de control inclinadas.
+Un PHWR imaginario de siete canales y tres barras de control inclinadas.
 
 [pausa]
 
@@ -1178,7 +1178,7 @@ Un PHWR ficticio de siete canales y tres barras de control inclinadas.
 
 Como el problema es inventado, también inventamos las secciones eficaces.
 En particular, para el moderador ponemos un perfil de temperaturas en función de $z$.
-Y hacemos que algunas secciones eficaces dependan algebráicamente y otras a través de puntos "numéricos" de esta temperatura.
+Y hacemos que algunas secciones eficaces dependan algebráicamente y otras a través de funciones definidas por puntos interpolados de esta temperatura.
 
 ## Flujos
 
@@ -1236,13 +1236,12 @@ La tesis y esta presentación terminan con un jardín de trabajos futuros que se
 Cada unos de estos bullets implica varios años-persona y un presupuesto importante.
 En particular, el último punto es una meta-tarea que podría llegar a involucrar a una o más de las anteriores.
 
-Seguramente ustedes se preguntan lo mismo que yo.
-¿Cómo hacemos todo esto?
+Seguramente ustedes se estarán preguntando: ¿Cómo hacemos todo esto?
 
 Bueno, como le explica Séneca a Lucilio: "con una constante dedicación".
 
 Porque podría llegar a venir un cisne negro que te sacara la pelota con la que estás acostumbrado a tirar laterales y te pusiera en su lugar la piedra de Sísifo.
-Pero si vos le le estuviste haciendo caso al contra y durante la semana te la pasaste entrenando laterales con sandías, tal vez te quede resto...
+Pero si vos le le estuviste haciendo caso a Calabró y te la pasaste entrenando laterales con sandías, tal vez te quede resto...
 
 ## PhD / Cancún
 

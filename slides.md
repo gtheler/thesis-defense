@@ -363,8 +363,6 @@ $$
 \end{cases}
 $$
 
-. . .
-
 $$
 \text{paralelizable} \rightarrow \text{descomposición de dominio} \rightarrow \text{DAG} = \text{malla no estructurada}
 $$
@@ -1318,19 +1316,7 @@ PayPal only just dodged this bullet. After they merged with X.com, the new CEO w
 . . .
 
 :::::::::::::: {.columns}
-::: {.column width="57%"}
-
-```terminal-tiny
-$ a=1; b=3; echo PRINT $a/$b | feenox -
-0.333333
-$ a=0.1; b=0.09999; echo PRINT "(abs($a)-abs($b))<1e-4" | feenox -
-1
-$ 
-```
-
-:::
 ::: {.column width="43%"}
-
 ```terminal-tiny
 $ feenox f.fee "sin(t)" 1 | ./derivative.fee 
 0.05    0.998725
@@ -1338,7 +1324,15 @@ $ feenox f.fee "sin(t)" 1 | ./derivative.fee
 0.95    0.574296
 $ 
 ```
-
+:::
+::: {.column width="57%"}
+```terminal-tiny
+$ a=1; b=3; echo PRINT $a/$b | feenox -
+0.333333
+$ a=0.1; b=0.09999; echo PRINT "(abs($a)-abs($b))<1e-4" | feenox -
+1
+$ 
+```
 :::
 ::::::::::::::
 
