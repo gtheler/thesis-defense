@@ -644,6 +644,11 @@ Paul Graham
 :::
 ::::::::::::::
 
+. . .
+
+\vspace{-1.65cm}
+![](footer.svg)
+
 
 ## 3. Esquemas de discretización numérica
 

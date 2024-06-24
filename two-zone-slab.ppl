@@ -1,0 +1,36 @@
+set preamble "\usepackage{amsmath}"
+
+set width 14*unit(cm)
+set size ratio 9/16
+
+set axis x arrow nomirrored
+set axis y arrow nomirrored
+
+set grid
+set key left bottom
+set terminal pdf
+
+set xlabel "Ancho $a$ de la zona $A$"
+set ylabel "$k_\text{eff}$"
+
+set output "two-zone-slab-keff.pdf"
+
+plot "two-zone-slab-i-20.dat" u 1:3 w l color grey30      lw 4 lt 1 ti "Soluci\\'on anal\\'itica",\
+     "two-zone-slab-ii-10.dat"   w l       color red     lw 4 lt 2 ti "$n=10$ ii (uniforme)",\
+     "two-zone-slab-ii-20.dat"   w l       color magenta lw 4 lt 2 ti "$n=20$ ii (uniforme)",\
+     "two-zone-slab-i-10.dat"    w l       color blue    lw 6 lt 3 ti "$n=10$ i (no uniforme)",\
+     "two-zone-slab-i-20.dat"    w l       color cyan    lw 6 lt 3 ti "$n=20$ i (no uniforme)"
+     
+     
+set output "two-zone-slab-error.pdf"
+set ylabel "Error con respecto a la soluci\\'on anal\\'itica"
+set yrange [-0.025:0.005]
+
+plot 0 w l color grey30 lw 4 lt 1 ti "Soluci\\'on exacta",\
+     "two-zone-slab-ii-10.dat"   u 1:4 w l       color red     lw 4 lt 2 ti "$n=10$ ii (uniforme)",\
+     "two-zone-slab-ii-20.dat"   u 1:4 w l       color magenta lw 4 lt 2 ti "$n=20$ ii (uniforme)",\
+     "two-zone-slab-i-10.dat"    u 1:4 w l       color blue    lw 6 lt 3 ti "$n=10$ i (no uniforme)",\
+     "two-zone-slab-i-20.dat"    u 1:4 w l       color cyan    lw 6 lt 3 ti "$n=20$ i (no uniforme)"
+     
+     
+     

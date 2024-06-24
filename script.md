@@ -573,10 +573,10 @@ En el 97, Dassault compró Solidworks por 300 millones de dólares y Jon se qued
 
 Nuevo mileno. Burbuja punto com.
 En una conferencia le preguntan a Paul Graham por qué fallan las startups.
-No sabe qué contestar así que se pone a investigar y escribe este ensayo en forma de "listicle".
+No sabe qué contestar. Pero como es un hacker se pone a investigar y escribe este ensayo en forma de "listicle".
 En el punto 7, dice Graham:
 
-"Muchas startups se suicidaron al decidir hacer aplicaciones basadas en servers sobre Windows".
+"Muchas startups se suicidaron al decidir hacer aplicaciones basadas en servidores sobre Windows".
 
 "Hotmail siguió usando FreeBSD, aún después de ser comprada por Microsoft".
 
@@ -604,7 +604,7 @@ En resumen,
  
 ---
 
- * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos desafíos que presenta "la nube" y que definitivamente no existían hace más 50 años. Como la bicicleta.
+ * Y los últimos 480 gracias a los nerds de barba que en el 70 diseñaron un sistema operativo que hoy resuelve todos desafíos que presenta "la nube" y que definitivamente no existían cuando inventaron Unix. Como la bicicleta.
 
 
 Cierro concurso con ayudita.
