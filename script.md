@@ -25,7 +25,7 @@ Eso quiere decir dos cosas.
  * otra, que crecí en los noventa.
  
 Y---como recordarán los que vivieron esa década o los que vieron Seinfeld---en los noventa todo giraba alrededor de la televisión.
-Y yo me la pasaba desperdiciando mi tiempo mirando televisión.
+Y yo me la pasaba mirando televisión.
 
 ## Calabró
 
