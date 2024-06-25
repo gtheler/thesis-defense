@@ -2437,7 +2437,7 @@ S$_4$               |   159k    |   KSP        |    64.7 s   |   449.1 s   |   5
 ::: {.column width="37%"}
 
  
- a. simulación programática
+ a. Unix script friendliness 
  b. mallas no estructuradas
  c. S$_N$ (además de difusión)
  d. paralelización MPI
